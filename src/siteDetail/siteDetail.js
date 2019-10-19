@@ -6,13 +6,11 @@ class SiteDetail extends Component {
   static contextType = siteContext;
 
   render() {
-    console.log("SiteDetail is rendering...");
     // eslint-disable-next-line
     const selectedSite = this.context.sites.sites.find(site => {
       const numberProp = parseInt(this.props.match.params.siteId);
-      console.log(site.id + " " + numberProp);
       if (site.id === numberProp) {
-        console.log(`There was a match and returned ${site}`);
+        console.log(site);
         return site;
       }
     });

@@ -34,7 +34,7 @@ class App extends Component {
           <Nav />
           <Route path="/about" component={About} />
           <Route path="/signIn" component={SignIn} />
-          <Route path="/sites" component={SiteList} />
+          <Route exact path="/sites" component={SiteList} />
           <Route path="/sites/:siteId" component={SiteDetail} />
           <Route exact path="/" component={Landing} />
         </siteContext.Provider>
