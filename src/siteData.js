@@ -1,4 +1,4 @@
-export default Sites = {
+const Sites = {
   sites: [
     {
       title: "Horsetooh Trail",
@@ -38,3 +38,5 @@ export default Sites = {
     }
   ]
 };
+
+export default Sites;
