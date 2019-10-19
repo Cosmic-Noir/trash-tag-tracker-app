@@ -3,7 +3,7 @@ import SignUp from "../signUp/signUp";
 
 export default function Landing() {
   return (
-    <div class="landing">
+    <div className="landing">
       <h1>Welcome to TrashTag Tracker!</h1>
       <SignUp />
     </div>

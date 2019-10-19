@@ -1,6 +1,7 @@
 const Sites = {
   sites: [
     {
+      id: 1,
       title: "Horsetooh Trail",
       address: "Horsetooth Resevoir",
       state: "CO",
@@ -10,6 +11,7 @@ const Sites = {
         "Was hiking through Horsetooth resevoir the other day when I came across someone's secret dumping site. Unbelievable! I didn't have anything on me to clean this at the time, but I thought I would post in case anyone has the time and probably a truck to haul away the refuse"
     },
     {
+      id: 2,
       title: "Park Trail",
       address: "6th & Oak Ave",
       state: "NE",
@@ -19,6 +21,7 @@ const Sites = {
         "Was jogging in the neighborhood the other day and saw all this trash in the woods near the park. Couldn't pick it up when I was running, but might go back this weekend and may need help."
     },
     {
+      id: 3,
       title: "Ditch Off Highway 25",
       address: "Highway 25, Windsor Exit",
       state: "CO",
@@ -28,6 +31,7 @@ const Sites = {
         "I always see this spot on my way home and have decided to go back this Saturday morning to clean it up. More hands would make this quick!"
     },
     {
+      id: 4,
       title: "Leech Lake",
       address: "Leech Lake",
       state: "MN",
