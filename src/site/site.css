@@ -1,0 +1,10 @@
+img {
+  height: 200px;
+  margin: 5px;
+  width: 300px;
+}
+
+.site {
+  border: 1px solid black;
+  margin: 5px;
+}
