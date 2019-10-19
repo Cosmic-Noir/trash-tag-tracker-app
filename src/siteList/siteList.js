@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 export default class SiteList extends Component {
+  state = {
+    sites: []
+  };
   render() {
     return (
       <div>
