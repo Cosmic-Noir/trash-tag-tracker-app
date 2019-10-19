@@ -20,6 +20,20 @@ export default class SiteList extends Component {
     return (
       <div>
         <h2>Trash Sites:</h2>
+        <form>
+          <select class="center">
+            <option>CO</option>
+            <option>NE</option>
+            <option>MN</option>
+            <option>AZ</option>
+          </select>
+          <select>
+            <option>Easy</option>
+            <option>Medium</option>
+            <option>Hard</option>
+          </select>
+          <button type="submit">Filter Results</button>
+        </form>
         <ul>{trashSites}</ul>
       </div>
     );

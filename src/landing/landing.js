@@ -10,7 +10,7 @@ export default function Landing() {
         Have you ever wanted to participate in the TrashTag challenge but felt
         unsure as to where to start?
       </p>
-      <br />
+
       <p>
         Now you have the perfect place to start. Browse reported trash sites by
         other users, post new trash sites, and mark them as cleaned up! Make a
