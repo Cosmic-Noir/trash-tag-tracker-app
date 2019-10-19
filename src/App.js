@@ -24,6 +24,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(`App rendering...`);
     const contextValue = {
       sites: this.state.sites
     };
@@ -34,7 +35,7 @@ class App extends Component {
           <Route path="/about" component={About} />
           <Route path="/signIn" component={SignIn} />
           <Route path="/sites" component={SiteList} />
-          <Route path="sites/:siteId" component={SiteDetail} />
+          <Route path="/sites/:siteId" component={SiteDetail} />
           <Route exact path="/" component={Landing} />
         </siteContext.Provider>
       </div>
