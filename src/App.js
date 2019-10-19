@@ -6,6 +6,7 @@ import Landing from "./landing/landing";
 import About from "./about/about";
 import SignIn from "./signIn/signIn";
 import SiteList from "./siteList/siteList";
+import SiteDetail from "./siteDetail/siteDetail";
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
         <Route path="/about" component={About} />
         <Route path="/signIn" component={SignIn} />
         <Route path="/sites" component={SiteList} />
+        <Route path="sites/:siteId" component={SiteDetail} />
         <Route exact path="/" component={Landing} />
       </div>
     );

@@ -11,6 +11,7 @@ export default class SiteList extends Component {
       return (
         <Site
           key={site.id}
+          id={site.id}
           title={site.title}
           state={site.state}
           imgSrc={site.imgSrc}
@@ -27,11 +28,11 @@ export default class SiteList extends Component {
             <option>MN</option>
             <option>AZ</option>
           </select>
-          <select>
+          {/* <select>
             <option>Easy</option>
             <option>Medium</option>
             <option>Hard</option>
-          </select>
+          </select> */}
           <button type="submit">Filter Results</button>
         </form>
         <ul>{trashSites}</ul>
