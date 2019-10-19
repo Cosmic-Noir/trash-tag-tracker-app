@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import Sites from "../siteData";
+import siteContext from "../siteContext";
 import Site from "../site/site";
 
 export default class SiteList extends Component {
-  state = {
-    sites: Sites
-  };
+  static contextType = siteContext;
+
   render() {
-    const trashSites = this.state.sites.sites.map(site => {
+    const trashSites = this.context.sites.sites.map(site => {
       return (
         <Site
           key={site.id}
