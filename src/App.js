@@ -6,15 +6,9 @@ import Landing from "./landing/landing";
 import About from "./about/about";
 import SignIn from "./signIn/signIn";
 import SiteList from "./siteList/siteList";
-import Sites from "./siteData";
 
 class App extends Component {
-  state = {
-    sites: Sites
-  };
-
   render() {
-    console.log(this.state.sites);
     return (
       <div className="App">
         <Nav />
