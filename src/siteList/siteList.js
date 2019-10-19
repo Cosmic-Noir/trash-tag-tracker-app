@@ -21,7 +21,7 @@ export default class SiteList extends Component {
       <div>
         <h2>Trash Sites:</h2>
         <form>
-          <select class="center">
+          <select className="center">
             <option>CO</option>
             <option>NE</option>
             <option>MN</option>

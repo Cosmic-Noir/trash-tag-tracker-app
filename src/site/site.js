@@ -1,15 +1,26 @@
-import React from "react";
-import "./site.css";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import siteContext from "../siteContext";
+import "./site.css";
 
-export default function Site(props) {
-  return (
-    <Link to={`/sites/${props.id}`}>
-      <div className="site">
-        <h2>{props.title}</h2>
-        <h3>{props.state}</h3>
-        <img src={props.imgSrc} alt="Trash site" />
-      </div>
-    </Link>
-  );
+class Site extends Component {
+  static contextType = siteContext;
+
+  render() {
+    return (
+      <siteContext.Consumer>
+        {context => (
+          <Link to={`/sites/${this.props.id}`}>
+            <div className="site">
+              <h2>{this.props.title}</h2>
+              <h3>{this.props.state}</h3>
+              <img src={this.props.imgSrc} alt="Trash site" />
+            </div>
+          </Link>
+        )}
+      </siteContext.Consumer>
+    );
+  }
 }
+
+export default Site;

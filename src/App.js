@@ -37,7 +37,6 @@ class App extends Component {
           <Route path="sites/:siteId" component={SiteDetail} />
           <Route exact path="/" component={Landing} />
         </siteContext.Provider>
-        }
       </div>
     );
   }
