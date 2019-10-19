@@ -5,6 +5,7 @@ import Nav from "./nav/nav";
 import Landing from "./landing/landing";
 import About from "./about/about";
 import SignIn from "./signIn/signIn";
+import SiteList from "./siteList/siteList";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Nav />
       <Route path="/about" component={About} />
       <Route path="/signIn" component={SignIn} />
+      <Route path="/sites" component={SiteList} />
       <Route exact path="/" component={Landing} />
     </div>
   );
