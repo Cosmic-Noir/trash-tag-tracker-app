@@ -7,10 +7,7 @@ export default class SiteList extends Component {
     sites: Sites
   };
   render() {
-    // const trashSites = this.state.sites[0].title;
-    console.log(this.state.sites.sites[0].title);
     const trashSites = this.state.sites.sites.map(site => {
-      console.log(site.title);
       return (
         <Site
           key={site.id}

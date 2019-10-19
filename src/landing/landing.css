@@ -1,0 +1,10 @@
+p {
+  max-width: 500px;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
