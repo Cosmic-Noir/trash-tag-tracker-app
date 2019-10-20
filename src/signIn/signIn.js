@@ -25,10 +25,11 @@ class SignIn extends Component {
     console.log(
       `Log In pressed, user: ${this.state.email}  pass: ${this.state.password}`
     );
+    console.log(this.context);
 
     // Find matching user in siteData
     // eslint-disable-next-line
-    const loggedUser = Sites.users.find(user => {
+    const loggedUser = this.context.users.find(user => {
       if (
         user.email === this.state.email &&
         user.password === this.state.password

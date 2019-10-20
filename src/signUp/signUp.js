@@ -13,6 +13,7 @@ class SignUp extends Component {
   };
 
   static contextType = siteContext;
+
   updateUsername(username) {
     this.setState({ username: username });
   }
@@ -28,6 +29,18 @@ class SignUp extends Component {
   updateId() {
     this.setState({ id: Math.floor(Math.random() * 1000) });
   }
+
+  handlSubmit = e => {
+    e.preventDefault();
+    console.log(`Create Account pressed, checking info...`);
+
+    // Check if info empty or missing:
+    if (this.state.username.length < 6) {
+      console.log("does");
+    }
+
+    // Check if username or e-mail taken, update error for problems
+  };
 
   render() {
     return (

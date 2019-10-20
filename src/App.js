@@ -25,12 +25,7 @@ class App extends Component {
     sites: Sites,
     loggedIn: false,
     userInfo: [],
-    users: Sites.users.map(user => {
-      return user.username;
-    }),
-    emails: Sites.users.map(user => {
-      return user.email;
-    })
+    users: Sites.users
   };
 
   onLogIn = () => {
@@ -53,7 +48,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(`App rendered with users: ${this.state.users}`);
     // console.log(`App rendering...`);
     const contextValue = {
       // state
@@ -61,7 +55,6 @@ class App extends Component {
       loggedIn: this.state.loggedIn,
       userInfo: this.state.userInfo,
       users: this.state.users,
-      emails: this.state.emails,
       // methods
       onLogIn: this.onLogIn,
       onLogOut: this.onLogOut,
