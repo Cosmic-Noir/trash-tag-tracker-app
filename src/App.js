@@ -33,6 +33,7 @@ class App extends Component {
     this.setState({
       users: [...this.state.users, newUser]
     });
+    console.log(`New user added: ${this.state.users}`);
   };
 
   onLogIn = () => {

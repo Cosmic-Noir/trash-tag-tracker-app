@@ -27,7 +27,7 @@ class SignUp extends Component {
   }
 
   updateId() {
-    this.setState({ id: Math.floor(Math.random() * 1000) });
+    this.setState({ id: Math.floor(Math.random() * 1000), error: null });
   }
 
   handlSubmit = e => {
@@ -58,9 +58,9 @@ class SignUp extends Component {
     } else {
       this.updateId();
       let newUser = this.state;
-      console.log(
-        `New user successfully passed inspection with info: ${newUser}`
-      );
+      this.context.onLogIn();
+      this.context.addNewUser(newUser);
+      this.context.setUserInfo(newUser);
     }
   };
 
