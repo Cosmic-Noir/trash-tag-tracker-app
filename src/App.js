@@ -20,7 +20,8 @@ import Sites from "./siteData";
 class App extends Component {
   state = {
     // Initially set to seed data
-    sites: Sites
+    sites: Sites,
+    loggedIn: false
   };
 
   render() {
