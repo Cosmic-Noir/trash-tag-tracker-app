@@ -6,7 +6,7 @@ const Sites = {
       title: "Horsetooh Trail",
       address: "Horsetooth Resevoir",
       state: "CO",
-      imgSrc:
+      beforeImg:
         "https://www.suffolknewsherald.com/wp-content/uploads/2016/05/useIMG_1460.jpg",
       afterImg: "",
       description:
@@ -18,7 +18,7 @@ const Sites = {
       title: "Park Trail",
       address: "6th & Oak Ave",
       state: "NE",
-      imgSrc:
+      beforeImg:
         "https://bloximages.chicago2.vip.townnews.com/wvnews.com/content/tncms/assets/v3/editorial/c/d7/cd75f812-a8e4-51ec-92dc-c6fc15d36b57/5a6ba163eeb8d.image.jpg?resize=1200%2C900",
       afterImg: "",
       description:
@@ -30,7 +30,7 @@ const Sites = {
       title: "Ditch Off Highway 25",
       address: "Highway 25, Windsor Exit",
       state: "CO",
-      imgSrc:
+      beforeImg:
         "http://nykography.weebly.com/uploads/1/1/0/4/11041387/9292659_orig.jpg",
       afterImg: "",
       description:
@@ -42,7 +42,7 @@ const Sites = {
       title: "Leech Lake",
       address: "Leech Lake",
       state: "MN",
-      imgSrc:
+      beforeImg:
         "https://www.pasadenastarnews.com/wp-content/uploads/2019/06/LDN-L-HOMELESS-COUNT-SGVN-0605-12-SR2.jpg?w=525",
       afterImg: "",
       description:
