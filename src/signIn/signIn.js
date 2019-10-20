@@ -27,6 +27,7 @@ class SignIn extends Component {
     );
 
     // Find matching user in siteData
+    // eslint-disable-next-line
     const loggedUser = Sites.users.find(user => {
       if (
         user.email === this.state.email &&

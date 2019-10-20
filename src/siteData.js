@@ -65,15 +65,13 @@ const Sites = {
   users: [
     {
       id: 1,
-      first_name: "Brian",
-      last_name: "Eng",
+      username: "dude",
       email: "cool@email.com",
       password: "cool123"
     },
     {
       id: 2,
-      first_name: "Adam",
-      last_name: "Doucette",
+      username: "dudette",
       email: "cooler@email.com",
       password: "cold789"
     }
