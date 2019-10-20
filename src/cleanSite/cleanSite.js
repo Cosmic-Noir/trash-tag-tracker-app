@@ -3,19 +3,24 @@ import siteContext from "../siteContext";
 import "./cleanSite.css";
 
 class CleanSite extends Component {
-  static contextType = siteContext;
-
   state = {
     error: null,
     id: "",
     clean: "false",
     description: "",
+    address: "",
+    state: "",
+    beforeImg: "",
     afterImg: ""
   };
 
+  static contextType = siteContext;
+
   hanldeSubmit = e => {
     e.preventDefault();
-    this.setState({ clean: "true" });
+
+    const cleanedSite = this.state;
+    this.context.updateSite(cleanedSite);
 
     // const { siteId } = this.props.match.params;
 
@@ -25,15 +30,18 @@ class CleanSite extends Component {
 
   resetFields = () => {
     this.setState({
+      error: null,
       id: "",
       clean: "false",
       description: "",
+      address: "",
+      state: "",
       afterImg: ""
     });
   };
 
-  handleChangeDescripton = e => {
-    this.setState({ description: e.target.value });
+  updateDescription = e => {
+    this.setState({ description: e });
   };
 
   render() {
@@ -41,25 +49,39 @@ class CleanSite extends Component {
     const selectedSite = this.context.sites.sites.find(site => {
       const numberProp = parseInt(this.props.match.params.siteId);
       if (site.id === numberProp) {
-        console.log(site);
+        console.log(this.state);
         return site;
       }
+      // this.setState({
+      //   error: null,
+      //   id: selectedSite.id,
+      //   address: selectedSite.address,
+      //   state: selectedSite.state,
+      //   beforeImg: selectedSite.beforeImg
+      // });
     });
     return (
       <div className="clean">
         <h2>Mark A Trash Site As Cleaned:</h2>
         <h3>{selectedSite.title}</h3>
         <form>
-          <input type="hidden" name="id" />
+          <input type="hidden" name="id" value={selectedSite.id} />
+          <input
+            type="hidden"
+            name="beforeImg"
+            value={selectedSite.beforeImg}
+          />
+          <input type="hidden" name="address" value={selectedSite.address} />
+          <input type="hidden" name="state" value={selectedSite.state} />
           <label htmlFor="description">Updated Description:</label>
           <textarea
             name="description"
             id="description"
             value={this.state.description}
-            onChange={this.handleChangeDescripton}
+            onChange={e => this.updateDescription(e.target.value)}
           />
-          <label htmlFor="afterImg">Upload After Photo:</label>
-          <button>Upload</button>
+          <label htmlFor="afterImg">Photo web address:</label>
+          <input type="text" name="afterImg" value={selectedSite.afterImg} />
           <button type="submit">Mark Site as Clean</button>
         </form>
       </div>

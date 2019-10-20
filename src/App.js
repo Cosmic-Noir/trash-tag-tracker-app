@@ -75,7 +75,8 @@ class App extends Component {
       onLogIn: this.onLogIn,
       onLogOut: this.onLogOut,
       setUserInfo: this.setUserInfo,
-      addNewUser: this.addNewUser
+      addNewUser: this.addNewUser,
+      updateSite: this.updateSite
     };
     return (
       <div className="App">
