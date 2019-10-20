@@ -21,11 +21,18 @@ import Sites from "./siteData";
 
 class App extends Component {
   state = {
-    // Initially set to seed data
+    // Initially set to seed data - unsecure
     sites: Sites,
     loggedIn: false,
     userInfo: [],
     users: Sites.users
+  };
+
+  // Temp function to add new user data to state
+  addNewUser = newUser => {
+    this.setState({
+      users: [...this.state.users, newUser]
+    });
   };
 
   onLogIn = () => {
@@ -58,7 +65,8 @@ class App extends Component {
       // methods
       onLogIn: this.onLogIn,
       onLogOut: this.onLogOut,
-      setUserInfo: this.setUserInfo
+      setUserInfo: this.setUserInfo,
+      addNewUser: this.addNewUser
     };
     return (
       <div className="App">
