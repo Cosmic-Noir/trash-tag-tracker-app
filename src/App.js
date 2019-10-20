@@ -27,6 +27,9 @@ class App extends Component {
     userInfo: [],
     users: Sites.users.map(user => {
       return user.username;
+    }),
+    emails: Sites.users.map(user => {
+      return user.email;
     })
   };
 
@@ -57,6 +60,8 @@ class App extends Component {
       sites: this.state.sites,
       loggedIn: this.state.loggedIn,
       userInfo: this.state.userInfo,
+      users: this.state.users,
+      emails: this.state.emails,
       // methods
       onLogIn: this.onLogIn,
       onLogOut: this.onLogOut,

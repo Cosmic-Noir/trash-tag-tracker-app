@@ -13,6 +13,21 @@ class SignUp extends Component {
   };
 
   static contextType = siteContext;
+  updateUsername(username) {
+    this.setState({ username: username });
+  }
+
+  updateEmail(email) {
+    this.setState({ email: email });
+  }
+
+  updatePass(password) {
+    this.setState({ password: password });
+  }
+
+  updateId() {
+    this.setState({ id: Math.floor(Math.random() * 1000) });
+  }
 
   render() {
     return (
