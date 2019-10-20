@@ -30,7 +30,7 @@ class SiteDetail extends Component {
         <p className="desc">{selectedSite.description}</p>
         <Link to="/sites">Back</Link>
         {selectedSite.clean === "false" ? (
-          <Link to="/cleanSite">Mark as Cleaned!</Link>
+          <Link to={`/cleanSite/${selectedSite.id}`}>Mark as Cleaned!</Link>
         ) : (
           ""
         )}

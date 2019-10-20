@@ -19,9 +19,7 @@ export default class SiteList extends Component {
   }
 
   render() {
-    console.log(
-      `Component re-rendered, clean state is now: ${this.state.clean}`
-    );
+    // eslint-disable-next-line
     const trashSites = this.context.sites.sites.map(site => {
       if (
         (this.state.clean === "" || site.clean === this.state.clean) &&
@@ -58,7 +56,7 @@ export default class SiteList extends Component {
             className="center"
             name="state"
             id="state"
-            ref={this.state}
+            ref={this.state.state}
             onChange={e => this.updateState(e.target.value)}
           >
             <option value="">All</option>

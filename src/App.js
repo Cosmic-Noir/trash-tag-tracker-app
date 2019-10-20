@@ -39,7 +39,7 @@ class App extends Component {
           <Route path="/signIn" component={SignIn} />
           <Route exact path="/sites" component={SiteList} />
           <Route path="/sites/:siteId" component={SiteDetail} />
-          <Route path="/cleanSite" component={CleanSite} />
+          <Route path="/cleanSite/:siteId" component={CleanSite} />
           <Route exact path="/" component={Landing} />
         </siteContext.Provider>
       </div>
