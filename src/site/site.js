@@ -15,6 +15,11 @@ class Site extends Component {
 
             <h3>{this.props.state}</h3>
             <img src={this.props.beforeImg} alt="Trash site" />
+            {this.props.afterImg !== "" ? (
+              <img src={this.props.afterImg} alt="Clean site" />
+            ) : (
+              ""
+            )}
           </div>
         )}
       </siteContext.Consumer>

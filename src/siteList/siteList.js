@@ -27,6 +27,7 @@ export default class SiteList extends Component {
             title={site.title}
             state={site.state}
             beforeImg={site.beforeImg}
+            afterImg={site.afterImg}
           />
         );
       }
