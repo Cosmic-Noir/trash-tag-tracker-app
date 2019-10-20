@@ -25,6 +25,7 @@ class SiteDetail extends Component {
           address={selectedSite.address}
           state={selectedSite.state}
           beforeImg={selectedSite.beforeImg}
+          afterImg={selectedSite.afterImg}
         />
         <p className="desc">{selectedSite.description}</p>
         <Link to="/sites">Back</Link>
