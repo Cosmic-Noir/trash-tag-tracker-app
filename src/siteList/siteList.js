@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import siteContext from "../siteContext";
+import SignUp from "../signUp/signUp";
 import Site from "../site/site";
 
 export default class SiteList extends Component {
@@ -71,6 +72,7 @@ export default class SiteList extends Component {
           </select> */}
         </form>
         <ul>{trashSites}</ul>
+        <footer>{this.context.loggedIn === false ? <SignUp /> : ""}</footer>
       </div>
     );
   }
