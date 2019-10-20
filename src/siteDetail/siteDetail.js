@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import siteContext from "../siteContext";
 import Site from "../site/site";
 import "./siteDetail.css";
@@ -26,6 +27,7 @@ class SiteDetail extends Component {
           imgSrc={selectedSite.imgSrc}
         />
         <p className="desc">{selectedSite.description}</p>
+        <Link to="/sites">Back</Link>
       </div>
     );
   }
