@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import siteContext from "../siteContext";
 import Site from "../site/site";
+import "./siteDetail.css";
 
 class SiteDetail extends Component {
   static contextType = siteContext;

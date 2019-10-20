@@ -10,13 +10,12 @@ class Site extends Component {
     return (
       <siteContext.Consumer>
         {context => (
-          <Link to={`/sites/${this.props.id}`}>
-            <div className="site">
-              <h2>{this.props.title}</h2>
-              <h3>{this.props.state}</h3>
-              <img src={this.props.imgSrc} alt="Trash site" />
-            </div>
-          </Link>
+          <div className="site">
+            <Link to={`/sites/${this.props.id}`}>{this.props.title}</Link>
+
+            <h3>{this.props.state}</h3>
+            <img src={this.props.imgSrc} alt="Trash site" />
+          </div>
         )}
       </siteContext.Consumer>
     );

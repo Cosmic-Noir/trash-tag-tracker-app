@@ -1,0 +1,10 @@
+p {
+  max-width: 500px;
+}
+
+.siteDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
