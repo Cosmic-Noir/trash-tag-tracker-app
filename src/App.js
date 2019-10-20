@@ -24,7 +24,10 @@ class App extends Component {
     // Initially set to seed data
     sites: Sites,
     loggedIn: false,
-    userInfo: []
+    userInfo: [],
+    users: Sites.users.map(user => {
+      return user.username;
+    })
   };
 
   onLogIn = () => {
@@ -47,6 +50,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(`App rendered with users: ${this.state.users}`);
     // console.log(`App rendering...`);
     const contextValue = {
       // state
