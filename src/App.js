@@ -34,6 +34,7 @@ class App extends Component {
 
   setUserInfo = user => {
     this.setState({ userInfo: user });
+    console.log(`User info set as: ${user}`);
   };
 
   render() {

@@ -1,11 +1,16 @@
 import React, { Component } from "react";
+import siteContext from "../siteContext";
 import Sites from "../siteData";
+import "./signIn.css";
 
 class SignIn extends Component {
   state = {
+    error: null,
     email: "",
     password: ""
   };
+
+  static contextType = siteContext;
 
   updateEmail(email) {
     this.setState({ email: email });
@@ -29,9 +34,16 @@ class SignIn extends Component {
       ) {
         console.log("A matching user was found");
         console.log(user);
+        this.context.onLogIn();
         return user;
+      } else {
+        this.setState({ error: "User and e-mail match not found." });
       }
     });
+    if (loggedUser !== undefined) {
+      this.context.setUserInfo(loggedUser);
+      this.props.history.push("/");
+    }
   };
 
   render() {
@@ -59,6 +71,11 @@ class SignIn extends Component {
             ref={this.password}
             onChange={e => this.updatePass(e.target.value)}
           />
+          {this.state.error !== null ? (
+            <h4 className="error">{this.state.error}</h4>
+          ) : (
+            ""
+          )}
           <button type="submit">Log In</button>
         </form>
       </div>
