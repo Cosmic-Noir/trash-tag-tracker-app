@@ -40,6 +40,22 @@ const Sites = {
       description:
         "So sad to see this beech absolutely trashed by parties and picknickers. Would be wonderful to bring my kids here again if we cleaned it up, but I could really use some help, along with a truck to haul away the refuse."
     }
+  ],
+  users: [
+    {
+      id: 1,
+      first_name: "Brian",
+      last_name: "Eng",
+      email: "cool@email.com",
+      password: "cool123"
+    },
+    {
+      id: 2,
+      first_name: "Adam",
+      last_name: "Doucette",
+      email: "cooler@email.com",
+      password: "cold789"
+    }
   ]
 };
 

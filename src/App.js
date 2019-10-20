@@ -25,7 +25,7 @@ class App extends Component {
   };
 
   render() {
-    console.log(`App rendering...`);
+    // console.log(`App rendering...`);
     const contextValue = {
       sites: this.state.sites
     };
