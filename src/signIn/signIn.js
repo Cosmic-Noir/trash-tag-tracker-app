@@ -9,6 +9,7 @@ export default function SignIn() {
         <input type="email" />
         <label>Password:</label>
         <input type="password" />
+        <button type="submit">Log In</button>
       </form>
     </div>
   );
