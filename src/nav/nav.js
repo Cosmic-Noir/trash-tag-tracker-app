@@ -15,7 +15,7 @@ class Nav extends Component {
         {this.context.loggedIn === false ? (
           <Link to="/signIn">Sign In</Link>
         ) : (
-          ""
+          <Link to="/signOut">Sign Out</Link>
         )}
       </div>
     );

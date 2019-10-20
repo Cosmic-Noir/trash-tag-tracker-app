@@ -11,6 +11,7 @@ import SignIn from "./signIn/signIn";
 import SiteList from "./siteList/siteList";
 import SiteDetail from "./siteDetail/siteDetail";
 import CleanSite from "./cleanSite/cleanSite";
+import SignOut from "./signOut/signOut";
 
 // Context
 import siteContext from "./siteContext";
@@ -32,6 +33,14 @@ class App extends Component {
     });
   };
 
+  onLogOut = () => {
+    this.setState({
+      loggedIn: false,
+      userInfo: []
+    });
+    console.log(`User has logged out, set state to false`);
+  };
+
   setUserInfo = user => {
     this.setState({ userInfo: user });
     console.log(`User info set as: ${user}`);
@@ -46,6 +55,7 @@ class App extends Component {
       userInfo: this.state.userInfo,
       // methods
       onLogIn: this.onLogIn,
+      onLogOut: this.onLogOut,
       setUserInfo: this.setUserInfo
     };
     return (
@@ -57,6 +67,7 @@ class App extends Component {
           <Route exact path="/sites" component={SiteList} />
           <Route path="/sites/:siteId" component={SiteDetail} />
           <Route path="/cleanSite/:siteId" component={CleanSite} />
+          <Route path="/signOut" component={SignOut} />
           <Route exact path="/" component={Landing} />
         </siteContext.Provider>
       </div>
