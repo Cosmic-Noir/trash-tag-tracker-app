@@ -26,12 +26,26 @@ class App extends Component {
     userInfo: []
   };
 
+  onLogIn = () => {
+    this.setState({
+      loggedIn: true
+    });
+  };
+
+  setUserInfo = user => {
+    this.setState({ userInfo: user });
+  };
+
   render() {
     // console.log(`App rendering...`);
     const contextValue = {
+      // state
       sites: this.state.sites,
       loggedIn: this.state.loggedIn,
-      userInfo: this.state.userInfo
+      userInfo: this.state.userInfo,
+      // methods
+      onLogIn: this.onLogIn,
+      setUserInfo: this.setUserInfo
     };
     return (
       <div className="App">
