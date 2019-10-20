@@ -71,7 +71,6 @@ export default class SiteList extends Component {
             <option>Medium</option>
             <option>Hard</option>
           </select> */}
-          <button type="submit">Filter Results</button>
         </form>
         <ul>{trashSites}</ul>
       </div>
