@@ -23,13 +23,15 @@ class App extends Component {
     // Initially set to seed data
     sites: Sites,
     loggedIn: false,
-    userInfo: ""
+    userInfo: []
   };
 
   render() {
     // console.log(`App rendering...`);
     const contextValue = {
-      sites: this.state.sites
+      sites: this.state.sites,
+      loggedIn: this.state.loggedIn,
+      userInfo: this.state.userInfo
     };
     return (
       <div className="App">

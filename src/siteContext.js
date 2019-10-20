@@ -1,7 +1,9 @@
 import React from "react";
 
 const siteContext = React.createContext({
-  sites: []
+  sites: [],
+  loggedIn: "",
+  userInfo: []
 });
 
 export default siteContext;
