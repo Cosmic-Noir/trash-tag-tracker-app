@@ -10,6 +10,7 @@ import About from "./about/about";
 import SignIn from "./signIn/signIn";
 import SiteList from "./siteList/siteList";
 import SiteDetail from "./siteDetail/siteDetail";
+import CleanSites from "./cleanSites/cleanSites";
 
 // Context
 import siteContext from "./siteContext";
@@ -38,6 +39,7 @@ class App extends Component {
           <Route path="/signIn" component={SignIn} />
           <Route exact path="/sites" component={SiteList} />
           <Route path="/sites/:siteId" component={SiteDetail} />
+          <Route path="/clean" component={CleanSites} />
           <Route exact path="/" component={Landing} />
         </siteContext.Provider>
       </div>
