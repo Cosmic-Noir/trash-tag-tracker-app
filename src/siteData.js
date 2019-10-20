@@ -2,7 +2,7 @@ const Sites = {
   sites: [
     {
       id: 1,
-      clean: false,
+      clean: "false",
       title: "Horsetooh Trail",
       address: "Horsetooth Resevoir",
       state: "CO",
@@ -14,7 +14,7 @@ const Sites = {
     },
     {
       id: 2,
-      clean: false,
+      clean: "false",
       title: "Park Trail",
       address: "6th & Oak Ave",
       state: "NE",
@@ -26,7 +26,7 @@ const Sites = {
     },
     {
       id: 3,
-      clean: false,
+      clean: "false",
       title: "Ditch Off Highway 25",
       address: "Highway 25, Windsor Exit",
       state: "CO",
@@ -38,7 +38,7 @@ const Sites = {
     },
     {
       id: 4,
-      clean: false,
+      clean: "false",
       title: "Leech Lake",
       address: "Leech Lake",
       state: "MN",
@@ -50,7 +50,7 @@ const Sites = {
     },
     {
       id: 5,
-      clean: true,
+      clean: "true",
       title: "Lum Beech",
       address: "413 Lum Beech Rd",
       state: "MN",
