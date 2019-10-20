@@ -7,7 +7,7 @@ export default class SiteList extends Component {
 
   state = {
     state: "",
-    clean: "false"
+    clean: ""
   };
 
   updateClean(trueOrFalse) {
@@ -23,7 +23,10 @@ export default class SiteList extends Component {
       `Component re-rendered, clean state is now: ${this.state.clean}`
     );
     const trashSites = this.context.sites.sites.map(site => {
-      if (site.clean === this.state.clean) {
+      if (
+        (this.state.clean === "" || site.clean === this.state.clean) &&
+        (this.state.state === "" || site.state === this.state.state)
+      ) {
         return (
           <Site
             key={site.id}
@@ -47,6 +50,7 @@ export default class SiteList extends Component {
             ref={this.clean}
             onChange={e => this.updateClean(e.target.value)}
           >
+            <option value="">All Sites</option>
             <option value={false}>Trashed</option>
             <option value={true}>Clean</option>
           </select>
