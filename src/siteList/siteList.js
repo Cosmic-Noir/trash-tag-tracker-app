@@ -10,6 +10,10 @@ export default class SiteList extends Component {
     clean: false
   };
 
+  updateClean(trueOrFalse) {
+    this.setState({ clean: trueOrFalse });
+  }
+
   render() {
     const trashSites = this.context.sites.sites.map(site => {
       if (site.clean === this.state.clean) {
