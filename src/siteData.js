@@ -54,8 +54,10 @@ const Sites = {
       title: "Lum Beech",
       address: "413 Lum Beech Rd",
       state: "MN",
-      beforeImg: "../images/before1.jpg",
-      afterImg: "../images/after1.jpg",
+      beforeImg:
+        "https://www.graziame.com/sites/default/files/graziame/styles/1140_630_wide_landscape/public/images/2019/03/13/dustan-woodhouse-675082-unsplash.jpg?itok=o1_XF_jm",
+      afterImg:
+        "https://media.globalcitizen.org/thumbnails/e4/15/e415fee3-e28a-4d6d-9ce1-ba303d3d5dab/screen_shot_2019-03-11_at_53455_pm.png__1500x670_q85_crop_subsampling-2.png",
       description:
         "Wow we did it! Four of us met up and hauled all the refuse away. Made some new friends and I'll never have to see that trash when I bring my daughter to the park ever again."
     }

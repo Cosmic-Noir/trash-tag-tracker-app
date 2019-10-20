@@ -5,17 +5,24 @@ import Site from "../site/site";
 export default class SiteList extends Component {
   static contextType = siteContext;
 
+  state = {
+    state: "",
+    clean: false
+  };
+
   render() {
     const trashSites = this.context.sites.sites.map(site => {
-      return (
-        <Site
-          key={site.id}
-          id={site.id}
-          title={site.title}
-          state={site.state}
-          beforeImg={site.beforeImg}
-        />
-      );
+      if (site.clean === this.state.clean) {
+        return (
+          <Site
+            key={site.id}
+            id={site.id}
+            title={site.title}
+            state={site.state}
+            beforeImg={site.beforeImg}
+          />
+        );
+      }
     });
     return (
       <div>
