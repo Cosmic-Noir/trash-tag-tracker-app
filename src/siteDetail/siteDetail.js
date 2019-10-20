@@ -12,7 +12,7 @@ class SiteDetail extends Component {
     const selectedSite = this.context.sites.sites.find(site => {
       const numberProp = parseInt(this.props.match.params.siteId);
       if (site.id === numberProp) {
-        console.log(site);
+        // console.log(site);
         return site;
       }
     });

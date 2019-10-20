@@ -21,7 +21,8 @@ class App extends Component {
   state = {
     // Initially set to seed data
     sites: Sites,
-    loggedIn: false
+    loggedIn: false,
+    userInfo: ""
   };
 
   render() {
