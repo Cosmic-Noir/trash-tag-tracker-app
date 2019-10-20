@@ -69,6 +69,10 @@ class SignUp extends Component {
   render() {
     return (
       <div className="signUp">
+        <h3 className="warning">
+          Warning! This site is purely for testing with locally stored
+          passwords, please create a fake password only.
+        </h3>
         <form
           onSubmit={e => {
             this.handlSubmit(e);
