@@ -4,6 +4,10 @@ img {
   width: 300px;
 }
 
+select {
+  margin: 5px;
+}
+
 .site {
   border: 1px solid black;
   margin: 10px;
