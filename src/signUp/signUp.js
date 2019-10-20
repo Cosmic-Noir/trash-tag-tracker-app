@@ -51,6 +51,10 @@ class SignUp extends Component {
       this.setState({
         error: `Password length must be greater than 5 characters`
       });
+    } else if (this.state.email.length < 1) {
+      this.setState({
+        error: `Must enter valid e-mail addres`
+      });
     } else if (matchingUser !== undefined) {
       this.setState({
         error: `Username or e-mail already registered`
@@ -83,6 +87,7 @@ class SignUp extends Component {
             type="text"
             name="username"
             id="username"
+            required
             ref={this.username}
             onChange={e => this.updateUsername(e.target.value)}
           ></input>
@@ -91,6 +96,7 @@ class SignUp extends Component {
             type="email"
             name="email"
             id="email"
+            required
             ref={this.email}
             onChange={e => this.updateEmail(e.target.value)}
           ></input>
@@ -99,6 +105,7 @@ class SignUp extends Component {
             type="password"
             name="password"
             id="password"
+            required
             ref={this.password}
             onChange={e => this.updatePass(e.target.value)}
           />

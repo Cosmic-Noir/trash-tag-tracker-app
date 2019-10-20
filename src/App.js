@@ -55,6 +55,14 @@ class App extends Component {
     console.log(`User info set as: ${user}`);
   };
 
+  updateSite = cleanedSite => {
+    this.setState({
+      sites: this.state.sites.map(site =>
+        site.id !== cleanedSite.id ? site : cleanedSite
+      )
+    });
+  };
+
   render() {
     // console.log(`App rendering...`);
     const contextValue = {
