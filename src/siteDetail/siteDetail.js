@@ -16,7 +16,6 @@ class SiteDetail extends Component {
         return site;
       }
     });
-    console.log(this.context.loggedIn);
     return (
       <div className="siteDetail">
         <Site
@@ -32,6 +31,11 @@ class SiteDetail extends Component {
         <Link to="/sites">Back</Link>
         {selectedSite.clean === "false" && this.context.loggedIn === true ? (
           <Link to={`/cleanSite/${selectedSite.id}`}>Mark as Cleaned!</Link>
+        ) : (
+          ""
+        )}
+        {this.context.loggedIn === false ? (
+          <h5>Log in to mark as cleaned or comment on post</h5>
         ) : (
           ""
         )}

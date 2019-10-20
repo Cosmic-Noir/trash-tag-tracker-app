@@ -32,7 +32,7 @@ class SignUp extends Component {
 
   handlSubmit = e => {
     e.preventDefault();
-    console.log(`Create Account pressed, checking info...`);
+    // eslint-disable-next-line
     let matchingUser = this.context.users.find(user => {
       if (
         user.email === this.state.email ||

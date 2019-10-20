@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import siteContext from "../siteContext";
-import Sites from "../siteData";
 import "./signIn.css";
 
 class SignIn extends Component {
@@ -22,10 +21,6 @@ class SignIn extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(
-      `Log In pressed, user: ${this.state.email}  pass: ${this.state.password}`
-    );
-    console.log(this.context);
 
     // Find matching user in siteData
     // eslint-disable-next-line
@@ -34,8 +29,6 @@ class SignIn extends Component {
         user.email === this.state.email &&
         user.password === this.state.password
       ) {
-        console.log("A matching user was found");
-        console.log(user);
         this.context.onLogIn();
         return user;
       } else {
@@ -44,7 +37,7 @@ class SignIn extends Component {
     });
     if (loggedUser !== undefined) {
       this.context.setUserInfo(loggedUser);
-      this.props.history.push("/");
+      this.props.history.push("/sites");
     }
   };
 
