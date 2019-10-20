@@ -13,7 +13,7 @@ export default class SiteList extends Component {
           id={site.id}
           title={site.title}
           state={site.state}
-          imgSrc={site.imgSrc}
+          beforeImg={site.beforeImg}
         />
       );
     });
