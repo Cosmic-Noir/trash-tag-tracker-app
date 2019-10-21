@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import siteContext from "../siteContext";
 import Site from "../site/site";
+import SignUp from "../signUp/signUp";
 import "./siteDetail.css";
 
 class SiteDetail extends Component {

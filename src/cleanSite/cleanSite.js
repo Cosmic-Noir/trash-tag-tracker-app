@@ -40,8 +40,16 @@ class CleanSite extends Component {
     });
   };
 
-  updateDescription = e => {
-    this.setState({ description: e });
+  updateDescription = description => {
+    this.setState({ description: description });
+  };
+
+  updateAfterImg = afterImg => {
+    this.setState({ afterImg: afterImg });
+  };
+
+  updateAddress = address => {
+    this.setState({ address: address });
   };
 
   render() {
@@ -49,17 +57,11 @@ class CleanSite extends Component {
     const selectedSite = this.context.sites.sites.find(site => {
       const numberProp = parseInt(this.props.match.params.siteId);
       if (site.id === numberProp) {
-        console.log(this.state);
         return site;
       }
-      // this.setState({
-      //   error: null,
-      //   id: selectedSite.id,
-      //   address: selectedSite.address,
-      //   state: selectedSite.state,
-      //   beforeImg: selectedSite.beforeImg
-      // });
     });
+    console.log(selectedSite);
+
     return (
       <div className="clean">
         <h2>Mark A Trash Site As Cleaned:</h2>
@@ -71,7 +73,12 @@ class CleanSite extends Component {
             name="beforeImg"
             value={selectedSite.beforeImg}
           />
-          <input type="hidden" name="address" value={selectedSite.address} />
+          <input
+            type="hidden"
+            name="address"
+            value={selectedSite.address}
+            onChange={e => this.updateAddress(e.target.value)}
+          />
           <input type="hidden" name="state" value={selectedSite.state} />
           <label htmlFor="description">Updated Description:</label>
           <textarea
@@ -81,7 +88,12 @@ class CleanSite extends Component {
             onChange={e => this.updateDescription(e.target.value)}
           />
           <label htmlFor="afterImg">Photo web address:</label>
-          <input type="text" name="afterImg" value={selectedSite.afterImg} />
+          <input
+            type="text"
+            name="afterImg"
+            // value={selectedSite.afterImg}
+            onChange={e => this.updateAfterImg(e.target.value)}
+          />
           <button type="submit">Mark Site as Clean</button>
         </form>
       </div>
