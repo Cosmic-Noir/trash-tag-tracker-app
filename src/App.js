@@ -23,7 +23,7 @@ class App extends Component {
   state = {
     // Initially set to seed data - unsecure
     sites: Data.sites,
-    loggedIn: false,
+    loggedIn: true, // set to true for testing
     userInfo: [],
     users: Data.users
   };
@@ -33,7 +33,7 @@ class App extends Component {
     this.setState({
       users: [...this.state.users, newUser]
     });
-    console.log(`New user added: ${this.state.users}`);
+    // console.log(`New user added: ${this.state.users}`);
   };
 
   onLogIn = () => {
@@ -47,17 +47,15 @@ class App extends Component {
       loggedIn: false,
       userInfo: []
     });
-    console.log(`User has logged out, set state to false`);
+    // console.log(`User has logged out, set state to false`);
   };
 
   setUserInfo = user => {
     this.setState({ userInfo: user });
-    console.log(`User info set as: ${user}`);
+    // console.log(`User info set as: ${user}`);
   };
 
   updateSite = cleanedSite => {
-    console.log(cleanedSite);
-    console.log(this.state);
     this.setState({
       sites: this.state.sites.map(site =>
         site.id !== cleanedSite.id ? site : cleanedSite

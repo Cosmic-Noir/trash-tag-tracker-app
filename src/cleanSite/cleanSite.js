@@ -13,25 +13,10 @@ class CleanSite extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log("Form button pressed");
 
     let cleanedSite = this.state;
-    console.log(cleanedSite);
-
     this.context.updateSite(cleanedSite);
-  };
-
-  resetFields = () => {
-    this.setState({
-      error: null,
-      id: "",
-      clean: "false",
-      title: "",
-      description: "",
-      address: "",
-      state: "",
-      afterImg: ""
-    });
+    this.props.history.push("/sites");
   };
 
   updateDescription = description => {
@@ -50,7 +35,6 @@ class CleanSite extends Component {
     const selectedSite = this.context.sites.find(site => {
       const numberProp = parseInt(this.props.match.params.siteId);
       if (site.id === numberProp) {
-        console.log(site);
         return site;
       }
     });
