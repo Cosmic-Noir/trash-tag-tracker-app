@@ -17,15 +17,15 @@ import SignOut from "./signOut/signOut";
 import siteContext from "./siteContext";
 
 // Seed data
-import Sites from "./siteData";
+import Data from "./siteData";
 
 class App extends Component {
   state = {
     // Initially set to seed data - unsecure
-    sites: Sites,
+    sites: Data.sites,
     loggedIn: false,
     userInfo: [],
-    users: Sites.users
+    users: Data.users
   };
 
   // Temp function to add new user data to state

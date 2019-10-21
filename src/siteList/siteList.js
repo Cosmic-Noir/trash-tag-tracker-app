@@ -21,7 +21,7 @@ export default class SiteList extends Component {
 
   render() {
     // eslint-disable-next-line
-    const trashSites = this.context.sites.sites.map(site => {
+    const trashSites = this.context.sites.map(site => {
       if (
         (this.state.clean === "" || site.clean === this.state.clean) &&
         (this.state.state === "" || site.state === this.state.state)

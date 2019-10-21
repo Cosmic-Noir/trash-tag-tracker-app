@@ -1,4 +1,4 @@
-const Sites = {
+const Data = {
   sites: [
     {
       id: 1,
@@ -78,4 +78,4 @@ const Sites = {
   ]
 };
 
-export default Sites;
+export default Data;

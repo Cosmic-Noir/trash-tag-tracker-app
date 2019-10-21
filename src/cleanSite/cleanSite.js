@@ -47,7 +47,7 @@ class CleanSite extends Component {
   };
 
   componentDidMount() {
-    const selectedSite = this.context.sites.sites.find(site => {
+    const selectedSite = this.context.sites.find(site => {
       const numberProp = parseInt(this.props.match.params.siteId);
       if (site.id === numberProp) {
         console.log(site);
