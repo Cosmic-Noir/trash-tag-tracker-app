@@ -50,13 +50,14 @@ class CleanSite extends Component {
     const selectedSite = this.context.sites.sites.find(site => {
       const numberProp = parseInt(this.props.match.params.siteId);
       if (site.id === numberProp) {
+        console.log(site);
         return site;
       }
     });
-    console.log(selectedSite);
+    // console.log(selectedSite);
     this.setState({
       id: selectedSite.id,
-      clean: true,
+      clean: "true",
       title: selectedSite.title,
       address: selectedSite.address,
       state: selectedSite.state,

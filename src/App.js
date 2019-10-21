@@ -56,6 +56,8 @@ class App extends Component {
   };
 
   updateSite = cleanedSite => {
+    console.log(cleanedSite);
+    console.log(this.state);
     this.setState({
       sites: this.state.sites.map(site =>
         site.id !== cleanedSite.id ? site : cleanedSite
