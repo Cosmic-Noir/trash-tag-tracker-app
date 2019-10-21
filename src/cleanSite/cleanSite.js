@@ -5,27 +5,20 @@ import "./cleanSite.css";
 class CleanSite extends Component {
   state = {
     error: null,
-    id: "",
     clean: "false",
-    description: "",
-    address: "",
-    state: "",
-    beforeImg: "",
     afterImg: ""
   };
 
   static contextType = siteContext;
 
-  hanldeSubmit = e => {
+  handleSubmit = e => {
     e.preventDefault();
+    console.log("Form button pressed");
 
-    const cleanedSite = this.state;
+    let cleanedSite = this.state;
+    console.log(cleanedSite);
+
     this.context.updateSite(cleanedSite);
-
-    // const { siteId } = this.props.match.params;
-
-    // const { id, title, description, afterImg } = this.state;
-    // const cleanedSite = { id, title, description, afterImg };
   };
 
   resetFields = () => {
@@ -33,6 +26,7 @@ class CleanSite extends Component {
       error: null,
       id: "",
       clean: "false",
+      title: "",
       description: "",
       address: "",
       state: "",
@@ -52,8 +46,7 @@ class CleanSite extends Component {
     this.setState({ address: address });
   };
 
-  render() {
-    // eslint-disable-next-line
+  componentDidMount() {
     const selectedSite = this.context.sites.sites.find(site => {
       const numberProp = parseInt(this.props.match.params.siteId);
       if (site.id === numberProp) {
@@ -61,30 +54,29 @@ class CleanSite extends Component {
       }
     });
     console.log(selectedSite);
+    this.setState({
+      id: selectedSite.id,
+      clean: true,
+      title: selectedSite.title,
+      address: selectedSite.address,
+      state: selectedSite.state,
+      description: selectedSite.description,
+      beforeImg: selectedSite.beforeImg
+    });
+  }
 
+  render() {
+    // console.log("clean site comp rendering...");
     return (
       <div className="clean">
         <h2>Mark A Trash Site As Cleaned:</h2>
-        <h3>{selectedSite.title}</h3>
-        <form>
-          <input type="hidden" name="id" value={selectedSite.id} />
-          <input
-            type="hidden"
-            name="beforeImg"
-            value={selectedSite.beforeImg}
-          />
-          <input
-            type="hidden"
-            name="address"
-            value={selectedSite.address}
-            onChange={e => this.updateAddress(e.target.value)}
-          />
-          <input type="hidden" name="state" value={selectedSite.state} />
+        <h3>{this.state.title}</h3>
+        <form onSubmit={this.handleSubmit}>
           <label htmlFor="description">Updated Description:</label>
           <textarea
             name="description"
             id="description"
-            value={this.state.description}
+            // value={this.state.description}
             onChange={e => this.updateDescription(e.target.value)}
           />
           <label htmlFor="afterImg">Photo web address:</label>
