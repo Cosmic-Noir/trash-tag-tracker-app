@@ -9,7 +9,8 @@ const siteContext = React.createContext({
   onLogOut: () => {},
   setUserInfo: () => {},
   addNewUser: () => {},
-  updateSite: () => {}
+  updateSite: () => {},
+  addNewSite: () => {}
 });
 
 export default siteContext;

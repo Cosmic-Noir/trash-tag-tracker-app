@@ -37,6 +37,12 @@ class App extends Component {
     // console.log(`New user added: ${this.state.users}`);
   };
 
+  addNewSite = newSite => {
+    this.setState({
+      sites: [...this.state.sites, newSite]
+    });
+  };
+
   onLogIn = () => {
     this.setState({
       loggedIn: true
@@ -77,7 +83,8 @@ class App extends Component {
       onLogOut: this.onLogOut,
       setUserInfo: this.setUserInfo,
       addNewUser: this.addNewUser,
-      updateSite: this.updateSite
+      updateSite: this.updateSite,
+      addNewSite: this.addNewSite
     };
     return (
       <div className="App">
