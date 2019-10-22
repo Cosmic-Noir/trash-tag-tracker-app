@@ -6,7 +6,8 @@ class CleanSite extends Component {
   state = {
     error: null,
     clean: "false",
-    afterImg: ""
+    afterImg: "",
+    stateAbr: ""
   };
 
   static contextType = siteContext;
@@ -45,7 +46,7 @@ class CleanSite extends Component {
       clean: "true",
       title: selectedSite.title,
       address: selectedSite.address,
-      state: selectedSite.state,
+      stateAbr: selectedSite.stateAbr,
       description: selectedSite.description,
       beforeImg: selectedSite.beforeImg
     });

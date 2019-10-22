@@ -2,9 +2,14 @@ p {
   max-width: 500px;
 }
 
-.siteDetail {
+.siteDetail,
+.detailFoot {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.detailFoot {
+  width: 90%;
 }

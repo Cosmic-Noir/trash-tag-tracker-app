@@ -7,6 +7,10 @@ import "./siteDetail.css";
 class SiteDetail extends Component {
   static contextType = siteContext;
 
+  handleClickBack = () => {
+    this.props.history.push("/sites");
+  };
+
   render() {
     // eslint-disable-next-line
     const selectedSite = this.context.sites.find(site => {
@@ -27,23 +31,24 @@ class SiteDetail extends Component {
           beforeImg={selectedSite.beforeImg}
           afterImg={selectedSite.afterImg}
         />
-        <p className="desc">{selectedSite.description}</p>
-        <Link to="/sites">Back</Link>
-        {selectedSite.clean === "false" && this.context.loggedIn === true ? (
-          <Link to={`/cleanSite/${selectedSite.id}`}>Mark as Cleaned!</Link>
-        ) : (
-          ""
-        )}
-        {this.context.loggedIn === false && selectedSite.clean === "false" ? (
-          <h5>Sign in to mark this site as cleaned or view comments.</h5>
-        ) : (
-          <h5>Sign in to view or add comments.</h5>
-        )}
-        {this.context.loggedIn === false ? (
-          <Link to="/signUp">Sign Up</Link>
-        ) : (
-          ""
-        )}
+        <footer className="detailFoot">
+          <p className="desc">{selectedSite.description}</p>
+          {/* <Link to="/sites">Back</Link> */}
+          <button type="button" onClick={this.handleClickBack}>
+            Back
+          </button>
+          {selectedSite.clean === "false" && this.context.loggedIn === true ? (
+            <Link to={`/cleanSite/${selectedSite.id}`}>Mark as Cleaned!</Link>
+          ) : (
+            ""
+          )}
+
+          {this.context.loggedIn === false ? (
+            <Link to="/signUp">Sign Up</Link>
+          ) : (
+            ""
+          )}
+        </footer>
       </div>
     );
   }
