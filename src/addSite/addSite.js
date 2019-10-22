@@ -48,6 +48,7 @@ class AddSite extends Component {
     console.log(this.state);
     let newSite = this.state;
     this.context.addNewSite(newSite);
+    this.props.history.push("/sites");
   };
 
   componentDidMount() {
