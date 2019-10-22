@@ -18,7 +18,6 @@ class AddSite extends Component {
   // Methods to update state
   updateId() {
     let newId = Math.floor(Math.random() * 1000);
-    console.log(newId);
     this.setState({ id: newId });
   }
 
@@ -45,7 +44,6 @@ class AddSite extends Component {
   // submit info in form
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
     let newSite = this.state;
     this.context.addNewSite(newSite);
     this.props.history.push("/sites");

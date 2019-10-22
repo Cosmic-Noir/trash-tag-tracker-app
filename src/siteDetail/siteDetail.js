@@ -8,7 +8,7 @@ class SiteDetail extends Component {
   static contextType = siteContext;
 
   handleClickBack = () => {
-    this.props.history.push("/sites");
+    this.props.history.goBack();
   };
 
   render() {

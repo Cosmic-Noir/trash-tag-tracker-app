@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import siteContext from "../siteContext";
+import { Link } from "react-router-dom";
 import "./signIn.css";
 
 class SignIn extends Component {
@@ -73,6 +74,7 @@ class SignIn extends Component {
           )}
           <button type="submit">Log In</button>
         </form>
+        <Link to="signUp">Sign Up</Link>
       </div>
     );
   }
