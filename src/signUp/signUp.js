@@ -47,25 +47,19 @@ class SignUp extends Component {
       this.setState({
         error: `Username length must be greater than 5 characters`
       });
-    }
-    if (this.state.password.length < 6) {
+    } else if (this.state.password.length < 6) {
       this.setState({
         error: `Password length must be greater than 5 characters`
       });
-    }
-
-    if (this.state.email.length < 1) {
+    } else if (this.state.email.length < 1) {
       this.setState({
         error: `Must enter valid e-mail addres`
       });
-    }
-    if (matchingUser !== undefined) {
+    } else if (matchingUser !== undefined) {
       this.setState({
         error: `Username or e-mail already registered`
       });
-    }
-
-    if (this.state.error === null) {
+    } else {
       let newUser = this.state;
       this.context.onLogIn();
       this.context.addNewUser(newUser);
