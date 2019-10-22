@@ -99,6 +99,9 @@ class App extends Component {
           <Route path="/signOut" component={SignOut} />
           <Route exact path="/" component={Landing} />
         </siteContext.Provider>
+        <footer>
+          <h5>&copy; 2020.</h5>
+        </footer>
       </div>
     );
   }

@@ -42,7 +42,11 @@ export default class SiteList extends Component {
     return (
       <div>
         <h2>Trash Sites:</h2>
-        <Link to="/addSite">Add New Trash Site</Link>
+        {this.context.loggedIn === true ? (
+          <Link to="/addSite">Add New Trash Site</Link>
+        ) : (
+          ""
+        )}
         <form>
           <select
             className="center"
