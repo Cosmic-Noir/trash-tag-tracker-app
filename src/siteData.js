@@ -75,6 +75,26 @@ const Data = {
       email: "cooler@email.com",
       password: "cold789"
     }
+  ],
+  comments: [
+    {
+      id: 1,
+      userRef: "dude",
+      content:
+        "Hey I think I will swing by on saturday afternoon around 3 if anyone wants to join, I will be bringing my truck!"
+    },
+    {
+      id: 2,
+      userRef: "dudette",
+      content:
+        "Hey my friend and I will meet you there on Saturday and bring bags!"
+    },
+    {
+      id: 3,
+      userRef: "dude",
+      content:
+        "Sounds great! My cousin is also showing up with some friends, see you then."
+    }
   ]
 };
 
