@@ -46,6 +46,8 @@ class AddSite extends Component {
   handleSubmit = e => {
     e.preventDefault();
     console.log(this.state);
+    let newSite = this.state;
+    this.context.addNewSite(newSite);
   };
 
   componentDidMount() {
