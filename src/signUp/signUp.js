@@ -64,6 +64,7 @@ class SignUp extends Component {
       this.context.onLogIn();
       this.context.addNewUser(newUser);
       this.context.setUserInfo(newUser);
+      this.props.history.push("/sites");
     }
   };
 

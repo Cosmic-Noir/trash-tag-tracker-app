@@ -34,10 +34,10 @@ class SiteDetail extends Component {
         ) : (
           ""
         )}
-        {this.context.loggedIn === false ? (
-          <h5>Sign in to mark this site as cleaned.</h5>
+        {this.context.loggedIn === false && selectedSite.clean === "false" ? (
+          <h5>Sign in to mark this site as cleaned or view comments.</h5>
         ) : (
-          ""
+          <h5>Sign in to view or add comments.</h5>
         )}
         {this.context.loggedIn === false ? (
           <Link to="/signUp">Sign Up</Link>
