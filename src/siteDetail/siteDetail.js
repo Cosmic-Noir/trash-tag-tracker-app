@@ -31,12 +31,20 @@ class SiteDetail extends Component {
           beforeImg={selectedSite.beforeImg}
           afterImg={selectedSite.afterImg}
         />
-        <footer className="detailFoot">
+        <div className="detail">
           <p className="desc">{selectedSite.description}</p>
-          {/* <Link to="/sites">Back</Link> */}
           <button type="button" onClick={this.handleClickBack}>
             Back
           </button>
+        </div>
+        {/* Can make this conditionally render if there are comments associated with site */}
+        <div className="hidden">
+          <h3>Comments:</h3>
+          <ul className="comments"></ul>
+
+          {/* comment components should go here */}
+        </div>
+        <footer className="detailFoot">
           {selectedSite.clean === "false" && this.context.loggedIn === true ? (
             <Link to={`/cleanSite/${selectedSite.id}`}>Mark as Cleaned!</Link>
           ) : (

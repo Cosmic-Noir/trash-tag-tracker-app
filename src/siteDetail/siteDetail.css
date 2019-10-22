@@ -3,13 +3,15 @@ p {
 }
 
 .siteDetail,
-.detailFoot {
+.detailFoot,
+.detail {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.detailFoot {
+.detailFoot,
+.detail {
   width: 90%;
 }
