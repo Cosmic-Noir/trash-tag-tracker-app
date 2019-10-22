@@ -16,10 +16,9 @@ img {
   align-items: center;
   border: 1px solid black;
   min-width: 300px;
-  /* margin: 15px; */
-
   width: 100%;
 }
 
 .title {
+  margin-bottom: 0px;
 }
