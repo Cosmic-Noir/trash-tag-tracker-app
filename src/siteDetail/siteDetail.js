@@ -23,7 +23,7 @@ class SiteDetail extends Component {
           id={selectedSite.id}
           title={selectedSite.title}
           address={selectedSite.address}
-          state={selectedSite.state}
+          stateAbr={selectedSite.stateAbr}
           beforeImg={selectedSite.beforeImg}
           afterImg={selectedSite.afterImg}
         />

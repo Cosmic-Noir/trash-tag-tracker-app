@@ -8,7 +8,7 @@ export default class SiteList extends Component {
   static contextType = siteContext;
 
   state = {
-    state: "",
+    stateAbr: "",
     clean: ""
   };
 
@@ -17,7 +17,7 @@ export default class SiteList extends Component {
   }
 
   updateState(state) {
-    this.setState({ state: state });
+    this.setState({ stateAbr: state });
   }
 
   render() {
@@ -25,14 +25,14 @@ export default class SiteList extends Component {
     const trashSites = this.context.sites.map(site => {
       if (
         (this.state.clean === "" || site.clean === this.state.clean) &&
-        (this.state.state === "" || site.state === this.state.state)
+        (this.state.stateAbr === "" || site.stateAbr === this.state.stateAbr)
       ) {
         return (
           <Site
             key={site.id}
             id={site.id}
             title={site.title}
-            state={site.state}
+            state={site.stateAbr}
             beforeImg={site.beforeImg}
             afterImg={site.afterImg}
           />

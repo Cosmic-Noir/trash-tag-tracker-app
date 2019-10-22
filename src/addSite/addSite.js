@@ -7,7 +7,7 @@ class AddSite extends Component {
     clean: "false",
     title: "",
     address: "",
-    state: "",
+    stateAbr: "",
     description: "",
     beforeImg: "",
     afterImg: ""
@@ -29,11 +29,11 @@ class AddSite extends Component {
   }
 
   updateState(state) {
-    this.setState({ state: state });
+    this.setState({ stateAbr: state });
   }
 
   updateDescription(description) {
-    this.setState({ descrtiption: description });
+    this.setState({ description: description });
   }
 
   updateBeforeImg(beforeImg) {
@@ -43,7 +43,7 @@ class AddSite extends Component {
   // submit info in form
   handleSubmit = e => {
     e.preventDefault();
-    console.log("Submit form pressed");
+    console.log(this.state);
   };
 
   render() {
@@ -56,19 +56,47 @@ class AddSite extends Component {
           }}
         >
           <label htmlFor="title">Title</label>
-          <input type="text"></input>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            ref={this.title}
+            onChange={e => this.updateTitle(e.target.value)}
+          ></input>
           <label htmlFor="address">Address(aprox):</label>
-          <input type="address"></input>
+          <input
+            type="address"
+            name="address"
+            id="address"
+            ref={this.address}
+            onChange={e => this.updateAddress(e.target.value)}
+          ></input>
           <label htmlFor="state">State:</label>
-          <select>
+          <select
+            name="state"
+            id="state"
+            ref={this.stateAbr}
+            onChange={e => this.updateState(e.target.value)}
+          >
             <option value="CO">CO</option>
             <option value="MN">MN</option>
             <option value="NE">NE</option>
           </select>
           <label htmlFor="description">Description:</label>
-          <textarea></textarea>
+          <textarea
+            name="description"
+            id="description"
+            ref={this.description}
+            onChange={e => this.updateDescription(e.target.value)}
+          ></textarea>
           <label htmlFor="beforeImg">Photo web address:</label>
-          <input type="text"></input>
+          <input
+            type="text"
+            name="beforeImg"
+            id="beforeImg"
+            ref={this.beforeImg}
+            onChange={e => this.updateBeforeImg(e.target.value)}
+          ></input>
           <button type="submit">Add Site</button>
         </form>
       </div>

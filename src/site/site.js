@@ -13,7 +13,7 @@ class Site extends Component {
           <div className="site">
             <Link to={`/sites/${this.props.id}`}>{this.props.title}</Link>
 
-            <h3>{this.props.state}</h3>
+            <h3>{this.props.stateAbr}</h3>
             <img src={this.props.beforeImg} alt="Trash site" />
             {this.props.afterImg !== "" ? (
               <img src={this.props.afterImg} alt="Clean site" />
