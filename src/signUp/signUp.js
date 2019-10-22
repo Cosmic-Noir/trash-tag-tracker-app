@@ -60,7 +60,6 @@ class SignUp extends Component {
         error: `Username or e-mail already registered`
       });
     } else {
-      this.updateId();
       let newUser = this.state;
       this.context.onLogIn();
       this.context.addNewUser(newUser);
@@ -68,7 +67,9 @@ class SignUp extends Component {
     }
   };
 
-  // Check if username or e-mail taken, update error for problems
+  componentDidMount() {
+    this.updateId();
+  }
 
   render() {
     return (
