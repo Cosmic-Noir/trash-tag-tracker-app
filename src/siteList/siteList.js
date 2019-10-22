@@ -79,7 +79,13 @@ export default class SiteList extends Component {
           </select> */}
         </form>
         <ul className="siteList">{trashSites}</ul>
-        <footer>{this.context.loggedIn === false ? <SignUp /> : ""}</footer>
+        <footer>
+          {this.context.loggedIn === false ? (
+            <Link to="/signUp">Sign Up</Link>
+          ) : (
+            ""
+          )}
+        </footer>
       </div>
     );
   }

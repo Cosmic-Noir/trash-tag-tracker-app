@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import SignUp from "../signUp/signUp";
 import siteContext from "../siteContext";
 import "./landing.css";
@@ -22,7 +23,13 @@ class Landing extends Component {
           at a time.
         </p>
 
-        <footer>{this.context.loggedIn === false ? <SignUp /> : ""}</footer>
+        <footer>
+          {this.context.loggedIn === false ? (
+            <Link to="/signUp">Sign Up</Link>
+          ) : (
+            ""
+          )}
+        </footer>
       </div>
     );
   }

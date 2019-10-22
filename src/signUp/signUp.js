@@ -9,7 +9,8 @@ class SignUp extends Component {
     id: "",
     username: "",
     email: "",
-    password: ""
+    password: "",
+    passTwo: ""
   };
 
   static contextType = siteContext;
@@ -30,6 +31,10 @@ class SignUp extends Component {
     this.setState({ id: Math.floor(Math.random() * 1000), error: null });
   }
 
+  updatePassTwo(passTwo) {
+    this.setState({ passTwo: passTwo });
+  }
+
   handlSubmit = e => {
     e.preventDefault();
     // eslint-disable-next-line
@@ -47,20 +52,30 @@ class SignUp extends Component {
       this.setState({
         error: `Username length must be greater than 5 characters`
       });
+    } else if (this.state.email.length < 6) {
+      this.setState({
+        error: `Must enter valid e-mail addres`
+      });
     } else if (this.state.password.length < 6) {
       this.setState({
         error: `Password length must be greater than 5 characters`
       });
-    } else if (this.state.email.length < 1) {
+    } else if (this.state.password !== this.state.passTwo) {
       this.setState({
-        error: `Must enter valid e-mail addres`
+        error: `Password fields must match`
       });
     } else if (matchingUser !== undefined) {
       this.setState({
         error: `Username or e-mail already registered`
       });
     } else {
-      let newUser = this.state;
+      let newUser = {
+        error: null,
+        id: this.state.id,
+        username: this.state.username,
+        email: this.state.email,
+        password: this.state.passwrod
+      };
       this.context.onLogIn();
       this.context.addNewUser(newUser);
       this.context.setUserInfo(newUser);
@@ -110,6 +125,15 @@ class SignUp extends Component {
             required
             ref={this.password}
             onChange={e => this.updatePass(e.target.value)}
+          />
+          <label htmlFor="Password repeat">Enter password again:</label>
+          <input
+            type="password"
+            name="passTwo"
+            id="passTwo"
+            required
+            ref={this.passTwo}
+            onChange={e => this.updatePassTwo(e.target.value)}
           />
           {this.state.error !== null ? (
             <h4 className="error">{this.state.error}</h4>
