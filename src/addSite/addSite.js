@@ -17,7 +17,9 @@ class AddSite extends Component {
 
   // Methods to update state
   updateId() {
-    this.setState({ id: Math.floor(Math.random() * 1000), error: null });
+    let newId = Math.floor(Math.random() * 1000);
+    console.log(newId);
+    this.setState({ id: newId });
   }
 
   updateTitle(title) {
@@ -46,6 +48,10 @@ class AddSite extends Component {
     console.log(this.state);
   };
 
+  componentDidMount() {
+    this.updateId();
+  }
+
   render() {
     return (
       <div className="addSite">
@@ -73,8 +79,8 @@ class AddSite extends Component {
           ></input>
           <label htmlFor="state">State:</label>
           <select
-            name="state"
-            id="state"
+            name="stateAbr"
+            id="stateAbr"
             ref={this.stateAbr}
             onChange={e => this.updateState(e.target.value)}
           >
