@@ -12,6 +12,7 @@ import SiteList from "./siteList/siteList";
 import SiteDetail from "./siteDetail/siteDetail";
 import CleanSite from "./cleanSite/cleanSite";
 import SignOut from "./signOut/signOut";
+import SignUp from "./signUp/signUp";
 import AddSite from "./addSite/addSite";
 
 // Context
@@ -24,7 +25,7 @@ class App extends Component {
   state = {
     // Initially set to seed data - unsecure
     sites: Data.sites,
-    loggedIn: true, // set to true for testing
+    loggedIn: false, // set to true for testing
     userInfo: [],
     users: Data.users
   };
@@ -92,6 +93,7 @@ class App extends Component {
           <Nav />
           <Route path="/about" component={About} />
           <Route path="/signIn" component={SignIn} />
+          <Route path="/signUp" component={SignUp} />
           <Route exact path="/sites" component={SiteList} />
           <Route path="/sites/:siteId" component={SiteDetail} />
           <Route path="/addSite" component={AddSite} />

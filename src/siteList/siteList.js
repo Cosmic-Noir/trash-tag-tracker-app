@@ -32,7 +32,7 @@ export default class SiteList extends Component {
             key={site.id}
             id={site.id}
             title={site.title}
-            state={site.stateAbr}
+            stateAbr={site.stateAbr}
             beforeImg={site.beforeImg}
             afterImg={site.afterImg}
           />
