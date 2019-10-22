@@ -3,6 +3,7 @@ import siteContext from "../siteContext";
 import { Link } from "react-router-dom";
 import SignUp from "../signUp/signUp";
 import Site from "../site/site";
+import "./siteList.css";
 
 export default class SiteList extends Component {
   static contextType = siteContext;
@@ -40,14 +41,14 @@ export default class SiteList extends Component {
       }
     });
     return (
-      <div>
+      <div className="siteList">
         <h2>Trash Sites:</h2>
         {this.context.loggedIn === true ? (
           <Link to="/addSite">Add New Trash Site</Link>
         ) : (
           ""
         )}
-        <form>
+        <form className="siteList">
           <select
             className="center"
             name="clean"
@@ -77,7 +78,7 @@ export default class SiteList extends Component {
             <option>Hard</option>
           </select> */}
         </form>
-        <ul>{trashSites}</ul>
+        <ul className="siteList">{trashSites}</ul>
         <footer>{this.context.loggedIn === false ? <SignUp /> : ""}</footer>
       </div>
     );
