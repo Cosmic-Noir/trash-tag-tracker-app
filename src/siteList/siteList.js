@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import siteContext from "../siteContext";
+import { Link } from "react-router-dom";
 import SignUp from "../signUp/signUp";
 import Site from "../site/site";
 
@@ -41,6 +42,7 @@ export default class SiteList extends Component {
     return (
       <div>
         <h2>Trash Sites:</h2>
+        <Link to="/addSite">Add New Trash Site</Link>
         <form>
           <select
             className="center"

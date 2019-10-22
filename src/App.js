@@ -12,6 +12,7 @@ import SiteList from "./siteList/siteList";
 import SiteDetail from "./siteDetail/siteDetail";
 import CleanSite from "./cleanSite/cleanSite";
 import SignOut from "./signOut/signOut";
+import AddSite from "./addSite/addSite";
 
 // Context
 import siteContext from "./siteContext";
@@ -86,6 +87,7 @@ class App extends Component {
           <Route path="/signIn" component={SignIn} />
           <Route exact path="/sites" component={SiteList} />
           <Route path="/sites/:siteId" component={SiteDetail} />
+          <Route path="/addSite" component={AddSite} />
           <Route path="/cleanSite/:siteId" component={CleanSite} />
           <Route path="/signOut" component={SignOut} />
           <Route exact path="/" component={Landing} />
