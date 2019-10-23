@@ -40,7 +40,7 @@ class CommentList extends Component {
             <button type="button" id="add" onClick={this.clickAddComment}>
               Add Comment
             </button>
-            <AddComment />
+            <AddComment siteId={this.props.siteId} />
           </div>
         )}
         <ul>{comments}</ul>

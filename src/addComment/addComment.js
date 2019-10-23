@@ -13,15 +13,6 @@ class AddComment extends Component {
   static contextType = siteContext;
 
   // Methods to update state
-  updateId = () => {
-    let newId = Math.floor(Math.random() * 1000);
-    this.setState({ id: newId });
-  };
-
-  updateUserRef = userRef => {
-    this.setState({ userRef: userRef });
-  };
-
   updateContent = content => {
     this.setState({ content: content });
   };
@@ -29,6 +20,9 @@ class AddComment extends Component {
   // Method to send newComment to App state.comments
   handleSubmit = e => {
     e.preventDefault();
+
+    let newComment = this.state;
+
     console.log("form pressed");
   };
 
@@ -41,6 +35,19 @@ class AddComment extends Component {
     addButton.classList.remove("hidden");
   };
 
+  // Lifecycle methods
+
+  componentDidMount() {
+    // Set initial state with user data
+    let newId = Math.floor(Math.random() * 1000);
+
+    this.setState({
+      userRef: this.context.userInfo.username,
+      siteId: this.props.siteId,
+      id: newId
+    });
+  }
+
   render() {
     return (
       <div className="addComment hidden" id="addComment">
@@ -50,7 +57,12 @@ class AddComment extends Component {
           }}
         >
           <label htmlFor="content">Add comment:</label>
-          <textarea></textarea>
+          <textarea
+            name="content"
+            id="content"
+            ref={this.content}
+            onChange={e => this.updateContent(e.target.value)}
+          ></textarea>
           <button type="submit">Add</button>
         </form>
 
