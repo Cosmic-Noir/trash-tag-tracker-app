@@ -5,7 +5,8 @@ a {
 
 img {
   height: 200px;
-  margin-bottom: 15px;
+  margin: 0px 15px 15px 15px;
+
   width: 300px;
 }
 
@@ -25,4 +26,10 @@ img {
 
 .title {
   margin-bottom: 0px;
+}
+
+@media screen and (min-width: 500px) {
+  .container {
+    flex-direction: row;
+  }
 }

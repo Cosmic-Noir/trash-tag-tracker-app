@@ -15,12 +15,14 @@ class Site extends Component {
               <h2 className="title">{this.props.title}</h2>
               <h3 className="address">{this.props.address}</h3>
               <h3>{this.props.stateAbr}</h3>
-              <img src={this.props.beforeImg} alt="Trash site" />
-              {this.props.afterImg !== "" ? (
-                <img src={this.props.afterImg} alt="Clean site" />
-              ) : (
-                ""
-              )}
+              <div className="wide_screen">
+                <img src={this.props.beforeImg} alt="Trash site" />
+                {this.props.afterImg !== "" ? (
+                  <img src={this.props.afterImg} alt="Clean site" />
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
           </Link>
         )}
