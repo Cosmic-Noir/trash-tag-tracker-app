@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import siteContext from "../siteContext";
 import Site from "../site/site";
+import Comment from "../comment/comment";
 import "./siteDetail.css";
 
 class SiteDetail extends Component {
@@ -18,6 +19,21 @@ class SiteDetail extends Component {
       if (site.id === numberProp) {
         // console.log(site);
         return site;
+      }
+    });
+
+    const comments = this.context.comments.map(comment => {
+      const numberProp = parseInt(this.props.match.params.siteId);
+      if (comment.siteId === numberProp) {
+        console.log(`${comment.siteId} and ${numberProp}`);
+        return (
+          <Comment
+            key={comment.id}
+            id={comment.id}
+            userRef={comment.userRef}
+            content={comment.content}
+          />
+        );
       }
     });
     return (
@@ -37,12 +53,10 @@ class SiteDetail extends Component {
             Back
           </button>
         </div>
-        {/* Can make this conditionally render if there are comments associated with site */}
-        <div className="hidden">
+        <div className="">
           <h3>Comments:</h3>
           <ul className="comments"></ul>
-
-          {/* comment components should go here */}
+          {comments ? comments : <h5>No comments</h5>}
         </div>
         <footer className="detailFoot">
           {selectedSite.clean === "false" && this.context.loggedIn === true ? (

@@ -5,6 +5,7 @@ const siteContext = React.createContext({
   loggedIn: "",
   userInfo: [],
   users: [],
+  comments: [],
   onLogIn: () => {},
   onLogOut: () => {},
   setUserInfo: () => {},

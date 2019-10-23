@@ -9,6 +9,10 @@ img {
   width: 300px;
 }
 
+.address {
+  margin-bottom: 0px;
+}
+
 .site {
   display: flex;
   flex-direction: column;

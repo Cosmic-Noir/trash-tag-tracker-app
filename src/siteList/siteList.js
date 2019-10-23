@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import siteContext from "../siteContext";
 import { Link } from "react-router-dom";
-import SignUp from "../signUp/signUp";
 import Site from "../site/site";
 import "./siteList.css";
 

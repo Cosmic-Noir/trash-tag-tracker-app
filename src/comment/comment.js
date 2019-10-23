@@ -1,11 +1,13 @@
 import React, { Component } from "react";
+import "./comment.css";
 
 class Comment extends Component {
   render() {
     return (
-      <div className="comment">
-        <h5>Posted By: </h5>
-      </div>
+      <li className="comment">
+        <h5>Posted By: {this.props.userRef}</h5>
+        <p>{this.props.content}</p>
+      </li>
     );
   }
 }
