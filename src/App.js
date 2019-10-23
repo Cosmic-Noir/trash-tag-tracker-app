@@ -45,6 +45,12 @@ class App extends Component {
     });
   };
 
+  addNewComment = newComment => {
+    this.setState({
+      comments: [...this.state.comments, newComment]
+    });
+  };
+
   onLogIn = () => {
     this.setState({
       loggedIn: true
@@ -87,7 +93,8 @@ class App extends Component {
       setUserInfo: this.setUserInfo,
       addNewUser: this.addNewUser,
       updateSite: this.updateSite,
-      addNewSite: this.addNewSite
+      addNewSite: this.addNewSite,
+      addNewComment: this.addNewComment
     };
     return (
       <div className="App">

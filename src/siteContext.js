@@ -11,7 +11,8 @@ const siteContext = React.createContext({
   setUserInfo: () => {},
   addNewUser: () => {},
   updateSite: () => {},
-  addNewSite: () => {}
+  addNewSite: () => {},
+  addNewComment: () => {}
 });
 
 export default siteContext;
