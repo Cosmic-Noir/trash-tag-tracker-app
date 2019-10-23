@@ -1,10 +1,20 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import siteContext from "../siteContext";
 import Comment from "../comment/comment";
+import AddComment from "../addComment/addComment";
 import "./commentList.css";
 
 class CommentList extends Component {
   static contextType = siteContext;
+
+  clickAddComment() {
+    const element = document.getElementById("addComment");
+    element.classList.remove("hidden");
+    console.log("add comment should be showing");
+    const addButton = document.getElementById("add");
+    addButton.classList.add("hidden");
+  }
 
   render() {
     const comments = this.context.comments.map(comment => {
@@ -25,7 +35,13 @@ class CommentList extends Component {
         {this.context.loggedIn === false ? (
           <h5>Comments: (Log in to comment!)</h5>
         ) : (
-          <h5>Comments:</h5>
+          <div>
+            <h5>Comments:</h5>
+            <button type="button" id="add" onClick={this.clickAddComment}>
+              Add Comment
+            </button>
+            <AddComment />
+          </div>
         )}
         <ul>{comments}</ul>
         <p></p>
