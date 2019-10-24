@@ -13,13 +13,13 @@ export default class SiteList extends Component {
   static contextType = siteContext;
 
   //  Methods to update state
-  updateClean(trueOrFalse) {
+  updateClean = trueOrFalse => {
     this.setState({ clean: trueOrFalse });
-  }
+  };
 
-  updateState(state) {
+  updateState = state => {
     this.setState({ stateAbr: state });
-  }
+  };
 
   render() {
     // eslint-disable-next-line
@@ -40,13 +40,17 @@ export default class SiteList extends Component {
         );
       }
     });
+
+    const stateOptions = this.context.sites.map(site => {
+      return <option value={site.stateAbr}>{site.stateAbr}</option>;
+    });
     return (
       <div className="siteList">
         <h2>Trash Sites:</h2>
         {this.context.loggedIn === true ? (
           <Link to="/addSite">Add New Trash Site</Link>
         ) : (
-          <h5>Log in to add a new</h5>
+          <h5>Log in to add a new site</h5>
         )}
         <form className="siteList" onSubmit={e => this.handleSubmit(e)}>
           <select
@@ -70,9 +74,10 @@ export default class SiteList extends Component {
             onChange={e => this.updateState(e.target.value)}
           >
             <option value="">All</option>
-            <option value="CO">CO</option>
+            {stateOptions}
+            {/* <option value="CO">CO</option>
             <option value="NE">NE</option>
-            <option value="MN">MN</option>
+            <option value="MN">MN</option> */}
           </select>
 
           {/* <select>

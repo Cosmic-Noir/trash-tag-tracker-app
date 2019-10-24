@@ -26,7 +26,7 @@ class App extends Component {
   state = {
     // Initially set to seed data - unsecure
     sites: Data.sites,
-    loggedIn: false, // set to true for testing
+    loggedIn: false,
     userInfo: [],
     users: Data.users,
     comments: Data.comments,
@@ -115,14 +115,14 @@ class App extends Component {
         <siteContext.Provider value={contextValue}>
           <Nav />
           <Route path="/about" component={About} />
+          <Route path="/addSite" component={AddSite} />
+          <Route path="/cleanSite/:siteId" component={CleanSite} />
+          <Route path="/dashboard" component={Dashboard} />
           <Route path="/signIn" component={SignIn} />
+          <Route path="/signOut" component={SignOut} />
           <Route path="/signUp" component={SignUp} />
           <Route exact path="/sites" component={SiteList} />
           <Route path="/sites/:siteId" component={SiteDetail} />
-          <Route path="/addSite" component={AddSite} />
-          <Route path="/cleanSite/:siteId" component={CleanSite} />
-          <Route path="/signOut" component={SignOut} />
-          <Route path="/dashboard" component={Dashboard} />
           <Route exact path="/" component={Landing} />
         </siteContext.Provider>
         <footer>
