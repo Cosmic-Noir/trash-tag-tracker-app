@@ -4,6 +4,7 @@ import "./addComment.css";
 
 class AddComment extends Component {
   state = {
+    error: null,
     id: "",
     siteId: "",
     userRef: "",
@@ -17,11 +18,27 @@ class AddComment extends Component {
     this.setState({ content: content });
   };
 
+  resetContent = () => {
+    this.setState({ content: "" });
+  };
+
+  updateId = () => {
+    let newId = Math.floor(Math.random() * 1000);
+    this.setState({ id: newId });
+  };
+
   // Method to send newComment to App state.comments
   handleSubmit = e => {
     e.preventDefault();
 
-    let newComment = this.state;
+    if (this.state.content.length === 0) {
+      this.setState({ error: "Please provide content" });
+    } else {
+      let newComment = this.state;
+      this.context.addNewComment(newComment);
+      this.updateId();
+    }
+    this.resetContent();
 
     console.log("form pressed");
   };
@@ -33,18 +50,17 @@ class AddComment extends Component {
     element.classList.add("hidden");
     const addButton = document.getElementById("add");
     addButton.classList.remove("hidden");
+    this.resetContent();
   };
 
   // Lifecycle methods
 
   componentDidMount() {
     // Set initial state with user data
-    let newId = Math.floor(Math.random() * 1000);
-
+    this.updateId();
     this.setState({
       userRef: this.context.userInfo.username,
-      siteId: this.props.siteId,
-      id: newId
+      siteId: this.props.siteId
     });
   }
 
@@ -57,10 +73,16 @@ class AddComment extends Component {
           }}
         >
           <label htmlFor="content">Add comment:</label>
+          {this.state.error !== null ? (
+            <h4 className="error">{this.state.error}</h4>
+          ) : (
+            ""
+          )}
           <textarea
             name="content"
             id="content"
             ref={this.content}
+            value={this.content}
             onChange={e => this.updateContent(e.target.value)}
           ></textarea>
           <button type="submit">Add</button>

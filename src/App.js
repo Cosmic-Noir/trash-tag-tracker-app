@@ -25,7 +25,7 @@ class App extends Component {
   state = {
     // Initially set to seed data - unsecure
     sites: Data.sites,
-    loggedIn: true, // set to true for testing
+    loggedIn: false, // set to true for testing
     userInfo: [],
     users: Data.users,
     comments: Data.comments
