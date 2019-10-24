@@ -51,6 +51,8 @@ class AddSite extends Component {
       this.setState({ error: `Please enter an address` });
     } else if (this.state.description.length < 1) {
       this.setState({ error: `Please enter a description` });
+    } else if (this.state.stateAbr.length !== 2) {
+      this.setState({ error: `Please select a valid state` });
     } else {
       let newSite = this.state;
       this.context.addNewSite(newSite);
@@ -94,13 +96,14 @@ class AddSite extends Component {
             ref={this.stateAbr}
             onChange={e => this.updateState(e.target.value)}
           >
-            {/* <option value="AL">AL</option>
+            <option>State</option>
+            <option value="AL">AL</option>
             <option value="AK">AK</option>
             <option value="AZ">AZ</option>
             <option value="AR">AR</option>
-            <option value="CA">CA</option> */}
+            <option value="CA">CA</option>
             <option value="CO">CO</option>
-            {/* <option value="CT">CT</option>
+            <option value="CT">CT</option>
             <option value="DE">DE</option>
             <option value="FL">FL</option>
             <option value="GA">GA</option>
@@ -115,13 +118,13 @@ class AddSite extends Component {
             <option value="ME">ME</option>
             <option value="MD">MD</option>
             <option value="MA">MA</option>
-            <option value="MI">MI</option> */}
+            <option value="MI">MI</option>
             <option value="MN">MN</option>
-            {/* <option value="MO">MO</option>
+            <option value="MO">MO</option>
             <option value="MS">MS</option>
-            <option value="MT">MT</option> */}
+            <option value="MT">MT</option>
             <option value="NE">NE</option>
-            {/* <option value="NV">NV</option>
+            <option value="NV">NV</option>
             <option value="NH">NH</option>
             <option value="NJ">NJ</option>
             <option value="NM">NM</option>
@@ -142,7 +145,7 @@ class AddSite extends Component {
             <option value="WA">WA</option>
             <option value="WV">WV</option>
             <option value="WI">WI</option>
-            <option value="WY">WY</option> */}
+            <option value="WY">WY</option>
           </select>
           <label htmlFor="description">Description:</label>
           <textarea
