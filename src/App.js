@@ -53,6 +53,14 @@ class App extends Component {
     });
   };
 
+  increaseScore = addScore => {
+    const currentScore = this.state.userInfo.score;
+    const updatedUser = this.state.userInfo;
+    const newScore = addScore + currentScore;
+    updatedUser.score = newScore;
+    console.log(updatedUser);
+  };
+
   onLogIn = () => {
     this.setState({
       loggedIn: true
