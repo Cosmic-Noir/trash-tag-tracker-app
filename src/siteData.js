@@ -112,7 +112,8 @@ const Data = {
       userRef: "dudette",
       content: "Wow it looks like you guys did an awesome job!"
     }
-  ]
+  ],
+  totalScore: 125
 };
 
 export default Data;

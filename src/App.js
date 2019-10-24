@@ -29,7 +29,8 @@ class App extends Component {
     loggedIn: false, // set to true for testing
     userInfo: [],
     users: Data.users,
-    comments: Data.comments
+    comments: Data.comments,
+    totalScore: Data.totalScore
   };
 
   // Temp function to add new user data to state
@@ -88,6 +89,7 @@ class App extends Component {
       userInfo: this.state.userInfo,
       users: this.state.users,
       comments: this.state.comments,
+      totalScore: this.state.totalScore,
       // methods
       onLogIn: this.onLogIn,
       onLogOut: this.onLogOut,
