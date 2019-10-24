@@ -35,6 +35,11 @@ class SiteDetail extends Component {
         />
         <div className="detail">
           <p className="desc">{selectedSite.description}</p>
+          {selectedSite.clean === "false" && this.context.loggedIn === true ? (
+            <Link to={`/cleanSite/${selectedSite.id}`}>Mark as Cleaned!</Link>
+          ) : (
+            ""
+          )}
           <button type="button" onClick={this.handleClickBack}>
             Back
           </button>
@@ -42,12 +47,6 @@ class SiteDetail extends Component {
         </div>
 
         <footer className="detailFoot">
-          {selectedSite.clean === "false" && this.context.loggedIn === true ? (
-            <Link to={`/cleanSite/${selectedSite.id}`}>Mark as Cleaned!</Link>
-          ) : (
-            ""
-          )}
-
           {this.context.loggedIn === false ? (
             <Link to="/signUp">Sign Up</Link>
           ) : (

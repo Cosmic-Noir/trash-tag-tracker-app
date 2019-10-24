@@ -17,6 +17,7 @@ class CleanSite extends Component {
 
     let cleanedSite = this.state;
     this.context.updateSite(cleanedSite);
+    this.context.increaseScore(5);
     this.props.history.push("/sites");
   };
 
@@ -44,7 +45,7 @@ class CleanSite extends Component {
     this.setState({
       id: selectedSite.id,
       clean: "true",
-      title: selectedSite.title,
+      title: selectedSite.title + " - Cleaned!",
       address: selectedSite.address,
       stateAbr: selectedSite.stateAbr,
       description: selectedSite.description,

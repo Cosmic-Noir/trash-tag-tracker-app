@@ -58,7 +58,9 @@ class App extends Component {
     const updatedUser = this.state.userInfo;
     const newScore = addScore + currentScore;
     updatedUser.score = newScore;
-    console.log(updatedUser);
+
+    const newTotal = this.state.totalScore + addScore;
+    this.setState({ totalScore: newTotal });
   };
 
   onLogIn = () => {

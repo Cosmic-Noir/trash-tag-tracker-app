@@ -51,7 +51,7 @@ const Data = {
     {
       id: 5,
       clean: "true",
-      title: "Lum Beech",
+      title: "Lum Beech - Cleaned!",
       address: "413 Lum Beech Rd",
       stateAbr: "MN",
       beforeImg:

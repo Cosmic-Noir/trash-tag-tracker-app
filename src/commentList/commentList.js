@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import siteContext from "../siteContext";
 import Comment from "../comment/comment";
 import AddComment from "../addComment/addComment";
@@ -17,6 +16,7 @@ class CommentList extends Component {
   }
 
   render() {
+    // eslint-disable-next-line
     const comments = this.context.comments.map(comment => {
       const numberProp = parseInt(this.props.siteId);
       if (comment.siteId === numberProp) {
