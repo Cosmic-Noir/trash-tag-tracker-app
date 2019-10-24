@@ -67,7 +67,8 @@ const Data = {
       id: 1,
       username: "dude",
       email: "cool@email.com",
-      password: "cool123"
+      password: "cool123",
+      score: 25
     },
     {
       id: 2,

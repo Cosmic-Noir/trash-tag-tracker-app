@@ -10,7 +10,8 @@ class SignUp extends Component {
     username: "",
     email: "",
     password: "",
-    passTwo: ""
+    passTwo: "",
+    score: 0
   };
 
   static contextType = siteContext;
@@ -74,12 +75,13 @@ class SignUp extends Component {
         id: this.state.id,
         username: this.state.username,
         email: this.state.email,
-        password: this.state.passwrod
+        password: this.state.password,
+        score: this.state.score
       };
       this.context.onLogIn();
       this.context.addNewUser(newUser);
       this.context.setUserInfo(newUser);
-      this.props.history.push("/sites");
+      this.props.history.push("/dashboard");
     }
   };
 

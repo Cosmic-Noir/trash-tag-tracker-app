@@ -5,13 +5,14 @@ import Site from "../site/site";
 import "./siteList.css";
 
 export default class SiteList extends Component {
-  static contextType = siteContext;
-
   state = {
     stateAbr: "",
     clean: ""
   };
 
+  static contextType = siteContext;
+
+  //  Methods to update state
   updateClean(trueOrFalse) {
     this.setState({ clean: trueOrFalse });
   }
@@ -45,14 +46,15 @@ export default class SiteList extends Component {
         {this.context.loggedIn === true ? (
           <Link to="/addSite">Add New Trash Site</Link>
         ) : (
-          ""
+          <h5>Log in to add a new</h5>
         )}
-        <form className="siteList">
+        <form className="siteList" onSubmit={e => this.handleSubmit(e)}>
           <select
             className="center"
             name="clean"
             id="clean"
             ref={this.clean}
+            value={this.state.clean}
             onChange={e => this.updateClean(e.target.value)}
           >
             <option value="">All Sites</option>
@@ -61,9 +63,10 @@ export default class SiteList extends Component {
           </select>
           <select
             className="center"
-            name="state"
-            id="state"
-            ref={this.state.state}
+            name="stateAbr"
+            id="stateAbr"
+            value={this.state.stateAbr}
+            ref={this.state.stateAbr}
             onChange={e => this.updateState(e.target.value)}
           >
             <option value="">All</option>
@@ -71,6 +74,7 @@ export default class SiteList extends Component {
             <option value="NE">NE</option>
             <option value="MN">MN</option>
           </select>
+
           {/* <select>
             <option>Easy</option>
             <option>Medium</option>

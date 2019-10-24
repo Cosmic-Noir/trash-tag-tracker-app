@@ -38,7 +38,7 @@ class SignIn extends Component {
     });
     if (loggedUser !== undefined) {
       this.context.setUserInfo(loggedUser);
-      this.props.history.push("/sites");
+      this.props.history.push("/dashboard");
     }
   };
 

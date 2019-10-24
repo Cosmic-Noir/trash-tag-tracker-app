@@ -4,16 +4,17 @@ import { Route } from "react-router-dom";
 import "./App.css";
 
 // Custom Components
-import Nav from "./nav/nav";
-import Landing from "./landing/landing";
 import About from "./about/about";
-import SignIn from "./signIn/signIn";
-import SiteList from "./siteList/siteList";
-import SiteDetail from "./siteDetail/siteDetail";
+import AddSite from "./addSite/addSite";
 import CleanSite from "./cleanSite/cleanSite";
+import Dashboard from "./dashboard/dashboard";
+import Landing from "./landing/landing";
+import Nav from "./nav/nav";
+import SignIn from "./signIn/signIn";
 import SignOut from "./signOut/signOut";
 import SignUp from "./signUp/signUp";
-import AddSite from "./addSite/addSite";
+import SiteDetail from "./siteDetail/siteDetail";
+import SiteList from "./siteList/siteList";
 
 // Context
 import siteContext from "./siteContext";
@@ -108,6 +109,7 @@ class App extends Component {
           <Route path="/addSite" component={AddSite} />
           <Route path="/cleanSite/:siteId" component={CleanSite} />
           <Route path="/signOut" component={SignOut} />
+          <Route path="/dashboard" component={Dashboard} />
           <Route exact path="/" component={Landing} />
         </siteContext.Provider>
         <footer>
