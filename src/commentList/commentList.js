@@ -10,7 +10,7 @@ class CommentList extends Component {
   clickAddComment() {
     const element = document.getElementById("addComment");
     element.classList.remove("hidden");
-    console.log("add comment should be showing");
+    // console.log("add comment should be showing");
     const addButton = document.getElementById("add");
     addButton.classList.add("hidden");
   }

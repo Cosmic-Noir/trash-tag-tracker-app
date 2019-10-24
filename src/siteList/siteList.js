@@ -41,9 +41,16 @@ export default class SiteList extends Component {
       }
     });
 
-    const stateOptions = this.context.sites.map(site => {
-      return <option value={site.stateAbr}>{site.stateAbr}</option>;
-    });
+    // const stateOptions = this.context.sites.map(site => {
+    //   return <option value={site.stateAbr}>{site.stateAbr}</option>;
+    // });
+    // console.log(stateOptions);
+
+    // let filterOptions = stateOptions =>
+    //   stateOptions.filter((v, i) => stateOptions.indexOf(v) === i);
+
+    // console.log(filterOptions);
+
     return (
       <div className="siteList">
         <h2>Trash Sites:</h2>
@@ -74,10 +81,10 @@ export default class SiteList extends Component {
             onChange={e => this.updateState(e.target.value)}
           >
             <option value="">All</option>
-            {stateOptions}
-            {/* <option value="CO">CO</option>
+            {/* {filterOptions} */}
+            <option value="CO">CO</option>
             <option value="NE">NE</option>
-            <option value="MN">MN</option> */}
+            <option value="MN">MN</option>
           </select>
 
           {/* <select>
