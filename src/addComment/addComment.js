@@ -39,8 +39,10 @@ class AddComment extends Component {
       this.updateId();
     }
     this.resetContent();
-
-    console.log("form pressed");
+    const element = document.getElementById("addComment");
+    element.classList.add("hidden");
+    const addButton = document.getElementById("add");
+    addButton.classList.remove("hidden");
   };
 
   // Methods for buttons
@@ -82,7 +84,7 @@ class AddComment extends Component {
             name="content"
             id="content"
             ref={this.content}
-            value={this.content}
+            value={this.state.content}
             onChange={e => this.updateContent(e.target.value)}
           ></textarea>
           <button type="submit">Add</button>
