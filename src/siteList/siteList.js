@@ -40,16 +40,20 @@ export default class SiteList extends Component {
         );
       }
     });
-
-    // const stateOptions = this.context.sites.map(site => {
-    //   return <option value={site.stateAbr}>{site.stateAbr}</option>;
-    // });
-    // console.log(stateOptions);
-
-    // let filterOptions = stateOptions =>
-    //   stateOptions.filter((v, i) => stateOptions.indexOf(v) === i);
-
-    // console.log(filterOptions);
+    // Create array of all states there are sites for
+    const stateOptions = this.context.sites.map(site => {
+      return site.stateAbr;
+    });
+    // Filter to create unique lists
+    let filterOptions = [...new Set(stateOptions)];
+    // Creat options out of filtered array
+    const options = filterOptions.map(state => {
+      return (
+        <option value={state} key={state}>
+          {state}
+        </option>
+      );
+    });
 
     return (
       <div className="siteList">
@@ -81,10 +85,10 @@ export default class SiteList extends Component {
             onChange={e => this.updateState(e.target.value)}
           >
             <option value="">All</option>
-            {/* {filterOptions} */}
-            <option value="CO">CO</option>
+            {options}
+            {/* <option value="CO">CO</option>
             <option value="NE">NE</option>
-            <option value="MN">MN</option>
+            <option value="MN">MN</option> */}
           </select>
 
           {/* <select>
