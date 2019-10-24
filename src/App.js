@@ -105,7 +105,8 @@ class App extends Component {
       addNewUser: this.addNewUser,
       updateSite: this.updateSite,
       addNewSite: this.addNewSite,
-      addNewComment: this.addNewComment
+      addNewComment: this.addNewComment,
+      increaseScore: this.increaseScore
     };
     return (
       <div className="App">
