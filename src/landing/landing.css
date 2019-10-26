@@ -8,3 +8,13 @@ p {
   justify-content: center;
   align-items: center;
 }
+
+#ex {
+  height: 300px;
+  width: 400px;
+}
+
+#logo {
+  height: 150px;
+  width: 150px;
+}

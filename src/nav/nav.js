@@ -10,7 +10,7 @@ class Nav extends Component {
     return (
       <div className="nav">
         <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
+        <Link to="/about">Impact</Link>
         <Link to="/sites">Trash Sites</Link>
         {this.context.loggedIn === true ? (
           <Link to="/dashboard">{this.context.userInfo.username}</Link>
