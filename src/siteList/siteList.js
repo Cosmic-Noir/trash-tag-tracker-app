@@ -41,7 +41,9 @@ export default class SiteList extends Component {
     });
     // Create array of all states there are sites for
     const stateOptions = this.context.sites.map(site => {
-      return site.stateAbr;
+      if (site.clean === "false") {
+        return site.stateAbr;
+      }
     });
     // Filter to create unique lists
     let filterOptions = [...new Set(stateOptions)];
@@ -62,7 +64,7 @@ export default class SiteList extends Component {
         ) : (
           <h5>Log in to add a new site</h5>
         )}
-        <form className="siteList" onSubmit={e => this.handleSubmit(e)}>
+        <form className="siteList">
           <select
             className="center"
             name="stateAbr"
@@ -73,9 +75,6 @@ export default class SiteList extends Component {
           >
             <option value="">All</option>
             {options}
-            {/* <option value="CO">CO</option>
-            <option value="NE">NE</option>
-            <option value="MN">MN</option> */}
           </select>
 
           {/* <select>

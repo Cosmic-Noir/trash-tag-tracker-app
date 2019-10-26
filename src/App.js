@@ -15,6 +15,7 @@ import SignOut from "./signOut/signOut";
 import SignUp from "./signUp/signUp";
 import SiteDetail from "./siteDetail/siteDetail";
 import SiteList from "./siteList/siteList";
+import CleanList from "./cleanList/cleanList";
 
 // Context
 import siteContext from "./siteContext";
@@ -116,6 +117,7 @@ class App extends Component {
           <Nav />
           <Route path="/about" component={About} />
           <Route path="/addSite" component={AddSite} />
+          <Route path="/cleaned" component={CleanList} />
           <Route path="/cleanSite/:siteId" component={CleanSite} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/signIn" component={SignIn} />

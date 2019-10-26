@@ -12,6 +12,7 @@ class Nav extends Component {
         <Link to="/">Home</Link>
         <Link to="/about">Impact</Link>
         <Link to="/sites">Trash Sites</Link>
+        <Link to="/cleaned">Cleaned Sites</Link>
         {this.context.loggedIn === true ? (
           <Link to="/dashboard">{this.context.userInfo.username}</Link>
         ) : (
