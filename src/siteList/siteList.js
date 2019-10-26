@@ -6,8 +6,7 @@ import "./siteList.css";
 
 export default class SiteList extends Component {
   state = {
-    stateAbr: "",
-    clean: ""
+    stateAbr: ""
   };
 
   static contextType = siteContext;
@@ -24,7 +23,10 @@ export default class SiteList extends Component {
   render() {
     // eslint-disable-next-line
     const trashSites = this.context.sites.map(site => {
-      if (site.clean === "false") {
+      if (
+        site.clean === "false" &&
+        (this.state.stateAbr === "" || site.stateAbr === this.state.stateAbr)
+      ) {
         return (
           <Site
             key={site.id}
@@ -61,18 +63,6 @@ export default class SiteList extends Component {
           <h5>Log in to add a new site</h5>
         )}
         <form className="siteList" onSubmit={e => this.handleSubmit(e)}>
-          <select
-            className="center"
-            name="clean"
-            id="clean"
-            ref={this.clean}
-            value={this.state.clean}
-            onChange={e => this.updateClean(e.target.value)}
-          >
-            <option value="">All Sites</option>
-            <option value={false}>Trashed</option>
-            <option value={true}>Clean</option>
-          </select>
           <select
             className="center"
             name="stateAbr"
