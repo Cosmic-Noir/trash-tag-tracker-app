@@ -24,10 +24,7 @@ export default class SiteList extends Component {
   render() {
     // eslint-disable-next-line
     const trashSites = this.context.sites.map(site => {
-      if (
-        (this.state.clean === "" || site.clean === this.state.clean) &&
-        (this.state.stateAbr === "" || site.stateAbr === this.state.stateAbr)
-      ) {
+      if (site.clean === "false") {
         return (
           <Site
             key={site.id}
