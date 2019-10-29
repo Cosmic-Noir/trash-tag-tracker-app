@@ -43,13 +43,15 @@ class AddSite extends Component {
     this.setState({ content: content });
   }
 
-  updateBeforeImg(before_img) {
-    this.setState({ before_img: before_img });
+  updateBeforeImg(event) {
+    console.log(event.target.files[0]);
+    this.setState({ before_img: event.target.files[0] });
   }
 
   // submit info in form
   handleSubmit = e => {
     e.preventDefault();
+
     if (this.state.title.length < 1) {
       this.setState({ error: `Please enter a title` });
     } else if (this.state.addrss.length < 1) {
@@ -65,6 +67,7 @@ class AddSite extends Component {
       this.context.addNewSite(newSite);
       this.props.history.push("/sites");
     }
+    console.log(this.state);
   };
 
   componentDidMount() {
@@ -171,7 +174,13 @@ class AddSite extends Component {
             onChange={e => this.updateContent(e.target.value)}
           ></textarea>
           <label htmlFor="before_img">Upload Image:</label>
-          <input type="file" />
+          <input
+            type="file"
+            name="before_img"
+            id="before_img"
+            ref={this.before_img}
+            onChange={e => this.updateBeforeImg(e)}
+          />
           {/* <input
             type="text"
             name="before_img"
@@ -184,7 +193,9 @@ class AddSite extends Component {
           ) : (
             ""
           )}
-          <button type="submit">Add Site</button>
+          <button type="submit" onClick={this.uploadPic}>
+            Add Site
+          </button>
         </form>
       </div>
     );
