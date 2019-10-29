@@ -39,12 +39,17 @@ class Site extends Component {
                   <img src={this.props.before_img} alt="Trash site" />
                 )}
 
-                {this.props.after_img !== "" ? (
+                {typeof this.props.after_img === "string" &&
+                this.props.after_img !== "" ? (
                   <img src={this.props.after_img} alt="Clean site" />
                 ) : (
                   ""
                 )}
-                <img id="afterImg" src=""></img>
+                {typeof this.props.after_img === "object" ? (
+                  <img id="afterImg" src=""></img>
+                ) : (
+                  ""
+                )}
                 <p>{this.props.content}</p>
               </div>
             </div>
