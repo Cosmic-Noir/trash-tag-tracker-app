@@ -14,9 +14,11 @@ class Site extends Component {
             <div className="site">
               <h2 className="title">{this.props.title}</h2>
               <h3 className="address">{this.props.address}</h3>
+              <h3>{this.props.city}</h3>
               <h3>{this.props.state_abr}</h3>
               <div className="wide_screen">
                 <img src={this.props.before_img} alt="Trash site" />
+                <p>{this.props.content}</p>
                 {this.props.after_img !== "" ? (
                   <img src={this.props.after_img} alt="Clean site" />
                 ) : (

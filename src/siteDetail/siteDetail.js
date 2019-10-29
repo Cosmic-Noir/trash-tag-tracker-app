@@ -28,13 +28,14 @@ class SiteDetail extends Component {
           key={selectedSite.id}
           id={selectedSite.id}
           title={selectedSite.title}
+          city={selectedSite.city}
           address={selectedSite.address}
-          stateAbr={selectedSite.stateAbr}
-          beforeImg={selectedSite.beforeImg}
-          afterImg={selectedSite.afterImg}
+          state_abr={selectedSite.state_abr}
+          content={selectedSite.content}
+          before_img={selectedSite.before_img}
+          after_img={selectedSite.after_img}
         />
         <div className="detail">
-          <p className="desc">{selectedSite.description}</p>
           {selectedSite.clean === "false" && this.context.loggedIn === true ? (
             <Link to={`/cleanSite/${selectedSite.id}`}>Mark as Cleaned!</Link>
           ) : (
