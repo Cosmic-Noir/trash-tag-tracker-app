@@ -8,6 +8,7 @@ class AddSite extends Component {
     clean: "false",
     title: "",
     adrss: "",
+    city: "",
     state_abr: "",
     content: "",
     before_img: "",
@@ -30,6 +31,10 @@ class AddSite extends Component {
     this.setState({ addrss: addrss });
   }
 
+  updateCity(city) {
+    this.setState({ city: city });
+  }
+
   updateState(state_abr) {
     this.setState({ state_abr: state_abr });
   }
@@ -49,6 +54,8 @@ class AddSite extends Component {
       this.setState({ error: `Please enter a title` });
     } else if (this.state.adrss.length < 1) {
       this.setState({ error: `Please enter an address` });
+    } else if (this.state.city.length < 1) {
+      this.setState({ error: `Please enter a valid city name` });
     } else if (this.state.content.length < 1) {
       this.setState({ error: `Please enter a description` });
     } else if (this.state.state_abr.length !== 2) {
@@ -61,6 +68,7 @@ class AddSite extends Component {
   };
 
   componentDidMount() {
+    // can remove once hooked up to database
     this.updateId();
   }
 
@@ -89,6 +97,14 @@ class AddSite extends Component {
             ref={this.address}
             onChange={e => this.updateAddress(e.target.value)}
           ></input>
+          <label htmlFor="city">City:</label>
+          <input
+            type="text"
+            name="city"
+            id="city"
+            ref={this.city}
+            onChange={e => this.updateCity(e.target.value)}
+          />
           <label htmlFor="state">State:</label>
           <select
             name="state_abr"
