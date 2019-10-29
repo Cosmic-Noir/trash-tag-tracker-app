@@ -6,7 +6,7 @@ import "./siteList.css";
 
 export default class SiteList extends Component {
   state = {
-    stateAbr: ""
+    state_abr: ""
   };
 
   static contextType = siteContext;
@@ -16,8 +16,8 @@ export default class SiteList extends Component {
     this.setState({ clean: trueOrFalse });
   };
 
-  updateState = state => {
-    this.setState({ stateAbr: state });
+  updateState = state_abr => {
+    this.setState({ state_abr: state_abr });
   };
 
   render() {
@@ -25,16 +25,16 @@ export default class SiteList extends Component {
     const trashSites = this.context.sites.map(site => {
       if (
         site.clean === "false" &&
-        (this.state.stateAbr === "" || site.stateAbr === this.state.stateAbr)
+        (this.state.state_abr === "" || site.state_abr === this.state.state_abr)
       ) {
         return (
           <Site
             key={site.id}
             id={site.id}
             title={site.title}
-            stateAbr={site.stateAbr}
-            beforeImg={site.beforeImg}
-            afterImg={site.afterImg}
+            state_abr={site.state_abr}
+            before_img={site.before_img}
+            after_img={site.after_img}
           />
         );
       }
@@ -42,7 +42,7 @@ export default class SiteList extends Component {
     // Create array of all states there are sites for
     const stateOptions = this.context.sites.map(site => {
       if (site.clean === "false") {
-        return site.stateAbr;
+        return site.state_abr;
       }
     });
     // Filter to create unique lists
@@ -67,10 +67,10 @@ export default class SiteList extends Component {
         <form className="siteList">
           <select
             className="center"
-            name="stateAbr"
-            id="stateAbr"
-            value={this.state.stateAbr}
-            ref={this.state.stateAbr}
+            name="state_abr"
+            id="state_abr"
+            value={this.state.state_abr}
+            ref={this.state.state_abr}
             onChange={e => this.updateState(e.target.value)}
           >
             <option value="">All</option>

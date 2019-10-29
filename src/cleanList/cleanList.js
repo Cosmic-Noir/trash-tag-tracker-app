@@ -5,14 +5,14 @@ import "./cleanList.css";
 
 class CleanList extends Component {
   state = {
-    stateAbr: ""
+    state_abr: ""
   };
 
   static contextType = siteContext;
 
   // Methods to update state
   updateState = state => {
-    this.setState({ stateAbr: state });
+    this.setState({ state_abr: state });
   };
 
   // Create seperate funciton to check for clean status first
@@ -28,19 +28,19 @@ class CleanList extends Component {
     // eslint-disable-next-line
     // explore .filter - performance
     const cleanSites = this.context.sites.map(
-      ({ stateAbr, id, title, beforeImg, afterImg, clean }) => {
+      ({ state_abr, id, title, before_img, after_img, clean }) => {
         if (
           clean === "true" &&
-          (this.state.stateAbr === "" || this.state.stateAbr === stateAbr)
+          (this.state.state_abr === "" || this.state.state_abr === state_abr)
         ) {
           return (
             <Site
               key={id}
               id={id}
               title={title}
-              stateAbr={stateAbr}
-              beforeImg={beforeImg}
-              afterImg={afterImg}
+              state_abr={state_abr}
+              before_img={before_img}
+              after_img={after_img}
             />
           );
         }
@@ -51,7 +51,7 @@ class CleanList extends Component {
     // Create array of all states there are sites for
     const stateOptions = this.context.sites.map(site => {
       if (site.clean === "true") {
-        return site.stateAbr;
+        return site.state_abr;
       }
     });
     // Filter to create unique lists
@@ -65,7 +65,7 @@ class CleanList extends Component {
       );
     });
 
-    const { stateAbr } = this.state;
+    const { state_abr } = this.state;
 
     return (
       <div className="cleanList">
@@ -73,10 +73,10 @@ class CleanList extends Component {
         <form className="siteList">
           <select
             className="center"
-            name="stateAbr"
-            id="stateAbr"
-            value={stateAbr}
-            ref={stateAbr}
+            name="state_abr"
+            id="state_abr"
+            value={state_abr}
+            ref={state_abr}
             onChange={e => this.updateState(e.target.value)}
           >
             <option value="">All</option>
