@@ -7,11 +7,11 @@ class AddSite extends Component {
     id: "",
     clean: "false",
     title: "",
-    address: "",
-    stateAbr: "",
+    adrss: "",
+    state_abr: "",
     description: "",
-    beforeImg: "",
-    afterImg: ""
+    before_img: "",
+    after_img: ""
   };
 
   static contextType = siteContext;
@@ -26,20 +26,20 @@ class AddSite extends Component {
     this.setState({ title: title });
   }
 
-  updateAddress(address) {
-    this.setState({ address: address });
+  updateAddress(addrss) {
+    this.setState({ addrss: addrss });
   }
 
-  updateState(state) {
-    this.setState({ stateAbr: state });
+  updateState(state_abr) {
+    this.setState({ state_abr: state_abr });
   }
 
   updateDescription(description) {
     this.setState({ description: description });
   }
 
-  updateBeforeImg(beforeImg) {
-    this.setState({ beforeImg: beforeImg });
+  updateBeforeImg(before_img) {
+    this.setState({ before_img: before_img });
   }
 
   // submit info in form
@@ -47,11 +47,11 @@ class AddSite extends Component {
     e.preventDefault();
     if (this.state.title.length < 1) {
       this.setState({ error: `Please enter a title` });
-    } else if (this.state.address.length < 1) {
+    } else if (this.state.adrss.length < 1) {
       this.setState({ error: `Please enter an address` });
     } else if (this.state.description.length < 1) {
       this.setState({ error: `Please enter a description` });
-    } else if (this.state.stateAbr.length !== 2) {
+    } else if (this.state.state_abr.length !== 2) {
       this.setState({ error: `Please select a valid state` });
     } else {
       let newSite = this.state;
@@ -91,9 +91,9 @@ class AddSite extends Component {
           ></input>
           <label htmlFor="state">State:</label>
           <select
-            name="stateAbr"
-            id="stateAbr"
-            ref={this.stateAbr}
+            name="state_abr"
+            id="state_abr"
+            ref={this.state_abr}
             onChange={e => this.updateState(e.target.value)}
           >
             <option>State</option>
@@ -154,14 +154,15 @@ class AddSite extends Component {
             ref={this.description}
             onChange={e => this.updateDescription(e.target.value)}
           ></textarea>
-          <label htmlFor="beforeImg">Photo web address:</label>
-          <input
+          <label htmlFor="before_img">Upload Image:</label>
+          <input type="file" />
+          {/* <input
             type="text"
-            name="beforeImg"
-            id="beforeImg"
-            ref={this.beforeImg}
+            name="before_img"
+            id="before_img"
+            ref={this.before_img}
             onChange={e => this.updateBeforeImg(e.target.value)}
-          ></input>
+          ></input> */}
           {this.state.error !== null ? (
             <h5 className="error">{this.state.error}</h5>
           ) : (

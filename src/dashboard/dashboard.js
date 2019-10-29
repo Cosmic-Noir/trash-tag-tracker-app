@@ -14,7 +14,6 @@ class Dashboard extends Component {
         <Link to="/sites">View Trash Sites</Link>
         <Link to="/addSite">Add New Trash Site</Link>
         <Link to="/about">View Our Mission</Link>
-
         <Link to="/donate">Donate</Link>
       </div>
     );
