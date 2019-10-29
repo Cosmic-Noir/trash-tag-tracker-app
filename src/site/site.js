@@ -7,6 +7,14 @@ class Site extends Component {
   static contextType = siteContext;
 
   render() {
+    if (typeof this.props.before_img === "object") {
+      const fr = new FileReader();
+      fr.onload = function() {
+        document.getElementById("befImg").src = fr.result;
+      };
+      fr.readAsDataURL(this.props.before_img);
+    }
+
     return (
       <siteContext.Consumer>
         {context => (
@@ -17,7 +25,12 @@ class Site extends Component {
               <h4>{this.props.city}</h4>
               <h4>{this.props.state_abr}</h4>
               <div className="wide_screen">
-                <img src={this.props.before_img} alt="Trash site" />
+                {typeof this.props.before_img === "object" ? (
+                  <img id="befImg" src=""></img>
+                ) : (
+                  <img src={this.props.before_img} alt="Trash site" />
+                )}
+
                 <p>{this.props.content}</p>
                 {this.props.after_img !== "" ? (
                   <img src={this.props.after_img} alt="Clean site" />
