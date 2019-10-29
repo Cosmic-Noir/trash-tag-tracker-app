@@ -9,7 +9,7 @@ class AddSite extends Component {
     title: "",
     adrss: "",
     state_abr: "",
-    description: "",
+    content: "",
     before_img: "",
     after_img: ""
   };
@@ -34,8 +34,8 @@ class AddSite extends Component {
     this.setState({ state_abr: state_abr });
   }
 
-  updateDescription(description) {
-    this.setState({ description: description });
+  updateContent(content) {
+    this.setState({ content: content });
   }
 
   updateBeforeImg(before_img) {
@@ -49,7 +49,7 @@ class AddSite extends Component {
       this.setState({ error: `Please enter a title` });
     } else if (this.state.adrss.length < 1) {
       this.setState({ error: `Please enter an address` });
-    } else if (this.state.description.length < 1) {
+    } else if (this.state.content.length < 1) {
       this.setState({ error: `Please enter a description` });
     } else if (this.state.state_abr.length !== 2) {
       this.setState({ error: `Please select a valid state` });
@@ -147,12 +147,12 @@ class AddSite extends Component {
             <option value="WI">WI</option>
             <option value="WY">WY</option>
           </select>
-          <label htmlFor="description">Description:</label>
+          <label htmlFor="content">Description:</label>
           <textarea
-            name="description"
-            id="description"
-            ref={this.description}
-            onChange={e => this.updateDescription(e.target.value)}
+            name="content"
+            id="content"
+            ref={this.content}
+            onChange={e => this.updateContent(e.target.value)}
           ></textarea>
           <label htmlFor="before_img">Upload Image:</label>
           <input type="file" />
