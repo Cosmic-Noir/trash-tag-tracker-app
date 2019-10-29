@@ -7,7 +7,8 @@ class CleanSite extends Component {
     error: null,
     clean: "false",
     after_img: "",
-    state_abr: ""
+    state_abr: "",
+    content: ""
   };
 
   static contextType = siteContext;
@@ -21,12 +22,12 @@ class CleanSite extends Component {
     this.props.history.push("/sites");
   };
 
-  updateDescription = description => {
-    this.setState({ description: description });
+  updateContent = content => {
+    this.setState({ content: content });
   };
 
   updateAfterImg = event => {
-    this.setState({ afterImg: event.target.files[0] });
+    this.setState({ after_img: event.target.files[0] });
   };
 
   updateAddress = address => {
@@ -62,10 +63,10 @@ class CleanSite extends Component {
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="description">Updated Description:</label>
           <textarea
-            name="description"
-            id="description"
+            name="content"
+            id="content"
             // value={this.state.description}
-            onChange={e => this.updateDescription(e.target.value)}
+            onChange={e => this.updateContent(e.target.value)}
           />
           <label htmlFor="after_img">Upload Image:</label>
           <input

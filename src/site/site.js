@@ -16,6 +16,13 @@ class Site extends Component {
       fr.readAsDataURL(this.props.before_img);
     }
 
+    if (typeof this.props.after_img === "object") {
+      const fr = new FileReader();
+      fr.onload = function() {
+        document.getElementById("afterImg").src = fr.result;
+      };
+      fr.readAsDataURL(this.props.after_img);
+    }
     return (
       <siteContext.Consumer>
         {context => (
@@ -32,12 +39,13 @@ class Site extends Component {
                   <img src={this.props.before_img} alt="Trash site" />
                 )}
 
-                <p>{this.props.content}</p>
                 {this.props.after_img !== "" ? (
                   <img src={this.props.after_img} alt="Clean site" />
                 ) : (
                   ""
                 )}
+                <img id="afterImg" src=""></img>
+                <p>{this.props.content}</p>
               </div>
             </div>
           </Link>

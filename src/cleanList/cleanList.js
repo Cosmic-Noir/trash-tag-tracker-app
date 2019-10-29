@@ -25,8 +25,8 @@ class CleanList extends Component {
   };
 
   render() {
-    // eslint-disable-next-line
     // explore .filter - performance
+    // eslint-disable-next-line
     const cleanSites = this.context.sites.map(
       ({ state_abr, id, title, before_img, after_img, clean }) => {
         if (
