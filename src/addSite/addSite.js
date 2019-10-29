@@ -27,7 +27,7 @@ class AddSite extends Component {
     this.setState({ title: title });
   }
 
-  updateAddress(addrss) {
+  updateAddrss(addrss) {
     this.setState({ addrss: addrss });
   }
 
@@ -52,7 +52,7 @@ class AddSite extends Component {
     e.preventDefault();
     if (this.state.title.length < 1) {
       this.setState({ error: `Please enter a title` });
-    } else if (this.state.adrss.length < 1) {
+    } else if (this.state.addrss.length < 1) {
       this.setState({ error: `Please enter an address` });
     } else if (this.state.city.length < 1) {
       this.setState({ error: `Please enter a valid city name` });
@@ -89,13 +89,13 @@ class AddSite extends Component {
             ref={this.title}
             onChange={e => this.updateTitle(e.target.value)}
           ></input>
-          <label htmlFor="address">Address(aprox):</label>
+          <label htmlFor="addrss">Address(aprox):</label>
           <input
-            type="address"
-            name="address"
-            id="address"
-            ref={this.address}
-            onChange={e => this.updateAddress(e.target.value)}
+            type="addrss"
+            name="addrss"
+            id="addrss"
+            ref={this.addrss}
+            onChange={e => this.updateAddrss(e.target.value)}
           ></input>
           <label htmlFor="city">City:</label>
           <input
