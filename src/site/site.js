@@ -13,9 +13,9 @@ class Site extends Component {
           <Link to={`/sites/${this.props.id}`} className="title">
             <div className="site">
               <h2 className="title">{this.props.title}</h2>
-              <h3 className="address">{this.props.address}</h3>
-              <h3>{this.props.city}</h3>
-              <h3>{this.props.state_abr}</h3>
+              <h4 className="addrss">{this.props.addrss}</h4>
+              <h4>{this.props.city}</h4>
+              <h4>{this.props.state_abr}</h4>
               <div className="wide_screen">
                 <img src={this.props.before_img} alt="Trash site" />
                 <p>{this.props.content}</p>

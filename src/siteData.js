@@ -4,7 +4,7 @@ const Data = {
       id: 1,
       clean: "false",
       title: "Horsetooh Trail",
-      address: "Horsetooth Resevoir",
+      addrss: "Horsetooth Resevoir",
       city: "Fort Collins",
       state_abr: "CO",
       before_img:
@@ -17,7 +17,7 @@ const Data = {
       id: 2,
       clean: "false",
       title: "Park Trail",
-      address: "6th & Oak Ave",
+      addrss: "6th & Oak Ave",
       city: "Omaha",
       state_abr: "NE",
       before_img:
@@ -30,7 +30,7 @@ const Data = {
       id: 3,
       clean: "false",
       title: "Ditch Off Highway 25",
-      address: "Highway 25, Windsor Exit",
+      addrss: "Highway 25, Windsor Exit",
       city: "Loveland",
       state_abr: "CO",
       before_img:
@@ -43,7 +43,7 @@ const Data = {
       id: 4,
       clean: "false",
       title: "Leech Lake",
-      address: "Leech Lake",
+      addrss: "Leech Lake",
       city: "Pequot",
       state_abr: "MN",
       before_img:
@@ -56,7 +56,7 @@ const Data = {
       id: 5,
       clean: "true",
       title: "Lum Beech - Cleaned!",
-      address: "413 Lum Beech Rd",
+      addrss: "413 Lum Beech Rd",
       city: "Bloomington",
       state_abr: "MN",
       before_img:

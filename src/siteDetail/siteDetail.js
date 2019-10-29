@@ -29,23 +29,22 @@ class SiteDetail extends Component {
           id={selectedSite.id}
           title={selectedSite.title}
           city={selectedSite.city}
-          address={selectedSite.address}
+          addrss={selectedSite.addrss}
           state_abr={selectedSite.state_abr}
           content={selectedSite.content}
           before_img={selectedSite.before_img}
           after_img={selectedSite.after_img}
         />
-        <div className="detail">
-          {selectedSite.clean === "false" && this.context.loggedIn === true ? (
-            <Link to={`/cleanSite/${selectedSite.id}`}>Mark as Cleaned!</Link>
-          ) : (
-            ""
-          )}
-          <button type="button" onClick={this.handleClickBack}>
-            Back
-          </button>
-          <CommentList siteId={selectedSite.id} />
-        </div>
+
+        {selectedSite.clean === "false" && this.context.loggedIn === true ? (
+          <Link to={`/cleanSite/${selectedSite.id}`}>Mark as Cleaned!</Link>
+        ) : (
+          ""
+        )}
+        <button type="button" onClick={this.handleClickBack}>
+          Back
+        </button>
+        <CommentList siteId={selectedSite.id} />
 
         <footer className="detailFoot">
           {this.context.loggedIn === false ? (
