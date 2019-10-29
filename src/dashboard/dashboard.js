@@ -12,7 +12,9 @@ class Dashboard extends Component {
         <h3>EnvoScore: {this.context.userInfo.score}</h3>
         <h3>What would you like to do?</h3>
         <Link to="/sites">View Trash Sites</Link>
+        <Link to="/addSite">Add New Trash Site</Link>
         <Link to="/about">View Our Mission</Link>
+
         <Link to="/donate">Donate</Link>
       </div>
     );
