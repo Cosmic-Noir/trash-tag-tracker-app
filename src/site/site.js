@@ -7,6 +7,7 @@ class Site extends Component {
   static contextType = siteContext;
 
   render() {
+    // PROTOTYPE WORK AROUND - if img not a test img, but uploaded, then read image file
     if (typeof this.props.before_img === "object") {
       const fr = new FileReader();
       fr.onload = function() {

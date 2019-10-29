@@ -6,8 +6,8 @@ class CleanSite extends Component {
   state = {
     error: null,
     clean: "false",
-    afterImg: "",
-    stateAbr: ""
+    after_img: "",
+    state_abr: ""
   };
 
   static contextType = siteContext;
@@ -25,8 +25,8 @@ class CleanSite extends Component {
     this.setState({ description: description });
   };
 
-  updateAfterImg = afterImg => {
-    this.setState({ afterImg: afterImg });
+  updateAfterImg = event => {
+    this.setState({ afterImg: event.target.files[0] });
   };
 
   updateAddress = address => {
@@ -46,10 +46,10 @@ class CleanSite extends Component {
       id: selectedSite.id,
       clean: "true",
       title: selectedSite.title + " - Cleaned!",
-      address: selectedSite.address,
-      stateAbr: selectedSite.stateAbr,
-      description: selectedSite.description,
-      beforeImg: selectedSite.beforeImg
+      addrss: selectedSite.addrss,
+      state_abr: selectedSite.state_abr,
+      content: selectedSite.content,
+      before_img: selectedSite.before_img
     });
   }
 
@@ -67,12 +67,13 @@ class CleanSite extends Component {
             // value={this.state.description}
             onChange={e => this.updateDescription(e.target.value)}
           />
-          <label htmlFor="afterImg">Photo web address:</label>
+          <label htmlFor="after_img">Upload Image:</label>
           <input
-            type="text"
-            name="afterImg"
-            // value={selectedSite.afterImg}
-            onChange={e => this.updateAfterImg(e.target.value)}
+            type="file"
+            name="after_img"
+            id="after_img"
+            ref={this.after_img}
+            onChange={e => this.updateAfterImg(e)}
           />
           <button type="submit">Mark Site as Clean</button>
         </form>
