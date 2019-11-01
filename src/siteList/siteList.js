@@ -59,9 +59,20 @@ class SiteList extends Component {
     return sites;
   };
 
-  filterForStates = trashSites => {
-    const stateOptions = trashSites.map(site => {
+  filterForStates = () => {
+    // array of state_abr
+    const stateOptions = this.state.sites.map(site => {
       return site.state_abr;
+    });
+    // remove duplicates
+    let filterOptions = [...new Set(stateOptions)];
+    // turn array into option elements
+    return filterOptions.map(state => {
+      return (
+        <option value={state} key={state}>
+          {state}
+        </option>
+      );
     });
   };
 
@@ -70,24 +81,6 @@ class SiteList extends Component {
   }
 
   render() {
-    // console.log(this.context.sites);
-    // // Create array of all states there are sites for
-    // const stateOptions = this.context.sites.map(site => {
-    //   if (site.clean === "false") {
-    //     return site.state_abr;
-    //   }
-    // });
-    // // Filter to create unique lists
-    // let filterOptions = [...new Set(stateOptions)];
-    // // Creat options out of filtered array
-    // const options = filterOptions.map(state => {
-    //   return (
-    //     <option value={state} key={state}>
-    //       {state}
-    //     </option>
-    //   );
-    // });
-
     return (
       <div className="siteList">
         <h2>Trash Sites:</h2>
@@ -106,7 +99,7 @@ class SiteList extends Component {
             onChange={e => this.updateState(e.target.value)}
           >
             <option value="">All</option>
-            {/* {options} */}
+            {this.state.error === null ? this.filterForStates() : ""}
           </select>
         </form>
         <ul className="siteList" id="siteList">
