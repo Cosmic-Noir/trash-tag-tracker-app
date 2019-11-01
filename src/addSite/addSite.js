@@ -1,27 +1,41 @@
 import React, { Component } from "react";
 import siteContext from "../siteContext";
+import config from "../config";
 
 class AddSite extends Component {
   state = {
-    error: null,
-    id: "",
-    clean: "false",
+    posted_by: this.context.userInfo.id,
     title: "",
-    adrss: "",
+    addrss: "",
     city: "",
     state_abr: "",
     content: "",
-    before_img: "",
-    after_img: ""
+    before_img: ""
   };
 
   static contextType = siteContext;
 
-  // Methods to update state
-  updateId() {
-    let newId = Math.floor(Math.random() * 1000);
-    this.setState({ id: newId });
-  }
+  // Post new site to db:
+
+  addSite = () => {
+    const newSite = this.state;
+
+    const url = config.API_ENDPOINT + "sites";
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(newSite),
+      headers: {
+        "content-type": "application/json"
+      }
+    }).then(res => {
+      if (!res.ok) {
+        return res.json().then(error => {
+          throw error;
+        });
+      }
+      return res.json();
+    });
+  };
 
   updateTitle(title) {
     this.setState({ title: title });
@@ -44,7 +58,6 @@ class AddSite extends Component {
   }
 
   updateBeforeImg(event) {
-    console.log(event.target.files[0]);
     this.setState({ before_img: event.target.files[0] });
   }
 
@@ -63,16 +76,10 @@ class AddSite extends Component {
     } else if (this.state.state_abr.length !== 2) {
       this.setState({ error: `Please select a valid state` });
     } else {
-      let newSite = this.state;
-      this.context.addNewSite(newSite);
+      this.addSite();
       this.props.history.push("/sites");
     }
   };
-
-  componentDidMount() {
-    // can remove once hooked up to database
-    this.updateId();
-  }
 
   render() {
     return (
@@ -180,13 +187,7 @@ class AddSite extends Component {
             ref={this.before_img}
             onChange={e => this.updateBeforeImg(e)}
           />
-          {/* <input
-            type="text"
-            name="before_img"
-            id="before_img"
-            ref={this.before_img}
-            onChange={e => this.updateBeforeImg(e.target.value)}
-          ></input> */}
+
           {this.state.error !== null ? (
             <h5 className="error">{this.state.error}</h5>
           ) : (

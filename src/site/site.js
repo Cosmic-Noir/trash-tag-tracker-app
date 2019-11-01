@@ -16,7 +16,10 @@ class Site extends Component {
       fr.readAsDataURL(this.props.before_img);
     }
 
-    if (typeof this.props.after_img === "object") {
+    if (
+      this.props.after_img !== null &&
+      typeof this.props.after_img === "object"
+    ) {
       const fr = new FileReader();
       fr.onload = function() {
         document.getElementById("afterImg").src = fr.result;
@@ -40,7 +43,7 @@ class Site extends Component {
                 )}
 
                 {typeof this.props.after_img === "string" &&
-                this.props.after_img !== "" ? (
+                this.props.after_img !== null ? (
                   <img src={this.props.after_img} alt="Clean site" />
                 ) : (
                   ""
