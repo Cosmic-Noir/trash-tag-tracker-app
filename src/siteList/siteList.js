@@ -20,7 +20,16 @@ class SiteList extends Component {
 
   render() {
     const sites = this.context.sites.map(site => {
-      return <Site key={site.id} id={site.id} />;
+      return (
+        <Site
+          key={site.id}
+          id={site.id}
+          title={site.title}
+          before_img={site.before_img}
+          city={site.city}
+          state_abr={site.state_abr}
+        />
+      );
     });
     console.log(this.context.sites);
     // // Create array of all states there are sites for

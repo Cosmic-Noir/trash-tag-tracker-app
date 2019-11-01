@@ -57,6 +57,7 @@ class App extends Component {
         return res.json();
       })
       .then(this.setSites)
+      .then(console.log("Request for all sites sent"))
       .catch(error => this.setState({ error }));
   };
 
