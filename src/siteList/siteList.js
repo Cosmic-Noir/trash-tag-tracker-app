@@ -7,8 +7,7 @@ import "./siteList.css";
 
 class SiteList extends Component {
   state = {
-    state_abr: "",
-    sites: null
+    state_abr: ""
   };
 
   static contextType = siteContext;
@@ -17,69 +16,13 @@ class SiteList extends Component {
     this.setState({ state_abr: state_abr });
   };
 
-  setSites = sites => {
-    this.setState({ sites: sites });
-    this.displayTrashSites();
-  };
-
-  getTrashSites = () => {
-    const url = config.API_ENDPOINT + "sites/trash";
-    fetch(url, {
-      method: "GET",
-      headers: {
-        "content-type": "application/json"
-      }
-    })
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(res.status);
-        }
-        return res.json();
-      })
-      .then(this.setSites)
-      .catch(error => this.setState({ error }));
-  };
-
-  displayTrashSites() {
-    console.log(this.state.sites);
-    const trashSites = this.context.sites.map(site => {
-      return (
-        <Site
-          key={site.id}
-          id={site.id}
-          title={site.title}
-          state_abr={site.state_abr}
-          before_img={site.before_img}
-          after_img={site.after_img}
-        />
-      );
-    });
-    document.getElementById("siteList").append(trashSites);
-  }
-
-  componentDidMount() {
-    this.getTrashSites();
-  }
+  componentDidMount() {}
 
   render() {
-    // eslint-disable-next-line
-    // const trashSites = this.context.sites.map(site => {
-    //   if (
-    //     site.clean === "false" &&
-    //     (this.state.state_abr === "" || site.state_abr === this.state.state_abr)
-    //   ) {
-    //     return (
-    //       <Site
-    //         key={site.id}
-    //         id={site.id}
-    //         title={site.title}
-    //         state_abr={site.state_abr}
-    //         before_img={site.before_img}
-    //         after_img={site.after_img}
-    //       />
-    //     );
-    //   }
-    // });
+    const sites = this.context.sites.map(site => {
+      return <Site key={site.id} id={site.id} />;
+    });
+    console.log(this.context.sites);
     // // Create array of all states there are sites for
     // const stateOptions = this.context.sites.map(site => {
     //   if (site.clean === "false") {
@@ -117,14 +60,10 @@ class SiteList extends Component {
             <option value="">All</option>
             {/* {options} */}
           </select>
-
-          {/* <select>
-            <option>Easy</option>
-            <option>Medium</option>
-            <option>Hard</option>
-          </select> */}
         </form>
-        <ul className="siteList" id="siteList"></ul>
+        <ul className="siteList" id="siteList">
+          {sites}
+        </ul>
         <footer>
           {this.context.loggedIn === false ? (
             <Link to="/signUp">Sign Up</Link>
