@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
+import config from "./config";
 
 import "./App.css";
 
@@ -25,13 +26,38 @@ import Data from "./siteData";
 
 class App extends Component {
   state = {
+    error: null,
     // Initially set to seed data - unsecure
-    sites: Data.sites,
+    sites: "",
     loggedIn: false,
     userInfo: [],
     users: Data.users,
     comments: Data.comments,
     totalScore: Data.totalScore
+  };
+
+  // Set state from returned data:
+  setSites = response => {
+    this.setState({ sites: response });
+  };
+
+  // Fetch all sites:
+  getAllSites = () => {
+    const url = config.API_ENDPOINT + "sites";
+    fetch(url, {
+      method: "GET",
+      headers: {
+        "content-type": "applicatin/json"
+      }
+    })
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(res.status);
+        }
+        return res.json();
+      })
+      .then(this.setSites)
+      .catch(error => this.setState({ error }));
   };
 
   // Temp function to add new user data to state
@@ -90,6 +116,10 @@ class App extends Component {
       )
     });
   };
+
+  componentDidMount() {
+    this.getAllSites();
+  }
 
   render() {
     // console.log(`App rendering...`);
