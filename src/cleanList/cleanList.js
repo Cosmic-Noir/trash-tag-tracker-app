@@ -1,72 +1,91 @@
 import React, { Component } from "react";
 import siteContext from "../siteContext";
 import Site from "../site/site";
+import config from "../config";
 import "./cleanList.css";
 
 class CleanList extends Component {
   state = {
-    state_abr: ""
+    error: "",
+    state_abr: "",
+    sites: null
   };
 
   static contextType = siteContext;
 
-  // Methods to update state
-  updateState = state => {
-    this.setState({ state_abr: state });
+  updateState = state_abr => {
+    this.setState({ state_abr: state_abr });
   };
 
-  // Create seperate funciton to check for clean status first
-  cleanStates = sites => {
-    return sites.filter(({ clean }) => {
-      if (clean === "true") {
-        console.log("things");
+  // Get trashSites
+  getCleanSites = () => {
+    const url = config.API_ENDPOINT + "sites/clean";
+    fetch(url, {
+      method: "GET",
+      headers: {
+        "content-type": "applicatin/json"
       }
-    });
-  };
-
-  render() {
-    // explore .filter - performance
-    // eslint-disable-next-line
-    const cleanSites = this.context.sites.map(
-      ({ state_abr, id, title, before_img, after_img, clean }) => {
-        if (
-          clean === "true" &&
-          (this.state.state_abr === "" || this.state.state_abr === state_abr)
-        ) {
-          return (
-            <Site
-              key={id}
-              id={id}
-              title={title}
-              state_abr={state_abr}
-              before_img={before_img}
-              after_img={after_img}
-            />
-          );
+    })
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(res.status);
         }
-      }
-    );
+        return res.json();
+      })
+      .then(this.setSites)
+      .then(console.log("Request for all sites sent"))
+      .catch(error => this.setState({ error }));
+  };
 
-    // Explore - reduce() - use one loop
-    // Create array of all states there are sites for
-    const stateOptions = this.context.sites.map(site => {
-      if (site.clean === "true") {
-        return site.state_abr;
+  // Set state of trashSites
+  setSites = sites => {
+    this.setState({ sites: sites, error: null });
+  };
+
+  displayList = () => {
+    const sites = this.state.sites.map(site => {
+      if (
+        this.state.state_abr === "" ||
+        this.state.state_abr === site.state_abr
+      ) {
+        return (
+          <Site
+            key={site.id}
+            id={site.id}
+            title={site.title}
+            before_img={site.before_img}
+            after_img={site.after_img}
+            city={site.city}
+            state_abr={site.state_abr}
+          />
+        );
       }
     });
-    // Filter to create unique lists
+    return sites;
+  };
+
+  filterForStates = () => {
+    // array of state_abr
+    const stateOptions = this.state.sites.map(site => {
+      return site.state_abr;
+    });
+    // remove duplicates
     let filterOptions = [...new Set(stateOptions)];
-    // Creat options out of filtered array
-    const options = filterOptions.map(state => {
+    // turn array into option elements
+    return filterOptions.map(state => {
       return (
         <option value={state} key={state}>
           {state}
         </option>
       );
     });
+  };
 
-    const { state_abr } = this.state;
+  componentDidMount() {
+    this.getCleanSites();
+  }
 
+  render() {
     return (
       <div className="cleanList">
         <h2> Cleaned Sites:</h2>
@@ -75,21 +94,19 @@ class CleanList extends Component {
             className="center"
             name="state_abr"
             id="state_abr"
-            value={state_abr}
-            ref={state_abr}
+            value={this.state.state_abr}
+            ref={this.state.state_abr}
             onChange={e => this.updateState(e.target.value)}
           >
             <option value="">All</option>
-            {options}
+            {this.state.error === null ? this.filterForStates() : ""}
           </select>
-
-          {/* <select>
-            <option>Easy</option>
-            <option>Medium</option>
-            <option>Hard</option>
-          </select> */}
         </form>
-        {cleanSites}
+        {this.state.error === null ? (
+          this.displayList()
+        ) : (
+          <p>{this.state.error}</p>
+        )}
       </div>
     );
   }
