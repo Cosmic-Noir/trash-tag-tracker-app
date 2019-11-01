@@ -45,16 +45,21 @@ class SiteList extends Component {
 
   displayList = () => {
     const sites = this.state.sites.map(site => {
-      return (
-        <Site
-          key={site.id}
-          id={site.id}
-          title={site.title}
-          before_img={site.before_img}
-          city={site.city}
-          state_abr={site.state_abr}
-        />
-      );
+      if (
+        this.state.state_abr === "" ||
+        this.state.state_abr === site.state_abr
+      ) {
+        return (
+          <Site
+            key={site.id}
+            id={site.id}
+            title={site.title}
+            before_img={site.before_img}
+            city={site.city}
+            state_abr={site.state_abr}
+          />
+        );
+      }
     });
     return sites;
   };
