@@ -3,48 +3,71 @@ import { Link } from "react-router-dom";
 import siteContext from "../siteContext";
 import Site from "../site/site";
 import CommentList from "../commentList/commentList";
+import config from "../config";
 import "./siteDetail.css";
 
 class SiteDetail extends Component {
+  state = {
+    site: "",
+    error: ""
+  };
+
   static contextType = siteContext;
 
   handleClickBack = () => {
     this.props.history.goBack();
   };
 
-  render() {
-    // eslint-disable-next-line
-    const selectedSite = this.context.sites.find(site => {
-      const numberProp = parseInt(this.props.match.params.siteId);
-      if (site.id === numberProp) {
-        // console.log(site);
-        return site;
+  getSelectSite = () => {
+    const url = config.API_ENDPOINT + "sites/" + this.props.match.params.siteId;
+    fetch(url, {
+      method: "GET",
+      headers: {
+        "content-type": "applicatin/json"
       }
-    });
+    })
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(res.status);
+        }
+        return res.json();
+      })
+      .then(this.setSite)
+      .catch(error => this.setState({ error }));
+  };
 
+  setSite = site => {
+    this.setState({ site: site });
+  };
+
+  componentDidMount() {
+    this.getSelectSite();
+  }
+
+  render() {
     return (
       <div className="siteDetail">
         <Site
-          key={selectedSite.id}
-          id={selectedSite.id}
-          title={selectedSite.title}
-          city={selectedSite.city}
-          addrss={selectedSite.addrss}
-          state_abr={selectedSite.state_abr}
-          content={selectedSite.content}
-          before_img={selectedSite.before_img}
-          after_img={selectedSite.after_img}
+          key={this.state.site.id}
+          id={this.state.site.id}
+          title={this.state.site.title}
+          city={this.state.site.city}
+          addrss={this.state.site.addrss}
+          state_abr={this.state.site.state_abr}
+          content={this.state.site.content}
+          before_img={this.state.site.before_img}
+          after_img={this.state.site.after_img}
         />
 
-        {selectedSite.clean === "false" && this.context.loggedIn === true ? (
-          <Link to={`/cleanSite/${selectedSite.id}`}>Mark as Cleaned!</Link>
+        {this.state.site.clean === "false" && this.context.loggedIn === true ? (
+          <Link to={`/cleanSite/${this.state.site.id}`}>Mark as Cleaned!</Link>
         ) : (
           ""
         )}
         <button type="button" onClick={this.handleClickBack}>
           Back
         </button>
-        <CommentList siteId={selectedSite.id} />
+        <CommentList siteId={this.state.site.id} />
 
         <footer className="detailFoot">
           {this.context.loggedIn === false ? (
