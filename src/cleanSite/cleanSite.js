@@ -1,17 +1,48 @@
 import React, { Component } from "react";
 import siteContext from "../siteContext";
+import config from "../config";
 import "./cleanSite.css";
 
 class CleanSite extends Component {
   state = {
     error: null,
-    clean: "false",
+    title: "",
+    clean: true,
     after_img: "",
     state_abr: "",
     content: ""
   };
 
   static contextType = siteContext;
+
+  // PATCH request:
+  patchSite = () => {
+    const url = config.API_ENDPOINT + "sites/" + this.props.match.params.siteId;
+
+    const siteToClean = this.state;
+
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(siteToClean),
+      headers: {
+        "content-type": "application/json"
+      }
+    })
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(error => {
+            Promise.reject(error);
+          });
+        }
+      })
+      .then(() => {
+        this.props.history.push("/");
+      })
+      .catch(error => {
+        console.error(error);
+        this.setState({ error });
+      });
+  };
 
   handleSubmit = e => {
     e.preventDefault();

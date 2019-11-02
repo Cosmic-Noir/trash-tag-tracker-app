@@ -76,6 +76,8 @@ class AddSite extends Component {
     } else if (this.state.state_abr.length !== 2) {
       this.setState({ error: `Please select a valid state` });
     } else {
+      // let newSite = this.state;
+      // this.context.addNewSite(newSite);
       this.addSite();
       this.props.history.push("/sites");
     }

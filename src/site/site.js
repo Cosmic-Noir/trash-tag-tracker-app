@@ -6,26 +6,19 @@ import "./site.css";
 class Site extends Component {
   static contextType = siteContext;
 
-  render() {
-    // PROTOTYPE WORK AROUND - if img not a test img, but uploaded, then read image file
-    if (typeof this.props.before_img === "object") {
-      const fr = new FileReader();
-      fr.onload = function() {
-        document.getElementById("befImg").src = fr.result;
-      };
-      fr.readAsDataURL(this.props.before_img);
-    }
+  readImgFile = () => {
+    const fr = new FileReader();
+    fr.onload = function() {
+      document.getElementById("pic" + this.props.id).src = fr.result;
+    };
+    fr.readAsDataURL(this.props.before_img);
+  };
 
-    if (
-      this.props.after_img !== null &&
-      typeof this.props.after_img === "object"
-    ) {
-      const fr = new FileReader();
-      fr.onload = function() {
-        document.getElementById("afterImg").src = fr.result;
-      };
-      fr.readAsDataURL(this.props.after_img);
-    }
+  componentDidMount() {
+    // this.readImgFile();
+  }
+
+  render() {
     return (
       <siteContext.Consumer>
         {context => (
@@ -36,23 +29,11 @@ class Site extends Component {
               <h4>{this.props.city}</h4>
               <h4>{this.props.state_abr}</h4>
               <div className="wide_screen">
-                {typeof this.props.before_img === "object" ? (
-                  <img id="befImg" src=""></img>
-                ) : (
-                  <img src={this.props.before_img} alt="Trash site" />
-                )}
-
-                {typeof this.props.after_img === "string" &&
-                this.props.after_img !== null ? (
-                  <img src={this.props.after_img} alt="Clean site" />
-                ) : (
-                  ""
-                )}
-                {typeof this.props.after_img === "object" ? (
-                  <img id="afterImg" src=""></img>
-                ) : (
-                  ""
-                )}
+                <img
+                  src={this.props.before_img}
+                  alt="trash site"
+                  id={"pic" + this.props.id}
+                />
                 <p>{this.props.content}</p>
               </div>
             </div>
