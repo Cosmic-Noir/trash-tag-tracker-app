@@ -7,7 +7,7 @@ import "./commentList.css";
 
 class CommentList extends Component {
   state = {
-    error: null,
+    error: "",
     comments: null
   };
 
@@ -39,34 +39,34 @@ class CommentList extends Component {
         return res.json();
       })
       .then(this.setComments)
+      .then(console.log(this.state.comments))
       .catch(error => this.setState({ error }));
   };
 
   setComments = comments => {
-    this.setState({ comments: comments });
+    this.setState({ comments: comments, error: null });
+  };
+
+  displayComments = () => {
+    const comments = this.state.comments.map(comment => {
+      return (
+        <Comment
+          key={comment.id}
+          id={comment.id}
+          userRef={comment.userRef}
+          content={comment.content}
+        />
+      );
+    });
+    return comments;
   };
 
   componentDidMount() {
     this.getComments();
-    console.log(this.state.comments);
     console.log(this.props);
   }
 
   render() {
-    // eslint-disable-next-line
-    const comments = this.context.comments.map(comment => {
-      const numberProp = parseInt(this.props.siteId);
-      if (comment.siteId === numberProp) {
-        return (
-          <Comment
-            key={comment.id}
-            id={comment.id}
-            userRef={comment.userRef}
-            content={comment.content}
-          />
-        );
-      }
-    });
     return (
       <div className="comments">
         {this.context.loggedIn === false ? (
@@ -80,7 +80,13 @@ class CommentList extends Component {
             <AddComment siteId={this.props.siteId} />
           </div>
         )}
-        <ul>{comments}</ul>
+        <ul>
+          {this.state.error === null ? (
+            this.displayComments()
+          ) : (
+            <p>{this.state.error}</p>
+          )}
+        </ul>
         <p></p>
       </div>
     );
