@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import config from "./config";
-
 import "./App.css";
 
 // Custom Components
@@ -28,85 +26,40 @@ class App extends Component {
   state = {
     error: null,
     // Initially set to seed data - unsecure
-    sites: "",
-    loggedIn: false,
-    userInfo: [],
-    users: Data.users,
     comments: Data.comments,
     totalScore: Data.totalScore
   };
 
   // Set state from returned data:
-  setSites = response => {
-    this.setState({ sites: response });
-  };
+  // setSites = response => {
+  //   this.setState({ sites: response });
+  // };
 
   // Fetch all sites:
-  getAllSites = () => {
-    const url = config.API_ENDPOINT + "sites";
-    fetch(url, {
-      method: "GET",
-      headers: {
-        "content-type": "applicatin/json"
-      }
-    })
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(res.status);
-        }
-        return res.json();
-      })
-      .then(this.setSites)
-      .catch(error => this.setState({ error }));
-  };
+  // getAllSites = () => {
+  //   const url = config.API_ENDPOINT + "sites";
+  //   fetch(url, {
+  //     method: "GET",
+  //     headers: {
+  //       "content-type": "applicatin/json"
+  //     }
+  //   })
+  //     .then(res => {
+  //       if (!res.ok) {
+  //         throw new Error(res.status);
+  //       }
+  //       return res.json();
+  //     })
+  //     .then(this.setSites)
+  //     .catch(error => this.setState({ error }));
+  // };
 
   // Temp function to add new user data to state
-  addNewUser = newUser => {
-    this.setState({
-      users: [...this.state.users, newUser]
-    });
-    // console.log(`New user added: ${this.state.users}`);
-  };
-
-  addNewSite = newSite => {
-    this.setState({
-      sites: [...this.state.sites, newSite]
-    });
-  };
 
   addNewComment = newComment => {
     this.setState({
       comments: [...this.state.comments, newComment]
     });
-  };
-
-  increaseScore = addScore => {
-    const currentScore = this.state.userInfo.score;
-    const updatedUser = this.state.userInfo;
-    const newScore = addScore + currentScore;
-    updatedUser.score = newScore;
-
-    const newTotal = this.state.totalScore + addScore;
-    this.setState({ totalScore: newTotal });
-  };
-
-  onLogIn = () => {
-    this.setState({
-      loggedIn: true
-    });
-  };
-
-  onLogOut = () => {
-    this.setState({
-      loggedIn: false,
-      userInfo: []
-    });
-    // console.log(`User has logged out, set state to false`);
-  };
-
-  setUserInfo = user => {
-    this.setState({ userInfo: user });
-    // console.log(`User info set as: ${user}`);
   };
 
   updateSite = cleanedSite => {
@@ -117,27 +70,22 @@ class App extends Component {
     });
   };
 
-  componentDidMount() {
-    this.getAllSites();
-  }
+  // componentDidMount() {
+  //   this.getAllSites();
+  // }
 
   render() {
     // console.log(`App rendering...`);
     const contextValue = {
       // state
-      sites: this.state.sites,
+
       loggedIn: this.state.loggedIn,
       userInfo: this.state.userInfo,
       users: this.state.users,
       comments: this.state.comments,
       totalScore: this.state.totalScore,
       // methods
-      onLogIn: this.onLogIn,
-      onLogOut: this.onLogOut,
-      setUserInfo: this.setUserInfo,
-      addNewUser: this.addNewUser,
       updateSite: this.updateSite,
-      addNewSite: this.addNewSite,
       addNewComment: this.addNewComment,
       increaseScore: this.increaseScore
     };

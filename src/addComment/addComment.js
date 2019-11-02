@@ -61,7 +61,6 @@ class AddComment extends Component {
     // Set initial state with user data
     this.updateId();
     this.setState({
-      userRef: this.context.userInfo.username,
       siteId: this.props.siteId
     });
   }

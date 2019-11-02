@@ -19,7 +19,6 @@ class Site extends Component {
   }
 
   render() {
-    console.log(typeof this.props.after_img);
     return (
       <siteContext.Consumer>
         {context => (
