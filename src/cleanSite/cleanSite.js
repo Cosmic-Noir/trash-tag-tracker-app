@@ -61,10 +61,6 @@ class CleanSite extends Component {
     this.setState({ after_img: event.target.files[0] });
   };
 
-  updateAddress = address => {
-    this.setState({ address: address });
-  };
-
   componentDidMount() {
     // eslint-disable-next-line
     const selectedSite = this.context.sites.find(site => {
