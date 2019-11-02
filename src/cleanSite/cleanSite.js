@@ -37,7 +37,6 @@ class CleanSite extends Component {
         this.props.history.push("/");
       })
       .catch(error => {
-        console.error(error);
         this.setState({ error });
       });
   };

@@ -19,6 +19,7 @@ class Site extends Component {
   }
 
   render() {
+    console.log(typeof this.props.after_img);
     return (
       <siteContext.Consumer>
         {context => (
@@ -34,6 +35,12 @@ class Site extends Component {
                   alt="trash site"
                   id={"pic" + this.props.id}
                 />
+                {/* <img src={this.props.after_img} alt="Clean picture" /> */}
+                {typeof this.props.after_img === "string" ? (
+                  <img src={this.props.after_img} alt="Clean picture" />
+                ) : (
+                  ""
+                )}
                 <p>{this.props.content}</p>
               </div>
             </div>
