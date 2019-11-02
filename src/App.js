@@ -30,63 +30,16 @@ class App extends Component {
     totalScore: Data.totalScore
   };
 
-  // Set state from returned data:
-  // setSites = response => {
-  //   this.setState({ sites: response });
-  // };
-
-  // Fetch all sites:
-  // getAllSites = () => {
-  //   const url = config.API_ENDPOINT + "sites";
-  //   fetch(url, {
-  //     method: "GET",
-  //     headers: {
-  //       "content-type": "applicatin/json"
-  //     }
-  //   })
-  //     .then(res => {
-  //       if (!res.ok) {
-  //         throw new Error(res.status);
-  //       }
-  //       return res.json();
-  //     })
-  //     .then(this.setSites)
-  //     .catch(error => this.setState({ error }));
-  // };
-
   // Temp function to add new user data to state
-
-  addNewComment = newComment => {
-    this.setState({
-      comments: [...this.state.comments, newComment]
-    });
-  };
-
-  updateSite = cleanedSite => {
-    this.setState({
-      sites: this.state.sites.map(site =>
-        site.id !== cleanedSite.id ? site : cleanedSite
-      )
-    });
-  };
-
-  // componentDidMount() {
-  //   this.getAllSites();
-  // }
 
   render() {
     // console.log(`App rendering...`);
     const contextValue = {
       // state
 
-      loggedIn: this.state.loggedIn,
-      userInfo: this.state.userInfo,
-      users: this.state.users,
       comments: this.state.comments,
       totalScore: this.state.totalScore,
       // methods
-      updateSite: this.updateSite,
-      addNewComment: this.addNewComment,
       increaseScore: this.increaseScore
     };
     return (
