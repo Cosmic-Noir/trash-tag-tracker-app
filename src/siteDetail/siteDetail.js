@@ -66,7 +66,7 @@ class SiteDetail extends Component {
         <button type="button" onClick={this.handleClickBack}>
           Back
         </button>
-        <CommentList siteId={this.state.site.id} />
+        <CommentList siteId={this.props.match.params.siteId} />
 
         <footer className="detailFoot">
           {this.context.loggedIn === false ? (
