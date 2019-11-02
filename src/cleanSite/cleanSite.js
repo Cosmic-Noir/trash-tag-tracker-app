@@ -6,10 +6,8 @@ import "./cleanSite.css";
 class CleanSite extends Component {
   state = {
     error: null,
-    title: "",
     clean: true,
     after_img: "",
-    state_abr: "",
     content: ""
   };
 
@@ -65,26 +63,6 @@ class CleanSite extends Component {
     this.props.history.goBack();
   };
 
-  componentDidMount() {
-    // eslint-disable-next-line
-    // const selectedSite = this.context.sites.find(site => {
-    //   const numberProp = parseInt(this.props.match.params.siteId);
-    //   if (site.id === numberProp) {
-    //     return site;
-    //   }
-    // });
-    // // console.log(selectedSite);
-    // this.setState({
-    //   id: selectedSite.id,
-    //   clean: "true",
-    //   title: selectedSite.title + " - Cleaned!",
-    //   addrss: selectedSite.addrss,
-    //   state_abr: selectedSite.state_abr,
-    //   content: selectedSite.content,
-    //   before_img: selectedSite.before_img
-    // });
-  }
-
   render() {
     // console.log("clean site comp rendering...");
     return (
@@ -106,6 +84,7 @@ class CleanSite extends Component {
             name="after_img"
             id="after_img"
             ref={this.after_img}
+            required
             onChange={e => this.updateAfterImg(e)}
           />
           <button type="button" onClick={this.handleCancel}>
