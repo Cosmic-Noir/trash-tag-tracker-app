@@ -16,15 +16,12 @@ class CommentList extends Component {
   clickAddComment() {
     const element = document.getElementById("addComment");
     element.classList.remove("hidden");
-    // console.log("add comment should be showing");
     const addButton = document.getElementById("add");
     addButton.classList.add("hidden");
   }
 
   getComments = () => {
     const url = `${config.API_ENDPOINT}sites/${this.props.siteId}/comments`;
-    console.log(url);
-    console.log(this.props.siteId);
 
     fetch(url, {
       method: "GET",
@@ -39,7 +36,6 @@ class CommentList extends Component {
         return res.json();
       })
       .then(this.setComments)
-      .then(console.log(this.state.comments))
       .catch(error => this.setState({ error }));
   };
 
@@ -63,7 +59,6 @@ class CommentList extends Component {
 
   componentDidMount() {
     this.getComments();
-    console.log(this.props);
   }
 
   render() {
