@@ -30,12 +30,15 @@ class Site extends Component {
               <h4>{this.props.city}</h4>
               <h4>{this.props.state_abr}</h4>
               <div className="wide_screen">
-                <img
-                  src={this.props.before_img}
-                  alt="trash site"
-                  id={"pic" + this.props.id}
-                />
-                {/* <img src={this.props.after_img} alt="Clean picture" /> */}
+                {typeof this.props.before_img === "string" ? (
+                  <img
+                    src={this.props.before_img}
+                    alt="trash site"
+                    id={"pic" + this.props.id}
+                  />
+                ) : (
+                  ""
+                )}
                 {typeof this.props.after_img === "string" ? (
                   <img src={this.props.after_img} alt="Clean picture" />
                 ) : (
