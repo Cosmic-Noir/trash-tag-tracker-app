@@ -30,8 +30,6 @@ class App extends Component {
     totalScore: Data.totalScore
   };
 
-  // Temp function to add new user data to state
-
   render() {
     // console.log(`App rendering...`);
     const contextValue = {
