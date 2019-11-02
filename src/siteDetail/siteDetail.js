@@ -58,7 +58,7 @@ class SiteDetail extends Component {
           before_img={this.state.site.before_img}
           after_img={this.state.site.after_img}
         />
-
+        <Link to={`/cleanSite/${this.state.site.id}`}>Mark as Cleaned!</Link>
         {this.state.site.clean === "false" && this.context.loggedIn === true ? (
           <Link to={`/cleanSite/${this.state.site.id}`}>Mark as Cleaned!</Link>
         ) : (

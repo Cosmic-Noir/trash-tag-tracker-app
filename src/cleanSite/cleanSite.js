@@ -61,24 +61,28 @@ class CleanSite extends Component {
     this.setState({ after_img: event.target.files[0] });
   };
 
+  handleCancel = () => {
+    this.props.history.goBack();
+  };
+
   componentDidMount() {
     // eslint-disable-next-line
-    const selectedSite = this.context.sites.find(site => {
-      const numberProp = parseInt(this.props.match.params.siteId);
-      if (site.id === numberProp) {
-        return site;
-      }
-    });
-    // console.log(selectedSite);
-    this.setState({
-      id: selectedSite.id,
-      clean: "true",
-      title: selectedSite.title + " - Cleaned!",
-      addrss: selectedSite.addrss,
-      state_abr: selectedSite.state_abr,
-      content: selectedSite.content,
-      before_img: selectedSite.before_img
-    });
+    // const selectedSite = this.context.sites.find(site => {
+    //   const numberProp = parseInt(this.props.match.params.siteId);
+    //   if (site.id === numberProp) {
+    //     return site;
+    //   }
+    // });
+    // // console.log(selectedSite);
+    // this.setState({
+    //   id: selectedSite.id,
+    //   clean: "true",
+    //   title: selectedSite.title + " - Cleaned!",
+    //   addrss: selectedSite.addrss,
+    //   state_abr: selectedSite.state_abr,
+    //   content: selectedSite.content,
+    //   before_img: selectedSite.before_img
+    // });
   }
 
   render() {
@@ -93,6 +97,7 @@ class CleanSite extends Component {
             name="content"
             id="content"
             // value={this.state.description}
+            required
             onChange={e => this.updateContent(e.target.value)}
           />
           <label htmlFor="after_img">Upload Image:</label>
@@ -103,6 +108,9 @@ class CleanSite extends Component {
             ref={this.after_img}
             onChange={e => this.updateAfterImg(e)}
           />
+          <button type="button" onClick={this.handleCancel}>
+            Cancel
+          </button>
           <button type="submit">Mark Site as Clean</button>
         </form>
       </div>
