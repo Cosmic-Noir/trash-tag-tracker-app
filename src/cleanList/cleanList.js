@@ -43,6 +43,7 @@ class CleanList extends Component {
   };
 
   displayList = () => {
+    // eslint-disable-next-line
     const sites = this.state.sites.map(site => {
       if (
         this.state.state_abr === "" ||

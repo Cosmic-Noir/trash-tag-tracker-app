@@ -31,10 +31,7 @@ class App extends Component {
   };
 
   render() {
-    // console.log(`App rendering...`);
     const contextValue = {
-      // state
-
       comments: this.state.comments,
       totalScore: this.state.totalScore,
       // methods
