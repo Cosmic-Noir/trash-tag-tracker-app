@@ -20,7 +20,7 @@ class CleanSite extends Component {
     const siteToClean = this.state;
 
     fetch(url, {
-      method: "POST",
+      method: "PATCH",
       body: JSON.stringify(siteToClean),
       headers: {
         "content-type": "application/json"
@@ -45,9 +45,7 @@ class CleanSite extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    let cleanedSite = this.state;
-    this.context.updateSite(cleanedSite);
-    this.context.increaseScore(5);
+    this.patchSite();
     this.props.history.push("/sites");
   };
 
@@ -64,7 +62,6 @@ class CleanSite extends Component {
   };
 
   render() {
-    // console.log("clean site comp rendering...");
     return (
       <div className="clean">
         <h2>Mark A Trash Site As Cleaned:</h2>
