@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import siteContext from "../siteContext";
+import TokenService from "../auth/token-service";
 import "./nav.css";
 
 class Nav extends Component {
@@ -13,12 +14,12 @@ class Nav extends Component {
         <Link to="/about">Impact</Link>
         <Link to="/sites">Trash Sites</Link>
         <Link to="/cleaned">Cleaned Sites</Link>
-        {this.context.loggedIn === true ? (
-          <Link to="/dashboard">{this.context.userInfo.username}</Link>
+        {TokenService.hasAuthToken() === true ? (
+          <Link to="/dashboard">Dashboard</Link>
         ) : (
           ""
         )}
-        {this.context.loggedIn === false ? (
+        {TokenService.hasAuthToken() === false ? (
           <Link to="/signIn">Sign In</Link>
         ) : (
           <Link to="/signOut">Sign Out</Link>
