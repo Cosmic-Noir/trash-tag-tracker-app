@@ -59,7 +59,8 @@ class SiteDetail extends Component {
           before_img={this.state.site.before_img}
           after_img={this.state.site.after_img}
         />
-        {this.state.site.clean === false ? (
+        {this.state.site.clean === false &&
+        TokenService.hasAuthToken() === true ? (
           <Link to={`/cleanSite/${this.state.site.id}`}>Mark as Cleaned!</Link>
         ) : (
           ""

@@ -34,15 +34,12 @@ class AddComment extends Component {
     if (this.state.content.length === 0) {
       this.setState({ error: "Please provide content" });
     } else {
-      let newComment = this.state;
-      this.context.addNewComment(newComment);
-      this.updateId();
+      this.resetContent();
+      const element = document.getElementById("addComment");
+      element.classList.add("hidden");
+      const addButton = document.getElementById("add");
+      addButton.classList.remove("hidden");
     }
-    this.resetContent();
-    const element = document.getElementById("addComment");
-    element.classList.add("hidden");
-    const addButton = document.getElementById("add");
-    addButton.classList.remove("hidden");
   };
 
   // Methods for buttons
@@ -54,16 +51,6 @@ class AddComment extends Component {
     addButton.classList.remove("hidden");
     this.resetContent();
   };
-
-  // Lifecycle methods
-
-  componentDidMount() {
-    // Set initial state with user data
-    this.updateId();
-    this.setState({
-      siteId: this.props.siteId
-    });
-  }
 
   render() {
     return (

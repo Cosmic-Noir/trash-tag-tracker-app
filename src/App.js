@@ -24,15 +24,13 @@ import Data from "./siteData";
 
 class App extends Component {
   state = {
-    error: null,
+    error: null
     // Initially set to seed data - unsecure
-    comments: Data.comments,
-    totalScore: Data.totalScore
+    // totalScore: Data.totalScore
   };
 
   render() {
     const contextValue = {
-      comments: this.state.comments,
       totalScore: this.state.totalScore,
       // methods
       increaseScore: this.increaseScore
