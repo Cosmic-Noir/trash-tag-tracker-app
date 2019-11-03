@@ -49,7 +49,7 @@ class CommentList extends Component {
         <Comment
           key={comment.id}
           id={comment.id}
-          userRef={comment.userRef}
+          username={comment.username}
           content={comment.content}
         />
       );

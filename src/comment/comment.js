@@ -5,7 +5,7 @@ class Comment extends Component {
   render() {
     return (
       <li className="comment">
-        <h5>Posted By: {this.props.userRef}</h5>
+        <h5>Posted By: {this.props.username}</h5>
         <p>{this.props.content}</p>
       </li>
     );
