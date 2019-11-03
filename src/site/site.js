@@ -38,7 +38,8 @@ class Site extends Component {
                 ) : (
                   ""
                 )}
-                {typeof this.props.after_img === "string" ? (
+                {this.props.after_img !== "" &&
+                typeof this.props.after_img === "string" ? (
                   <img src={this.props.after_img} alt="Clean site" />
                 ) : (
                   ""
