@@ -9,7 +9,7 @@ class Dashboard extends Component {
     return (
       <div className="dashboard">
         <h2>Welcome back </h2>
-        <h3>EnvoScore: </h3>
+        {/* <h3>EnvoScore: </h3> */}
         <h3>What would you like to do?</h3>
         <Link to="/sites">View Trash Sites</Link>
         <Link to="/addSite">Add New Trash Site</Link>

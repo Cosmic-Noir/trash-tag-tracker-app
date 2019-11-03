@@ -7,11 +7,15 @@ import "./nav.css";
 class Nav extends Component {
   static contextType = siteContext;
 
+  handleLogOut = () => {
+    TokenService.clearAuthToken();
+  };
+
   render() {
     return (
       <div className="nav">
         <Link to="/">Home</Link>
-        <Link to="/about">Impact</Link>
+        {/* <Link to="/about">Impact</Link> */}
         <Link to="/sites">Trash Sites</Link>
         <Link to="/cleaned">Cleaned Sites</Link>
         {TokenService.hasAuthToken() === true ? (
@@ -22,7 +26,9 @@ class Nav extends Component {
         {TokenService.hasAuthToken() === false ? (
           <Link to="/signIn">Sign In</Link>
         ) : (
-          <Link to="/signOut">Sign Out</Link>
+          <Link to="/signOut" onClick={this.handleLogOut}>
+            Sign Out
+          </Link>
         )}
       </div>
     );

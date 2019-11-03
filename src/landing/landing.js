@@ -20,7 +20,7 @@ class Landing extends Component {
           together!
         </p>
 
-        <h2>Create an account and track your EnvoScore </h2>
+        <h2>Create An Account And Make An Impact </h2>
         <p>
           Start with small suggested changes on your dashboard to earn points
           and reduce your everday waste and energy consumption. Then tackle
@@ -28,15 +28,15 @@ class Landing extends Component {
         </p>
         <img src={completePic} alt="Completed Trash site" id="ex"></img>
 
-        <h2>Global EnvoScore:</h2>
+        {/* <h2>Global EnvoScore:</h2>
         <h3>Current Global EnvoScore:</h3>
         <h4>{this.context.totalScore}</h4>
         <p>
           {" "}
           Our app shows how many small efforts add up to make a large impact.
           The Global EnvoScore tracks the points of all users.
-        </p>
-        <h2>Post a Trash Site:</h2>
+        </p> */}
+        <h2>Post A Trash Site:</h2>
         <p>
           Use our app to report a new trash site that needs help. We don't
           always have time to clean a site when we first encounter it. This also

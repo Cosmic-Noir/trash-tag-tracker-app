@@ -4,6 +4,7 @@ import siteContext from "../siteContext";
 import Site from "../site/site";
 import CommentList from "../commentList/commentList";
 import config from "../config";
+import TokenService from "../auth/token-service";
 import "./siteDetail.css";
 
 class SiteDetail extends Component {
@@ -69,7 +70,7 @@ class SiteDetail extends Component {
         <CommentList siteId={this.props.match.params.siteId} />
 
         <footer className="detailFoot">
-          {this.context.loggedIn === false ? (
+          {TokenService.hasAuthToken() === false ? (
             <Link to="/signUp">Sign Up</Link>
           ) : (
             ""

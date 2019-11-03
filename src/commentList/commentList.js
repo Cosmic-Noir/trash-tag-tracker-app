@@ -3,6 +3,7 @@ import siteContext from "../siteContext";
 import Comment from "../comment/comment";
 import config from "../config";
 import AddComment from "../addComment/addComment";
+import TokenService from "../auth/token-service";
 import "./commentList.css";
 
 class CommentList extends Component {
@@ -69,9 +70,13 @@ class CommentList extends Component {
         ) : (
           <div>
             <h5>Comments:</h5>
-            <button type="button" id="add" onClick={this.clickAddComment}>
-              Add Comment
-            </button>
+            {TokenService.hasAuthToken() === true ? (
+              <button type="button" id="add" onClick={this.clickAddComment}>
+                Add Comment
+              </button>
+            ) : (
+              <h6>Sign in to comment</h6>
+            )}
             <AddComment siteId={this.props.siteId} />
           </div>
         )}
