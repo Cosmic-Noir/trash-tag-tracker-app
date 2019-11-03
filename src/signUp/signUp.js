@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import siteContext from "../siteContext";
+import config from "../config";
 import "./signUp.css";
 
 class SignUp extends Component {
@@ -37,15 +38,6 @@ class SignUp extends Component {
 
   handlSubmit = e => {
     e.preventDefault();
-    // eslint-disable-next-line
-    let matchingUser = this.context.users.find(user => {
-      if (
-        user.email === this.state.email ||
-        user.username === this.state.username
-      ) {
-        return "Error, matching username or email already registered";
-      }
-    });
 
     // Check if info empty or missing:
     if (this.state.username.length < 6) {
@@ -64,22 +56,39 @@ class SignUp extends Component {
       this.setState({
         error: `Password fields must match`
       });
-    } else if (matchingUser !== undefined) {
-      this.setState({
-        error: `Username or e-mail already registered`
-      });
     } else {
-      let newUser = {
-        username: this.state.username,
-        email: this.state.email,
-        password: this.state.password,
-        score: this.state.score
-      };
+      this.postNewUser();
       // this.context.onLogIn();
       // this.context.addNewUser(newUser);
       // this.context.setUserInfo(newUser);
-      this.props.history.push("/dashboard");
     }
+  };
+
+  postNewUser = () => {
+    const url = config.API_ENDPOINT + "users";
+
+    const newUser = {
+      username: this.state.username,
+      email: this.state.email,
+      pass: this.state.password
+    };
+
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(newUser),
+      headers: {
+        "content-type": "application/json"
+      }
+    }).then(res => {
+      if (!res.ok) {
+        return res.json().then(error => {
+          this.setState({ error: error.error });
+          throw error;
+        });
+      }
+      this.props.history.push("/dashboard");
+      return res.json();
+    });
   };
 
   render() {

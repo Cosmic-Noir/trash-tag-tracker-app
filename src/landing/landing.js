@@ -53,11 +53,7 @@ class Landing extends Component {
         </p>
 
         <footer>
-          {this.context.loggedIn === false ? (
-            <Link to="/signUp">Sign Up</Link>
-          ) : (
-            ""
-          )}
+          <Link to="/signUp">Sign Up</Link>
         </footer>
       </div>
     );
