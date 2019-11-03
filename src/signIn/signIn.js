@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import siteContext from "../siteContext";
 import { Link } from "react-router-dom";
 import config from "../config";
+import TokenService from "../auth/token-service";
 import "./signIn.css";
 
 class SignIn extends Component {
@@ -41,6 +42,9 @@ class SignIn extends Component {
           res.json().then(e => Promise.reject(e));
         }
         return res.json();
+      })
+      .then(res => {
+        TokenService.saveAuthToken(res.authToken);
       })
       .catch(res => {
         this.setState({ error: res.error });
