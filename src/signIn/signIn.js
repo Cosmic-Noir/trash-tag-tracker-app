@@ -39,7 +39,10 @@ class SignIn extends Component {
     })
       .then(res => {
         if (!res.ok) {
-          res.json().then(e => Promise.reject(e));
+          res.json().then(error => {
+            this.setState({ error: error.error });
+            throw error;
+          });
         }
         return res.json();
       })
@@ -75,7 +78,7 @@ class SignIn extends Component {
             this.handleSubmit(e);
           }}
         >
-          <label>E-mail:</label>
+          <label>Username:</label>
           <input
             type="username"
             name="username"
