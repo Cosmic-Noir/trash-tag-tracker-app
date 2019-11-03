@@ -1,44 +1,64 @@
 import React, { Component } from "react";
 import siteContext from "../siteContext";
 import { Link } from "react-router-dom";
+import config from "../config";
 import "./signIn.css";
 
 class SignIn extends Component {
   state = {
     error: null,
-    email: "",
-    password: ""
+    username: "",
+    pass: ""
   };
 
   static contextType = siteContext;
 
-  updateEmail(email) {
-    this.setState({ email: email });
+  updateUsername(username) {
+    this.setState({ username: username });
   }
 
-  updatePass(password) {
-    this.setState({ password: password });
+  updatePass(pass) {
+    this.setState({ pass: pass });
   }
+
+  login = () => {
+    const url = config.API_ENDPOINT + "login";
+
+    const credentials = {
+      username: this.state.username,
+      pass: this.state.pass
+    };
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(credentials)
+    })
+      .then(res => {
+        if (!res.ok) {
+          res.json().then(e => Promise.reject(e));
+        }
+        return res.json();
+      })
+      .catch(res => {
+        this.setState({ error: res.error });
+      });
+  };
 
   handleSubmit = e => {
     e.preventDefault();
-
-    // Find matching user in siteData
-    // eslint-disable-next-line
-    const loggedUser = this.context.users.find(user => {
-      if (
-        user.email === this.state.email &&
-        user.password === this.state.password
-      ) {
-        this.context.onLogIn();
-        return user;
-      } else {
-        this.setState({ error: "User and e-mail match not found." });
-      }
-    });
-    if (loggedUser !== undefined) {
-      this.context.setUserInfo(loggedUser);
-      this.props.history.push("/dashboard");
+    if (this.state.username.length < 6) {
+      this.setState({
+        error: "Error, valid usernames are at least 6 characters"
+      });
+    } else if (this.state.pass.length < 6) {
+      this.setState({
+        error: "Error, valid password is at least 6 characters"
+      });
+    } else {
+      this.login();
     }
   };
 
@@ -53,18 +73,20 @@ class SignIn extends Component {
         >
           <label>E-mail:</label>
           <input
-            type="email"
-            name="email"
-            id="email"
-            ref={this.email}
-            onChange={e => this.updateEmail(e.target.value)}
+            type="username"
+            name="username"
+            id="username"
+            ref={this.username}
+            required
+            onChange={e => this.updateUsername(e.target.value)}
           />
           <label>Password:</label>
           <input
             type="password"
-            name="password"
-            id="password"
-            ref={this.password}
+            name="pass"
+            id="pass"
+            ref={this.pass}
+            required
             onChange={e => this.updatePass(e.target.value)}
           />
           {this.state.error !== null ? (
