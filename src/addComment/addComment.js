@@ -1,17 +1,14 @@
 import React, { Component } from "react";
-import siteContext from "../siteContext";
+import config from "../config";
+import TokenService from "../auth/token-service";
 import "./addComment.css";
 
 class AddComment extends Component {
   state = {
     error: null,
-    id: "",
-    siteId: "",
-    userRef: "",
+    site_id: "",
     content: ""
   };
-
-  static contextType = siteContext;
 
   // Methods to update state
   updateContent = content => {
@@ -22,9 +19,28 @@ class AddComment extends Component {
     this.setState({ content: "" });
   };
 
-  updateId = () => {
-    let newId = Math.floor(Math.random() * 1000);
-    this.setState({ id: newId });
+  postComment = () => {
+    const url = config.API_ENDPOINT + "comments";
+
+    const newComment = {
+      site_id: this.state.site_id,
+      content: this.state.content
+    };
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(newComment),
+      headers: {
+        "content-type": "application/json",
+        Authorization: `bearer ${TokenService.getAuthToken()}`
+      }
+    }).then(res => {
+      if (!res.ok) {
+        return res.json().then(error => {
+          throw error;
+        });
+      }
+      return res.json();
+    });
   };
 
   // Method to send newComment to App state.comments
@@ -35,10 +51,12 @@ class AddComment extends Component {
       this.setState({ error: "Please provide content" });
     } else {
       this.resetContent();
+      // Display
       const element = document.getElementById("addComment");
       element.classList.add("hidden");
       const addButton = document.getElementById("add");
       addButton.classList.remove("hidden");
+      this.postComment();
     }
   };
 

@@ -19,9 +19,6 @@ import CleanList from "./cleanList/cleanList";
 // Context
 import siteContext from "./siteContext";
 
-// Seed data
-import Data from "./siteData";
-
 class App extends Component {
   state = {
     error: null
