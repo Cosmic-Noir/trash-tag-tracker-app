@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import siteContext from "../siteContext";
 import config from "../config";
+import TokenService from "../auth/token-service";
 
 class AddSite extends Component {
   state = {
-    posted_by: this.context.userInfo.id,
     title: "",
     addrss: "",
     city: "",
@@ -25,7 +25,9 @@ class AddSite extends Component {
       method: "POST",
       body: JSON.stringify(newSite),
       headers: {
-        "content-type": "application/json"
+        "content-type": "application/json",
+        Accept: "application/json",
+        Authorization: `bearer ${TokenService.getAuthToken()}`
       }
     }).then(res => {
       if (!res.ok) {
