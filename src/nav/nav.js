@@ -13,7 +13,6 @@ class Nav extends Component {
   };
 
   render() {
-    console.log(this.context.loggedIn);
     return (
       <div className="nav">
         <Link to="/">Home</Link>

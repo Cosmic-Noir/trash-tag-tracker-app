@@ -16,7 +16,6 @@ import SignUp from "./signUp/signUp";
 import SiteDetail from "./siteDetail/siteDetail";
 import SiteList from "./siteList/siteList";
 import CleanList from "./cleanList/cleanList";
-import TokenService from "./auth/token-service";
 
 // Context
 import siteContext from "./siteContext";
@@ -33,7 +32,6 @@ class App extends Component {
     } else {
       this.setState({ loggedIn: false });
     }
-    console.log("Checking loggin status...");
   };
 
   componentDidMount() {
