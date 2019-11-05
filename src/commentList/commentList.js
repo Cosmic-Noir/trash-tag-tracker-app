@@ -46,6 +46,7 @@ class CommentList extends Component {
 
   displayComments = () => {
     const comments = this.state.comments.map(comment => {
+      console.log(comment);
       return (
         <Comment
           key={comment.id}

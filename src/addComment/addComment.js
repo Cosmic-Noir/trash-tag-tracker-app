@@ -6,7 +6,6 @@ import "./addComment.css";
 class AddComment extends Component {
   state = {
     error: null,
-    site_id: "",
     content: ""
   };
 
@@ -23,7 +22,7 @@ class AddComment extends Component {
     const url = config.API_ENDPOINT + "comments";
 
     const newComment = {
-      site_id: this.state.site_id,
+      site_id: parseInt(this.props.siteId),
       content: this.state.content
     };
     fetch(url, {
@@ -31,6 +30,7 @@ class AddComment extends Component {
       body: JSON.stringify(newComment),
       headers: {
         "content-type": "application/json",
+        Accept: "application/json",
         Authorization: `bearer ${TokenService.getAuthToken()}`
       }
     }).then(res => {
