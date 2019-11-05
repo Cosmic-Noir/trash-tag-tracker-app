@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
+import config from "./config";
 import "./App.css";
 
 // Custom Components
@@ -15,22 +16,35 @@ import SignUp from "./signUp/signUp";
 import SiteDetail from "./siteDetail/siteDetail";
 import SiteList from "./siteList/siteList";
 import CleanList from "./cleanList/cleanList";
+import TokenService from "./auth/token-service";
 
 // Context
 import siteContext from "./siteContext";
 
 class App extends Component {
   state = {
-    error: null
-    // Initially set to seed data - unsecure
-    // totalScore: Data.totalScore
+    error: null,
+    loggedIn: ""
   };
+
+  checkLoginStatus = () => {
+    if (window.localStorage.getItem(config.TOKEN_KEY)) {
+      this.setState({ loggedIn: true });
+    } else {
+      this.setState({ loggedIn: false });
+    }
+    console.log("Checking loggin status...");
+  };
+
+  componentDidMount() {
+    this.checkLoginStatus();
+  }
 
   render() {
     const contextValue = {
       totalScore: this.state.totalScore,
-      // methods
-      increaseScore: this.increaseScore
+      loggedIn: this.state.loggedIn,
+      checkLoginStatus: this.checkLoginStatus
     };
     return (
       <div className="App">

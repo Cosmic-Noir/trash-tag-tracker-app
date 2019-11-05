@@ -48,6 +48,7 @@ class SignIn extends Component {
       })
       .then(res => {
         TokenService.saveAuthToken(res.authToken);
+        this.context.checkLoginStatus();
         this.props.history.push("/dashboard");
       })
       .catch(res => {

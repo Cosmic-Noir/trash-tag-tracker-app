@@ -9,21 +9,23 @@ class Nav extends Component {
 
   handleLogOut = () => {
     TokenService.clearAuthToken();
+    this.context.checkLoginStatus();
   };
 
   render() {
+    console.log(this.context.loggedIn);
     return (
       <div className="nav">
         <Link to="/">Home</Link>
         {/* <Link to="/about">Impact</Link> */}
         <Link to="/sites">Trash Sites</Link>
         <Link to="/cleaned">Cleaned Sites</Link>
-        {TokenService.hasAuthToken() === true ? (
+        {this.context.loggedIn === true ? (
           <Link to="/dashboard">Dashboard</Link>
         ) : (
           ""
         )}
-        {TokenService.hasAuthToken() === false ? (
+        {this.context.loggedIn === false ? (
           <Link to="/signIn">Sign In</Link>
         ) : (
           <Link to="/signOut" onClick={this.handleLogOut}>
