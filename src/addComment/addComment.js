@@ -25,6 +25,7 @@ class AddComment extends Component {
       site_id: parseInt(this.props.siteId),
       content: this.state.content
     };
+
     fetch(url, {
       method: "POST",
       body: JSON.stringify(newComment),
@@ -39,6 +40,7 @@ class AddComment extends Component {
           throw error;
         });
       }
+      this.props.addComment(newComment);
       return res.json();
     });
   };
