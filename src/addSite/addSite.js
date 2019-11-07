@@ -24,23 +24,32 @@ class AddSite extends Component {
 
     // .. Attempting to send form data instead of json - Results in 500 error Unexpected token < in JSON at position 0
     // const formData = document.getElementById('addSite');
-    // fetch(url, {
-    //   method: "POST",
-    //   body: new FormData(formData),
-    //   headers: {
-    //     "content-type": "form/multipart",
-    //     Accept: "application/json",
-    //     Authorization: `bearer ${TokenService.getAuthToken()}`
-    //   }
+    const form = new FormData();
+
+    form.append("title", this.state.title);
+    form.append("before_img", this.state.before_img);
+    form.append("addrss", "123 Fake St");
+    form.append("city", "Littleton");
+    form.append("state_abr", "AZ");
+    form.append("content", "This needs help");
 
     fetch(url, {
       method: "POST",
-      body: JSON.stringify(newSite),
+      body: form,
       headers: {
-        "content-type": "application/json",
-        Accept: "application/json",
+        // "content-type": "multipart/form-data",
+        // Accept: "application/json",
         Authorization: `bearer ${TokenService.getAuthToken()}`
       }
+
+      // fetch(url, {
+      //   method: "POST",
+      //   body: JSON.stringify(newSite),
+      //   headers: {
+      //     "content-type": "application/json",
+      //     Accept: "application/json",
+      //     Authorization: `bearer ${TokenService.getAuthToken()}`
+      //   }
     }).then(res => {
       if (!res.ok) {
         return res.json().then(error => {
