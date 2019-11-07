@@ -86,7 +86,7 @@ class SignUp extends Component {
           throw error;
         });
       }
-      this.props.history.push("/dashboard");
+      this.props.history.push("/login");
       return res.json();
     });
   };

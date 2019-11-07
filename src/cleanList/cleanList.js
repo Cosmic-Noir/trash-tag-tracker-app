@@ -17,7 +17,7 @@ class CleanList extends Component {
     this.setState({ state_abr: state_abr });
   };
 
-  // Get trashSites
+  // Get CleanSites
   getCleanSites = () => {
     const url = config.API_ENDPOINT + "sites/clean";
     fetch(url, {

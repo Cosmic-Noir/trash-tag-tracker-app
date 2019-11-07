@@ -23,7 +23,9 @@ import siteContext from "./siteContext";
 class App extends Component {
   state = {
     error: null,
-    loggedIn: ""
+    loggedIn: "",
+    trash_sites: "",
+    clean_sites: ""
   };
 
   checkLoginStatus = () => {
@@ -34,15 +36,65 @@ class App extends Component {
     }
   };
 
+  getTrashSites = () => {
+    const url = config.API_ENDPOINT + "sites/trash";
+    fetch(url, {
+      method: "GET",
+      headers: {
+        "content-type": "applicatin/json"
+      }
+    })
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(res.status);
+        }
+        return res.json();
+      })
+      .then(this.setTrashSites)
+      .catch(error => this.setState({ error }));
+  };
+
+  // Set state of trashSites
+  setTrashSites = trash_sites => {
+    this.setState({ trash_sites: trash_sites, error: null });
+  };
+
+  getCleanSites = () => {
+    const url = config.API_ENDPOINT + "sites/clean";
+    fetch(url, {
+      method: "GET",
+      headers: {
+        "content-type": "applicatin/json"
+      }
+    })
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(res.status);
+        }
+        return res.json();
+      })
+      .then(this.setCleanSites)
+      .catch(error => this.setState({ error }));
+  };
+
+  // Set state of trashSites
+  setCleanSites = clean_sites => {
+    this.setState({ clean_sites: clean_sites, error: null });
+  };
+
   componentDidMount() {
     this.checkLoginStatus();
+    this.getTrashSites();
+    this.getCleanSites();
   }
 
   render() {
     const contextValue = {
       totalScore: this.state.totalScore,
       loggedIn: this.state.loggedIn,
-      checkLoginStatus: this.checkLoginStatus
+      checkLoginStatus: this.checkLoginStatus,
+      trash_sites: this.state.trash_sites,
+      clean_sites: this.state.clean_sites
     };
     return (
       <div className="App">

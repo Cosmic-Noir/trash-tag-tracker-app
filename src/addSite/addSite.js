@@ -21,6 +21,18 @@ class AddSite extends Component {
     const newSite = this.state;
 
     const url = config.API_ENDPOINT + "sites";
+
+    // .. Attempting to send form data instead of json - Results in 500 error Unexpected token < in JSON at position 0
+    // const formData = document.getElementById('addSite');
+    // fetch(url, {
+    //   method: "POST",
+    //   body: new FormData(formData),
+    //   headers: {
+    //     "content-type": "form/multipart",
+    //     Accept: "application/json",
+    //     Authorization: `bearer ${TokenService.getAuthToken()}`
+    //   }
+
     fetch(url, {
       method: "POST",
       body: JSON.stringify(newSite),
