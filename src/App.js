@@ -86,19 +86,6 @@ class App extends Component {
     this.setState({ clean_sites: clean_sites, error: null });
   };
 
-  removeTrashSite = site_id => {
-    const newTrashSites = this.state.trash_sites.filter(
-      site => site.site_id !== site_id
-    );
-    this.setState({ trash_sites: newTrashSites });
-  };
-
-  addCleanSite = clean_site => {
-    this.setState({
-      clean_sites: [...this.state.clean_sites, clean_site]
-    });
-  };
-
   componentDidMount() {
     this.checkLoginStatus();
     this.getTrashSites();
@@ -111,8 +98,8 @@ class App extends Component {
       loggedIn: this.state.loggedIn,
       checkLoginStatus: this.checkLoginStatus,
       addTrashSite: this.addTrashSite,
-      removeTrashSite: this.removeTrashSite,
-      addCleanSite: this.addCleanSite,
+      getCleanSites: this.getCleanSites,
+      getTrashSites: this.getTrashSites,
       trash_sites: this.state.trash_sites,
       clean_sites: this.state.clean_sites
     };
