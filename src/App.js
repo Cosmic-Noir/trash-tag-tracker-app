@@ -94,7 +94,6 @@ class App extends Component {
 
   render() {
     const contextValue = {
-      totalScore: this.state.totalScore,
       loggedIn: this.state.loggedIn,
       checkLoginStatus: this.checkLoginStatus,
       addTrashSite: this.addTrashSite,
