@@ -92,13 +92,12 @@ class App extends Component {
     );
     this.setState({ trash_sites: newTrashSites });
   };
-  
+
   addCleanSite = clean_site => {
-      this.setState({
-        clean_sites: [...this.state.clean_sites, clean_site]
-      });
-    };
-  }
+    this.setState({
+      clean_sites: [...this.state.clean_sites, clean_site]
+    });
+  };
 
   componentDidMount() {
     this.checkLoginStatus();
@@ -111,7 +110,7 @@ class App extends Component {
       totalScore: this.state.totalScore,
       loggedIn: this.state.loggedIn,
       checkLoginStatus: this.checkLoginStatus,
-      addTrashSite: this.addTrashSite,,
+      addTrashSite: this.addTrashSite,
       removeTrashSite: this.removeTrashSite,
       addCleanSite: this.addCleanSite,
       trash_sites: this.state.trash_sites,

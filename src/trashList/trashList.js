@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import siteContext from "../siteContext";
 import { Link } from "react-router-dom";
 import Site from "../site/site";
-import config from "../config";
 import "./trashList.css";
 
 class TrashList extends Component {

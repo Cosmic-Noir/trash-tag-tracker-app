@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import siteContext from "../siteContext";
 import Site from "../site/site";
-import config from "../config";
 import "./cleanList.css";
 
 class CleanList extends Component {

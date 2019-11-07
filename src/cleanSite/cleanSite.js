@@ -34,6 +34,8 @@ class CleanSite extends Component {
         }
       })
       .then(() => {
+        this.context.removeTrashSite(this.props.match.params.siteId);
+        this.context.addCleanSite(siteToClean);
         this.props.history.push("/");
       })
       .catch(error => {
