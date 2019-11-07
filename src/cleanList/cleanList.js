@@ -17,33 +17,9 @@ class CleanList extends Component {
     this.setState({ state_abr: state_abr });
   };
 
-  // Get CleanSites
-  getCleanSites = () => {
-    const url = config.API_ENDPOINT + "sites/clean";
-    fetch(url, {
-      method: "GET",
-      headers: {
-        "content-type": "applicatin/json"
-      }
-    })
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(res.status);
-        }
-        return res.json();
-      })
-      .then(this.setSites)
-      .catch(error => this.setState({ error }));
-  };
-
-  // Set state of trashSites
-  setSites = sites => {
-    this.setState({ sites: sites, error: null });
-  };
-
   displayList = () => {
     // eslint-disable-next-line
-    const sites = this.state.sites.map(site => {
+    const sites = this.context.clean_sites.map(site => {
       if (
         this.state.state_abr === "" ||
         this.state.state_abr === site.state_abr
@@ -66,7 +42,7 @@ class CleanList extends Component {
 
   filterForStates = () => {
     // array of state_abr
-    const stateOptions = this.state.sites.map(site => {
+    const stateOptions = this.context.clean_sites.map(site => {
       return site.state_abr;
     });
     // remove duplicates
@@ -82,7 +58,7 @@ class CleanList extends Component {
   };
 
   componentDidMount() {
-    this.getCleanSites();
+    this.setState({ error: null });
   }
 
   render() {
