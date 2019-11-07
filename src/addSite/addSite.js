@@ -18,8 +18,6 @@ class AddSite extends Component {
   // Post new site to db:
 
   addSite = () => {
-    const newSite = this.state;
-
     const url = config.API_ENDPOINT + "sites";
 
     // .. Attempting to send form data instead of json - Results in 500 error Unexpected token < in JSON at position 0
@@ -45,7 +43,7 @@ class AddSite extends Component {
           throw error;
         });
       }
-      this.context.addTrashSite(newSite);
+      this.context.getTrashSites();
       return res.json();
     });
   };
