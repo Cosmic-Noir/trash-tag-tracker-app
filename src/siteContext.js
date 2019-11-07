@@ -3,7 +3,7 @@ import React from "react";
 const siteContext = React.createContext({
   increaseScore: () => {},
   checkLogginStatus: () => {},
-  addCleanSite: () => {},
+  addTrashSite: () => {},
   getCleanSites: () => {},
   getTrashSites: () => {},
   loggedIn: "",
