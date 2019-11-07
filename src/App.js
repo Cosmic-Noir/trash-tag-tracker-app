@@ -14,7 +14,7 @@ import SignIn from "./signIn/signIn";
 import SignOut from "./signOut/signOut";
 import SignUp from "./signUp/signUp";
 import SiteDetail from "./siteDetail/siteDetail";
-import SiteList from "./siteList/siteList";
+import TrashList from "./trashList/trashList";
 import CleanList from "./cleanList/cleanList";
 
 // Context
@@ -24,8 +24,8 @@ class App extends Component {
   state = {
     error: null,
     loggedIn: "",
-    trash_sites: "",
-    clean_sites: ""
+    trash_sites: [],
+    clean_sites: []
   };
 
   checkLoginStatus = () => {
@@ -108,7 +108,7 @@ class App extends Component {
           <Route path="/signIn" component={SignIn} />
           <Route path="/signOut" component={SignOut} />
           <Route path="/signUp" component={SignUp} />
-          <Route exact path="/sites" component={SiteList} />
+          <Route exact path="/sites" component={TrashList} />
           <Route path="/sites/:siteId" component={SiteDetail} />
           <Route exact path="/" component={Landing} />
         </siteContext.Provider>

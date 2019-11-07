@@ -3,9 +3,9 @@ import siteContext from "../siteContext";
 import { Link } from "react-router-dom";
 import Site from "../site/site";
 import config from "../config";
-import "./siteList.css";
+import "./trashList.css";
 
-class SiteList extends Component {
+class TrashList extends Component {
   state = {
     error: "",
     state_abr: "",
@@ -19,32 +19,32 @@ class SiteList extends Component {
   };
 
   // Get trashSites
-  getTrashSites = () => {
-    const url = config.API_ENDPOINT + "sites/trash";
-    fetch(url, {
-      method: "GET",
-      headers: {
-        "content-type": "applicatin/json"
-      }
-    })
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(res.status);
-        }
-        return res.json();
-      })
-      .then(this.setSites)
-      .catch(error => this.setState({ error }));
-  };
+  // getTrashSites = () => {
+  //   const url = config.API_ENDPOINT + "sites/trash";
+  //   fetch(url, {
+  //     method: "GET",
+  //     headers: {
+  //       "content-type": "applicatin/json"
+  //     }
+  //   })
+  //     .then(res => {
+  //       if (!res.ok) {
+  //         throw new Error(res.status);
+  //       }
+  //       return res.json();
+  //     })
+  //     .then(this.setSites)
+  //     .catch(error => this.setState({ error }));
+  // };
 
-  // Set state of trashSites
-  setSites = sites => {
-    this.setState({ sites: sites, error: null });
-  };
+  // // Set state of trashSites
+  // setSites = sites => {
+  //   this.setState({ sites: sites, error: null });
+  // };
 
   displayList = () => {
     // eslint-disable-next-line
-    const sites = this.state.sites.map(site => {
+    const sites = this.context.trash_sites.map(site => {
       if (
         this.state.state_abr === "" ||
         this.state.state_abr === site.state_abr
@@ -66,7 +66,7 @@ class SiteList extends Component {
 
   filterForStates = () => {
     // array of state_abr
-    const stateOptions = this.state.sites.map(site => {
+    const stateOptions = this.context.trash_sites.map(site => {
       return site.state_abr;
     });
     // remove duplicates
@@ -82,7 +82,7 @@ class SiteList extends Component {
   };
 
   componentDidMount() {
-    this.getTrashSites();
+    this.setState({ error: null });
   }
 
   render() {
@@ -126,4 +126,4 @@ class SiteList extends Component {
   }
 }
 
-export default SiteList;
+export default TrashList;
