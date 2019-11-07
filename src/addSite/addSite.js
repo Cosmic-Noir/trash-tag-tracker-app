@@ -47,6 +47,7 @@ class AddSite extends Component {
           throw error;
         });
       }
+      this.context.addTrashSite(newSite);
       return res.json();
     });
   };
