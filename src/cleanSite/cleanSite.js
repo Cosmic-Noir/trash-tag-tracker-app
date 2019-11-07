@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import siteContext from "../siteContext";
 import config from "../config";
+import TokenService from "../auth/token-service";
 import "./cleanSite.css";
 
 class CleanSite extends Component {
@@ -17,13 +18,16 @@ class CleanSite extends Component {
   patchSite = () => {
     const url = config.API_ENDPOINT + "sites/" + this.props.match.params.siteId;
 
-    const siteToClean = this.state;
+    const form = new FormData();
+    form.append("content", this.state.content);
+    form.append("clean", this.state.clean);
+    form.append("after_img", this.state.after_img);
 
     fetch(url, {
       method: "PATCH",
-      body: JSON.stringify(siteToClean),
+      body: form,
       headers: {
-        "content-type": "application/json"
+        Authorization: `bearer ${TokenService.getAuthToken()}`
       }
     })
       .then(res => {

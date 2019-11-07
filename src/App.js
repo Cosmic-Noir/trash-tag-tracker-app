@@ -51,7 +51,6 @@ class App extends Component {
         return res.json();
       })
       .then(this.setTrashSites)
-      .then(console.log("getTrashSites ran"))
       .catch(error => this.setState({ error }));
   };
 
