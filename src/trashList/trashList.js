@@ -17,31 +17,6 @@ class TrashList extends Component {
   updateState = state_abr => {
     this.setState({ state_abr: state_abr });
   };
-
-  // Get trashSites
-  // getTrashSites = () => {
-  //   const url = config.API_ENDPOINT + "sites/trash";
-  //   fetch(url, {
-  //     method: "GET",
-  //     headers: {
-  //       "content-type": "applicatin/json"
-  //     }
-  //   })
-  //     .then(res => {
-  //       if (!res.ok) {
-  //         throw new Error(res.status);
-  //       }
-  //       return res.json();
-  //     })
-  //     .then(this.setSites)
-  //     .catch(error => this.setState({ error }));
-  // };
-
-  // // Set state of trashSites
-  // setSites = sites => {
-  //   this.setState({ sites: sites, error: null });
-  // };
-
   displayList = () => {
     // eslint-disable-next-line
     const sites = this.context.trash_sites.map(site => {

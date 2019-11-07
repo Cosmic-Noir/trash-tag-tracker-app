@@ -54,9 +54,14 @@ class App extends Component {
       .catch(error => this.setState({ error }));
   };
 
-  // Set state of trashSites
   setTrashSites = trash_sites => {
     this.setState({ trash_sites: trash_sites, error: null });
+  };
+
+  addTrashSite = trash_site => {
+    this.setState({
+      comments: [...this.state.trash_sites, trash_site]
+    });
   };
 
   getCleanSites = () => {
@@ -77,7 +82,6 @@ class App extends Component {
       .catch(error => this.setState({ error }));
   };
 
-  // Set state of trashSites
   setCleanSites = clean_sites => {
     this.setState({ clean_sites: clean_sites, error: null });
   };
@@ -93,6 +97,7 @@ class App extends Component {
       totalScore: this.state.totalScore,
       loggedIn: this.state.loggedIn,
       checkLoginStatus: this.checkLoginStatus,
+      addTrashSite: this.addTrashSite,
       trash_sites: this.state.trash_sites,
       clean_sites: this.state.clean_sites
     };
