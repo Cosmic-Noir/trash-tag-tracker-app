@@ -28,28 +28,17 @@ class AddSite extends Component {
 
     form.append("title", this.state.title);
     form.append("before_img", this.state.before_img);
-    form.append("addrss", "123 Fake St");
-    form.append("city", "Littleton");
-    form.append("state_abr", "AZ");
-    form.append("content", "This needs help");
+    form.append("addrss", this.state.addrss);
+    form.append("city", this.state.city);
+    form.append("state_abr", this.state.state_abr);
+    form.append("content", this.state.content);
 
     fetch(url, {
       method: "POST",
       body: form,
       headers: {
-        // "content-type": "multipart/form-data",
-        // Accept: "application/json",
         Authorization: `bearer ${TokenService.getAuthToken()}`
       }
-
-      // fetch(url, {
-      //   method: "POST",
-      //   body: JSON.stringify(newSite),
-      //   headers: {
-      //     "content-type": "application/json",
-      //     Accept: "application/json",
-      //     Authorization: `bearer ${TokenService.getAuthToken()}`
-      //   }
     }).then(res => {
       if (!res.ok) {
         return res.json().then(error => {
