@@ -58,6 +58,7 @@ class SiteDetail extends Component {
           content={this.state.site.content}
           before_img={this.state.site.before_img}
           after_img={this.state.site.after_img}
+          date_posted={this.state.site.date_posted}
         />
         {this.state.site.clean === false &&
         TokenService.hasAuthToken() === true ? (
