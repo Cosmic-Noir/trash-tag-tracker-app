@@ -40,7 +40,7 @@ class CleanSite extends Component {
       .then(() => {
         this.context.getCleanSites();
         this.context.getTrashSites();
-        this.props.history.push("/");
+        this.props.history.push("/cleaned");
       })
       .catch(error => {
         this.setState({ error });
