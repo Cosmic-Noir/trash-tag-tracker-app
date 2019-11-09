@@ -9,4 +9,8 @@ describe("AddComment Component", () => {
     ReactDom.render(<AddComment />, div);
     ReactDom.unmountComponentAtNode(div);
   });
+  it("Renders the UI as expected", () => {
+    const tree = renderer.create(<AddComment />).toJSON;
+    expect(tree).toMatchSnapshot();
+  });
 });
