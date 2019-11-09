@@ -40,7 +40,7 @@ class AddComment extends Component {
           throw error;
         });
       }
-      this.props.addComment(newComment);
+      this.props.getComments();
       return res.json();
     });
   };

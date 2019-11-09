@@ -52,16 +52,11 @@ class CommentList extends Component {
           id={comment.id}
           username={comment.username}
           content={comment.content}
+          date_posted={comment.date_posted}
         />
       );
     });
     return comments;
-  };
-
-  addComment = comment => {
-    this.setState({
-      comments: [...this.state.comments, comment]
-    });
   };
 
   componentDidMount() {
@@ -84,7 +79,7 @@ class CommentList extends Component {
               <h6>Sign in to comment</h6>
             )}
             <AddComment
-              addComment={this.addComment}
+              getComments={this.getComments}
               siteId={this.props.siteId}
             />
           </div>
