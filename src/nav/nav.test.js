@@ -4,7 +4,7 @@ import renderer from "react-test-renderer";
 import Nav from "./nav";
 import { BrowserRouter } from "react-router-dom";
 
-describe("CommentList Component", () => {
+describe("Nav Component", () => {
   it("Renders without crashing", () => {
     const div = document.createElement("div");
     ReactDom.render(

@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDom from "react-dom";
 import renderer from "react-test-renderer";
-import Landing from "./landing";
+import SignIn from "./signIn";
 import { BrowserRouter } from "react-router-dom";
 
-describe("Landing Component", () => {
+describe("SignIn Component", () => {
   it("Renders without crashing", () => {
     const div = document.createElement("div");
     ReactDom.render(
       <BrowserRouter>
-        <Landing />
+        <SignIn />
       </BrowserRouter>,
       div
     );
@@ -18,7 +18,7 @@ describe("Landing Component", () => {
   it("Renders the UI as expected", () => {
     const tree = renderer.create(
       <BrowserRouter>
-        <Landing />
+        <SignIn />
       </BrowserRouter>
     ).toJSON;
     expect(tree).toMatchSnapshot();
