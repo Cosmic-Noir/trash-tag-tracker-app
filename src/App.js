@@ -64,6 +64,7 @@ class App extends Component {
     });
   };
 
+  // API endpoint in .env.local for production file instead
   getCleanSites = () => {
     const url = config.API_ENDPOINT + "sites/clean";
     fetch(url, {

@@ -19,18 +19,19 @@ class TrashList extends Component {
   displayList = () => {
     // eslint-disable-next-line
     const sites = this.context.trash_sites.map(site => {
+      const { id, title, before_img, city, state_abr } = site;
       if (
         this.state.state_abr === "" ||
         this.state.state_abr === site.state_abr
       ) {
         return (
           <Site
-            key={site.id}
-            id={site.id}
-            title={site.title}
-            before_img={site.before_img}
-            city={site.city}
-            state_abr={site.state_abr}
+            key={id}
+            id={id}
+            title={title}
+            before_img={before_img}
+            city={city}
+            state_abr={state_abr}
           />
         );
       }
