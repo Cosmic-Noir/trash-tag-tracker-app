@@ -1,68 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Trash#Tracker](landing/logo.png)
 
-## Available Scripts
+Trash#Track is a app designed to piggy-back off of the trending #Trash-Tag challenge. The challenge was to find an area that was littered or polluted, clean it, and then post a before and after picture of the clean up job.
 
-In the project directory, you can run:
+This app allows users to post trash sites that need cleaning, communicate with other interested users, and then post their success and add to the list of cleaned sites.
 
-### `npm start`
+Eventually the hope is that this app can measure the enviornmental impact of every user and suggest other ways that users can reduce their trash production and energy consumption.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Approach
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This is a mobile-first application with a focus on ease-of-use and intuitive user experience.
 
-### `npm test`
+# Tech
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- HTML
+- CSS
+- JavaScript
+- React
+- Enzyme
 
-### `npm run build`
+# APIs
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Trash#Track API (). Accompanying server built with express to securely store site and user data.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+# Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Allows user to create a peronal account.
+- Users can then post new trash sites.
+- Users can comment on existing trash or cleaned sites.
+- Users can mark trash sites as cleaned with their success picture.
 
-### `npm run eject`
+# Demo
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+(Soon to come)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ScreenShots
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+(Soon to come)
