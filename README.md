@@ -20,7 +20,7 @@ This is a mobile-first application with a focus on ease-of-use and intuitive use
 
 # APIs
 
-- Trash#Track API (). Accompanying server built with express to securely store site and user data.
+- Trash#Track API (https://github.com/Cosmic-Noir/trash-tracker-api). Accompanying server built with express to securely store site and user data.
 
 # Features
 
