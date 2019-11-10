@@ -11,7 +11,7 @@ class AddComment extends Component {
 
   // Methods to update state
   updateContent = content => {
-    this.setState({ content: content });
+    this.setState({ content });
   };
 
   resetContent = () => {

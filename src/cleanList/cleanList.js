@@ -13,17 +13,14 @@ class CleanList extends Component {
   static contextType = siteContext;
 
   updateState = state_abr => {
-    this.setState({ state_abr: state_abr });
+    this.setState({ state_abr });
   };
 
   displayList = () => {
     // eslint-disable-next-line
     const sites = this.context.clean_sites.map(site => {
       const { id, title, before_img, after_img, city, state_abr } = site;
-      if (
-        this.state.state_abr === "" ||
-        this.state.state_abr === site.state_abr
-      ) {
+      if (this.state.state_abr === "" || this.state.state_abr === state_abr) {
         return (
           <Site
             key={id}
