@@ -45,7 +45,7 @@ class TrashList extends Component {
 
       // Adding state_abr to state_abrs object
       // if state_abr already exists - then return null
-      if (state_abrs.state_abr === true) {
+      if (state_abrs[state_abr] === true) {
         return null;
       }
       // else if state_abr does not exist - then return option

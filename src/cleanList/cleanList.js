@@ -40,25 +40,30 @@ class CleanList extends Component {
   };
 
   filterForStates = () => {
-    // array of state_abr
-    const stateOptions = this.context.clean_sites.map(site => {
-      return site.state_abr;
-    });
-    // remove duplicates
-    let filterOptions = [...new Set(stateOptions)];
-    // turn array into option elements
-    return filterOptions.map(state => {
-      return (
-        <option value={state} key={state}>
-          {state}
-        </option>
-      );
+    const state_abrs = {};
+
+    return this.context.clean_sites.map(site => {
+      const { state_abr } = site;
+      console.log(state_abrs);
+      console.log("state is " + state_abr);
+      // Adding state_abr to state_abrs object
+      // if state_abr already exists - then return null
+      if (state_abrs[state_abr] === true) {
+        console.log("State is already on the list, not adding to object");
+        return null;
+      } else {
+        console.log("State not on list, adding to list and returning option");
+        // else if state_abr does not exist - then return option
+        state_abrs[state_abr] = true;
+
+        return (
+          <option value={state_abr} key={state_abr}>
+            {state_abr}
+          </option>
+        );
+      }
     });
   };
-
-  componentDidMount() {
-    this.setState({ error: null });
-  }
 
   render() {
     return (
@@ -74,14 +79,10 @@ class CleanList extends Component {
             onChange={e => this.updateState(e.target.value)}
           >
             <option value="">All</option>
-            {this.state.error === null ? this.filterForStates() : ""}
+            {this.filterForStates()}
           </select>
         </form>
-        {this.state.error === null ? (
-          this.displayList()
-        ) : (
-          <p>{this.state.error}</p>
-        )}
+        {this.displayList()}
       </div>
     );
   }
