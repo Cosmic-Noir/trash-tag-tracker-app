@@ -5,17 +5,15 @@ import TokenService from "../auth/token-service";
 
 class AddSite extends Component {
   state = {
-    title: "",
-    addrss: "",
-    city: "",
-    state_abr: "",
-    content: "",
-    before_img: ""
+    // title: "",
+    // addrss: "",
+    // city: "",
+    // state_abr: "",
+    // content: "",
+    // before_img: ""
   };
 
   static contextType = siteContext;
-
-  // Post new site to db:
 
   addSite = () => {
     const url = config.API_ENDPOINT + "sites";
@@ -48,23 +46,23 @@ class AddSite extends Component {
   };
 
   updateTitle(title) {
-    this.setState({ title: title });
+    this.setState({ title });
   }
 
   updateAddrss(addrss) {
-    this.setState({ addrss: addrss });
+    this.setState({ addrss });
   }
 
   updateCity(city) {
-    this.setState({ city: city });
+    this.setState({ city });
   }
 
   updateState(state_abr) {
-    this.setState({ state_abr: state_abr });
+    this.setState({ state_abr });
   }
 
   updateContent(content) {
-    this.setState({ content: content });
+    this.setState({ content });
   }
 
   updateBeforeImg(event) {
