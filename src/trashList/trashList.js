@@ -40,21 +40,6 @@ class TrashList extends Component {
   };
 
   filterForStates = () => {
-    // // array of state_abr
-    // const stateOptions = this.context.trash_sites.map(site => {
-    //   return site.state_abr;
-    // });
-    // // remove duplicates
-    // let filterOptions = [...new Set(stateOptions)];
-    // // turn array into option elements
-    // return filterOptions.map(state => {
-    //   return (
-    //     <option value={state} key={state}>
-    //       {state}
-    //     </option>
-    //   );
-    // });
-
     const state_abrs = {};
 
     return this.context.trash_sites.map(site => {
@@ -62,7 +47,7 @@ class TrashList extends Component {
 
       // Adding state_abr to state_abrs object
       // if state_abr already exists - then return null
-      if (state_abrs.state_abr == true) {
+      if (state_abrs.state_abr === true) {
         return null;
       }
       // else if state_abr does not exist - then return option
@@ -100,16 +85,10 @@ class TrashList extends Component {
           >
             <option value="">All</option>
             {this.filterForStates()}
-            {/* {this.state.error === null ? this.filterForStates() : ""} */}
           </select>
         </form>
         <ul className="siteList" id="siteList">
           {this.displayList()}
-          {/* {this.state.error === null ? (
-            this.displayList()
-          ) : (
-            <p>{this.state.error}</p>
-          )} */}
         </ul>
         <footer>
           {this.context.loggedIn === false ? (
