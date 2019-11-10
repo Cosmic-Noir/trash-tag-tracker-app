@@ -1,8 +1,8 @@
 ![Trash#Tracker](src/landing/logo.png)
 
-Trash#Tracker is a app designed to piggy-back off of the trending #Trash-Tag challenge. The challenge was to find an area that was littered or polluted, clean it, and then post a before and after picture of the clean up job.
+Trash#Tracker is an app designed to piggy-back off of the trending #Trash-Tag challenge. The challenge was to find an area that was littered or polluted, clean it, and then post a before and after picture of the clean up job.
 
-This app allows users to post trash sites that need cleaning, communicate with other interested users, and then post their success and add to the list of cleaned sites.
+This app allows users to post trash sites that need cleaning, communicate with other interested users, and then mark a site as cleaned and post a picture of their success.
 
 Eventually the hope is that this app can measure the enviornmental impact of every user and suggest other ways that users can reduce their trash production and energy consumption.
 
