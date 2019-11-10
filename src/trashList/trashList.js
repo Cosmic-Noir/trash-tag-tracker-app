@@ -6,9 +6,7 @@ import "./trashList.css";
 
 class TrashList extends Component {
   state = {
-    error: "",
-    state_abr: "",
-    sites: null
+    state_abr: ""
   };
 
   static contextType = siteContext;
@@ -60,10 +58,6 @@ class TrashList extends Component {
       );
     });
   };
-
-  componentDidMount() {
-    this.setState({ error: null });
-  }
 
   render() {
     return (
