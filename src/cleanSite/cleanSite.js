@@ -50,7 +50,6 @@ class CleanSite extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.patchSite();
-    this.props.history.push("/sites");
   };
 
   updateContent = content => {
