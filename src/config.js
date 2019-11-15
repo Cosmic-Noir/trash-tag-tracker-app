@@ -1,4 +1,4 @@
 export default {
-  API_ENDPOINT: `http://localhost:8000/api/`,
+  API_ENDPOINT: `https://fathomless-sierra-82385.herokuapp.com`,
   TOKEN_KEY: "Trash-Tracker-Auth-Token"
 };
