@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "alias": "trash-tracker",
+  "name": "trash-tracker",
+  "routes": [
+    {
+      "src": "^/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": ".*",
+      "dest": "/index.html"
+    }
+  ]
+}
