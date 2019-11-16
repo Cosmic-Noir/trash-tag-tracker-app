@@ -14,6 +14,7 @@ class Site extends Component {
       <Link to={`/sites/${this.props.id}`} className="title">
         <div className="site">
           <h2 className="title">{this.props.title}</h2>
+          {this.props.username ? <h4>Posted by: {this.props.username}</h4> : ""}
           {this.props.date_posted ? (
             <h4>Date Posted: {this.createDate(this.props.date_posted)}</h4>
           ) : (

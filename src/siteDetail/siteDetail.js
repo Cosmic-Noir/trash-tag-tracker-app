@@ -39,6 +39,7 @@ class SiteDetail extends Component {
 
   setSite = site => {
     this.setState({ site: site });
+    console.log(this.state.site);
   };
 
   componentDidMount() {
@@ -59,6 +60,7 @@ class SiteDetail extends Component {
           before_img={this.state.site.before_img}
           after_img={this.state.site.after_img}
           date_posted={this.state.site.date_posted}
+          username={this.state.site.username}
         />
         {this.state.site.clean === false &&
         TokenService.hasAuthToken() === true ? (
