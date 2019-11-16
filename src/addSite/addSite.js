@@ -105,6 +105,7 @@ class AddSite extends Component {
             name="title"
             id="title"
             ref={this.title}
+            required
             onChange={e => this.updateTitle(e.target.value)}
           ></input>
           <label htmlFor="addrss">Address(aprox):</label>
@@ -113,6 +114,7 @@ class AddSite extends Component {
             name="addrss"
             id="addrss"
             ref={this.addrss}
+            required
             onChange={e => this.updateAddrss(e.target.value)}
           ></input>
           <label htmlFor="city">City:</label>
@@ -121,6 +123,7 @@ class AddSite extends Component {
             name="city"
             id="city"
             ref={this.city}
+            required
             onChange={e => this.updateCity(e.target.value)}
           />
           <label htmlFor="state">State:</label>
@@ -128,6 +131,7 @@ class AddSite extends Component {
             name="state_abr"
             id="state_abr"
             ref={this.state_abr}
+            required
             onChange={e => this.updateState(e.target.value)}
           >
             <option>State</option>
@@ -186,6 +190,7 @@ class AddSite extends Component {
             name="content"
             id="content"
             ref={this.content}
+            required
             onChange={e => this.updateContent(e.target.value)}
           ></textarea>
           <label htmlFor="before_img">Upload Image:</label>
@@ -194,6 +199,7 @@ class AddSite extends Component {
             name="before_img"
             id="before_img"
             ref={this.before_img}
+            required
             onChange={e => this.updateBeforeImg(e)}
           />
 
