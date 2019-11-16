@@ -39,7 +39,6 @@ class SiteDetail extends Component {
 
   setSite = site => {
     this.setState({ site: site });
-    console.log(this.state.site);
   };
 
   componentDidMount() {
