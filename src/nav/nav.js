@@ -14,20 +14,28 @@ class Nav extends Component {
 
   render() {
     return (
-      <div className="nav">
-        <Link to="/">Home</Link>
+      <div className="navBar">
+        <Link to="/" className="nav">
+          Home
+        </Link>
         {/* <Link to="/about">Impact</Link> */}
-        <Link to="/sites">Trash Sites</Link>
-        <Link to="/cleaned">Cleaned Sites</Link>
+        <Link to="/sites" className="nav">
+          Trash Sites
+        </Link>
+        <Link to="/cleaned" className="nav">
+          Cleaned Sites
+        </Link>
         {this.context.loggedIn === true ? (
-          <Link to="/dashboard">Dashboard</Link>
+          <Link to="/dashboard" className="nav">
+            Dashboard
+          </Link>
         ) : (
           ""
         )}
         {this.context.loggedIn === false ? (
           <Link to="/signIn">Sign In</Link>
         ) : (
-          <Link to="/signOut" onClick={this.handleLogOut}>
+          <Link to="/signOut" className="nav" onClick={this.handleLogOut}>
             Sign Out
           </Link>
         )}
