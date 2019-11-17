@@ -4,6 +4,7 @@ import siteContext from "../siteContext";
 
 // Styling and Images:
 import completeImg from "./example3.png";
+import logo from "../nav/logo1.png";
 import earthPic from "./earth2.jpg";
 import "./landing.css";
 
@@ -13,7 +14,11 @@ class Landing extends Component {
     return (
       <div className="landing">
         <header>
-          <h1>Welcome to Trash#Tracker!</h1>
+          <h1>
+            Welcome to Trash
+            <img src={logo} alt="logo" className="logo" />
+            Tracker!
+          </h1>
           <img src={earthPic} alt="Earth" />
           <p>
             Building on the viral #Trashtag Challenge, our app allows users to

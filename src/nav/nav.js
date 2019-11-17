@@ -18,7 +18,7 @@ class Nav extends Component {
   render() {
     return (
       <div className="navBar">
-        <img src={logo} alt="Logo" id="logo" />
+        <img src={logo} alt="Logo" className="logo" />
 
         <Link to="/" className="nav">
           Home
