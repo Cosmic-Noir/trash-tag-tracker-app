@@ -1,15 +1,23 @@
-.navBar {
-  width: 100%;
-  border: 1px solid black;
+a {
+  margin: 10px;
   padding: 10px;
+}
+.navBar {
   background-color: black;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
 }
 
 .nav {
   color: white;
 }
 
-a {
-  margin: 10px;
-  padding: 10px;
+#logo {
+  height: 30px;
+  margin: 0px;
+  width: 30px;
 }

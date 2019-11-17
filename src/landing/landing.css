@@ -1,7 +1,6 @@
 header {
   background-color: black;
   color: white;
-
   width: 100%;
 }
 
@@ -20,9 +19,4 @@ header,
 #ex {
   height: 300px;
   width: 400px;
-}
-
-#logo {
-  height: 150px;
-  width: 150px;
 }

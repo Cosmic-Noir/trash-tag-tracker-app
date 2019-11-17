@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import siteContext from "../siteContext";
 
 // Styling and Images:
-import logo from "./logo.png";
 import completePic from "./example3.png";
 import "./landing.css";
 
@@ -14,7 +13,6 @@ class Landing extends Component {
       <div className="landing">
         <header>
           <h1>Welcome to Trash#Tracker!</h1>
-          <img src={logo} alt="Logo" id="logo" />
           <p>
             Building on the viral #Trashtag Challenge, our app allows users to
             post "trash sites", coordinate with other users, and clean trash

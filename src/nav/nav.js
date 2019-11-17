@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import siteContext from "../siteContext";
 import TokenService from "../auth/token-service";
+import logo from "./logo.png";
 import "./nav.css";
 
 class Nav extends Component {
@@ -15,6 +16,8 @@ class Nav extends Component {
   render() {
     return (
       <div className="navBar">
+        <img src={logo} alt="Logo" id="logo" />
+
         <Link to="/" className="nav">
           Home
         </Link>
