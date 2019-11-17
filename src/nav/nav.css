@@ -11,7 +11,7 @@
 
 .nav {
   color: white;
-  transition-duration: 1.2s;
+  transition-duration: 1s;
 }
 
 .nav:hover {
@@ -34,7 +34,7 @@
 #signUp {
   border: 1px solid white;
   padding: 5px;
-  transition-duration: 1.2s;
+  transition-duration: 1s;
 }
 
 #signUp:hover {

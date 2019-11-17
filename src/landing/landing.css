@@ -1,6 +1,7 @@
 header {
   background-color: black;
   color: white;
+  padding-bottom: 20px;
   width: 100%;
 }
 
@@ -9,11 +10,26 @@ p {
 }
 
 header,
-.landing {
+.landing,
+.section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.container {
+  width: 100%;
+}
+
+.dark {
+  color: white;
+  background-color: black;
+}
+
+.section {
+  padding: 20px;
+  width: 100%;
 }
 
 #earth {
@@ -24,4 +40,5 @@ header,
 #ex {
   height: 300px;
   width: 400px;
+  float: right;
 }

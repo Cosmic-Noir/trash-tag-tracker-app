@@ -40,7 +40,6 @@ class Site extends Component {
                 src={this.props.after_img}
                 alt="Clean site"
                 className="siteImg"
-                alt="clean site"
               />
             ) : (
               ""

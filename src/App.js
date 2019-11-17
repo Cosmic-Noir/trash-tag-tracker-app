@@ -123,7 +123,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
           </main>
         </siteContext.Provider>
-        <footer>
+        <footer className="dark">
           <h5>&copy; 2020.</h5>
         </footer>
       </div>

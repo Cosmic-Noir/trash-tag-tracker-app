@@ -2,19 +2,10 @@ a {
   text-decoration: none;
 }
 
-h1 {
-  padding: 10px;
-}
-
 p {
   line-height: 26px;
-  padding: 10px;
 }
 
 main {
   padding-top: 50px;
-}
-.App {
-  text-align: center;
-  width: 100%;
 }
