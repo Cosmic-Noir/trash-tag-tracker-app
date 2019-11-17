@@ -7,11 +7,12 @@ header {
 
 p {
   max-width: 500px;
+  margin: 0px;
 }
 
 header,
 .landing,
-.section {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,7 +29,12 @@ header,
 }
 
 .section {
+  display: flex;
   padding: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* text-align: center; */
   width: 100%;
 }
 
@@ -40,5 +46,11 @@ header,
 #ex {
   height: 300px;
   width: 400px;
-  float: right;
+}
+
+@media screen and(min-width: 500px) {
+  .section {
+    flex-direction: row;
+    color: red;
+  }
 }

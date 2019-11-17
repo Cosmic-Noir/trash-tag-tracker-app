@@ -28,13 +28,15 @@ class Landing extends Component {
 
         <div className="container">
           <section className="section">
-            <h2>Create An Account And Make An Impact </h2>
-            <p>
-              Start with small suggested changes on your dashboard to earn
-              points and reduce your everday waste and energy consumption. Then
-              tackle trash sites and mark them as cleaned and post your success
-              picture!{" "}
-            </p>
+            <div className="content">
+              <h2>Create An Account And Make An Impact </h2>
+              <p>
+                Start with small suggested changes on your dashboard to earn
+                points and reduce your everday waste and energy consumption.
+                Then tackle trash sites and mark them as cleaned and post your
+                success picture!{" "}
+              </p>{" "}
+            </div>
             <img src={completeImg} alt="Completed Trash site" id="ex"></img>
           </section>
 

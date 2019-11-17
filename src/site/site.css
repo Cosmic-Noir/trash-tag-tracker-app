@@ -20,9 +20,3 @@
 .title {
   margin-bottom: 0px;
 }
-
-@media screen and (min-width: 500px) {
-  .container {
-    flex-direction: row;
-  }
-}
