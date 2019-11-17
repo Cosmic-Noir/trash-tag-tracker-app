@@ -49,23 +49,27 @@ class Landing extends Component {
           The Global EnvoScore tracks the points of all users.
         </p> */}
           <section className="section dark">
-            <h2>Post A Trash Site:</h2>
-            <p>
-              Use our app to report a new trash site that needs help. We don't
-              always have time to clean a site when we first encounter it. This
-              also allows users to comment on posted sites and make coordinated
-              efforts to clean it together.
-            </p>
+            <div className="content">
+              <h2>Post A Trash Site:</h2>
+              <p>
+                Use our app to report a new trash site that needs help. We don't
+                always have time to clean a site when we first encounter it.
+                This also allows users to comment on posted sites and make
+                coordinated efforts to clean it together.
+              </p>
+            </div>
           </section>
           <section className="section">
-            <h2>Cleaning Our World Together:</h2>
-            <p>
-              Whether it is a small ditch on the side of a highway, or an oil
-              spill requiring hundreds of hands, together we can undo the damage
-              done to our planet. By raising more enviornmental awareness we can
-              prevent further pollution of our most precious resrouce: Our
-              planet.
-            </p>
+            <div className="content">
+              <h2>Cleaning Our World Together:</h2>
+              <p>
+                Whether it is a small ditch on the side of a highway, or an oil
+                spill requiring hundreds of hands, together we can undo the
+                damage done to our planet. By raising more enviornmental
+                awareness we can prevent further pollution of our most precious
+                resrouce: Our planet.
+              </p>
+            </div>
           </section>
         </div>
       </div>
