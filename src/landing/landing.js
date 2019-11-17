@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import siteContext from "../siteContext";
 
 // Styling and Images:
-import completePic from "./example3.png";
+import completeImg from "./example3.png";
+import earthPic from "./earth2.jpg";
 import "./landing.css";
 
 class Landing extends Component {
@@ -13,6 +14,7 @@ class Landing extends Component {
       <div className="landing">
         <header>
           <h1>Welcome to Trash#Tracker!</h1>
+          <img src={earthPic} alt="Earth" />
           <p>
             Building on the viral #Trashtag Challenge, our app allows users to
             post "trash sites", coordinate with other users, and clean trash
@@ -27,7 +29,7 @@ class Landing extends Component {
             and reduce your everday waste and energy consumption. Then tackle
             trash sites and mark them as cleaned and post your success picture!{" "}
           </p>
-          <img src={completePic} alt="Completed Trash site" id="ex"></img>
+          <img src={completeImg} alt="Completed Trash site" id="ex"></img>
 
           {/* <h2>Global EnvoScore:</h2>
         <h3>Current Global EnvoScore:</h3>
