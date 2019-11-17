@@ -105,11 +105,11 @@ class App extends Component {
     };
     return (
       <div className="App">
-        <nav>
-          <Nav />
-        </nav>
-        <main>
-          <siteContext.Provider value={contextValue}>
+        <siteContext.Provider value={contextValue}>
+          <nav>
+            <Nav />
+          </nav>
+          <main>
             <Route path="/about" component={About} />
             <Route path="/addSite" component={AddSite} />
             <Route path="/cleaned" component={CleanList} />
@@ -121,8 +121,8 @@ class App extends Component {
             <Route exact path="/sites" component={TrashList} />
             <Route path="/sites/:siteId" component={SiteDetail} />
             <Route exact path="/" component={Landing} />
-          </siteContext.Provider>
-        </main>
+          </main>
+        </siteContext.Provider>
         <footer>
           <h5>&copy; 2020.</h5>
         </footer>

@@ -38,7 +38,9 @@ class Nav extends Component {
           ""
         )}
         {this.context.loggedIn === false ? (
-          <Link to="/signIn">Sign In</Link>
+          <Link to="/signUp" className="nav" id="signUp">
+            Sign Up
+          </Link>
         ) : (
           <Link to="/signOut" className="nav" onClick={this.handleLogOut}>
             Sign Out
