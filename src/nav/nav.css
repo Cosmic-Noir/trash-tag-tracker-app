@@ -11,12 +11,11 @@
 
 .nav {
   color: white;
-  /* font-family: "Alata", sans-serif; */
   transition-duration: 1.2s;
 }
 
 .nav:hover {
-  color: hsla(108, 88%, 55%, 0.9);
+  color: hsla(209, 85%, 62%, 0.9);
 }
 
 .logo {

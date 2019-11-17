@@ -18,8 +18,10 @@ class Nav extends Component {
   render() {
     return (
       <div className="navBar">
-        <img src={logo} alt="Logo" className="logo" />
-
+        <Link to="/" className="nav" id="navLogo">
+          <img src={logo} alt="Logo" className="logo" />
+        </Link>
+        TrashTracker
         <Link to="/" className="nav">
           Home
         </Link>

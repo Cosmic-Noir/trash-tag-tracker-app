@@ -1,20 +1,3 @@
-a {
-  width: 100%;
-  margin: 0px;
-}
-
-h4 {
-  padding: 0px;
-  margin: 0px;
-}
-
-img {
-  height: 200px;
-  margin: 0px 15px 15px 15px;
-
-  width: 300px;
-}
-
 .address {
   margin-bottom: 0px;
 }
@@ -27,6 +10,11 @@ img {
   border: 1px solid black;
   min-width: 300px;
   width: 100%;
+}
+
+.siteImg {
+  height: 300px;
+  width: 400px;
 }
 
 .title {

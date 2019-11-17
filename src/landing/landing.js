@@ -19,7 +19,7 @@ class Landing extends Component {
             <img src={logo} alt="logo" className="logo" />
             Tracker!
           </h1>
-          <img src={earthPic} alt="Earth" />
+          <img src={earthPic} alt="Earth" id="earth" />
           <p>
             Building on the viral #Trashtag Challenge, our app allows users to
             post "trash sites", coordinate with other users, and clean trash

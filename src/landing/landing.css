@@ -16,6 +16,11 @@ header,
   align-items: center;
 }
 
+#earth {
+  height: 200px;
+  width: 300px;
+}
+
 #ex {
   height: 300px;
   width: 400px;
