@@ -2,14 +2,17 @@ a {
   text-decoration: none;
 }
 
-p {
-  padding: 10px;
-}
-
 h1 {
   padding: 10px;
 }
 
+p {
+  padding: 10px;
+}
+
+main {
+  padding-top: 80px;
+}
 .App {
   text-align: center;
   width: 100%;
