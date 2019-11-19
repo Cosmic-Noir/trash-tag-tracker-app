@@ -16,49 +16,95 @@ class Nav extends Component {
     this.context.checkLoginStatus();
   };
 
+  toggleMobileMenu = () => {
+    const mobileMenu = document.getElementById("mobileNav");
+    if (
+      mobileMenu.style.display === "" ||
+      mobileMenu.style.display === "none"
+    ) {
+      mobileMenu.style.display = "block";
+    } else {
+      mobileMenu.style.display = "none";
+    }
+  };
+
   render() {
     return (
-      <div className="navBar">
-        <Link to="/" className="nav" id="navLogo">
-          <img src={logo} alt="Logo" className="logo" />
-        </Link>
+      <div>
+        <div className="deskNavBar">
+          <Link to="/" className="nav" id="navLogo">
+            <img src={logo} alt="Logo" className="logo" />
+          </Link>
 
-        <Link to="/" className="nav deskNav">
-          Home
-        </Link>
-        {/* <Link to="/about">Impact</Link> */}
-        <Link to="/sites" className="nav deskNav">
-          Trash Sites
-        </Link>
-        <Link to="/cleaned" className="nav deskNav">
-          Cleaned Sites
-        </Link>
-        {this.context.loggedIn === true ? (
-          <Link to="/dashboard" className="nav deskNav">
-            Dashboard
+          <Link to="/" className="nav deskNav">
+            Home
           </Link>
-        ) : (
-          ""
-        )}
-        {this.context.loggedIn === false ? (
-          <Link to="/signUp" className="nav deskNav" id="signUp">
-            Sign Up
+          {/* <Link to="/about">Impact</Link> */}
+          <Link to="/sites" className="nav deskNav">
+            Trash Sites
           </Link>
-        ) : (
-          <Link
-            to="/signOut"
-            className="nav deskNav"
-            onClick={this.handleLogOut}
-          >
-            Sign Out
+          <Link to="/cleaned" className="nav deskNav">
+            Cleaned Sites
           </Link>
-        )}
-        <img
-          src={menuIcon}
-          alt="menu icon"
-          id="menuIcon"
-          onClick="toggleMobileMenu"
-        />
+          {this.context.loggedIn === true ? (
+            <Link to="/dashboard" className="nav deskNav">
+              Dashboard
+            </Link>
+          ) : (
+            ""
+          )}
+          {this.context.loggedIn === false ? (
+            <Link to="/signUp" className="nav deskNav" id="signUp">
+              Sign Up
+            </Link>
+          ) : (
+            <Link
+              to="/signOut"
+              className="nav deskNav"
+              onClick={this.handleLogOut}
+            >
+              Sign Out
+            </Link>
+          )}
+          <img
+            src={menuIcon}
+            alt="menu icon"
+            id="menuIcon"
+            onClick={this.toggleMobileMenu}
+          />
+        </div>
+        <div id="mobileNav">
+          <Link to="/" className="nav mobile">
+            Home
+          </Link>
+          {/* <Link to="/about">Impact</Link> */}
+          <Link to="/sites" className="nav mobile">
+            Trash Sites
+          </Link>
+          <Link to="/cleaned" className="nav mobile">
+            Cleaned Sites
+          </Link>
+          {this.context.loggedIn === true ? (
+            <Link to="/dashboard" className="nav mobile">
+              Dashboard
+            </Link>
+          ) : (
+            ""
+          )}
+          {this.context.loggedIn === false ? (
+            <Link to="/signUp" className="nav mobile" id="signUp">
+              Sign Up
+            </Link>
+          ) : (
+            <Link
+              to="/signOut"
+              className="nav mobile"
+              onClick={this.handleLogOut}
+            >
+              Sign Out
+            </Link>
+          )}
+        </div>
       </div>
     );
   }

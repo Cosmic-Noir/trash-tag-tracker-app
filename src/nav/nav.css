@@ -2,7 +2,7 @@
   display: none;
 }
 
-.navBar {
+.deskNavBar {
   background-color: black;
   border: 1px solid black;
   display: flex;
@@ -13,6 +13,22 @@
   width: 100%;
 }
 
+#mobileNav {
+  display: none;
+  background-color: black;
+  position: fixed;
+  top: 50px;
+  width: 100%;
+}
+
+.mobile {
+  border: 1px solid white;
+  display: block;
+  /* position: absolute; */
+  padding: 10px;
+  text-align: right;
+  width: 100%;
+}
 .nav {
   color: white;
   transition-duration: 1s;
