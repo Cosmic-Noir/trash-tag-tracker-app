@@ -14,6 +14,7 @@ class Nav extends Component {
   handleLogOut = () => {
     TokenService.clearAuthToken();
     this.context.checkLoginStatus();
+    this.toggleMobileMenu();
   };
 
   toggleMobileMenu = () => {
@@ -74,25 +75,41 @@ class Nav extends Component {
           />
         </div>
         <div id="mobileNav">
-          <Link to="/" className="nav mobile">
+          <Link to="/" className="nav mobile" onClick={this.toggleMobileMenu}>
             Home
           </Link>
           {/* <Link to="/about">Impact</Link> */}
-          <Link to="/sites" className="nav mobile">
+          <Link
+            to="/sites"
+            className="nav mobile"
+            onClick={this.toggleMobileMenu}
+          >
             Trash Sites
           </Link>
-          <Link to="/cleaned" className="nav mobile">
+          <Link
+            to="/cleaned"
+            className="nav mobile"
+            onClick={this.toggleMobileMenu}
+          >
             Cleaned Sites
           </Link>
           {this.context.loggedIn === true ? (
-            <Link to="/dashboard" className="nav mobile">
+            <Link
+              to="/dashboard"
+              className="nav mobile"
+              onClick={this.toggleMobileMenu}
+            >
               Dashboard
             </Link>
           ) : (
             ""
           )}
           {this.context.loggedIn === false ? (
-            <Link to="/signUp" className="nav mobile">
+            <Link
+              to="/signUp"
+              className="nav mobile"
+              onClick={this.toggleMobileMenu}
+            >
               Sign Up
             </Link>
           ) : (
