@@ -53,7 +53,12 @@ class Nav extends Component {
             Sign Out
           </Link>
         )}
-        <img src={menuIcon} alt="menu icon" id="menuIcon" />
+        <img
+          src={menuIcon}
+          alt="menu icon"
+          id="menuIcon"
+          onClick="toggleMobileMenu"
+        />
       </div>
     );
   }
