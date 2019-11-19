@@ -3,18 +3,21 @@
 }
 
 .site {
+  align-items: center;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  border: 1px solid black;
   min-width: 300px;
   width: 100%;
 }
 
 .siteImg {
-  height: 300px;
-  width: 400px;
+  /* height: 200px;
+  width: 300px; */
+  max-height: 100%;
+  max-width: 100%;
+  padding: 30px;
 }
 
 .title {
