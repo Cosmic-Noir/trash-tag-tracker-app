@@ -92,7 +92,7 @@ class Nav extends Component {
             ""
           )}
           {this.context.loggedIn === false ? (
-            <Link to="/signUp" className="nav mobile" id="signUp">
+            <Link to="/signUp" className="nav mobile">
               Sign Up
             </Link>
           ) : (

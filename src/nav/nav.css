@@ -1,5 +1,10 @@
 .deskNav {
   display: none;
+  transition-duration: 1s;
+}
+
+.deskNav:hover {
+  color: hsla(209, 85%, 62%, 0.9);
 }
 
 .deskNavBar {
@@ -27,15 +32,12 @@
   /* position: absolute; */
   padding: 10px;
   text-align: right;
+  transition-duration: 1s;
   width: 100%;
 }
+
 .nav {
   color: white;
-  transition-duration: 1s;
-}
-
-.nav:hover {
-  color: hsla(209, 85%, 62%, 0.9);
 }
 
 .logo {
@@ -62,6 +64,7 @@
   transition-duration: 1s;
 }
 
+.mobile:hover,
 #signUp:hover {
   color: black;
   background-color: white;
