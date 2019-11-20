@@ -11,20 +11,18 @@ class Site extends Component {
           <h4>
             {this.props.city}, {this.props.state_abr}
           </h4>
-          <div className="wide_screen">
-            <img
-              alt="trash site"
-              className="siteImg"
-              id={"pic" + this.props.id}
-              src={this.props.before_img}
-            />
-            {this.props.after_img ? (
-              <img src={this.props.after_img} alt="Clean site" />
-            ) : (
-              ""
-            )}
-            <p>{this.props.content}</p>
-          </div>
+          <img
+            alt="trash site"
+            className="siteImg"
+            id={"pic" + this.props.id}
+            src={this.props.before_img}
+          />
+          {this.props.after_img ? (
+            <img src={this.props.after_img} alt="Clean site" />
+          ) : (
+            ""
+          )}
+          <p>{this.props.content}</p>
         </div>
       </Link>
     );
