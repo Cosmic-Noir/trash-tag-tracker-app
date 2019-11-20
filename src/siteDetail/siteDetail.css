@@ -2,6 +2,10 @@ p {
   max-width: 500px;
 }
 
+.detailImg {
+  margin-top: 50px;
+}
+
 .siteDetail,
 .detailFoot,
 .detail {
@@ -14,4 +18,10 @@ p {
 .detailFoot,
 .detail {
   width: 90%;
+}
+
+@media screen and (min-width: 900px) {
+  .siteDetail {
+    flex-direction: row;
+  }
 }

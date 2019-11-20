@@ -51,45 +51,39 @@ class SiteDetail extends Component {
 
   render() {
     return (
-      <div className="siteDetail">
-        <img
-          src={this.state.site.before_img}
-          className="siteImg"
-          alt="Before"
-        />
-        <section className="details">
-          <h2>{this.state.site.title}</h2>
-          <h4 className="addrss">{this.state.site.addrss}</h4>
-          <h4>
-            {this.state.site.city}, {this.state.site.state_abr}
-          </h4>
-          <h4>Date Posted: {this.state.dated}</h4>
-          <h4>Posted By: {this.state.site.username} </h4>
+      <div>
+        <div className="siteDetail">
+          <img
+            src={this.state.site.before_img}
+            className="detailImg"
+            alt="Before"
+          />
+          <section className="details">
+            <h2>{this.state.site.title}</h2>
+            <h4 className="addrss">{this.state.site.addrss}</h4>
+            <h4>
+              {this.state.site.city}, {this.state.site.state_abr}
+            </h4>
+            <br />
+            <h5>Date Posted: {this.state.dated}</h5>
+            <h5>Posted By: {this.state.site.username} </h5>
+            <p>{this.state.site.content}</p>
+          </section>
+        </div>
+        <section className="comments">
+          {this.state.site.clean === false &&
+          TokenService.hasAuthToken() === true ? (
+            <Link to={`/cleanSite/${this.state.site.id}`}>
+              Mark as Cleaned!
+            </Link>
+          ) : (
+            ""
+          )}
+          <button type="button" onClick={this.handleClickBack}>
+            Back
+          </button>
+          <CommentList siteId={this.props.match.params.siteId} />
         </section>
-
-        {/* <Site
-          key={this.state.site.id}
-          id={this.state.site.id}
-          title={this.state.site.title}
-          city={this.state.site.city}
-          addrss={this.state.site.addrss}
-          state_abr={this.state.site.state_abr}
-          content={this.state.site.content}
-          before_img={this.state.site.before_img}
-          after_img={this.state.site.after_img}
-          date_posted={this.state.site.date_posted}
-          username={this.state.site.username}
-        /> */}
-        {this.state.site.clean === false &&
-        TokenService.hasAuthToken() === true ? (
-          <Link to={`/cleanSite/${this.state.site.id}`}>Mark as Cleaned!</Link>
-        ) : (
-          ""
-        )}
-        <button type="button" onClick={this.handleClickBack}>
-          Back
-        </button>
-        <CommentList siteId={this.props.match.params.siteId} />
 
         <footer className="detailFoot">
           {TokenService.hasAuthToken() === false ? (
