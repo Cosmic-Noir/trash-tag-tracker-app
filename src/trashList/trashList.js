@@ -85,9 +85,7 @@ class TrashList extends Component {
               {this.filterForStates()}
             </select>
           </form>
-          <ul className="siteList" className="siteList">
-            {this.displayList()}
-          </ul>
+          <ul className="siteList">{this.displayList()}</ul>
         </div>
       </div>
     );
