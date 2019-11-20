@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import siteContext from "../siteContext";
-import Site from "../site/site";
 import CommentList from "../commentList/commentList";
 import config from "../config";
 import TokenService from "../auth/token-service";
@@ -41,6 +40,12 @@ class SiteDetail extends Component {
     this.setState({ site: site });
   };
 
+  createDate = date => {
+    if (this.props.date_posted) {
+      return date.slice(0, 10);
+    }
+  };
+
   componentDidMount() {
     this.getSelectSite();
   }
@@ -48,7 +53,22 @@ class SiteDetail extends Component {
   render() {
     return (
       <div className="siteDetail">
-        <Site
+        <img
+          src={this.state.site.before_img}
+          className="siteImg"
+          alt="Before"
+        />
+        <section className="details">
+          <h2>{this.state.site.title}</h2>
+          <h4 className="addrss">{this.state.site.addrss}</h4>
+          <h4>
+            {this.state.site.city}, {this.state.site.state_abr}
+          </h4>
+          <h4>Date Posted: {this.createDate(this.state.site.date_posted)}</h4>
+          <h4>Posted By: {this.state.site.username} </h4>
+        </section>
+
+        {/* <Site
           key={this.state.site.id}
           id={this.state.site.id}
           title={this.state.site.title}
@@ -60,7 +80,7 @@ class SiteDetail extends Component {
           after_img={this.state.site.after_img}
           date_posted={this.state.site.date_posted}
           username={this.state.site.username}
-        />
+        /> */}
         {this.state.site.clean === false &&
         TokenService.hasAuthToken() === true ? (
           <Link to={`/cleanSite/${this.state.site.id}`}>Mark as Cleaned!</Link>

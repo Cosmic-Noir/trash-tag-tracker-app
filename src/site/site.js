@@ -14,27 +14,20 @@ class Site extends Component {
       <Link to={`/sites/${this.props.id}`} className="title">
         <div className="site">
           <h2 className="title">{this.props.title}</h2>
-          {this.props.username ? <h4>Posted by: {this.props.username}</h4> : ""}
           {this.props.date_posted ? (
             <h4>Date Posted: {this.createDate(this.props.date_posted)}</h4>
           ) : (
             ""
           )}
-          <h4 className="addrss">{this.props.addrss}</h4>
-          <h4>{this.props.city}</h4>
+
           <h4>{this.props.state_abr}</h4>
           <div className="wide_screen">
-            {typeof this.props.before_img === "string" ? (
-              <img
-                src={this.props.before_img}
-                alt="trash site"
-                id={"pic" + this.props.id}
-              />
-            ) : (
-              ""
-            )}
-            {this.props.after_img !== "" &&
-            typeof this.props.after_img === "string" ? (
+            <img
+              src={this.props.before_img}
+              alt="trash site"
+              id={"pic" + this.props.id}
+            />
+            {this.props.after_img ? (
               <img src={this.props.after_img} alt="Clean site" />
             ) : (
               ""
