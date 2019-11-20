@@ -62,7 +62,7 @@ class CleanList extends Component {
   render() {
     return (
       <div className="cleanList">
-        <h2> Cleaned Sites:</h2>
+        <h2 className="listTitle"> Cleaned Sites:</h2>
         <form className="siteList">
           <select
             className="center"

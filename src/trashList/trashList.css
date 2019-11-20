@@ -9,6 +9,10 @@
   align-items: center;
 }
 
+.listTitle {
+  padding: 25px 0px 5px;
+}
+
 .siteList {
   padding: 0px;
   margin: 0px;
@@ -18,6 +22,28 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+#addNewSite {
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 1px;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  transition-duration: 1s;
+}
+
+#addNewSite:hover {
+  background-color: white;
+  color: black;
+}
+
+#state_abr {
+  font-size: 16px;
+  margin: 5px;
+  padding: 5px;
+  width: 140px;
 }
 
 @media screen and (min-width: 600px) {

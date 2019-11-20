@@ -62,14 +62,17 @@ class TrashList extends Component {
   render() {
     return (
       <div className="flex-column">
-        <h2>Trash Sites:</h2>
+        <h2 className="listTitle">Trash Sites:</h2>
         {this.context.loggedIn === true ? (
-          <Link to="/addSite">Add New Trash Site</Link>
+          <Link to="/addSite" id="addNewSite">
+            Add New Trash Site
+          </Link>
         ) : (
           <h5>Log in to add a new site</h5>
         )}
         <div className="siteList">
           <form className="siteList">
+            <h3>Filter by State:</h3>
             <select
               className="center"
               name="state_abr"
