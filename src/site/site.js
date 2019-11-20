@@ -3,23 +3,11 @@ import { Link } from "react-router-dom";
 import "./site.css";
 
 class Site extends Component {
-  createDate = date => {
-    if (this.props.date_posted) {
-      return date.slice(0, 10);
-    }
-  };
-
   render() {
     return (
       <Link to={`/sites/${this.props.id}`} className="title">
         <div className="site">
           <h2 className="title">{this.props.title}</h2>
-          {this.props.date_posted ? (
-            <h4>Date Posted: {this.createDate(this.props.date_posted)}</h4>
-          ) : (
-            ""
-          )}
-
           <h4>{this.props.state_abr}</h4>
           <div className="wide_screen">
             <img

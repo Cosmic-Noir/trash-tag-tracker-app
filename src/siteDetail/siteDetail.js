@@ -33,6 +33,7 @@ class SiteDetail extends Component {
         return res.json();
       })
       .then(this.setSite)
+      .then(this.createDate)
       .catch(error => this.setState({ error }));
   };
 
@@ -40,10 +41,9 @@ class SiteDetail extends Component {
     this.setState({ site: site });
   };
 
-  createDate = date => {
-    if (this.props.date_posted) {
-      return date.slice(0, 10);
-    }
+  createDate = () => {
+    const date = this.state.site.date_posted.slice(0, 10);
+    this.setState({ dated: date });
   };
 
   componentDidMount() {
@@ -64,7 +64,7 @@ class SiteDetail extends Component {
           <h4>
             {this.state.site.city}, {this.state.site.state_abr}
           </h4>
-          <h4>Date Posted: {this.createDate(this.state.site.date_posted)}</h4>
+          <h4>Date Posted: {this.state.dated}</h4>
           <h4>Posted By: {this.state.site.username} </h4>
         </section>
 
