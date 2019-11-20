@@ -64,7 +64,7 @@ class TrashList extends Component {
       <div className="flex-column">
         <h2 className="listTitle">Trash Sites:</h2>
         {this.context.loggedIn === true ? (
-          <Link to="/addSite" id="addNewSite">
+          <Link to="/addSite" className="addNewSite">
             Add New Trash Site
           </Link>
         ) : (
@@ -85,7 +85,7 @@ class TrashList extends Component {
               {this.filterForStates()}
             </select>
           </form>
-          <ul className="siteList" id="siteList">
+          <ul className="siteList" className="siteList">
             {this.displayList()}
           </ul>
         </div>

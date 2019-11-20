@@ -1,3 +1,5 @@
+/* Global element styles */
+
 * {
   padding: 0px;
   margin: 0px;
@@ -5,6 +7,10 @@
 
 a {
   text-decoration: none;
+}
+
+button {
+  min-width: 300px;
 }
 
 footer {
@@ -32,9 +38,41 @@ main {
   height: 100vh;
 }
 
+/* Global class sytles */
+
+.cancel {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 1px;
+  color: black;
+  margin: 10px;
+  padding: 10px;
+  transition-duration: 1s;
+}
+
+.cancel:hover {
+  background-color: black;
+  color: white;
+}
+
 .wrapper {
   min-height: 100%;
 }
+
+.formInput {
+  padding: 5px;
+}
+
+.formLabel {
+  font-size: 19px;
+  padding-top: 5px;
+}
+
+.listTitle {
+  padding: 25px 0px 5px;
+}
+
+/* App component ID styles */
 
 #footerSignUp {
   color: white;

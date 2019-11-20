@@ -91,18 +91,24 @@ class AddSite extends Component {
     }
   };
 
+  handleCancel = () => {
+    this.props.history.goBack();
+  };
+
   render() {
     return (
       <div className="addSite flex-column">
-        <h2>Add a new site that needs cleaning:</h2>
+        <h2 className="listTitle">Add a new site that needs cleaning:</h2>
         <form
           onSubmit={e => {
             this.handleSubmit(e);
           }}
         >
-          <label htmlFor="title">Title</label>
+          <label htmlFor="title" className="formLabel">
+            Title
+          </label>
           <input
-            className=""
+            className="formInput"
             id="title"
             onChange={e => this.updateTitle(e.target.value)}
             name="title"
@@ -110,8 +116,11 @@ class AddSite extends Component {
             required
             type="text"
           ></input>
-          <label htmlFor="addrss">Address(aprox):</label>
+          <label className="formLabel" htmlFor="addrss">
+            Address(aprox):
+          </label>
           <input
+            className="formInput"
             id="addrss"
             onChange={e => this.updateAddrss(e.target.value)}
             name="addrss"
@@ -119,8 +128,11 @@ class AddSite extends Component {
             required
             type="addrss"
           ></input>
-          <label htmlFor="city">City:</label>
+          <label htmlFor="city" className="formLabel">
+            City:
+          </label>
           <input
+            className="formInput"
             id="city"
             onChange={e => this.updateCity(e.target.value)}
             name="city"
@@ -128,7 +140,9 @@ class AddSite extends Component {
             required
             type="text"
           />
-          <label htmlFor="state">State:</label>
+          <label htmlFor="state" className="formLabel">
+            State:
+          </label>
           <select
             id="state_abr"
             onChange={e => this.updateState(e.target.value)}
@@ -187,7 +201,9 @@ class AddSite extends Component {
             <option value="WI">WI</option>
             <option value="WY">WY</option>
           </select>
-          <label htmlFor="content">Description:</label>
+          <label htmlFor="content" className="formLabel">
+            Description:
+          </label>
           <textarea
             id="content"
             name="content"
@@ -195,8 +211,11 @@ class AddSite extends Component {
             ref={this.content}
             required
           ></textarea>
-          <label htmlFor="before_img">Upload Image:</label>
+          <label htmlFor="before_img" className="formLabel">
+            Upload Image:
+          </label>
           <input
+            className="formInput"
             id="before_img"
             onChange={e => this.updateBeforeImg(e)}
             name="before_img"
@@ -210,7 +229,10 @@ class AddSite extends Component {
           ) : (
             ""
           )}
-          <button type="submit" onClick={this.uploadPic}>
+          <button className="cancel" onClick={this.handleCancel} type="button">
+            Cancel
+          </button>
+          <button className="addNewSite" onClick={this.uploadPic} type="submit">
             Add Site
           </button>
         </form>
