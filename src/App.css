@@ -7,10 +7,40 @@ a {
   text-decoration: none;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  bottom: 0px;
+  width: 100%;
+}
+
 p {
   line-height: 26px;
 }
 
 main {
   padding-top: 60px;
+  flex: 1 0 auto;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.wrapper {
+  min-height: 100%;
+}
+
+#footerSignUp {
+  color: white;
+  transition-duration: 1s;
+}
+
+#footerSignUp:hover {
+  color: hsla(209, 85%, 62%, 0.9);
 }

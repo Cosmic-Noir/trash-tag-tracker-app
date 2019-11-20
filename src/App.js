@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import config from "./config";
 import "./App.css";
 
@@ -124,6 +125,13 @@ class App extends Component {
           </main>
         </siteContext.Provider>
         <footer className="dark">
+          {this.state.loggedIn === false ? (
+            <Link to="/signUp" id="footerSignUp">
+              Sign Up
+            </Link>
+          ) : (
+            ""
+          )}
           <h5>&copy; 2020.</h5>
         </footer>
       </div>

@@ -84,13 +84,6 @@ class TrashList extends Component {
         <ul className="siteList" id="siteList">
           {this.displayList()}
         </ul>
-        <footer>
-          {this.context.loggedIn === false ? (
-            <Link to="/signUp">Sign Up</Link>
-          ) : (
-            ""
-          )}
-        </footer>
       </div>
     );
   }
