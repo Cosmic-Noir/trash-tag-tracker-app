@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import siteContext from "../siteContext";
 import config from "../config";
 import TokenService from "../auth/token-service";
+import "./addSite.css";
 
 class AddSite extends Component {
   state = {
@@ -92,7 +93,7 @@ class AddSite extends Component {
 
   render() {
     return (
-      <div className="addSite">
+      <div className="addSite flex-column">
         <h2>Add a new site that needs cleaning:</h2>
         <form
           onSubmit={e => {
@@ -101,38 +102,39 @@ class AddSite extends Component {
         >
           <label htmlFor="title">Title</label>
           <input
-            type="text"
-            name="title"
+            className=""
             id="title"
+            onChange={e => this.updateTitle(e.target.value)}
+            name="title"
             ref={this.title}
             required
-            onChange={e => this.updateTitle(e.target.value)}
+            type="text"
           ></input>
           <label htmlFor="addrss">Address(aprox):</label>
           <input
-            type="addrss"
-            name="addrss"
             id="addrss"
+            onChange={e => this.updateAddrss(e.target.value)}
+            name="addrss"
             ref={this.addrss}
             required
-            onChange={e => this.updateAddrss(e.target.value)}
+            type="addrss"
           ></input>
           <label htmlFor="city">City:</label>
           <input
-            type="text"
-            name="city"
             id="city"
+            onChange={e => this.updateCity(e.target.value)}
+            name="city"
             ref={this.city}
             required
-            onChange={e => this.updateCity(e.target.value)}
+            type="text"
           />
           <label htmlFor="state">State:</label>
           <select
-            name="state_abr"
             id="state_abr"
+            onChange={e => this.updateState(e.target.value)}
+            name="state_abr"
             ref={this.state_abr}
             required
-            onChange={e => this.updateState(e.target.value)}
           >
             <option>State</option>
             <option value="AL">AL</option>
@@ -187,20 +189,20 @@ class AddSite extends Component {
           </select>
           <label htmlFor="content">Description:</label>
           <textarea
-            name="content"
             id="content"
+            name="content"
+            onChange={e => this.updateContent(e.target.value)}
             ref={this.content}
             required
-            onChange={e => this.updateContent(e.target.value)}
           ></textarea>
           <label htmlFor="before_img">Upload Image:</label>
           <input
-            type="file"
-            name="before_img"
             id="before_img"
+            onChange={e => this.updateBeforeImg(e)}
+            name="before_img"
             ref={this.before_img}
             required
-            onChange={e => this.updateBeforeImg(e)}
+            type="file"
           />
 
           {this.state.error !== null ? (
