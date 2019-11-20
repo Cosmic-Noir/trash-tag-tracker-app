@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .siteList {
   padding: 0px;
   margin: 0px;
