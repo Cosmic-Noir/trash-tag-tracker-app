@@ -61,7 +61,7 @@ class CleanList extends Component {
 
   render() {
     return (
-      <div className="cleanList">
+      <div className="cleanList flex-column">
         <h2 className="listTitle"> Cleaned Sites:</h2>
         <form className="siteList">
           <select

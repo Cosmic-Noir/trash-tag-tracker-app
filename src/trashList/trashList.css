@@ -24,6 +24,10 @@
   width: 100%;
 }
 
+.trashSiteTile {
+  color: red;
+}
+
 #addNewSite {
   background-color: black;
   border: 1px solid black;
