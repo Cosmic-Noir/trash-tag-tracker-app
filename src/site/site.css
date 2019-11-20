@@ -1,40 +1,25 @@
-a {
-  width: 100%;
-  margin: 0px;
-}
-
-h4 {
-  padding: 0px;
-  margin: 0px;
-}
-
-img {
-  height: 200px;
-  margin: 0px 15px 15px 15px;
-
-  width: 300px;
-}
-
 .address {
   margin-bottom: 0px;
 }
 
 .site {
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  border: 1px solid black;
+  min-height: 280px;
+  margin: 10px;
+  max-height: 300px;
   min-width: 300px;
+  max-width: 300px;
+  padding: 10px;
   width: 100%;
 }
 
-.title {
-  margin-bottom: 0px;
-}
-
-@media screen and (min-width: 500px) {
-  .container {
-    flex-direction: row;
-  }
+.siteImg {
+  max-height: 100%;
+  max-width: 100%;
+  padding: 10px;
 }

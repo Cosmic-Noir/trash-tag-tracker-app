@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import config from "./config";
 import "./App.css";
 
@@ -106,20 +107,31 @@ class App extends Component {
     return (
       <div className="App">
         <siteContext.Provider value={contextValue}>
-          <Nav />
-          <Route path="/about" component={About} />
-          <Route path="/addSite" component={AddSite} />
-          <Route path="/cleaned" component={CleanList} />
-          <Route path="/cleanSite/:siteId" component={CleanSite} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/signIn" component={SignIn} />
-          <Route path="/signOut" component={SignOut} />
-          <Route path="/signUp" component={SignUp} />
-          <Route exact path="/sites" component={TrashList} />
-          <Route path="/sites/:siteId" component={SiteDetail} />
-          <Route exact path="/" component={Landing} />
+          <nav>
+            <Nav />
+          </nav>
+          <main>
+            <Route path="/about" component={About} />
+            <Route path="/addSite" component={AddSite} />
+            <Route path="/cleaned" component={CleanList} />
+            <Route path="/cleanSite/:siteId" component={CleanSite} />
+            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/signIn" component={SignIn} />
+            <Route path="/signOut" component={SignOut} />
+            <Route path="/signUp" component={SignUp} />
+            <Route exact path="/sites" component={TrashList} />
+            <Route path="/sites/:siteId" component={SiteDetail} />
+            <Route exact path="/" component={Landing} />
+          </main>
         </siteContext.Provider>
-        <footer>
+        <footer className="dark">
+          {this.state.loggedIn === false ? (
+            <Link to="/signUp" id="footerSignUp">
+              Sign Up
+            </Link>
+          ) : (
+            ""
+          )}
           <h5>&copy; 2020.</h5>
         </footer>
       </div>

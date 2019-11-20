@@ -13,9 +13,10 @@ class Site extends Component {
           </h4>
           <div className="wide_screen">
             <img
-              src={this.props.before_img}
               alt="trash site"
+              className="siteImg"
               id={"pic" + this.props.id}
+              src={this.props.before_img}
             />
             {this.props.after_img ? (
               <img src={this.props.after_img} alt="Clean site" />

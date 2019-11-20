@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .siteList {
   padding: 0px;
   margin: 0px;
@@ -11,4 +18,36 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+.trashSiteTile {
+  color: red;
+}
+
+.addNewSite {
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 1px;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  transition-duration: 1s;
+}
+
+.addNewSite:hover {
+  background-color: white;
+  color: black;
+}
+
+#state_abr {
+  font-size: 16px;
+  margin: 5px;
+  padding: 5px;
+  width: 140px;
+}
+
+@media screen and (min-width: 600px) {
+  .siteList {
+    flex-direction: row;
+  }
 }

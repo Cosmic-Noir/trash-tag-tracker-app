@@ -1,10 +1,80 @@
-.nav {
-  width: 100%;
-  border: 1px solid black;
-  padding: 10px;
+.deskNav {
+  display: none;
+  transition-duration: 1s;
 }
 
-a {
-  margin: 10px;
+.deskNav:hover {
+  color: hsla(209, 85%, 62%, 0.9);
+}
+
+.deskNavBar {
+  background-color: black;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+}
+
+#mobileNav {
+  display: none;
+  background-color: black;
+  position: fixed;
+  top: 50px;
+  width: 100%;
+}
+
+.mobile {
+  border: 1px solid white;
+  display: block;
+  /* position: absolute; */
   padding: 10px;
+  text-align: right;
+  transition-duration: 1s;
+  width: 100%;
+}
+
+.nav {
+  color: white;
+}
+
+.logo {
+  height: 25px;
+  margin: 0px;
+  width: 25px;
+  -webkit-transition: -webkit-transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out;
+}
+
+.logo:hover {
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+#menuIcon {
+  height: 30px;
+  width: 30px;
+}
+
+#signUp {
+  border: 1px solid white;
+  padding: 5px;
+  transition-duration: 1s;
+}
+
+.mobile:hover,
+#signUp:hover {
+  color: black;
+  background-color: white;
+}
+
+@media screen and (min-width: 500px) {
+  .deskNav {
+    display: inline;
+  }
+  #menuIcon {
+    display: none;
+  }
 }

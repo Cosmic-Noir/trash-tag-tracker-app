@@ -1,20 +1,63 @@
-p {
-  max-width: 500px;
+header {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  width: 100%;
 }
 
-.landing {
+p {
+  max-width: 500px;
+  margin: 0px;
+}
+
+header,
+.landing,
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#ex {
-  height: 300px;
-  width: 400px;
+.container {
+  width: 100%;
 }
 
-#logo {
-  height: 150px;
-  width: 150px;
+.dark {
+  color: white;
+  background-color: black;
+}
+
+.section {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+#earth {
+  max-height: 150px;
+  max-width: 250px;
+  margin: 20px;
+}
+
+#ex {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 360px) {
+  #earth {
+    max-height: 200px;
+    max-width: 300px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .section {
+    display: flex;
+    flex-direction: row;
+  }
 }

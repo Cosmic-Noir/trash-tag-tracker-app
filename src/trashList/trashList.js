@@ -61,36 +61,32 @@ class TrashList extends Component {
 
   render() {
     return (
-      <div className="siteList">
-        <h2>Trash Sites:</h2>
+      <div className="flex-column">
+        <h2 className="listTitle">Trash Sites:</h2>
         {this.context.loggedIn === true ? (
-          <Link to="/addSite">Add New Trash Site</Link>
+          <Link to="/addSite" className="addNewSite">
+            Add New Trash Site
+          </Link>
         ) : (
           <h5>Log in to add a new site</h5>
         )}
-        <form className="siteList">
-          <select
-            className="center"
-            name="state_abr"
-            id="state_abr"
-            value={this.state.state_abr}
-            ref={this.state.state_abr}
-            onChange={e => this.updateState(e.target.value)}
-          >
-            <option value="">All</option>
-            {this.filterForStates()}
-          </select>
-        </form>
-        <ul className="siteList" id="siteList">
-          {this.displayList()}
-        </ul>
-        <footer>
-          {this.context.loggedIn === false ? (
-            <Link to="/signUp">Sign Up</Link>
-          ) : (
-            ""
-          )}
-        </footer>
+        <div className="siteList">
+          <form className="siteList">
+            <h3>Filter by State:</h3>
+            <select
+              className="center"
+              name="state_abr"
+              id="state_abr"
+              value={this.state.state_abr}
+              ref={this.state.state_abr}
+              onChange={e => this.updateState(e.target.value)}
+            >
+              <option value="">All</option>
+              {this.filterForStates()}
+            </select>
+          </form>
+          <ul className="siteList">{this.displayList()}</ul>
+        </div>
       </div>
     );
   }

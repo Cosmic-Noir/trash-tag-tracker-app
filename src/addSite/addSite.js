@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import siteContext from "../siteContext";
 import config from "../config";
 import TokenService from "../auth/token-service";
+import "./addSite.css";
 
 class AddSite extends Component {
   state = {
@@ -90,51 +91,70 @@ class AddSite extends Component {
     }
   };
 
+  handleCancel = () => {
+    this.props.history.goBack();
+  };
+
   render() {
     return (
-      <div className="addSite">
-        <h2>Add a new site that needs cleaning:</h2>
+      <div className="addSite flex-column">
+        <h2 className="listTitle">Add a new site that needs cleaning:</h2>
         <form
+          id="addForm"
           onSubmit={e => {
             this.handleSubmit(e);
           }}
         >
-          <label htmlFor="title">Title</label>
+          <label className="formLabel" htmlFor="title">
+            Title
+          </label>
           <input
-            type="text"
-            name="title"
+            className="formInput"
             id="title"
+            onChange={e => this.updateTitle(e.target.value)}
+            placeholder="Trash Site Title"
+            name="title"
             ref={this.title}
             required
-            onChange={e => this.updateTitle(e.target.value)}
+            type="text"
           ></input>
-          <label htmlFor="addrss">Address(aprox):</label>
+          <label className="formLabel" htmlFor="addrss">
+            Address(aprox):
+          </label>
           <input
-            type="addrss"
-            name="addrss"
+            className="formInput"
             id="addrss"
+            onChange={e => this.updateAddrss(e.target.value)}
+            placeholder="Aprox. Street Address"
+            name="addrss"
             ref={this.addrss}
             required
-            onChange={e => this.updateAddrss(e.target.value)}
+            type="addrss"
           ></input>
-          <label htmlFor="city">City:</label>
+          <label htmlFor="city" className="formLabel">
+            City:
+          </label>
           <input
-            type="text"
-            name="city"
+            className="formInput"
             id="city"
+            onChange={e => this.updateCity(e.target.value)}
+            placeholder="City"
+            name="city"
             ref={this.city}
             required
-            onChange={e => this.updateCity(e.target.value)}
+            type="text"
           />
-          <label htmlFor="state">State:</label>
+          <label htmlFor="state" className="formLabel">
+            State:
+          </label>
           <select
-            name="state_abr"
             id="state_abr"
+            onChange={e => this.updateState(e.target.value)}
+            placeholder="state"
+            name="state_abr"
             ref={this.state_abr}
             required
-            onChange={e => this.updateState(e.target.value)}
           >
-            <option>State</option>
             <option value="AL">AL</option>
             <option value="AK">AK</option>
             <option value="AZ">AZ</option>
@@ -185,22 +205,28 @@ class AddSite extends Component {
             <option value="WI">WI</option>
             <option value="WY">WY</option>
           </select>
-          <label htmlFor="content">Description:</label>
+          <label htmlFor="content" className="formLabel">
+            Description:
+          </label>
           <textarea
-            name="content"
             id="content"
+            name="content"
+            onChange={e => this.updateContent(e.target.value)}
+            placeholder="Description of trash site and location"
             ref={this.content}
             required
-            onChange={e => this.updateContent(e.target.value)}
           ></textarea>
-          <label htmlFor="before_img">Upload Image:</label>
+          <label htmlFor="before_img" className="formLabel">
+            Upload Image:
+          </label>
           <input
-            type="file"
-            name="before_img"
+            className="formInput"
             id="before_img"
+            onChange={e => this.updateBeforeImg(e)}
+            name="before_img"
             ref={this.before_img}
             required
-            onChange={e => this.updateBeforeImg(e)}
+            type="file"
           />
 
           {this.state.error !== null ? (
@@ -208,7 +234,10 @@ class AddSite extends Component {
           ) : (
             ""
           )}
-          <button type="submit" onClick={this.uploadPic}>
+          <button className="cancel" onClick={this.handleCancel} type="button">
+            Cancel
+          </button>
+          <button className="addNewSite" onClick={this.uploadPic} type="submit">
             Add Site
           </button>
         </form>
