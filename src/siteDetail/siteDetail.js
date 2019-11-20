@@ -42,8 +42,7 @@ class SiteDetail extends Component {
   };
 
   createDate = () => {
-    const date = this.state.site.date_posted.slice(0, 10);
-    this.setState({ dated: date });
+    this.setState({ dated: this.state.site.date_posted.slice(0, 10) });
   };
 
   componentDidMount() {
