@@ -8,7 +8,9 @@ class Site extends Component {
       <Link to={`/sites/${this.props.id}`} className="title">
         <div className="site">
           <h2 className="title">{this.props.title}</h2>
-          <h4>{this.props.state_abr}</h4>
+          <h4>
+            {this.props.city}, {this.props.state_abr}
+          </h4>
           <div className="wide_screen">
             <img
               src={this.props.before_img}
