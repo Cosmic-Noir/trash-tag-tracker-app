@@ -61,15 +61,17 @@ main {
 
 .formInput {
   padding: 5px;
+  width: 80%;
 }
 
 .formLabel {
+  display: none;
   font-size: 19px;
   padding-top: 5px;
 }
 
 .listTitle {
-  padding: 25px 0px 5px;
+  padding: 25px 15px 5px;
 }
 
 /* App component ID styles */
@@ -81,4 +83,10 @@ main {
 
 #footerSignUp:hover {
   color: hsla(209, 85%, 62%, 0.9);
+}
+
+@media screen and (min-width: 200px) {
+  .formInput {
+    max-width: 200px;
+  }
 }

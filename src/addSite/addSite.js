@@ -100,17 +100,19 @@ class AddSite extends Component {
       <div className="addSite flex-column">
         <h2 className="listTitle">Add a new site that needs cleaning:</h2>
         <form
+          id="addForm"
           onSubmit={e => {
             this.handleSubmit(e);
           }}
         >
-          <label htmlFor="title" className="formLabel">
+          <label className="formLabel" htmlFor="title">
             Title
           </label>
           <input
             className="formInput"
             id="title"
             onChange={e => this.updateTitle(e.target.value)}
+            placeholder="Trash Site Title"
             name="title"
             ref={this.title}
             required
@@ -123,6 +125,7 @@ class AddSite extends Component {
             className="formInput"
             id="addrss"
             onChange={e => this.updateAddrss(e.target.value)}
+            placeholder="Aprox. Street Address"
             name="addrss"
             ref={this.addrss}
             required
@@ -135,6 +138,7 @@ class AddSite extends Component {
             className="formInput"
             id="city"
             onChange={e => this.updateCity(e.target.value)}
+            placeholder="City"
             name="city"
             ref={this.city}
             required
@@ -146,11 +150,11 @@ class AddSite extends Component {
           <select
             id="state_abr"
             onChange={e => this.updateState(e.target.value)}
+            placeholder="state"
             name="state_abr"
             ref={this.state_abr}
             required
           >
-            <option>State</option>
             <option value="AL">AL</option>
             <option value="AK">AK</option>
             <option value="AZ">AZ</option>
@@ -208,6 +212,7 @@ class AddSite extends Component {
             id="content"
             name="content"
             onChange={e => this.updateContent(e.target.value)}
+            placeholder="Description of trash site and location"
             ref={this.content}
             required
           ></textarea>
