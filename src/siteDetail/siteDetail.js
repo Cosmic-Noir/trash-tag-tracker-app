@@ -51,7 +51,7 @@ class SiteDetail extends Component {
 
   render() {
     return (
-      <div>
+      <div className="flex-column">
         <div className="siteDetail">
           <img
             src={this.state.site.before_img}

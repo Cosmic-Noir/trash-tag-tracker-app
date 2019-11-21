@@ -11,7 +11,6 @@
 .site {
   align-items: center;
   background-color: hsla(180, 1%, 36%, 0.192);
-  /* border: 1px solid black; */
   border-radius: 5px;
   box-shadow: 8px 5px 5px hsla(180, 1%, 36%, 0.541);
   color: black;

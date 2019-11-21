@@ -2,26 +2,36 @@ p {
   max-width: 500px;
 }
 
-.detailImg {
-  margin-top: 50px;
+.details {
+  padding: 10px;
+  width: 90%;
 }
 
-.siteDetail,
-.detailFoot,
-.detail {
+.detailImg {
+  height: 80%;
+  width: 90%;
+  max-width: 600px;
+  padding: 10px;
+}
+
+.siteDetail {
+  align-items: center;
+  background-color: hsla(180, 1%, 36%, 0.192);
+  border-radius: 5px;
+  box-shadow: 8px 5px 5px hsla(180, 1%, 36%, 0.541);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-}
-
-.detailFoot,
-.detail {
-  width: 90%;
+  margin: 15px;
+  padding: 10px;
+  width: 80%;
 }
 
 @media screen and (min-width: 900px) {
   .siteDetail {
     flex-direction: row;
+  }
+  .detailImg {
+    max-width: 70%;
   }
 }
