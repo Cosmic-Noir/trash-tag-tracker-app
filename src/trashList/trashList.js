@@ -17,7 +17,7 @@ class TrashList extends Component {
   displayList = () => {
     // eslint-disable-next-line
     const sites = this.context.trash_sites.map(site => {
-      const { id, title, before_img, city, state_abr, content } = site;
+      const { id, title, before_img, city, state_abr, content, clean } = site;
       if (
         this.state.state_abr === "" ||
         this.state.state_abr === site.state_abr
@@ -31,6 +31,7 @@ class TrashList extends Component {
             city={city}
             state_abr={state_abr}
             content={content}
+            clean={clean}
           />
         );
       }

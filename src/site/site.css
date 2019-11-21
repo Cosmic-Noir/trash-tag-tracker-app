@@ -10,8 +10,11 @@
 
 .site {
   align-items: center;
-  border: 1px solid black;
+  background-color: hsla(180, 1%, 36%, 0.192);
+  /* border: 1px solid black; */
   border-radius: 5px;
+  box-shadow: 8px 5px 5px hsla(180, 1%, 36%, 0.541);
+  color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,7 +36,11 @@
   width: 100%;
 }
 
-.cleanSiteImg,
+.cleanSiteImg {
+  max-height: 200px;
+  max-width: 300px;
+  padding: 10px;
+}
 .trashSiteImg {
   max-height: 100%;
   max-width: 100%;
@@ -53,8 +60,15 @@
     align-self: start;
   }
 
+  .cleanSiteImg {
+    max-height: 250px;
+    max-width: 350px;
+    padding: 10px;
+  }
+
   .trashSiteImg {
     max-height: 300px;
     max-width: 400px;
+    padding: 10px;
   }
 }
