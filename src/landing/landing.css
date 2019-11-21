@@ -28,13 +28,19 @@ header,
   background-color: black;
 }
 
-.section {
+.landingSection {
   display: flex;
   padding: 20px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
+}
+
+#addPic {
+  max-height: 300px;
+  margin: 10px;
+  max-width: 220px;
 }
 
 #earth {
@@ -56,8 +62,12 @@ header,
 }
 
 @media screen and (min-width: 900px) {
-  .section {
+  .landingSection {
     display: flex;
     flex-direction: row;
+  }
+  #addPic {
+    max-height: 500px;
+    max-width: 300px;
   }
 }

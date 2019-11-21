@@ -86,7 +86,7 @@ class AddSite extends Component {
       this.setState({ error: `Please select a valid state` });
     } else {
       // let newSite = this.state;
-      // this.context.addNewSite(newSite);
+      // this.context.blackButton(newSite);
       this.addSite();
     }
   };
@@ -234,10 +234,18 @@ class AddSite extends Component {
           ) : (
             ""
           )}
-          <button className="cancel" onClick={this.handleCancel} type="button">
+          <button
+            className="whiteButton"
+            onClick={this.handleCancel}
+            type="button"
+          >
             Cancel
           </button>
-          <button className="addNewSite" onClick={this.uploadPic} type="submit">
+          <button
+            className="blackButton"
+            onClick={this.uploadPic}
+            type="submit"
+          >
             Add Site
           </button>
         </form>

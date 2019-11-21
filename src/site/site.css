@@ -10,9 +10,11 @@
 
 .site {
   align-items: center;
-  background-color: hsla(180, 1%, 36%, 0.192);
+  background-color: rgba(107, 105, 105, 0.192);
+  box-shadow: 4px 3px 2px hsla(180, 2%, 60%, 0.541);
+
+  /* border: 1px solid black; */
   border-radius: 5px;
-  box-shadow: 8px 5px 5px hsla(180, 1%, 36%, 0.541);
   color: black;
   display: flex;
   flex-direction: column;
@@ -22,7 +24,12 @@
   min-width: 300px;
   max-width: 300px;
   padding: 10px;
+  transition-duration: 1s;
   width: 100%;
+}
+
+.site:hover {
+  box-shadow: 8px 5px 5px hsla(180, 1%, 24%, 0.541);
 }
 
 .siteContent {

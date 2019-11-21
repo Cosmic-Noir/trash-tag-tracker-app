@@ -79,7 +79,11 @@ class SiteDetail extends Component {
           ) : (
             ""
           )}
-          <button type="button" onClick={this.handleClickBack}>
+          <button
+            className="blackButton"
+            onClick={this.handleClickBack}
+            type="button"
+          >
             Back
           </button>
           <CommentList siteId={this.props.match.params.siteId} />

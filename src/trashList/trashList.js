@@ -66,7 +66,7 @@ class TrashList extends Component {
       <div className="flex-column">
         <h2 className="listTitle">Trash Sites:</h2>
         {this.context.loggedIn === true ? (
-          <Link to="/addSite" className="addNewSite">
+          <Link to="/addSite" className="blackButton">
             Add New Trash Site
           </Link>
         ) : (

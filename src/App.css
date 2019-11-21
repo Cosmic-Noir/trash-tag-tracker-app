@@ -32,15 +32,30 @@ main {
   flex: 1 0 auto;
 }
 
+/* Global class sytles */
+
 .App {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
-/* Global class sytles */
+.blackButton {
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 1px;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  transition-duration: 1s;
+}
 
-.cancel {
+.blackButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.whiteButton {
   background-color: white;
   border: 1px solid black;
   border-radius: 1px;
@@ -50,7 +65,7 @@ main {
   transition-duration: 1s;
 }
 
-.cancel:hover {
+.whiteButton:hover {
   background-color: black;
   color: white;
 }

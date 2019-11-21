@@ -5,6 +5,7 @@ import siteContext from "../siteContext";
 import completeImg from "./example3.png";
 import logo from "../nav/logo1.png";
 import earthPic from "./earth2.jpg";
+import addSitePic from "./addSite.png";
 import "./landing.css";
 
 class Landing extends Component {
@@ -27,8 +28,8 @@ class Landing extends Component {
         </header>
 
         <div className="container">
-          <section className="section">
-            <div className="content">
+          <section className="landingSection">
+            <div className="landingContent">
               <h2>Create An Account And Make An Impact </h2>
               <p>
                 Start with small suggested changes on your dashboard to earn
@@ -48,8 +49,8 @@ class Landing extends Component {
           Our app shows how many small efforts add up to make a large impact.
           The Global EnvoScore tracks the points of all users.
         </p> */}
-          <section className="section dark">
-            <div className="content">
+          <section className="landingSection dark">
+            <div className="landingContent">
               <h2>Post A Trash Site:</h2>
               <p>
                 Use our app to report a new trash site that needs help. We don't
@@ -58,9 +59,10 @@ class Landing extends Component {
                 coordinated efforts to clean it together.
               </p>
             </div>
+            <img alt="Add a site" id="addPic" src={addSitePic} />
           </section>
-          <section className="section">
-            <div className="content">
+          <section className="landingSection flex-column">
+            <div className="landingContent">
               <h2>Cleaning Our World Together:</h2>
               <p>
                 Whether it is a small ditch on the side of a highway, or an oil
