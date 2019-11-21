@@ -46,7 +46,7 @@ main {
   background-color: black;
   border: 1px solid hsla(0, 0%, 47%, 0.9);
   border-radius: 4px;
-  box-shadow: 5px 3px 4px rgba(143, 142, 142, 0.479);
+  box-shadow: 5px 3px 4px rgba(179, 179, 179, 0.322);
   color: white;
   margin: 10px;
   min-width: 200px;
@@ -56,15 +56,16 @@ main {
 }
 
 .blackButton:hover {
-  background-color: white;
-  color: black;
+  color: hsla(209, 85%, 62%, 0.9);
+
+  box-shadow: 5px 3px 4px rgba(102, 102, 102, 0.822);
 }
 
 .whiteButton {
   background-color: white;
   border: 1px solid hsla(0, 0%, 47%, 0.9);
   border-radius: 4px;
-  box-shadow: 5px 3px 4px rgba(143, 142, 142, 0.479);
+  box-shadow: 5px 3px 4px rgba(179, 179, 179, 0.322);
   color: black;
   margin: 10px;
   min-width: 200px;
@@ -74,8 +75,10 @@ main {
 }
 
 .whiteButton:hover {
-  background-color: black;
-  color: white;
+  /* background-color: black; */
+  color: hsla(209, 85%, 62%, 0.9);
+
+  box-shadow: 5px 3px 4px rgba(102, 102, 102, 0.822);
 }
 
 .wrapper {

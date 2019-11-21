@@ -66,7 +66,7 @@ class CleanSite extends Component {
 
   render() {
     return (
-      <div className="clean">
+      <div className="clean flex-column">
         <h2>Mark A Trash Site As Cleaned:</h2>
         <h3>{this.state.title}</h3>
         <form onSubmit={this.handleSubmit}>
@@ -80,17 +80,23 @@ class CleanSite extends Component {
           />
           <label htmlFor="after_img">Upload Image:</label>
           <input
-            type="file"
-            name="after_img"
             id="after_img"
+            onChange={e => this.updateAfterImg(e)}
+            name="after_img"
             ref={this.after_img}
             required
-            onChange={e => this.updateAfterImg(e)}
+            type="file"
           />
-          <button type="button" onClick={this.handleCancel}>
+          <button
+            className="whiteButton"
+            onClick={this.handleCancel}
+            type="button"
+          >
             Cancel
           </button>
-          <button type="submit">Mark Site as Clean</button>
+          <button className="blackButton" type="submit">
+            Mark Site as Clean
+          </button>
         </form>
       </div>
     );
