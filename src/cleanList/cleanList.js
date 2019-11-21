@@ -19,7 +19,15 @@ class CleanList extends Component {
   displayList = () => {
     // eslint-disable-next-line
     const sites = this.context.clean_sites.map(site => {
-      const { id, title, before_img, after_img, city, state_abr } = site;
+      const {
+        id,
+        title,
+        before_img,
+        after_img,
+        city,
+        state_abr,
+        content
+      } = site;
       if (this.state.state_abr === "" || this.state.state_abr === state_abr) {
         return (
           <Site
@@ -30,6 +38,7 @@ class CleanList extends Component {
             after_img={after_img}
             city={city}
             state_abr={state_abr}
+            content={content}
           />
         );
       }

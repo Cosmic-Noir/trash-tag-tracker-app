@@ -7,22 +7,33 @@ class Site extends Component {
     return (
       <Link to={`/sites/${this.props.id}`} className="title">
         <div className="site">
-          <h2 className="title">{this.props.title}</h2>
-          <h4>
-            {this.props.city}, {this.props.state_abr}
-          </h4>
+          <div className="siteContent">
+            <h2 className="title">{this.props.title}</h2>
+            <h4>
+              {this.props.city}, {this.props.state_abr}
+            </h4>
+            <p className="content">{this.props.content}</p>
+          </div>
           <img
             alt="trash site"
-            className="siteImg"
+            // className="siteImg"
+            className={
+              this.props.clean === false ? "trashSiteImg" : "cleanSiteImg"
+            }
             id={"pic" + this.props.id}
             src={this.props.before_img}
           />
           {this.props.after_img ? (
-            <img src={this.props.after_img} alt="Clean site" />
+            <img
+              alt="Clean site"
+              className={
+                this.props.clean === false ? "trashSiteImg" : "cleanSiteImg"
+              }
+              src={this.props.after_img}
+            />
           ) : (
             ""
           )}
-          <p>{this.props.content}</p>
         </div>
       </Link>
     );
