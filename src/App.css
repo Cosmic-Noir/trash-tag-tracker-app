@@ -7,10 +7,12 @@
 
 a {
   text-decoration: none;
+  /* text-align: center; */
 }
 
 button {
-  min-width: 300px;
+  min-width: 200px;
+  text-align: center;
 }
 
 footer {
@@ -42,11 +44,14 @@ main {
 
 .blackButton {
   background-color: black;
-  border: 1px solid black;
-  border-radius: 1px;
+  border: 1px solid hsla(0, 0%, 47%, 0.9);
+  border-radius: 4px;
+  box-shadow: 5px 3px 4px rgba(143, 142, 142, 0.479);
   color: white;
   margin: 10px;
+  min-width: 200px;
   padding: 10px;
+  text-align: center;
   transition-duration: 1s;
 }
 
@@ -57,10 +62,13 @@ main {
 
 .whiteButton {
   background-color: white;
-  border: 1px solid black;
-  border-radius: 1px;
+  border: 1px solid hsla(0, 0%, 47%, 0.9);
+  border-radius: 4px;
+  box-shadow: 5px 3px 4px rgba(143, 142, 142, 0.479);
   color: black;
   margin: 10px;
+  min-width: 200px;
+
   padding: 10px;
   transition-duration: 1s;
 }

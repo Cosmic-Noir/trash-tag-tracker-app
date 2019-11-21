@@ -73,14 +73,17 @@ class SiteDetail extends Component {
         <section className="comments">
           {this.state.site.clean === false &&
           TokenService.hasAuthToken() === true ? (
-            <Link to={`/cleanSite/${this.state.site.id}`}>
+            <Link
+              to={`/cleanSite/${this.state.site.id}`}
+              className="blackButton"
+            >
               Mark as Cleaned!
             </Link>
           ) : (
             ""
           )}
           <button
-            className="blackButton"
+            className="whiteButton"
             onClick={this.handleClickBack}
             type="button"
           >

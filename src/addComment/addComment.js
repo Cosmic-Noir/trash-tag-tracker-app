@@ -93,12 +93,18 @@ class AddComment extends Component {
             value={this.state.content}
             onChange={e => this.updateContent(e.target.value)}
           ></textarea>
-          <button type="submit">Add</button>
+          <button className="blackButton" type="submit">
+            Add
+          </button>
+          <button
+            type="button"
+            className="whiteButton"
+            id="cancel"
+            onClick={this.handleCancel}
+          >
+            Cancel
+          </button>
         </form>
-
-        <button type="button" id="cancel" onClick={this.handleCancel}>
-          Cancel
-        </button>
       </div>
     );
   }

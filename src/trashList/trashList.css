@@ -24,21 +24,6 @@
   color: red;
 }
 
-.addNewSite {
-  background-color: black;
-  border: 1px solid black;
-  border-radius: 1px;
-  color: white;
-  margin: 10px;
-  padding: 10px;
-  transition-duration: 1s;
-}
-
-.addNewSite:hover {
-  background-color: white;
-  color: black;
-}
-
 #state_abr {
   font-size: 16px;
   margin: 5px;

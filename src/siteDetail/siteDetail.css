@@ -3,7 +3,8 @@ p {
 }
 
 .details {
-  padding: 10px;
+  align-self: start;
+  padding: 20px;
   width: 90%;
 }
 

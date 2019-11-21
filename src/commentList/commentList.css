@@ -6,6 +6,14 @@
   max-width: 100%;
 }
 
+.commentList {
+  list-style-type: none;
+}
+
 .hidden {
   display: none;
+}
+
+#noComment {
+  padding: 10px;
 }

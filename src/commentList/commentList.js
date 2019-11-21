@@ -56,7 +56,11 @@ class CommentList extends Component {
         />
       );
     });
-    return comments;
+    if (comments.length === 0) {
+      return <li id="noComment">No comments yet!</li>;
+    } else {
+      return comments;
+    }
   };
 
   componentDidMount() {
@@ -71,8 +75,21 @@ class CommentList extends Component {
         ) : (
           <div>
             <h5>Comments:</h5>
+            <ul className="commentList">
+              {this.state.error === null ? (
+                this.displayComments()
+              ) : (
+                <p>{this.state.error}</p>
+              )}
+            </ul>
+            <p></p>
             {TokenService.hasAuthToken() === true ? (
-              <button type="button" id="add" onClick={this.clickAddComment}>
+              <button
+                type="button"
+                className="blackButton"
+                id="add"
+                onClick={this.clickAddComment}
+              >
                 Add Comment
               </button>
             ) : (
@@ -84,14 +101,6 @@ class CommentList extends Component {
             />
           </div>
         )}
-        <ul>
-          {this.state.error === null ? (
-            this.displayComments()
-          ) : (
-            <p>{this.state.error}</p>
-          )}
-        </ul>
-        <p></p>
       </div>
     );
   }
