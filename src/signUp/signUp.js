@@ -94,56 +94,64 @@ class SignUp extends Component {
   render() {
     return (
       <div className="signUp">
-        <h3>Sign Up:</h3>
+        <h3 className="title">Sign Up:</h3>
         <form
           onSubmit={e => {
             this.handlSubmit(e);
           }}
         >
-          <label>Username:</label>
           <input
-            type="text"
-            name="username"
+            className="formInput"
             id="username"
-            required
-            ref={this.username}
+            name="username"
             onChange={e => this.updateUsername(e.target.value)}
+            placeholder="username"
+            ref={this.username}
+            required
+            type="text"
           ></input>
-          <label>Email:</label>
           <input
-            type="email"
-            name="email"
+            className="formInput"
             id="email"
+            name="email"
+            onChange={e => this.updateEmail(e.target.value)}
+            placeholder="e-mail"
             required
             ref={this.email}
-            onChange={e => this.updateEmail(e.target.value)}
+            type="email"
           ></input>
-          <label>Password:</label>
           <input
-            type="password"
-            name="password"
+            className="formInput"
             id="password"
-            required
-            ref={this.password}
+            name="password"
             onChange={e => this.updatePass(e.target.value)}
-          />
-          <label htmlFor="Password repeat">Enter password again:</label>
-          <input
-            type="password"
-            name="passTwo"
-            id="passTwo"
+            placeholder="password"
+            ref={this.password}
             required
-            ref={this.passTwo}
+            type="password"
+          />
+          <input
+            className="formInput"
+            id="passTwo"
+            name="passTwo"
             onChange={e => this.updatePassTwo(e.target.value)}
+            placeholder="repeat password"
+            ref={this.passTwo}
+            required
+            type="password"
           />
           {this.state.error !== null ? (
             <h4 className="error">{this.state.error}</h4>
           ) : (
             ""
           )}
-          <button type="submit">Create Account</button>
+          <button className="whiteButton" type="submit">
+            Create Account
+          </button>
         </form>
-        <Link to="/signIn">Sign In</Link>
+        <Link className="whiteButton" to="/signIn">
+          Sign In
+        </Link>
       </div>
     );
   }

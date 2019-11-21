@@ -98,7 +98,7 @@ class AddSite extends Component {
   render() {
     return (
       <div className="addSite flex-column">
-        <h2 className="listTitle">Add a new site that needs cleaning:</h2>
+        <h2 className="title">Add a new site that needs cleaning:</h2>
         <form
           id="addForm"
           onSubmit={e => {

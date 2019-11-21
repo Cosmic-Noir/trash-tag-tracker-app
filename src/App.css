@@ -57,8 +57,6 @@ main {
 }
 
 .blackButton:hover {
-  /* color: hsla(209, 85%, 62%, 0.9); */
-
   box-shadow: 5px 3px 4px rgba(102, 102, 102, 0.822);
 }
 
@@ -72,15 +70,12 @@ main {
   font-size: 16px;
   margin: 10px;
   min-width: 200px;
-
   padding: 10px;
+  text-align: center;
   transition-duration: 1s;
 }
 
 .whiteButton:hover {
-  /* background-color: black; */
-  /* color: hsla(209, 85%, 62%, 0.9); */
-
   box-shadow: 5px 3px 4px rgba(102, 102, 102, 0.822);
 }
 
@@ -89,17 +84,18 @@ main {
 }
 
 .formInput {
+  margin: 10px;
   padding: 5px;
   width: 80%;
 }
 
-.formLabel {
+/* .formLabel {
   display: none;
   font-size: 19px;
   padding-top: 5px;
-}
+} */
 
-.listTitle {
+.title {
   padding: 25px 15px 5px;
 }
 
