@@ -84,14 +84,6 @@ class SiteDetail extends Component {
           </button>
           <CommentList siteId={this.props.match.params.siteId} />
         </section>
-
-        <footer className="detailFoot">
-          {TokenService.hasAuthToken() === false ? (
-            <Link to="/signUp">Sign Up</Link>
-          ) : (
-            ""
-          )}
-        </footer>
       </div>
     );
   }
