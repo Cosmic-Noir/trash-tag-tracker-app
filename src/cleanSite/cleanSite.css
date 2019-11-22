@@ -1,3 +1,7 @@
 input {
   margin: 5px;
 }
+
+#after_img {
+  padding-bottom: 10px;
+}

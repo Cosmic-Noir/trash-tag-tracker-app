@@ -97,7 +97,7 @@ class CleanSite extends Component {
           >
             Cancel
           </button>
-          <button className="blackButton" type="submit">
+          <button className="whiteButton" type="submit">
             Mark Site as Clean
           </button>
         </form>
