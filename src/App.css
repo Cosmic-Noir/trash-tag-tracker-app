@@ -1,8 +1,10 @@
 /* Global element styles */
 
 * {
-  padding: 0px;
+  box-sizing: border-box;
+
   margin: 0px;
+  padding: 0px;
 }
 
 a {
@@ -13,6 +15,13 @@ a {
 button {
   min-width: 200px;
   text-align: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 footer {
@@ -43,24 +52,6 @@ main {
   flex-direction: column;
   height: 100vh;
 }
-
-/* .whiteButton {
-  background-color: black;
-  border: 1px solid hsla(0, 0%, 47%, 0.9);
-  border-radius: 4px;
-  box-shadow: 5px 3px 4px rgba(179, 179, 179, 0.322);
-  color: white;
-  font-family: Ubuntu;
-  margin: 10px;
-  min-width: 200px;
-  padding: 10px;
-  text-align: center;
-  transition-duration: 1s;
-}
-
-.whiteButton:hover {
-  box-shadow: 5px 3px 4px rgba(102, 102, 102, 0.822);
-} */
 
 .error {
   color: red;

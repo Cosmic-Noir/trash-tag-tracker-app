@@ -53,11 +53,24 @@ class SiteDetail extends Component {
     return (
       <div className="flex-column">
         <div className="siteDetail">
-          <img
-            src={this.state.site.before_img}
-            className="detailImg"
-            alt="Before"
-          />
+          <section className="flex-column">
+            <img
+              alt="Before"
+              className={
+                this.state.site.clean === false ? "detailImg" : "cleanDetailImg"
+              }
+              src={this.state.site.before_img}
+            />
+            {this.state.site.clean === true ? (
+              <img
+                alt="Clean site"
+                className="cleanDetailImg"
+                src={this.state.site.after_img}
+              />
+            ) : (
+              ""
+            )}
+          </section>
           <section className="details">
             <h2>{this.state.site.title}</h2>
             <h4 className="addrss">{this.state.site.addrss}</h4>
