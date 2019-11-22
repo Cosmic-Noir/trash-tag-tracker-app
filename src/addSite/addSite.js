@@ -5,14 +5,7 @@ import TokenService from "../auth/token-service";
 import "./addSite.css";
 
 class AddSite extends Component {
-  state = {
-    // title: "",
-    // addrss: "",
-    // city: "",
-    // state_abr: "",
-    // content: "",
-    // before_img: ""
-  };
+  state = {};
 
   static contextType = siteContext;
 
@@ -86,7 +79,7 @@ class AddSite extends Component {
       this.setState({ error: `Please select a valid state` });
     } else {
       // let newSite = this.state;
-      // this.context.blackButton(newSite);
+      // this.context.whiteButton(newSite);
       this.addSite();
     }
   };
@@ -105,7 +98,7 @@ class AddSite extends Component {
             this.handleSubmit(e);
           }}
         >
-          <label className="formLabel" htmlFor="title">
+          <label className="subtitle" htmlFor="title">
             Title
           </label>
           <input
@@ -118,7 +111,7 @@ class AddSite extends Component {
             required
             type="text"
           ></input>
-          <label className="formLabel" htmlFor="addrss">
+          <label className="subtitle" htmlFor="addrss">
             Address(aprox):
           </label>
           <input
@@ -131,7 +124,7 @@ class AddSite extends Component {
             required
             type="addrss"
           ></input>
-          <label htmlFor="city" className="formLabel">
+          <label htmlFor="city" className="subtitle">
             City:
           </label>
           <input
@@ -144,7 +137,7 @@ class AddSite extends Component {
             required
             type="text"
           />
-          <label htmlFor="state" className="formLabel">
+          <label htmlFor="state" className="subtitle">
             State:
           </label>
           <select
@@ -205,7 +198,7 @@ class AddSite extends Component {
             <option value="WI">WI</option>
             <option value="WY">WY</option>
           </select>
-          <label htmlFor="content" className="formLabel">
+          <label htmlFor="content" className="subtitle">
             Description:
           </label>
           <textarea
@@ -216,7 +209,7 @@ class AddSite extends Component {
             ref={this.content}
             required
           ></textarea>
-          <label htmlFor="before_img" className="formLabel">
+          <label htmlFor="before_img" className="subtitle">
             Upload Image:
           </label>
           <input
@@ -242,7 +235,7 @@ class AddSite extends Component {
             Cancel
           </button>
           <button
-            className="blackButton"
+            className="whiteButton"
             onClick={this.uploadPic}
             type="submit"
           >

@@ -44,7 +44,7 @@ main {
   height: 100vh;
 }
 
-.blackButton {
+/* .whiteButton {
   background-color: black;
   border: 1px solid hsla(0, 0%, 47%, 0.9);
   border-radius: 4px;
@@ -58,22 +58,21 @@ main {
   transition-duration: 1s;
 }
 
-.blackButton:hover {
+.whiteButton:hover {
   box-shadow: 5px 3px 4px rgba(102, 102, 102, 0.822);
-}
+} */
 
 .error {
   color: red;
 }
 
 .formInput {
-  margin: 10px;
   padding: 5px;
   width: 80%;
 }
 
 .subtitle {
-  padding: 20px 5px 5px;
+  padding: 20px 5px 2px;
 }
 
 .title {
@@ -103,7 +102,7 @@ main {
   min-height: 100%;
 }
 
-/* .formLabel {
+/* .subtitle {
   display: none;
   font-size: 19px;
   padding-top: 5px;
