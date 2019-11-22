@@ -8,16 +8,7 @@
   padding: 10px;
 }
 
-.cleanTile {
-  align-items: center;
-  background-color: rgba(211, 209, 209, 0.13);
-  border: 1px solid hsla(0, 0%, 78%, 0.747);
-  box-shadow: 3px 2px 3px 2px hsla(180, 2%, 60%, 0.541);
-
-  /* border: 1px solid black; */
-  border-radius: 5px;
-  color: black;
-  display: flex;
+.clean {
   flex-direction: column;
   justify-content: center;
   min-height: 280px;
@@ -27,10 +18,6 @@
   padding: 10px;
   transition-duration: 1s;
   width: 100%;
-}
-
-.cleanTile:hover {
-  box-shadow: 8px 5px 5px hsla(180, 1%, 24%, 0.541);
 }
 
 .content {
@@ -49,39 +36,39 @@
   width: 100%;
 }
 
+.tile {
+  align-items: center;
+  background-color: rgba(211, 209, 209, 0.13);
+  border: 1px solid hsla(0, 0%, 78%, 0.747);
+  box-shadow: 3px 2px 3px 2px hsla(180, 2%, 60%, 0.541);
+  border-radius: 5px;
+  color: black;
+  display: flex;
+}
+
 .trashSiteImg {
   max-height: 200px;
   max-width: 300px;
   padding: 10px;
 }
 
-.trashTile {
-  align-items: center;
-  background-color: rgba(211, 209, 209, 0.13);
-  border: 1px solid hsla(0, 0%, 78%, 0.747);
-  box-shadow: 3px 2px 3px 2px hsla(180, 2%, 60%, 0.541);
-
-  /* border: 1px solid black; */
-  border-radius: 5px;
-  color: black;
-  display: flex;
+.trash {
   flex-direction: column;
   height: 300px;
   justify-content: center;
   min-height: 280px;
   margin: 10px;
-
   width: 300px;
   padding: 10px;
   transition-duration: 1s;
 }
 
-.trashTile:hover {
+.tile:hover {
   box-shadow: 8px 5px 5px hsla(180, 1%, 24%, 0.541);
 }
 
 @media screen and (min-width: 800px) {
-  .cleanTile {
+  .clean {
     flex-direction: row;
     max-height: 400px;
     max-width: 550px;
@@ -89,7 +76,7 @@
   .content {
     display: flex;
   }
-  .trashTile {
+  .trash {
     flex-direction: row;
     width: 700px;
     height: 200px;
@@ -97,12 +84,6 @@
   .siteContent {
     align-self: start;
   }
-
-  /* .cleanSiteImg {
-    max-height: 250px;
-    max-width: 350px;
-    padding: 10px;
-  } */
 
   .trashSiteImg {
     max-height: 280px;
