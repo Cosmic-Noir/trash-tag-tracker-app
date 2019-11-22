@@ -29,7 +29,6 @@
 .mobile {
   border: 1px solid white;
   display: block;
-  /* position: absolute; */
   padding: 10px;
   text-align: right;
   transition-duration: 1s;
@@ -75,6 +74,9 @@
     display: inline;
   }
   #menuIcon {
+    display: none;
+  }
+  #mobileNav {
     display: none;
   }
 }
