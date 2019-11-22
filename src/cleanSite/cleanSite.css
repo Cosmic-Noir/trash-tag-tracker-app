@@ -5,10 +5,18 @@
   width: 80%;
 }
 
-#after_desc {
+.comments {
+  width: 100%;
+}
+
+.desc {
   max-width: 400px;
   height: 100px;
   width: 80%;
+}
+
+.width100 {
+  width: 100%;
 }
 
 #clean_form {

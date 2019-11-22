@@ -74,8 +74,9 @@ class AddComment extends Component {
 
   render() {
     return (
-      <div className="addComment hidden" id="addComment">
+      <div className="addComment hidden width100" id="addComment">
         <form
+          className="width100"
           onSubmit={e => {
             this.handleSubmit(e);
           }}
@@ -87,8 +88,9 @@ class AddComment extends Component {
             ""
           )}
           <textarea
+            className="desc"
             name="content"
-            id="content"
+            id="addComment"
             ref={this.content}
             value={this.state.content}
             onChange={e => this.updateContent(e.target.value)}

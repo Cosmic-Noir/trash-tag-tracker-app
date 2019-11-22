@@ -78,7 +78,8 @@ class CleanSite extends Component {
             Updated Description:
           </label>
           <textarea
-            id="after_desc"
+            className="desc"
+            id="content"
             name="content"
             onChange={e => this.updateContent(e.target.value)}
             required

@@ -73,7 +73,7 @@ class CommentList extends Component {
         {this.context.loggedIn === false ? (
           <h5>Comments: (Log in to comment!)</h5>
         ) : (
-          <div>
+          <div className="width100 flex-column">
             <h5>Comments:</h5>
             <ul className="commentList">
               {this.state.error === null ? (
