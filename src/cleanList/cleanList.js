@@ -85,7 +85,7 @@ class CleanList extends Component {
             {this.filterForStates()}
           </select>
         </form>
-        {this.displayList()}
+        <ul className="siteList">{this.displayList()}</ul>
       </div>
     );
   }
