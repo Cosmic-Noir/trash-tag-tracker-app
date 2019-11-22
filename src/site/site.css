@@ -10,8 +10,9 @@
 
 .site {
   align-items: center;
-  background-color: rgba(107, 105, 105, 0.192);
-  box-shadow: 4px 3px 2px hsla(180, 2%, 60%, 0.541);
+  background-color: rgba(211, 209, 209, 0.13);
+  border: 1px solid hsla(0, 0%, 78%, 0.747);
+  box-shadow: 3px 2px 3px 2px hsla(180, 2%, 60%, 0.541);
 
   /* border: 1px solid black; */
   border-radius: 5px;

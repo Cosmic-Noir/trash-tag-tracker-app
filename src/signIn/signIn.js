@@ -73,8 +73,8 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div className="signIn">
-        <h2>Sign In: </h2>
+      <div className="signIn flex-column">
+        <h2 className="title">Sign In: </h2>
         <form
           onSubmit={e => {
             this.handleSubmit(e);
@@ -82,30 +82,36 @@ class SignIn extends Component {
         >
           <label>Username:</label>
           <input
-            type="username"
-            name="username"
+            className="formInput"
             id="username"
+            name="username"
+            onChange={e => this.updateUsername(e.target.value)}
             ref={this.username}
             required
-            onChange={e => this.updateUsername(e.target.value)}
+            type="username"
           />
           <label>Password:</label>
           <input
-            type="password"
-            name="pass"
+            className="formInput"
             id="pass"
-            ref={this.pass}
-            required
+            name="pass"
             onChange={e => this.updatePass(e.target.value)}
+            required
+            ref={this.pass}
+            type="password"
           />
           {this.state.error !== null ? (
             <h4 className="error">{this.state.error}</h4>
           ) : (
             ""
           )}
-          <button type="submit">Log In</button>
+          <button className="whiteButton" type="submit">
+            Log In
+          </button>
         </form>
-        <Link to="signUp">Sign Up</Link>
+        <Link className="whiteButton" to="signUp">
+          Sign Up
+        </Link>
       </div>
     );
   }

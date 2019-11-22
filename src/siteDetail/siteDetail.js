@@ -75,7 +75,7 @@ class SiteDetail extends Component {
           TokenService.hasAuthToken() === true ? (
             <Link
               to={`/cleanSite/${this.state.site.id}`}
-              className="blackButton"
+              className="whiteButton"
             >
               Mark as Cleaned!
             </Link>

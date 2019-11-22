@@ -86,7 +86,7 @@ class CommentList extends Component {
             {TokenService.hasAuthToken() === true ? (
               <button
                 type="button"
-                className="blackButton"
+                className="whiteButton"
                 id="add"
                 onClick={this.clickAddComment}
               >

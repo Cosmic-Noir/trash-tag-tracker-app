@@ -5,7 +5,7 @@ import "./site.css";
 class Site extends Component {
   render() {
     return (
-      <Link to={`/sites/${this.props.id}`} className="title">
+      <Link to={`/sites/${this.props.id}`} className="">
         <div className="site">
           <div className="siteContent">
             <h2 className="title">{this.props.title}</h2>
