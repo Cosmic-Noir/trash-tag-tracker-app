@@ -66,14 +66,14 @@
   color: black;
   display: flex;
   flex-direction: column;
+  height: 300px;
   justify-content: center;
   min-height: 280px;
   margin: 10px;
-  min-width: 300px;
-  max-width: 300px;
+
+  width: 300px;
   padding: 10px;
   transition-duration: 1s;
-  width: 100%;
 }
 
 .trashTile:hover {
@@ -83,6 +83,7 @@
 @media screen and (min-width: 800px) {
   .cleanTile {
     flex-direction: row;
+    max-height: 400px;
     max-width: 550px;
   }
   .content {
@@ -90,8 +91,8 @@
   }
   .trashTile {
     flex-direction: row;
-    max-width: 700px;
-    max-height: 200px;
+    width: 700px;
+    height: 200px;
   }
   .siteContent {
     align-self: start;
