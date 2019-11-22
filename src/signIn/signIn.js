@@ -80,22 +80,22 @@ class SignIn extends Component {
             this.handleSubmit(e);
           }}
         >
-          <label>Username:</label>
           <input
             className="formInput"
             id="username"
             name="username"
             onChange={e => this.updateUsername(e.target.value)}
+            placeholder="username"
             ref={this.username}
             required
             type="username"
           />
-          <label>Password:</label>
           <input
             className="formInput"
             id="pass"
             name="pass"
             onChange={e => this.updatePass(e.target.value)}
+            placeholder="password"
             required
             ref={this.pass}
             type="password"

@@ -94,7 +94,7 @@ class SignUp extends Component {
   render() {
     return (
       <div className="signUp">
-        <h3 className="title">Sign Up:</h3>
+        <h2 className="title">Sign Up:</h2>
         <form
           onSubmit={e => {
             this.handlSubmit(e);
