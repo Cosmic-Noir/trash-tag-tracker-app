@@ -1,7 +1,16 @@
-input {
-  margin: 5px;
-}
-
 #after_img {
   padding-bottom: 10px;
+  margin: auto;
+  text-align: center;
+  width: 80%;
+}
+
+#after_desc {
+  max-width: 400px;
+  height: 100px;
+  width: 80%;
+}
+
+#clean_form {
+  width: 100%;
 }

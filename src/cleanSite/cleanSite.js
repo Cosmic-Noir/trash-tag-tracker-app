@@ -69,12 +69,16 @@ class CleanSite extends Component {
       <div className="flex-column">
         <h2 className="title">Mark A Trash Site As Cleaned:</h2>
         <h3>{this.state.title}</h3>
-        <form onSubmit={this.handleSubmit}>
+        <form
+          id="clean_form"
+          className="flex-column"
+          onSubmit={this.handleSubmit}
+        >
           <label className="subtitle" htmlFor="description">
             Updated Description:
           </label>
           <textarea
-            id="content"
+            id="after_desc"
             name="content"
             onChange={e => this.updateContent(e.target.value)}
             required
@@ -83,6 +87,7 @@ class CleanSite extends Component {
             Upload Image:
           </label>
           <input
+            className="formInput"
             id="after_img"
             onChange={e => this.updateAfterImg(e)}
             name="after_img"
