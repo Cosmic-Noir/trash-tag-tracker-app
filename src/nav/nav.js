@@ -68,10 +68,10 @@ class Nav extends Component {
             </Link>
           )}
           <img
-            src={menuIcon}
             alt="menu icon"
             id="menuIcon"
             onClick={this.toggleMobileMenu}
+            src={menuIcon}
           />
         </div>
         <div id="mobileNav">
