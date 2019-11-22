@@ -6,7 +6,7 @@ class Site extends Component {
   render() {
     return (
       <Link to={`/sites/${this.props.id}`} className="">
-        <div className="site">
+        <div className={this.props.clean === false ? "trashTile" : "cleanTile"}>
           <div className="siteContent">
             <h2 className="title">{this.props.title}</h2>
             <h4>
@@ -14,26 +14,28 @@ class Site extends Component {
             </h4>
             <p className="content">{this.props.content}</p>
           </div>
-          <img
-            alt="trash site"
-            // className="siteImg"
-            className={
-              this.props.clean === false ? "trashSiteImg" : "cleanSiteImg"
-            }
-            id={"pic" + this.props.id}
-            src={this.props.before_img}
-          />
-          {this.props.after_img ? (
+          <div className="imgContainer">
             <img
-              alt="Clean site"
+              alt="trash site"
+              // className="siteImg"
               className={
                 this.props.clean === false ? "trashSiteImg" : "cleanSiteImg"
               }
-              src={this.props.after_img}
+              id={"pic" + this.props.id}
+              src={this.props.before_img}
             />
-          ) : (
-            ""
-          )}
+            {this.props.after_img ? (
+              <img
+                alt="Clean site"
+                className={
+                  this.props.clean === false ? "trashSiteImg" : "cleanSiteImg"
+                }
+                src={this.props.after_img}
+              />
+            ) : (
+              ""
+            )}
+          </div>
         </div>
       </Link>
     );
