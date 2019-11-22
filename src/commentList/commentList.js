@@ -4,6 +4,7 @@ import Comment from "../comment/comment";
 import config from "../config";
 import AddComment from "../addComment/addComment";
 import TokenService from "../auth/token-service";
+import { Link } from "react-router-dom";
 import "./commentList.css";
 
 class CommentList extends Component {
@@ -71,7 +72,12 @@ class CommentList extends Component {
     return (
       <div className="comments">
         {this.context.loggedIn === false ? (
-          <h5>Comments: (Log in to comment!)</h5>
+          <h5>
+            Comments:{" "}
+            <Link to="/signIn" id="commentLogIn">
+              (Log in to comment!)
+            </Link>
+          </h5>
         ) : (
           <div className="width100 flex-column">
             <h5>Comments:</h5>
