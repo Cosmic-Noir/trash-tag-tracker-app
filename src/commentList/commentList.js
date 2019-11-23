@@ -75,7 +75,7 @@ class CommentList extends Component {
           <h5>
             Comments:{" "}
             <Link to="/signIn" id="commentLogIn">
-              (Log in to comment!)
+              (Sign in to comment!)
             </Link>
           </h5>
         ) : (

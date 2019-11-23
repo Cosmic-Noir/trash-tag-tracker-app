@@ -70,7 +70,7 @@ class TrashList extends Component {
             Add New Trash Site
           </Link>
         ) : (
-          <h5>Log in to add a new site</h5>
+          <h5>Sign in to add a new site</h5>
         )}
         <div className="siteList">
           <form className="siteList">
