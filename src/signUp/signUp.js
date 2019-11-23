@@ -94,12 +94,12 @@ class SignUp extends Component {
   render() {
     return (
       <div className="signUp">
-        <h2 className="title">Sign Up:</h2>
-        <form
+        <form className="formBorder"
           onSubmit={e => {
             this.handlSubmit(e);
           }}
         >
+          <h2 className="title">Sign Up:</h2>
           <input
             className="formInput"
             id="username"
