@@ -74,12 +74,13 @@ class SignIn extends Component {
   render() {
     return (
       <div className="signIn flex-column">
-        <h2 className="title">Sign In: </h2>
         <form
+        className="formBorder"
           onSubmit={e => {
             this.handleSubmit(e);
           }}
         >
+          <h2 className="title">Sign In: </h2>
           <input
             className="formInput"
             id="username"
