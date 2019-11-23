@@ -3,9 +3,10 @@ import { Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import config from "./config";
 
-// Custom Components
+/* Custom Components */
 import About from "./components/about/about";
 import AddSite from "./components/addSite/addSite";
+import CleanList from "./components/cleanList/cleanList";
 import CleanSite from "./components/cleanSite/cleanSite";
 import Dashboard from "./components/dashboard/dashboard";
 import Landing from "./components/landing/landing";
@@ -15,12 +16,11 @@ import SignOut from "./components/signOut/signOut";
 import SignUp from "./components/signUp/signUp";
 import SiteDetail from "./components/siteDetail/siteDetail";
 import TrashList from "./components/trashList/trashList";
-import CleanList from "./components/cleanList/cleanList";
 
-// Styling & Images
+/* Styling & Images */
 import "./App.css";
 
-// Context
+/* Context */
 import siteContext from "./siteContext";
 
 class App extends Component {
@@ -31,7 +31,7 @@ class App extends Component {
     clean_sites: []
   };
 
-  // Custom Functions
+  /* Custom Methods */
 
   // Responsible for setting user's loggedIn status to true or false if JWT present
   checkLoginStatus = () => {

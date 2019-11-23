@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import config from "../../config";
+
+/* Custom Components */
 import TokenService from "../../auth/token-service";
+
+/* Styling & Images */
 import "./addComment.css";
 
 class AddComment extends Component {
@@ -9,15 +13,19 @@ class AddComment extends Component {
     content: ""
   };
 
-  // Methods to update state
+  /* Custom Methods */
+
+  // Responsible for updating content state from user input
   updateContent = content => {
     this.setState({ content });
   };
 
+  // Responsible for re-setting comment content to empty
   resetContent = () => {
     this.setState({ content: "" });
   };
 
+  // Responsible for sending POST request from state 
   postComment = () => {
     const url = config.API_ENDPOINT + "comments";
 
@@ -45,25 +53,19 @@ class AddComment extends Component {
     });
   };
 
-  // Method to send newComment to App state.comments
+  // Responsible for checking content input length < 0
   handleSubmit = e => {
     e.preventDefault();
-
     if (this.state.content.length === 0) {
       this.setState({ error: "Please provide content" });
     } else {
       this.resetContent();
-      // Display
-      const element = document.getElementById("addComment");
-      element.classList.add("hidden");
-      const addButton = document.getElementById("add");
-      addButton.classList.remove("hidden");
+      this.handleCancel();
       this.postComment();
     }
   };
 
-  // Methods for buttons
-
+  // Responsible for hiding content input 
   handleCancel = () => {
     const element = document.getElementById("addComment");
     element.classList.add("hidden");

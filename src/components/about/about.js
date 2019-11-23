@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import siteContext from "../../siteContext";
 
 // Styling & Images
 import "./about.css";
+
+// Context
+import siteContext from "../../siteContext";
 
 // Maybe use this as a score page or to track impact from score
 // Component not currently in use
