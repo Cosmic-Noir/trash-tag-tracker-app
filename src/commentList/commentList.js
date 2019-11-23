@@ -74,8 +74,8 @@ class CommentList extends Component {
         {this.context.loggedIn === false ? (
           <h5>
             Comments:{" "}
-            <Link to="/signIn" id="commentLogIn">
-              (Sign in to comment!)
+            <Link className="whiteButton" to="/signIn" >
+              Sign in to comment
             </Link>
           </h5>
         ) : (

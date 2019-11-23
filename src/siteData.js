@@ -2,7 +2,9 @@ const Data = {
   sites: [
     {
       id: 1,
-      clean: "false",
+      posted_by: 1,
+      date_posted: new Date().toISOString(),
+      clean: false,
       title: "Horsetooh Trail",
       addrss: "Horsetooth Resevoir",
       city: "Fort Collins",
@@ -15,7 +17,9 @@ const Data = {
     },
     {
       id: 2,
-      clean: "false",
+      posted_by: 2,
+      date_posted: new Date().toISOString(),
+      clean: false,
       title: "Park Trail",
       addrss: "6th & Oak Ave",
       city: "Omaha",
@@ -28,7 +32,9 @@ const Data = {
     },
     {
       id: 3,
-      clean: "false",
+      posted_by: 1,
+      date_posted: new Date().toISOString(),
+      clean: false,
       title: "Ditch Off Highway 25",
       addrss: "Highway 25, Windsor Exit",
       city: "Loveland",
@@ -41,7 +47,9 @@ const Data = {
     },
     {
       id: 4,
-      clean: "false",
+      posted_by: 2,
+      date_posted: new Date().toISOString(),
+      clean: false,
       title: "Leech Lake",
       addrss: "Leech Lake",
       city: "Pequot",
@@ -54,7 +62,9 @@ const Data = {
     },
     {
       id: 5,
-      clean: "true",
+      posted_by: 1,
+      date_posted: new Date().toISOString(),
+      clean: true,
       title: "Lum Beech - Cleaned!",
       addrss: "413 Lum Beech Rd",
       city: "Bloomington",

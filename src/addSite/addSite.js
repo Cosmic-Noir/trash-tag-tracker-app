@@ -91,13 +91,14 @@ class AddSite extends Component {
   render() {
     return (
       <div className="addSite flex-column">
-        <h2 className="title">Add a new site that needs cleaning:</h2>
         <form
+        className="formBorder"
           id="addForm"
           onSubmit={e => {
             this.handleSubmit(e);
           }}
         >
+          <h2 className="title">Add a new site that needs cleaning:</h2>
           <label className="subtitle" htmlFor="title">
             Title
           </label>
