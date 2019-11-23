@@ -2,14 +2,12 @@
 
 * {
   box-sizing: border-box;
-
   margin: 0px;
   padding: 0px;
 }
 
 a {
   text-decoration: none;
-  /* text-align: center; */
 }
 
 button {
@@ -27,9 +25,6 @@ footer {
   width: 100%;
 }
 
-p {
-  line-height: 26px;
-}
 
 main {
   padding-top: 60px;
@@ -38,6 +33,9 @@ main {
   align-items: center;
 }
 
+p {
+  line-height: 26px;
+}
 /* Global class sytles */
 
 .App {
@@ -119,8 +117,4 @@ main {
  text-decoration: underline;
 }
 
-@media screen and (min-width: 200px) {
-  .formInput {
-    max-width: 200px;
-  }
-}
+
