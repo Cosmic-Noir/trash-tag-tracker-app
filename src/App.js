@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import config from "./config";
-import "./App.css";
 
 // Custom Components
 import About from "./components/about/about";
@@ -18,6 +17,9 @@ import SiteDetail from "./components/siteDetail/siteDetail";
 import TrashList from "./components/trashList/trashList";
 import CleanList from "./components/cleanList/cleanList";
 
+// Styling & Images
+import "./App.css";
+
 // Context
 import siteContext from "./siteContext";
 
@@ -29,6 +31,9 @@ class App extends Component {
     clean_sites: []
   };
 
+  // Custom Functions
+
+  // Responsible for setting user's loggedIn status to true or false if JWT present
   checkLoginStatus = () => {
     if (window.localStorage.getItem(config.TOKEN_KEY)) {
       this.setState({ loggedIn: true });
@@ -37,6 +42,7 @@ class App extends Component {
     }
   };
 
+  // Responsible for GET request for trash sites
   getTrashSites = () => {
     const url = config.API_ENDPOINT + "sites/trash";
     fetch(url, {
@@ -55,17 +61,12 @@ class App extends Component {
       .catch(error => this.setState({ error }));
   };
 
+  // Responsible for setting trash_sites state to received trash site results
   setTrashSites = trash_sites => {
     this.setState({ trash_sites: trash_sites, error: null });
   };
 
-  addTrashSite = trash_site => {
-    this.setState({
-      comments: [...this.state.trash_sites, trash_site]
-    });
-  };
-
-  // API endpoint in .env.local for production file instead
+  // Responsible for GET request for clean sites
   getCleanSites = () => {
     const url = config.API_ENDPOINT + "sites/clean";
     fetch(url, {
@@ -84,6 +85,7 @@ class App extends Component {
       .catch(error => this.setState({ error }));
   };
 
+  // Responsible for setting clean_sites state to received clean site results
   setCleanSites = clean_sites => {
     this.setState({ clean_sites: clean_sites, error: null });
   };
@@ -98,7 +100,6 @@ class App extends Component {
     const contextValue = {
       loggedIn: this.state.loggedIn,
       checkLoginStatus: this.checkLoginStatus,
-      addTrashSite: this.addTrashSite,
       getCleanSites: this.getCleanSites,
       getTrashSites: this.getTrashSites,
       trash_sites: this.state.trash_sites,
