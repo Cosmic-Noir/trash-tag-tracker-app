@@ -32,7 +32,7 @@ class Nav extends Component {
   render() {
     return (
       <div className="navBar">
-          <Link to="/" className="nav" id="navLogo">
+          <Link to="/" className="" id="navLogo">
             <img src={logo} alt="Logo" className="logo" />
           </Link>
         <div className="deskNav">
@@ -70,27 +70,28 @@ class Nav extends Component {
           )}
             </div>
           
-        </div><img
+        </div>
+        <img
             alt="menu icon"
             id="menuIcon"
             onClick={this.toggleMobileMenu}
             src={menuIcon}
           />
         <div id="mobileNav">
-          <Link to="/" className="nav mobile" onClick={this.toggleMobileMenu}>
+          <Link to="/" className="mobile" onClick={this.toggleMobileMenu}>
             Home
           </Link>
           {/* <Link to="/about">Impact</Link> */}
           <Link
             to="/sites"
-            className="nav mobile"
+            className="mobile"
             onClick={this.toggleMobileMenu}
           >
             Trash Sites
           </Link>
           <Link
             to="/cleaned"
-            className="nav mobile"
+            className="mobile"
             onClick={this.toggleMobileMenu}
           >
             Cleaned Sites
@@ -98,7 +99,7 @@ class Nav extends Component {
           {this.context.loggedIn === true ? (
             <Link
               to="/dashboard"
-              className="nav mobile"
+              className="mobile"
               onClick={this.toggleMobileMenu}
             >
               Dashboard
@@ -109,7 +110,7 @@ class Nav extends Component {
           {this.context.loggedIn === false ? (
             <Link
               to="/signUp"
-              className="nav mobile"
+              className="mobile"
               onClick={this.toggleMobileMenu}
             >
               Sign Up
@@ -117,7 +118,7 @@ class Nav extends Component {
           ) : (
             <Link
               to="/signOut"
-              className="nav mobile"
+              className="mobile"
               onClick={this.handleLogOut}
             >
               Sign Out
