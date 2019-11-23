@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import config from "../config";
-import TokenService from "../auth/token-service";
+import config from "../../config";
+import TokenService from "../../auth/token-service";
 import "./addComment.css";
 
 class AddComment extends Component {

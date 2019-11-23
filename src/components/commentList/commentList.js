@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import siteContext from "../siteContext";
+import siteContext from "../../siteContext";
 import Comment from "../comment/comment";
-import config from "../config";
+import config from "../../config";
 import AddComment from "../addComment/addComment";
-import TokenService from "../auth/token-service";
+import TokenService from "../../auth/token-service";
 import { Link } from "react-router-dom";
 import "./commentList.css";
 

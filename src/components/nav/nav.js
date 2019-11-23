@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import siteContext from "../siteContext";
-import TokenService from "../auth/token-service";
+import siteContext from "../../siteContext";
+import TokenService from "../../auth/token-service";
 
 // Styling and Images:
 import logo from "./logo1.png";

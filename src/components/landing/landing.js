@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import siteContext from "../siteContext";
+import siteContext from "../../siteContext";
 
 // Styling and Images:
 import completeImg from "./example3.png";

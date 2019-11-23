@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import siteContext from "../siteContext";
-import config from "../config";
-import TokenService from "../auth/token-service";
+import siteContext from "../../siteContext";
+import config from "../../config";
+import TokenService from "../../auth/token-service";
 import "./addSite.css";
 
 class AddSite extends Component {

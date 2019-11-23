@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import siteContext from "../siteContext";
-import config from "../config";
+import siteContext from "../../siteContext";
+import config from "../../config";
 import "./signUp.css";
 
 class SignUp extends Component {

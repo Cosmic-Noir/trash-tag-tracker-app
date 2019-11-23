@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import siteContext from "../siteContext";
+import siteContext from "../../siteContext";
 import Site from "../site/site";
 import "./cleanList.css";
 

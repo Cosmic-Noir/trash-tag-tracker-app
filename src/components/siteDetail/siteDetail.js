@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import siteContext from "../siteContext";
+import siteContext from "../../siteContext";
 import CommentList from "../commentList/commentList";
-import config from "../config";
-import TokenService from "../auth/token-service";
+import config from "../../config";
+import TokenService from "../../auth/token-service";
 import "./siteDetail.css";
 
 class SiteDetail extends Component {

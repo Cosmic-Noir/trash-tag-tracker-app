@@ -5,18 +5,18 @@ import config from "./config";
 import "./App.css";
 
 // Custom Components
-import About from "./about/about";
-import AddSite from "./addSite/addSite";
-import CleanSite from "./cleanSite/cleanSite";
-import Dashboard from "./dashboard/dashboard";
-import Landing from "./landing/landing";
-import Nav from "./nav/nav";
-import SignIn from "./signIn/signIn";
-import SignOut from "./signOut/signOut";
-import SignUp from "./signUp/signUp";
-import SiteDetail from "./siteDetail/siteDetail";
-import TrashList from "./trashList/trashList";
-import CleanList from "./cleanList/cleanList";
+import About from "./components/about/about";
+import AddSite from "./components/addSite/addSite";
+import CleanSite from "./components/cleanSite/cleanSite";
+import Dashboard from "./components/dashboard/dashboard";
+import Landing from "./components/landing/landing";
+import Nav from "./components/nav/nav";
+import SignIn from "./components/signIn/signIn";
+import SignOut from "./components/signOut/signOut";
+import SignUp from "./components/signUp/signUp";
+import SiteDetail from "./components/siteDetail/siteDetail";
+import TrashList from "./components/trashList/trashList";
+import CleanList from "./components/cleanList/cleanList";
 
 // Context
 import siteContext from "./siteContext";

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import siteContext from "../siteContext";
+import siteContext from "../../siteContext";
 import { Link } from "react-router-dom";
-import config from "../config";
-import TokenService from "../auth/token-service";
+import config from "../../config";
+import TokenService from "../../auth/token-service";
 import "./signIn.css";
 
 class SignIn extends Component {

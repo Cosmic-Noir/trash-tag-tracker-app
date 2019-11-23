@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import siteContext from "../siteContext";
+import siteContext from "../../siteContext";
 import "./about.css";
 
 // Maybe use this as a score page or to track impact from score
