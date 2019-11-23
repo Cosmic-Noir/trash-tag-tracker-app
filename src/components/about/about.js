@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-// Styling & Images
+/* Styling & Images */
 import "./about.css";
 
 // Context

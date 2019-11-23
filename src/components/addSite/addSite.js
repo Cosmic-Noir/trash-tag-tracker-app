@@ -1,16 +1,28 @@
 import React, { Component } from "react";
-import siteContext from "../../siteContext";
 import config from "../../config";
+
+/* Custom Components */
 import TokenService from "../../auth/token-service";
+
+
+/* Styling & Images */
 import "./addSite.css";
+
+/* Context */
+import siteContext from "../../siteContext";
 
 class AddSite extends Component {
   state = {};
 
   static contextType = siteContext;
 
+  /* Custom Methods */
+
+  // Responsible for POST request to post a new trash site from state
   addSite = () => {
     const url = config.API_ENDPOINT + "sites";
+
+    // Create form data to allow file upload from before_img
     const form = new FormData();
 
     form.append("title", this.state.title);
@@ -39,6 +51,7 @@ class AddSite extends Component {
     });
   };
 
+  // 
   updateTitle(title) {
     this.setState({ title });
   }
