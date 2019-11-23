@@ -31,49 +31,51 @@ class Nav extends Component {
 
   render() {
     return (
-      <div>
-        <div className="deskNavBar">
+      <div className="navBar">
           <Link to="/" className="nav" id="navLogo">
             <img src={logo} alt="Logo" className="logo" />
           </Link>
+        <div className="deskNav">
 
-          <Link to="/" className="nav deskNav">
+          <div >
+          <Link to="/" className="nav">
             Home
           </Link>
           {/* <Link to="/about">Impact</Link> */}
-          <Link to="/sites" className="nav deskNav">
+          <Link to="/sites" className="nav">
             Trash Sites
           </Link>
-          <Link to="/cleaned" className="nav deskNav">
+          <Link to="/cleaned" className="nav">
             Cleaned Sites
           </Link>
           {this.context.loggedIn === true ? (
-            <Link to="/dashboard" className="nav deskNav">
+            <Link to="/dashboard" className="nav">
               Dashboard
             </Link>
           ) : (
             ""
-          )}
+            )}
           {this.context.loggedIn === false ? (
-            <Link to="/signUp" className="nav deskNav" id="signUp">
+            <Link to="/signUp" id="signUp">
               Sign Up
             </Link>
           ) : (
             <Link
               to="/signOut"
-              className="nav deskNav"
+              className="nav"
               onClick={this.handleLogOut}
             >
               Sign Out
             </Link>
           )}
-          <img
+            </div>
+          
+        </div><img
             alt="menu icon"
             id="menuIcon"
             onClick={this.toggleMobileMenu}
             src={menuIcon}
           />
-        </div>
         <div id="mobileNav">
           <Link to="/" className="nav mobile" onClick={this.toggleMobileMenu}>
             Home
