@@ -25,6 +25,18 @@
   width: 100%;
 }
 
+.nav {
+  border-radius: 4px;
+  color: white;
+  font-size: 15px;
+  margin: 0px 15px;
+  padding: 5px;
+}
+
+.nav:hover {
+  text-decoration: underline;
+}
+
 .navBar {
   background-color: black;
   border: 1px solid black;
@@ -35,16 +47,6 @@
   position: fixed;
   width: 100%;
 }
-
-.nav {
-  border-radius: 4px;
-  color: white;
-  font-size: 15px;
-  margin: 0px 15px;
-  padding: 5px;
-}
-
-
 
 .mobile:hover,
 #signUp:hover {
