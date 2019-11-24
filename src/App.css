@@ -25,7 +25,6 @@ footer {
   width: 100%;
 }
 
-
 main {
   padding-top: 60px;
   flex: 1 0 auto;
@@ -36,6 +35,7 @@ main {
 p {
   line-height: 26px;
 }
+
 /* Global class sytles */
 
 .App {
@@ -102,12 +102,6 @@ p {
 .wrapper {
   min-height: 100%;
 }
-
-/* .subtitle {
-  display: none;
-  font-size: 19px;
-  padding-top: 5px;
-} */
 
 /* App component ID styles */
 
