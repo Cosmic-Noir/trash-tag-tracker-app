@@ -1,12 +1,14 @@
 import React from "react";
 
 const siteContext = React.createContext({
+  // Methods
   checkLogginStatus: () => {},
   getCleanSites: () => {},
   getTrashSites: () => {},
+  // Values
+  clean_sites: [],
   loggedIn: "",
-  trash_sites: [],
-  clean_sites: []
+  trash_sites: []
 });
 
 export default siteContext;

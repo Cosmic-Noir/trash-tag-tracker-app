@@ -98,10 +98,12 @@ class App extends Component {
 
   render() {
     const contextValue = {
+      // Methods
       checkLoginStatus: this.checkLoginStatus,
-      clean_sites: this.state.clean_sites,
       getCleanSites: this.getCleanSites,
       getTrashSites: this.getTrashSites,
+      // Values
+      clean_sites: this.state.clean_sites,
       loggedIn: this.state.loggedIn,
       trash_sites: this.state.trash_sites
     };
