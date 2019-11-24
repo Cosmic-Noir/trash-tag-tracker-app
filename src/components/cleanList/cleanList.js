@@ -1,7 +1,13 @@
 import React, { Component } from "react";
-import siteContext from "../../siteContext";
+
+/* Custom Components */
 import Site from "../site/site";
+
+/* Styling & Images */
 import "./cleanList.css";
+
+/* Context */
+import siteContext from "../../siteContext";
 
 class CleanList extends Component {
   state = {
@@ -12,10 +18,14 @@ class CleanList extends Component {
 
   static contextType = siteContext;
 
+  /* Custom Methods */
+
+// Responsible for setting state from user input
   updateState = state_abr => {
     this.setState({ state_abr });
   };
 
+  // Responsible for taking context-passed clean_sites and returning array of site components
   displayList = () => {
     // eslint-disable-next-line
     const sites = this.context.clean_sites.map(site => {
@@ -46,6 +56,7 @@ class CleanList extends Component {
     return sites;
   };
 
+  // Responsible for creating unique state option list from context-passed sites - returns option elements
   filterForStates = () => {
     const state_abrs = {};
 
@@ -75,11 +86,11 @@ class CleanList extends Component {
         <form className="siteList">
           <select
             className="center"
-            name="state_abr"
             id="state_abr"
-            value={this.state.state_abr}
-            ref={this.state.state_abr}
+            name="state_abr"
             onChange={e => this.updateState(e.target.value)}
+            ref={this.state.state_abr}
+            value={this.state.state_abr}
           >
             <option value="">All</option>
             {this.filterForStates()}
