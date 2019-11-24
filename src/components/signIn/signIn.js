@@ -1,9 +1,15 @@
-import React, { Component } from "react";
-import siteContext from "../../siteContext";
-import { Link } from "react-router-dom";
 import config from "../../config";
+import { Link } from "react-router-dom";
+import React, { Component } from "react";
+
+/* Custom Components */
 import TokenService from "../../auth/token-service";
+
+/* Styling & Images */
 import "./signIn.css";
+
+/* Context */
+import siteContext from "../../siteContext";
 
 class SignIn extends Component {
   state = {
@@ -14,7 +20,8 @@ class SignIn extends Component {
 
   static contextType = siteContext;
 
-  updateUsername(username) {
+   /* State updating methods */
+   updateUsername(username) {
     this.setState({ username: username });
   }
 
@@ -22,6 +29,9 @@ class SignIn extends Component {
     this.setState({ pass: pass });
   }
 
+  /* Custom Methods */
+
+  // Responsible for POST request for user login from state 
   login = () => {
     const url = config.API_ENDPOINT + "login";
 
@@ -56,6 +66,7 @@ class SignIn extends Component {
       });
   };
 
+  // Responsible for validating form input and setting error state
   handleSubmit = e => {
     e.preventDefault();
     if (this.state.username.length < 6) {
@@ -73,7 +84,7 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div className="signIn flex-column">
+      <div className="flex-column signIn">
         <form
         className="formBorder"
           onSubmit={e => {

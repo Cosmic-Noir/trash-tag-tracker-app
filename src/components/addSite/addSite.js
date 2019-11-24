@@ -15,6 +15,32 @@ class AddSite extends Component {
 
   static contextType = siteContext;
 
+  /* State updating methods */
+  updateTitle(title) {
+    this.setState({ title });
+  }
+
+  updateAddrss(addrss) {
+    this.setState({ addrss });
+  }
+
+  updateCity(city) {
+    this.setState({ city });
+  }
+
+  updateState(state_abr) {
+    this.setState({ state_abr });
+  }
+
+  updateContent(content) {
+    this.setState({ content });
+  }
+
+  updateBeforeImg(event) {
+    this.setState({ before_img: event.target.files[0] });
+  }
+
+
   /* Custom Methods */
 
   // Responsible for POST request to post a new trash site from state
@@ -50,31 +76,6 @@ class AddSite extends Component {
     });
   };
 
-  /* State updating methods */
-  updateTitle(title) {
-    this.setState({ title });
-  }
-
-  updateAddrss(addrss) {
-    this.setState({ addrss });
-  }
-
-  updateCity(city) {
-    this.setState({ city });
-  }
-
-  updateState(state_abr) {
-    this.setState({ state_abr });
-  }
-
-  updateContent(content) {
-    this.setState({ content });
-  }
-
-  updateBeforeImg(event) {
-    this.setState({ before_img: event.target.files[0] });
-  }
-
   // Responsible for validating form input and setting error state
   handleSubmit = e => {
     e.preventDefault();
@@ -99,6 +100,7 @@ class AddSite extends Component {
     this.props.history.goBack();
   };
 
+   
   render() {
     return (
       <div className="addSite flex-column">
