@@ -25,7 +25,7 @@ class AddComment extends Component {
     this.setState({ content: "" });
   };
 
-  // Responsible for sending POST request from state 
+  // Responsible for sending POST request with comment content from state 
   postComment = () => {
     const url = config.API_ENDPOINT + "comments";
 
