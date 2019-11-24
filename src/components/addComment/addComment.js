@@ -1,11 +1,8 @@
-import config from "../../config";
 import React, { Component } from "react";
+import config from "../../config";
 
 /* Custom Components */
 import TokenService from "../../auth/token-service";
-
-/* Styling & Images */
-import "./addComment.css";
 
 class AddComment extends Component {
   state = {
@@ -53,7 +50,7 @@ class AddComment extends Component {
     });
   };
 
-  // Responsible for checking content input length < 0
+  // Responsible for validating form input and setting error state
   handleSubmit = e => {
     e.preventDefault();
     if (this.state.content.length === 0) {

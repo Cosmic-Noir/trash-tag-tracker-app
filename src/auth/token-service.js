@@ -2,7 +2,7 @@ import config from "../config";
 
 const TokenService = {
   saveAuthToken(token) {
-    // Look into storing in cookies
+    // Look into storing in cookies or session storage
     window.localStorage.setItem(config.TOKEN_KEY, token);
   },
   getAuthToken() {
