@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+
+// Should perhaps turn this into a function, OR update with user info to display
 class Dashboard extends Component {
   render() {
     return (
@@ -17,8 +19,6 @@ class Dashboard extends Component {
         <Link className="whiteButton" to="/addSite">
           Add New Trash Site
         </Link>
-        {/* <Link to="/about">View Our Mission</Link>
-        <Link to="/donate">Donate</Link> */}
       </div>
     );
   }
