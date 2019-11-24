@@ -98,12 +98,12 @@ class App extends Component {
 
   render() {
     const contextValue = {
-      loggedIn: this.state.loggedIn,
       checkLoginStatus: this.checkLoginStatus,
+      clean_sites: this.state.clean_sites,
       getCleanSites: this.getCleanSites,
       getTrashSites: this.getTrashSites,
-      trash_sites: this.state.trash_sites,
-      clean_sites: this.state.clean_sites
+      loggedIn: this.state.loggedIn,
+      trash_sites: this.state.trash_sites
     };
     return (
       <div className="App">
