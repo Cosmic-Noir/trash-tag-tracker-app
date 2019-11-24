@@ -1,5 +1,5 @@
-import React, { Component } from "react";
 import config from "../../config";
+import React, { Component } from "react";
 
 /* Custom Components */
 import TokenService from "../../auth/token-service";
@@ -25,7 +25,7 @@ class AddComment extends Component {
     this.setState({ content: "" });
   };
 
-  // Responsible for sending POST request with comment content from state 
+  // Responsible for POST request with comment content from state 
   postComment = () => {
     const url = config.API_ENDPOINT + "comments";
 

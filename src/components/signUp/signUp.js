@@ -1,8 +1,12 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import siteContext from "../../siteContext";
 import config from "../../config";
+import { Link } from "react-router-dom";
+import React, { Component } from "react";
+
+/* Styling & Images */
 import "./signUp.css";
+
+/* Context */
+import siteContext from "../../siteContext";
 
 class SignUp extends Component {
   state = {
@@ -16,6 +20,7 @@ class SignUp extends Component {
 
   static contextType = siteContext;
 
+   /* State updating methods */
   updateUsername = username => {
     this.setState({ username: username });
   };
@@ -36,10 +41,12 @@ class SignUp extends Component {
     this.setState({ passTwo: passTwo });
   };
 
+  /* Custom Methods */
+
+  // Responsible for validating form input and setting error state
   handlSubmit = e => {
     e.preventDefault();
 
-    // Check if info empty or missing:
     if (this.state.username.length < 6) {
       this.setState({
         error: `Username length must be greater than 5 characters`
@@ -58,12 +65,10 @@ class SignUp extends Component {
       });
     } else {
       this.postNewUser();
-      // this.context.onLogIn();
-      // this.context.addNewUser(newUser);
-      // this.context.setUserInfo(newUser);
     }
   };
 
+  // Responsible for POST request with user info from state
   postNewUser = () => {
     const url = config.API_ENDPOINT + "users";
 
