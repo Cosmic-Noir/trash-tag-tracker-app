@@ -68,6 +68,10 @@ p {
   max-width: 350px;
 }
 
+.hidden {
+  display: none;
+}
+
 .subtitle {
   padding: 20px 5px 2px;
 }

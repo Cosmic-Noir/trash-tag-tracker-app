@@ -4,7 +4,6 @@ import config from "../../config";
 /* Custom Components */
 import TokenService from "../../auth/token-service";
 
-
 /* Styling & Images */
 import "./addSite.css";
 
@@ -51,7 +50,7 @@ class AddSite extends Component {
     });
   };
 
-  // 
+  /* State updating methods */
   updateTitle(title) {
     this.setState({ title });
   }
@@ -76,7 +75,7 @@ class AddSite extends Component {
     this.setState({ before_img: event.target.files[0] });
   }
 
-  // submit info in form
+  // Responsible for validating form input and setting error state
   handleSubmit = e => {
     e.preventDefault();
 
@@ -91,12 +90,11 @@ class AddSite extends Component {
     } else if (this.state.state_abr.length !== 2) {
       this.setState({ error: `Please select a valid state` });
     } else {
-      // let newSite = this.state;
-      // this.context.whiteButton(newSite);
       this.addSite();
     }
   };
 
+  // Responsible for when user clicks cancel button
   handleCancel = () => {
     this.props.history.goBack();
   };
@@ -138,7 +136,7 @@ class AddSite extends Component {
             required
             type="addrss"
           ></input>
-          <label htmlFor="city" className="subtitle">
+          <label className="subtitle" htmlFor="city">
             City:
           </label>
           <input
@@ -151,7 +149,7 @@ class AddSite extends Component {
             required
             type="text"
           />
-          <label htmlFor="state" className="subtitle">
+          <label className="subtitle" htmlFor="state">
             State:
           </label>
           <select
@@ -212,7 +210,7 @@ class AddSite extends Component {
             <option value="WI">WI</option>
             <option value="WY">WY</option>
           </select>
-          <label htmlFor="content" className="subtitle">
+          <label className="subtitle" htmlFor="content">
             Description:
           </label>
           <textarea
@@ -223,7 +221,7 @@ class AddSite extends Component {
             ref={this.content}
             required
           ></textarea>
-          <label htmlFor="before_img" className="subtitle">
+          <label className="subtitle" htmlFor="before_img">
             Upload Image:
           </label>
           <input
