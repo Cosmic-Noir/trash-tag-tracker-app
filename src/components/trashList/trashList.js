@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import siteContext from "../../siteContext";
 import { Link } from "react-router-dom";
+
+/* Custom Components */
 import Site from "../site/site";
 import "./trashList.css";
+import siteContext from "../../siteContext";
 
 class TrashList extends Component {
   state = {
@@ -11,9 +13,14 @@ class TrashList extends Component {
 
   static contextType = siteContext;
 
+  /* State updating methods */
   updateState = state_abr => {
     this.setState({ state_abr: state_abr });
   };
+
+  /* Custom Methods */
+
+  // Responsible for taking context-passed trash_sites and returning array of site components
   displayList = () => {
     // eslint-disable-next-line
     const sites = this.context.trash_sites.map(site => {
@@ -39,6 +46,7 @@ class TrashList extends Component {
     return sites;
   };
 
+   // Responsible for creating unique state option list from context-passed sites - returns option elements
   filterForStates = () => {
     const state_abrs = {};
 
@@ -66,7 +74,7 @@ class TrashList extends Component {
       <div className="flex-column">
         <h2 className="title">Trash Sites:</h2>
         {this.context.loggedIn === true ? (
-          <Link to="/addSite" className="whiteButton">
+          <Link className="whiteButton" to="/addSite">
             Add New Trash Site
           </Link>
         ) : (
@@ -80,11 +88,11 @@ class TrashList extends Component {
             <h3>Filter by State:</h3>
             <select
               className="center"
-              name="state_abr"
               id="state_abr"
-              value={this.state.state_abr}
-              ref={this.state.state_abr}
+              name="state_abr"
               onChange={e => this.updateState(e.target.value)}
+              ref={this.state.state_abr}
+              value={this.state.state_abr}
             >
               <option value="">All</option>
               {this.filterForStates()}
