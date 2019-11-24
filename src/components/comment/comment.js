@@ -1,8 +1,11 @@
 import React, { Component } from "react";
+
+/* Styling & Images */
 import "./comment.css";
 
 class Comment extends Component {
-  // Change string into more readable format, return to string
+
+  // Responsbitle for creating readable time stamp for display
   createDate = date => {
     if (this.props.date_posted) {
       return date.slice(0, 10);
