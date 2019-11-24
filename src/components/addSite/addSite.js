@@ -105,8 +105,7 @@ class AddSite extends Component {
     return (
       <div className="addSite flex-column">
         <form
-        className="formBorder"
-          id="addForm"
+        className="formBorder width100"
           onSubmit={e => {
             this.handleSubmit(e);
           }}
