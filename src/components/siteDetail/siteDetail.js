@@ -1,10 +1,16 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import siteContext from "../../siteContext";
-import CommentList from "../commentList/commentList";
 import config from "../../config";
+import { Link } from "react-router-dom";
+import React, { Component } from "react";
+
+/* Custom Components */
+import CommentList from "../commentList/commentList";
 import TokenService from "../../auth/token-service";
+
+/* Styling & Images */
 import "./siteDetail.css";
+
+/* Context */
+import siteContext from "../../siteContext";
 
 class SiteDetail extends Component {
   state = {
@@ -14,12 +20,17 @@ class SiteDetail extends Component {
 
   static contextType = siteContext;
 
+  /* Custom Methods */  
+
+  // Responsible for when user clicks cancel button
   handleClickBack = () => {
     this.props.history.goBack();
   };
 
+  // Responsible for GET request of user selected site by ID
   getSelectSite = () => {
     const url = config.API_ENDPOINT + "sites/" + this.props.match.params.siteId;
+
     fetch(url, {
       method: "GET",
       headers: {
@@ -37,10 +48,12 @@ class SiteDetail extends Component {
       .catch(error => this.setState({ error }));
   };
 
+  // Responsible for setting site state to site received in GET res
   setSite = site => {
     this.setState({ site: site });
   };
 
+  // Responsbitle for creating readable time stamp for display
   createDate = () => {
     this.setState({ dated: this.state.site.date_posted.slice(0, 10) });
   };
@@ -87,8 +100,8 @@ class SiteDetail extends Component {
           {this.state.site.clean === false &&
           TokenService.hasAuthToken() === true ? (
             <Link
+            className="whiteButton"
               to={`/cleanSite/${this.state.site.id}`}
-              className="whiteButton"
             >
               Mark as Cleaned!
             </Link>
