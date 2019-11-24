@@ -1,11 +1,17 @@
 import React, { Component } from "react";
-import siteContext from "../../siteContext";
-import Comment from "../comment/comment";
 import config from "../../config";
-import AddComment from "../addComment/addComment";
-import TokenService from "../../auth/token-service";
 import { Link } from "react-router-dom";
+
+/* Custom Components */
+import AddComment from "../addComment/addComment";
+import Comment from "../comment/comment";
+import TokenService from "../../auth/token-service";
+
+/* Styling & Images */
 import "./commentList.css";
+
+/* Context */
+import siteContext from "../../siteContext";
 
 class CommentList extends Component {
   state = {
@@ -15,6 +21,10 @@ class CommentList extends Component {
 
   static contextType = siteContext;
 
+  /* Custom Methods */
+
+  // Responsible for displaying comment input element and add button
+  // May want to change to arrow function? - Cannot currently test fuctionality
   clickAddComment() {
     const element = document.getElementById("addComment");
     element.classList.remove("hidden");
@@ -22,6 +32,7 @@ class CommentList extends Component {
     addButton.classList.add("hidden");
   }
 
+  // Responsible for GET request for all comments with matching siteID
   getComments = () => {
     const url = `${config.API_ENDPOINT}sites/${this.props.siteId}/comments`;
 
@@ -41,10 +52,12 @@ class CommentList extends Component {
       .catch(error => this.setState({ error }));
   };
 
+  // Responsible for setting comments state to response received
   setComments = comments => {
     this.setState({ comments: comments, error: null });
   };
 
+  // Responsible for taking comments state and returning array of Comment components OR 'No comments yet!' 
   displayComments = () => {
     const comments = this.state.comments.map(comment => {
       return (
@@ -91,10 +104,10 @@ class CommentList extends Component {
             <p></p>
             {TokenService.hasAuthToken() === true ? (
               <button
-                type="button"
-                className="whiteButton"
-                id="add"
-                onClick={this.clickAddComment}
+              className="whiteButton"
+              id="add"
+              onClick={this.clickAddComment}
+              type="button"
               >
                 Add Comment
               </button>
