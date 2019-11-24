@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import siteContext from "../../siteContext";
+
+/* Custom Components */
 import TokenService from "../../auth/token-service";
 
 // Styling and Images:
@@ -8,15 +9,22 @@ import logo from "./logo1.png";
 import menuIcon from "./menuIcon.png";
 import "./nav.css";
 
+/* Context */
+import siteContext from "../../siteContext";
+
 class Nav extends Component {
   static contextType = siteContext;
 
-  handleLogOut = () => {
+  /* Custom Methods */
+
+  // Responsible for when user clicks Sign Out button
+  handleSignOut = () => {
     TokenService.clearAuthToken();
     this.context.checkLoginStatus();
     this.toggleMobileMenu();
   };
 
+  // Responsible for toggling display of mobile nav menu
   toggleMobileMenu = () => {
     const mobileMenu = document.getElementById("mobileNav");
     if (
@@ -32,38 +40,36 @@ class Nav extends Component {
   render() {
     return (
       <div className="navBar">
-          <Link to="/" className="" id="navLogo">
-            <img src={logo} alt="Logo" className="logo" />
+          <Link id="navLogo" to="/">
+            <img alt="Logo" className="logo" src={logo} />
           </Link>
         <div className="deskNav">
-
           <div >
-          <Link to="/" className="nav">
+          <Link className="nav" to="/" >
             Home
           </Link>
-          {/* <Link to="/about">Impact</Link> */}
-          <Link to="/sites" className="nav">
+          <Link className="nav" to="/sites" >
             Trash Sites
           </Link>
-          <Link to="/cleaned" className="nav">
+          <Link className="nav" to="/cleaned" >
             Cleaned Sites
           </Link>
           {this.context.loggedIn === true ? (
-            <Link to="/dashboard" className="nav">
+            <Link className="nav" to="/dashboard" >
               Dashboard
             </Link>
           ) : (
             ""
             )}
           {this.context.loggedIn === false ? (
-            <Link to="/signUp" id="signUp">
+            <Link id="signUp" to="/signUp" >
               Sign Up
             </Link>
           ) : (
             <Link
-              to="/signOut"
-              className="nav"
-              onClick={this.handleLogOut}
+            className="nav"
+            onClick={this.handleSignOut}
+            to="/signOut"
             >
               Sign Out
             </Link>
@@ -78,29 +84,28 @@ class Nav extends Component {
             src={menuIcon}
           />
         <div id="mobileNav">
-          <Link to="/" className="mobile" onClick={this.toggleMobileMenu}>
+          <Link className="mobile" onClick={this.toggleMobileMenu} to="/">
             Home
           </Link>
-          {/* <Link to="/about">Impact</Link> */}
           <Link
-            to="/sites"
             className="mobile"
             onClick={this.toggleMobileMenu}
+            to="/sites"
           >
             Trash Sites
           </Link>
           <Link
-            to="/cleaned"
             className="mobile"
             onClick={this.toggleMobileMenu}
+            to="/cleaned"
           >
             Cleaned Sites
           </Link>
           {this.context.loggedIn === true ? (
             <Link
-              to="/dashboard"
-              className="mobile"
-              onClick={this.toggleMobileMenu}
+            className="mobile"
+            onClick={this.toggleMobileMenu}
+            to="/dashboard"
             >
               Dashboard
             </Link>
@@ -109,17 +114,17 @@ class Nav extends Component {
           )}
           {this.context.loggedIn === false ? (
             <Link
-              to="/signUp"
-              className="mobile"
-              onClick={this.toggleMobileMenu}
+            className="mobile"
+            onClick={this.toggleMobileMenu}
+            to="/signUp"
             >
               Sign Up
             </Link>
           ) : (
             <Link
-              to="/signOut"
-              className="mobile"
-              onClick={this.handleLogOut}
+            className="mobile"
+            onClick={this.handleSignOut}
+            to="/signOut"
             >
               Sign Out
             </Link>
