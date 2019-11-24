@@ -1,11 +1,14 @@
-import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import React, { Component } from "react";
+
+/* Styling & Images */
 import "./site.css";
 
+// Consider turning into Function instead when can test
 class Site extends Component {
   render() {
     return (
-      <Link to={`/sites/${this.props.id}`} className="">
+      <Link to={`/sites/${this.props.id}`}>
         <div
           className={this.props.clean === false ? "trash tile" : "clean tile"}
         >
@@ -18,8 +21,7 @@ class Site extends Component {
           </div>
           <div className="imgContainer">
             <img
-              alt="trash site"
-              // className="siteImg"
+              alt="trash"
               className={
                 this.props.clean === false ? "trashSiteImg" : "cleanSiteImg"
               }
@@ -28,7 +30,7 @@ class Site extends Component {
             />
             {this.props.after_img ? (
               <img
-                alt="Clean site"
+                alt="Clean"
                 className={
                   this.props.clean === false ? "trashSiteImg" : "cleanSiteImg"
                 }
