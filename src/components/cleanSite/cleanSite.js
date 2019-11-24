@@ -1,8 +1,14 @@
 import React, { Component } from "react";
-import siteContext from "../../siteContext";
 import config from "../../config";
+
+/* Custom Components */
 import TokenService from "../../auth/token-service";
+
+/* Styling & Images */
 import "./cleanSite.css";
+
+/* Context */
+import siteContext from "../../siteContext";
 
 class CleanSite extends Component {
   state = {
@@ -14,10 +20,13 @@ class CleanSite extends Component {
 
   static contextType = siteContext;
 
-  // PATCH request:
+  /* Custom Methods */
+
+  // Responsible for PATCH request to patch existing trash site
   patchSite = () => {
     const url = config.API_ENDPOINT + "sites/" + this.props.match.params.siteId;
 
+    // Create form data to allow file upload from after_img
     const form = new FormData();
     form.append("content", this.state.content);
     form.append("clean", this.state.clean);
@@ -47,11 +56,14 @@ class CleanSite extends Component {
       });
   };
 
+  // NEED TO WRITE CONTENT VALIDATION
+  // Responsible for validating form input and setting error state
   handleSubmit = e => {
     e.preventDefault();
     this.patchSite();
   };
 
+  /* State updating methods */
   updateContent = content => {
     this.setState({ content: content });
   };
@@ -60,6 +72,7 @@ class CleanSite extends Component {
     this.setState({ after_img: event.target.files[0] });
   };
 
+  // Responsible for when user clicks cancel button
   handleCancel = () => {
     this.props.history.goBack();
   };
@@ -70,8 +83,8 @@ class CleanSite extends Component {
         <h2 className="title">Mark A Trash Site As Cleaned:</h2>
         <h3>{this.state.title}</h3>
         <form
-          id="clean_form"
           className="flex-column"
+          id="clean_form"
           onSubmit={this.handleSubmit}
         >
           <label className="subtitle" htmlFor="description">
@@ -90,8 +103,8 @@ class CleanSite extends Component {
           <input
             className="formInput"
             id="after_img"
-            onChange={e => this.updateAfterImg(e)}
             name="after_img"
+            onChange={e => this.updateAfterImg(e)}
             ref={this.after_img}
             required
             type="file"
