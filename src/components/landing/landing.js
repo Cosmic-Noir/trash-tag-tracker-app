@@ -1,25 +1,29 @@
 import React, { Component } from "react";
+
+/* Styling & Images */
+import "./landing.css";
+import addSitePic from "./addSite.png";
+import completeImg from "./example3.png";
+import earthPic from "./earth2.jpg";
+import logo from "../nav/logo1.png";
+
+/* Context */
 import siteContext from "../../siteContext";
 
-// Styling and Images:
-import completeImg from "./example3.png";
-import logo from "../nav/logo1.png";
-import earthPic from "./earth2.jpg";
-import addSitePic from "./addSite.png";
-import "./landing.css";
-
 class Landing extends Component {
+
   static contextType = siteContext;
+
   render() {
     return (
       <div className="landing">
         <header>
           <h1>
             Welcome to Trash
-            <img src={logo} alt="logo" className="logo" />
+            <img alt="logo" className="logo" src={logo} />
             Tracker!
           </h1>
-          <img src={earthPic} alt="Earth" id="earth" />
+          <img alt="Earth" id="earth" src={earthPic} />
           <p>
             Building on the viral #Trashtag Challenge, our app allows users to
             post "trash sites", coordinate with other users, and clean trash
@@ -35,20 +39,11 @@ class Landing extends Component {
                 Start with small suggested changes on your dashboard to earn
                 points and reduce your everday waste and energy consumption.
                 Then tackle trash sites and mark them as cleaned and post your
-                success picture!{" "}
-              </p>{" "}
+                success picture!
+              </p>
             </div>
             <img src={completeImg} alt="Completed Trash site" id="ex"></img>
           </section>
-
-          {/* <h2>Global EnvoScore:</h2>
-        <h3>Current Global EnvoScore:</h3>
-        <h4>{this.context.totalScore}</h4>
-        <p>
-          {" "}
-          Our app shows how many small efforts add up to make a large impact.
-          The Global EnvoScore tracks the points of all users.
-        </p> */}
           <section className="landingSection dark">
             <div className="landingContent">
               <h2>Post A Trash Site:</h2>
