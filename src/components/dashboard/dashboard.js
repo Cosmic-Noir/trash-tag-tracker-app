@@ -21,6 +21,13 @@ class Dashboard extends Component {
         <Link className="whiteButton" to="/addSite">
           Add New Trash Site
         </Link>
+        <a
+          className="whiteButton"
+          href="https://www.epa.gov/trash-free-waters/preventing-trash-source-0"
+          target="_blank"
+        >
+          Ways to Reduce Trash
+        </a>
       </div>
     );
   }
