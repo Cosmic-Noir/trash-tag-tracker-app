@@ -57,7 +57,7 @@ p {
 
 .formBorder {
   border: 1px solid hsla(0, 0%, 78%, 0.747);
-  margin-top: 30px;
+  margin: 30px 0px;
   max-width: 350px;
   width: 80%;
 }

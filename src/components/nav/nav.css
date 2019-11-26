@@ -46,6 +46,7 @@
   padding: 15px;
   position: fixed;
   width: 100%;
+  z-index: 10;
 }
 
 .mobile:hover,
@@ -78,13 +79,11 @@
   /* width: 77px; */
 }
 
-
 @media screen and (min-width: 500px) {
   .deskNav {
     display: flex;
     justify-content: flex-end;
     width: 100%;
-
   }
   #menuIcon {
     display: none;
