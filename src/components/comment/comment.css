@@ -1,5 +1,18 @@
 .comment {
-  border: 1px solid black;
   list-style-type: none;
   margin: 10px;
+}
+
+.comment_content {
+  padding: 5px;
+}
+
+.comment_title {
+  padding: 0px 5px;
+}
+
+@media screen and (min-width: 350px) {
+  .date {
+    float: right;
+  }
 }

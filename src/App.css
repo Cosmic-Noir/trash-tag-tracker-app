@@ -55,7 +55,7 @@ p {
   align-items: center;
 }
 
-.formBorder { 
+.formBorder {
   border: 1px solid hsla(0, 0%, 78%, 0.747);
   margin-top: 30px;
   max-width: 350px;
@@ -70,6 +70,16 @@ p {
 
 .hidden {
   display: none;
+}
+
+.inline_block {
+  display: inline-block;
+}
+
+.itemBorder {
+  border: 1px solid hsla(0, 0%, 78%, 0.747);
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px hsla(180, 1%, 52%, 0.541);
 }
 
 .subtitle {
@@ -112,7 +122,5 @@ p {
 }
 
 #footerSignUp:hover {
- text-decoration: underline;
+  text-decoration: underline;
 }
-
-
