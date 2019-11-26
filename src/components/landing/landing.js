@@ -42,8 +42,12 @@ class Landing extends Component {
           </p>
         </header>
 
-        <div className="container ">
-          <section className="landingSection">
+        <div className="container">
+          <section
+            className="landingSection"
+            data-aos="fade-right"
+            data-aos-duration="2000"
+          >
             <div className="landingContent">
               <h2>Create An Account And Make An Impact </h2>
               <p>
@@ -55,7 +59,11 @@ class Landing extends Component {
             <img alt="Completed Trash site" id="ex" src={completeImg}></img>
           </section>
           <section className="landingSection dark">
-            <div className="landingContent">
+            <div
+              className="landingContent"
+              data-aos="fade-left"
+              data-aos-duration="2000"
+            >
               <h2>Post A Trash Site:</h2>
               <p>
                 Use our app to report a new trash site that needs
@@ -64,9 +72,14 @@ class Landing extends Component {
               </p>
             </div>
             <div className="landingImages">
-              <img alt="Add a site" id="addPic" src={addTrashSite} />
-              <img alt="Add a site" src={trashSite} />
-              <img alt="Add a site" src={cleanSite} />
+              <img
+                alt="Add a site"
+                className="exImg"
+                id="addPic"
+                src={addTrashSite}
+              />
+              <img alt="Add a site" className="exImg" src={trashSite} />
+              <img alt="Add a site" className="exImg" src={cleanSite} />
             </div>
           </section>
           <section className="landingSection flex-column">

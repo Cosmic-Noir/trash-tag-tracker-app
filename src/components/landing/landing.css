@@ -72,6 +72,7 @@ header,
 @media screen and (min-width: 500px) {
   .exImg {
     height: 300px;
+    max-width: 230px;
     width: 30%;
   }
   .landingImages {
