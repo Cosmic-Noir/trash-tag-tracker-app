@@ -85,12 +85,9 @@ class CommentList extends Component {
     return (
       <div className="comments">
         {this.context.loggedIn === false ? (
-          <h5>
-            Comments:{" "}
-            <Link className="whiteButton" to="/signIn">
-              Sign in to comment
-            </Link>
-          </h5>
+          <Link className="whiteButton" to="/signIn">
+            Sign in to view comments
+          </Link>
         ) : (
           <div className="width100 flex-column">
             <h5>Comments:</h5>
