@@ -21,13 +21,7 @@ class Landing extends Component {
         <header role="banner">
           <h1 data-aos="fade-in" data-aos-duration="2000">
             Welcome to Trash
-            <img
-              alt="logo"
-              className="logo"
-              data-aos="fade-in"
-              data-aos-duration="2000"
-              src={logo}
-            />
+            <img alt="logo" className="logo" src={logo} />
             Tracker!
           </h1>
           <img

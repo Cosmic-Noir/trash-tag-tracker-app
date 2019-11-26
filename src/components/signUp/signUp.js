@@ -20,7 +20,7 @@ class SignUp extends Component {
 
   static contextType = siteContext;
 
-   /* State updating methods */
+  /* State updating methods */
   updateUsername = username => {
     this.setState({ username: username });
   };
@@ -98,8 +98,9 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div className="signUp">
-        <form className="formBorder"
+      <div className="signUp" data-aos="fade-in" data-aos-duration="1000">
+        <form
+          className="formBorder"
           onSubmit={e => {
             this.handlSubmit(e);
           }}

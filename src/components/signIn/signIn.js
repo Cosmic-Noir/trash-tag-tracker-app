@@ -20,8 +20,8 @@ class SignIn extends Component {
 
   static contextType = siteContext;
 
-   /* State updating methods */
-   updateUsername(username) {
+  /* State updating methods */
+  updateUsername(username) {
     this.setState({ username: username });
   }
 
@@ -31,7 +31,7 @@ class SignIn extends Component {
 
   /* Custom Methods */
 
-  // Responsible for POST request for user login from state 
+  // Responsible for POST request for user login from state
   login = () => {
     const url = config.API_ENDPOINT + "login";
 
@@ -84,9 +84,13 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div className="flex-column signIn">
+      <div
+        className="flex-column signIn"
+        data-aos="fade-in"
+        data-aos-duration="1000"
+      >
         <form
-        className="formBorder"
+          className="formBorder"
           onSubmit={e => {
             this.handleSubmit(e);
           }}
