@@ -22,6 +22,9 @@ class Nav extends Component {
     TokenService.clearAuthToken();
     this.context.checkLoginStatus();
     console.log(window.innerWidth);
+    if (window.innerWidth < 600) {
+      this.toggleMobileMenu();
+    }
   };
 
   // Responsible for toggling display of mobile nav menu
