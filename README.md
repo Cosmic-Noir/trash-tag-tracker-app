@@ -1,10 +1,3 @@
-![Trash#Tracker](README_images/logo2.png#logo)
-
-img[src*="#logo"]{
-width: 150px;
-height: 150px;
-}
-
 <img src="README_images/logo2.png#logo" alt="logo"
 	title="logo" width="150" height="150" />
 
