@@ -28,7 +28,7 @@
 .nav {
   border-radius: 4px;
   color: white;
-  font-size: 15px;
+  font-size: 12px;
   margin: 0px 15px;
   padding: 5px;
 }
@@ -90,5 +90,11 @@
   }
   #mobileNav {
     display: none;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .nav {
+    font-size: 16px;
   }
 }
