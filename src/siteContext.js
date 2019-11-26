@@ -8,6 +8,8 @@ const siteContext = React.createContext({
   // Values
   clean_sites: [],
   loggedIn: "",
+  totalScore: "",
+  totaleSitesCleaned: "",
   trash_sites: []
 });
 

@@ -27,8 +27,23 @@ class App extends Component {
   state = {
     error: null,
     loggedIn: "",
+    totalScore: "",
+    totalSitesCleaned: "",
     trash_sites: [],
     clean_sites: []
+  };
+
+  /* State Setting Methods */
+
+  updateTotalSitesCleaned = () => {
+    const numbSites = this.state.clean_sites.length;
+    this.setState({ totalSitesCleaned: numbSites });
+    const totalScore = numbSites * 5;
+    this.updateTotalScore(totalScore);
+  };
+
+  updateTotalScore = totalScore => {
+    this.setState({ totalScore: totalScore });
   };
 
   /* Custom Methods */
@@ -88,6 +103,7 @@ class App extends Component {
   // Responsible for setting clean_sites state to received clean site results
   setCleanSites = clean_sites => {
     this.setState({ clean_sites: clean_sites, error: null });
+    this.updateTotalSitesCleaned();
   };
 
   componentDidMount() {
@@ -105,6 +121,8 @@ class App extends Component {
       // Values
       clean_sites: this.state.clean_sites,
       loggedIn: this.state.loggedIn,
+      totalScore: this.state.totalScore,
+      totalSitesCleaned: this.state.totalSitesCleaned,
       trash_sites: this.state.trash_sites
     };
     return (
