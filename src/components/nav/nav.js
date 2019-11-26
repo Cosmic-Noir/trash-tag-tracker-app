@@ -21,7 +21,7 @@ class Nav extends Component {
   handleSignOut = () => {
     TokenService.clearAuthToken();
     this.context.checkLoginStatus();
-    this.toggleMobileMenu();
+    console.log(window.innerWidth);
   };
 
   // Responsible for toggling display of mobile nav menu
@@ -40,58 +40,49 @@ class Nav extends Component {
   render() {
     return (
       <div className="navBar">
-          <Link id="navLogo" to="/">
-            <img alt="Logo" className="logo" src={logo} />
-          </Link>
+        <Link id="navLogo" to="/">
+          <img alt="Logo" className="logo" src={logo} />
+        </Link>
         <div className="deskNav">
-          <div >
-          <Link className="nav" to="/" >
-            Home
-          </Link>
-          <Link className="nav" to="/sites" >
-            Trash Sites
-          </Link>
-          <Link className="nav" to="/cleaned" >
-            Cleaned Sites
-          </Link>
-          {this.context.loggedIn === true ? (
-            <Link className="nav" to="/dashboard" >
-              Dashboard
+          <div>
+            <Link className="nav" to="/">
+              Home
             </Link>
-          ) : (
-            ""
+            <Link className="nav" to="/sites">
+              Trash Sites
+            </Link>
+            <Link className="nav" to="/cleaned">
+              Cleaned Sites
+            </Link>
+            {this.context.loggedIn === true ? (
+              <Link className="nav" to="/dashboard">
+                Dashboard
+              </Link>
+            ) : (
+              ""
             )}
-          {this.context.loggedIn === false ? (
-            <Link id="signUp" to="/signUp" >
-              Sign Up
-            </Link>
-          ) : (
-            <Link
-            className="nav"
-            onClick={this.handleSignOut}
-            to="/signOut"
-            >
-              Sign Out
-            </Link>
-          )}
-            </div>
-          
+            {this.context.loggedIn === false ? (
+              <Link id="signUp" to="/signUp">
+                Sign Up
+              </Link>
+            ) : (
+              <Link className="nav" onClick={this.handleSignOut} to="/signOut">
+                Sign Out
+              </Link>
+            )}
+          </div>
         </div>
         <img
-            alt="menu icon"
-            id="menuIcon"
-            onClick={this.toggleMobileMenu}
-            src={menuIcon}
-          />
+          alt="menu icon"
+          id="menuIcon"
+          onClick={this.toggleMobileMenu}
+          src={menuIcon}
+        />
         <div id="mobileNav">
           <Link className="mobile" onClick={this.toggleMobileMenu} to="/">
             Home
           </Link>
-          <Link
-            className="mobile"
-            onClick={this.toggleMobileMenu}
-            to="/sites"
-          >
+          <Link className="mobile" onClick={this.toggleMobileMenu} to="/sites">
             Trash Sites
           </Link>
           <Link
@@ -103,9 +94,9 @@ class Nav extends Component {
           </Link>
           {this.context.loggedIn === true ? (
             <Link
-            className="mobile"
-            onClick={this.toggleMobileMenu}
-            to="/dashboard"
+              className="mobile"
+              onClick={this.toggleMobileMenu}
+              to="/dashboard"
             >
               Dashboard
             </Link>
@@ -114,18 +105,14 @@ class Nav extends Component {
           )}
           {this.context.loggedIn === false ? (
             <Link
-            className="mobile"
-            onClick={this.toggleMobileMenu}
-            to="/signUp"
+              className="mobile"
+              onClick={this.toggleMobileMenu}
+              to="/signUp"
             >
               Sign Up
             </Link>
           ) : (
-            <Link
-            className="mobile"
-            onClick={this.handleSignOut}
-            to="/signOut"
-            >
+            <Link className="mobile" onClick={this.handleSignOut} to="/signOut">
               Sign Out
             </Link>
           )}

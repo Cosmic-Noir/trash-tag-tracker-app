@@ -69,6 +69,10 @@ header,
   max-width: 100%;
 }
 
+#landingLogo {
+  margin-top: 15px;
+}
+
 @media screen and (min-width: 500px) {
   .exImg {
     height: 250px;

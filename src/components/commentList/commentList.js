@@ -57,7 +57,7 @@ class CommentList extends Component {
     this.setState({ comments: comments, error: null });
   };
 
-  // Responsible for taking comments state and returning array of Comment components OR 'No comments yet!' 
+  // Responsible for taking comments state and returning array of Comment components OR 'No comments yet!'
   displayComments = () => {
     const comments = this.state.comments.map(comment => {
       return (
@@ -87,7 +87,7 @@ class CommentList extends Component {
         {this.context.loggedIn === false ? (
           <h5>
             Comments:{" "}
-            <Link className="whiteButton" to="/signIn" >
+            <Link className="whiteButton" to="/signIn">
               Sign in to comment
             </Link>
           </h5>
@@ -104,10 +104,10 @@ class CommentList extends Component {
             <p></p>
             {TokenService.hasAuthToken() === true ? (
               <button
-              className="whiteButton"
-              id="add"
-              onClick={this.clickAddComment}
-              type="button"
+                className="whiteButton"
+                id="add"
+                onClick={this.clickAddComment}
+                type="button"
               >
                 Add Comment
               </button>

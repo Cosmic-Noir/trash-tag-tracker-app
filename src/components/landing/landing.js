@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import "./landing.css";
 import addTrashSite from "./images/addSite1.png";
 import cleanSite from "./images/cleanSite.png";
+import darkLogo from "../nav/logo2.png";
 import completeImg from "./images/example3.png";
 import earthPic from "./images/earth2.jpg";
 import logo from "../nav/logo1.png";
@@ -17,7 +18,7 @@ class Landing extends Component {
 
   render() {
     return (
-      <div className="landing">
+      <div className="landing" id="home">
         <header role="banner">
           <h1 data-aos="fade-in" data-aos-duration="2000">
             Welcome to Trash
@@ -105,6 +106,9 @@ class Landing extends Component {
                 resrouce: Our planet.
               </p>
             </div>
+            <a href="#home" id="landingLogo">
+              <img alt="Logo" className="logo" src={darkLogo} />
+            </a>
           </section>
         </div>
       </div>
