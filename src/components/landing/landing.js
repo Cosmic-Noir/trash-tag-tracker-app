@@ -2,12 +2,12 @@ import React, { Component } from "react";
 
 /* Styling & Images */
 import "./landing.css";
-import addTrashSite from "./images/addTrashSite.png";
+import addTrashSite from "./images/addSite1.png";
 import cleanSite from "./images/cleanSite.png";
 import completeImg from "./images/example3.png";
 import earthPic from "./images/earth2.jpg";
 import logo from "../nav/logo1.png";
-import trashSite from "./images/trashSite.png";
+import trashSite from "./images/trashSite2.png";
 
 /* Context */
 import siteContext from "../../siteContext";

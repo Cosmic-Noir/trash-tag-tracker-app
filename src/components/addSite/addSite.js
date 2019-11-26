@@ -235,19 +235,20 @@ class AddSite extends Component {
           ) : (
             ""
           )}
-          <button
-            className="whiteButton"
-            onClick={this.handleCancel}
-            type="button"
-          >
-            Cancel
-          </button>
+
           <button
             className="whiteButton"
             onClick={this.uploadPic}
             type="submit"
           >
             Add Site
+          </button>
+          <button
+            className="whiteButton"
+            onClick={this.handleCancel}
+            type="button"
+          >
+            Cancel
           </button>
         </form>
       </div>
