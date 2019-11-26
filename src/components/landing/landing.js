@@ -2,16 +2,17 @@ import React, { Component } from "react";
 
 /* Styling & Images */
 import "./landing.css";
-import addSitePic from "./addSite.png";
-import completeImg from "./example3.png";
-import earthPic from "./earth2.jpg";
+import addTrashSite from "./images/addTrashSite.png";
+import cleanSite from "./images/cleanSite.png";
+import completeImg from "./images/example3.png";
+import earthPic from "./images/earth2.jpg";
 import logo from "../nav/logo1.png";
+import trashSite from "./images/trashSite.png";
 
 /* Context */
 import siteContext from "../../siteContext";
 
 class Landing extends Component {
-
   static contextType = siteContext;
 
   render() {
@@ -25,9 +26,7 @@ class Landing extends Component {
           </h1>
           <img alt="Earth" id="earth" src={earthPic} />
           <p>
-            Building on the viral #Trashtag Challenge, our app allows users to
-            post "trash sites", coordinate with other users, and clean trash
-            sites together!
+            Targeting, tracking, and eliminating pollution one site at a time.
           </p>
         </header>
 
@@ -36,10 +35,9 @@ class Landing extends Component {
             <div className="landingContent">
               <h2>Create An Account And Make An Impact </h2>
               <p>
-                Start with small suggested changes on your dashboard to earn
-                points and reduce your everday waste and energy consumption.
-                Then tackle trash sites and mark them as cleaned and post your
-                success picture!
+                Building on the viral #Trashtag Challenge, our app allows users
+                to post "trash sites", coordinate with other users, and clean
+                trash sites together!
               </p>
             </div>
             <img src={completeImg} alt="Completed Trash site" id="ex"></img>
@@ -48,13 +46,21 @@ class Landing extends Component {
             <div className="landingContent">
               <h2>Post A Trash Site:</h2>
               <p>
-                Use our app to report a new trash site that needs help. We don't
-                always have time to clean a site when we first encounter it.
-                This also allows users to comment on posted sites and make
-                coordinated efforts to clean it together.
+                Use our app to report a new trash site that needs
+                help.Coordinate with others, clean up the site, and then mark it
+                as clean and post your success picture!
               </p>
             </div>
-            <img alt="Add a site" id="addPic" src={addSitePic} />
+            <div className="landingImages">
+              <img
+                alt="Add a site"
+                className="exImg"
+                id="addPic"
+                src={addTrashSite}
+              />
+              <img alt="Add a site" className="exImg" src={trashSite} />
+              <img alt="Add a site" className="exImg" src={cleanSite} />
+            </div>
           </section>
           <section className="landingSection flex-column">
             <div className="landingContent">

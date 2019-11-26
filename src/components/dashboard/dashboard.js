@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-
 // Should perhaps turn this into a function, OR update with user info to display
 class Dashboard extends Component {
   render() {
     return (
       <div className="dashboard flex-column">
-        <h2 className="title">Welcome back </h2>
-        {/* <h3>EnvoScore: </h3> */}
+        <h2 className="title">Welcome back!</h2>
         <h3 className="subtitle">What would you like to do?</h3>
         <Link className="whiteButton" to="/sites">
           View Trash Sites

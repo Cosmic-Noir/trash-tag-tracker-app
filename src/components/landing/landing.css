@@ -28,6 +28,21 @@ header,
   background-color: black;
 }
 
+.exImg {
+  height: 90%;
+  margin: 10px;
+  max-height: 300px;
+  max-width: 250px;
+  width: 80%;
+}
+
+.landingImages {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .landingSection {
   display: flex;
   padding: 20px;
@@ -54,7 +69,15 @@ header,
   max-width: 100%;
 }
 
-@media screen and (min-width: 360px) {
+@media screen and (min-width: 500px) {
+  .exImg {
+    height: 300px;
+    width: 30%;
+  }
+  .landingImages {
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+  }
   #earth {
     max-height: 200px;
     max-width: 300px;
