@@ -1,3 +1,11 @@
 .impact {
   padding: 15px;
 }
+
+#totalScore {
+  margin: 10px;
+}
+
+#totalSites {
+  color: green;
+}
