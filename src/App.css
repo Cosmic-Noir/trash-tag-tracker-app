@@ -76,6 +76,14 @@ p {
   display: inline-block;
 }
 
+.inPLink {
+  color: rgba(215, 119, 245, 0.972);
+}
+
+.inPLink:hover {
+  text-decoration: underline;
+}
+
 .itemBorder {
   border: 1px solid hsla(0, 0%, 78%, 0.747);
   border-radius: 5px;

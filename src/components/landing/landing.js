@@ -29,7 +29,7 @@ class Landing extends Component {
             alt="Earth"
             data-aos="fade-in"
             data-aos-duration="2000"
-            id="earth"
+            className="earth"
             src={earthPic}
           />
           <p data-aos="fade-in" data-aos-duration="2000">

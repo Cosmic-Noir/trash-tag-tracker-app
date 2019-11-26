@@ -58,7 +58,7 @@ header,
   max-width: 220px;
 }
 
-#earth {
+.earth {
   max-height: 150px;
   max-width: 250px;
   margin: 20px;
