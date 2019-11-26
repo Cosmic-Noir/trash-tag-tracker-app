@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 /* Styling & Images */
-import "./about.css";
+import "./impact.css";
 
 // Context
 import siteContext from "../../siteContext";
@@ -9,14 +9,20 @@ import siteContext from "../../siteContext";
 // Maybe use this as a score page or to track impact from score
 // Component not currently in use
 
-class About extends Component {
+class Impact extends Component {
+  state = {
+    totalSitesCleaned: "",
+    totalScore: ""
+  };
+
   static contextType = siteContext;
+
+  /* State updating methods */
 
   render() {
     return (
-      <div className="about">
-        <h2>Total EnvoScore of All Users:</h2>
-        <h2>{this.context.totalScore}</h2>
+      <div className="flex-column impact">
+        <h2>Impact</h2>
         <p>
           The above score is displays all points earned by every user of the
           app. This part of the app is currently undergoing construction...{" "}
@@ -27,4 +33,4 @@ class About extends Component {
   }
 }
 
-export default About;
+export default Impact;

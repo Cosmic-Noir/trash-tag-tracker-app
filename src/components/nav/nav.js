@@ -51,6 +51,9 @@ class Nav extends Component {
             <Link className="nav" to="/">
               Home
             </Link>
+            <Link className="nav" to="/impact">
+              Impact{" "}
+            </Link>
             <Link className="nav" to="/sites">
               Trash Sites
             </Link>
@@ -84,6 +87,9 @@ class Nav extends Component {
         <div id="mobileNav">
           <Link className="mobile" onClick={this.toggleMobileMenu} to="/">
             Home
+          </Link>
+          <Link className="mobile" onClick={this.toggleMobileMenu} to="/impact">
+            Impact{" "}
           </Link>
           <Link className="mobile" onClick={this.toggleMobileMenu} to="/sites">
             Trash Sites

@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import config from "./config";
 
 /* Custom Components */
-import About from "./components/about/about";
 import AddSite from "./components/addSite/addSite";
 import CleanList from "./components/cleanList/cleanList";
 import CleanSite from "./components/cleanSite/cleanSite";
 import Dashboard from "./components/dashboard/dashboard";
+import Impact from "./components/impact/impact";
 import Landing from "./components/landing/landing";
 import Nav from "./components/nav/nav";
 import SignIn from "./components/signIn/signIn";
@@ -114,7 +114,7 @@ class App extends Component {
             <Nav />
           </nav>
           <main>
-            <Route path="/about" component={About} />
+            <Route path="/impact" component={Impact} />
             <Route path="/addSite" component={AddSite} />
             <Route path="/cleaned" component={CleanList} />
             <Route path="/cleanSite/:siteId" component={CleanSite} />
