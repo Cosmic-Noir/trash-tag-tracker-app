@@ -79,7 +79,7 @@ class TrashList extends Component {
           </Link>
         ) : (
           <Link className="whiteButton" to="/signIn">
-            <h5>Sign in to add a new site</h5>
+            Sign in to add a new site
           </Link>
         )}
         <div className="siteList">
