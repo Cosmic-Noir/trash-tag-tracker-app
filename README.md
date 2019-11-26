@@ -1,4 +1,4 @@
-![Trash#Tracker](README_images/logo2.png){
+![Trash#Tracker](README_images/logo2.png#logo)img[src*="#logo"]{
 width: 150px;
 height: 150px;
 }
