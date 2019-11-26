@@ -18,19 +18,31 @@ class Landing extends Component {
   render() {
     return (
       <div className="landing">
-        <header>
-          <h1>
+        <header role="banner">
+          <h1 data-aos="fade-in" data-aos-duration="2000">
             Welcome to Trash
-            <img alt="logo" className="logo" src={logo} />
+            <img
+              alt="logo"
+              className="logo"
+              data-aos="fade-in"
+              data-aos-duration="2000"
+              src={logo}
+            />
             Tracker!
           </h1>
-          <img alt="Earth" id="earth" src={earthPic} />
-          <p>
+          <img
+            alt="Earth"
+            data-aos="fade-in"
+            data-aos-duration="2000"
+            id="earth"
+            src={earthPic}
+          />
+          <p data-aos="fade-in" data-aos-duration="2000">
             Targeting, tracking, and eliminating pollution one site at a time.
           </p>
         </header>
 
-        <div className="container">
+        <div className="container ">
           <section className="landingSection">
             <div className="landingContent">
               <h2>Create An Account And Make An Impact </h2>
@@ -40,7 +52,7 @@ class Landing extends Component {
                 trash sites together!
               </p>
             </div>
-            <img src={completeImg} alt="Completed Trash site" id="ex"></img>
+            <img alt="Completed Trash site" id="ex" src={completeImg}></img>
           </section>
           <section className="landingSection dark">
             <div className="landingContent">
@@ -52,14 +64,9 @@ class Landing extends Component {
               </p>
             </div>
             <div className="landingImages">
-              <img
-                alt="Add a site"
-                className="exImg"
-                id="addPic"
-                src={addTrashSite}
-              />
-              <img alt="Add a site" className="exImg" src={trashSite} />
-              <img alt="Add a site" className="exImg" src={cleanSite} />
+              <img alt="Add a site" id="addPic" src={addTrashSite} />
+              <img alt="Add a site" src={trashSite} />
+              <img alt="Add a site" src={cleanSite} />
             </div>
           </section>
           <section className="landingSection flex-column">
