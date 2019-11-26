@@ -14,7 +14,11 @@ class Impact extends Component {
 
   render() {
     return (
-      <div className="flex-column impact">
+      <div
+        className="flex-column impact"
+        data-aos="fade-in"
+        data-aos-duration="1000"
+      >
         <h2>Impact</h2>
         <h1 id="totalScore">{this.context.totalScore}</h1>
         <p>
