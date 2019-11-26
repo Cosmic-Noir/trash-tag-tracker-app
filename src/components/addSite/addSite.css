@@ -1,13 +1,16 @@
-
-
 #content {
   font-size: 16px;
-  min-height: 200px;
+  margin-top: 10px;
+  min-height: 100px;
   padding: 5px;
   width: 80%;
 }
 
 @media screen and (min-width: 500px) {
+  .addFloat {
+    float: right;
+  }
+
   #content {
     max-width: 400px;
   }

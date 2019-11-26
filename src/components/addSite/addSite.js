@@ -40,7 +40,6 @@ class AddSite extends Component {
     this.setState({ before_img: event.target.files[0] });
   }
 
-
   /* Custom Methods */
 
   // Responsible for POST request to post a new trash site from state
@@ -100,20 +99,19 @@ class AddSite extends Component {
     this.props.history.goBack();
   };
 
-   
   render() {
     return (
       <div className="addSite flex-column">
         <form
-        className="formBorder width100"
+          className="formBorder width100"
           onSubmit={e => {
             this.handleSubmit(e);
           }}
         >
           <h2 className="title">Add a new site that needs cleaning:</h2>
-          <label className="subtitle" htmlFor="title">
+          {/* <label className="subtitle" htmlFor="title">
             Title
-          </label>
+          </label> */}
           <input
             className="formInput"
             id="title"
@@ -124,9 +122,9 @@ class AddSite extends Component {
             required
             type="text"
           ></input>
-          <label className="subtitle" htmlFor="addrss">
+          {/* <label className="subtitle" htmlFor="addrss">
             Address(aprox):
-          </label>
+          </label> */}
           <input
             className="formInput"
             id="addrss"
@@ -137,9 +135,9 @@ class AddSite extends Component {
             required
             type="addrss"
           ></input>
-          <label className="subtitle" htmlFor="city">
+          {/* <label className="subtitle" htmlFor="city">
             City:
-          </label>
+          </label> */}
           <input
             className="formInput"
             id="city"
@@ -211,9 +209,9 @@ class AddSite extends Component {
             <option value="WI">WI</option>
             <option value="WY">WY</option>
           </select>
-          <label className="subtitle" htmlFor="content">
+          {/* <label className="subtitle" htmlFor="content">
             Description:
-          </label>
+          </label> */}
           <textarea
             id="content"
             name="content"
