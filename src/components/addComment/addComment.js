@@ -73,12 +73,7 @@ class AddComment extends Component {
 
   render() {
     return (
-      <div
-        className="addComment hidden width100"
-        data-aos="fade-in"
-        data-aos-duration="1000"
-        id="addComment"
-      >
+      <div className="addComment hidden width100" id="addComment">
         <form
           className="width100"
           onSubmit={e => {

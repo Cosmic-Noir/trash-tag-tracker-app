@@ -64,7 +64,7 @@ class SiteDetail extends Component {
 
   render() {
     return (
-      <div className="flex-column">
+      <div className="flex-column" data-aos="fade-in" data-aos-duration="1000">
         <div className="itemBorder siteDetail">
           <section className="flex-column">
             <img

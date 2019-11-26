@@ -79,7 +79,7 @@ class CleanSite extends Component {
 
   render() {
     return (
-      <div className="flex-column">
+      <div className="flex-column" data-aos="fade-in" data-aos-duration="1000">
         <h2 className="title">Mark A Trash Site As Cleaned:</h2>
         <h3>{this.state.title}</h3>
         <form
@@ -109,15 +109,16 @@ class CleanSite extends Component {
             required
             type="file"
           />
+
+          <button className="whiteButton" type="submit">
+            Mark Site as Clean
+          </button>
           <button
             className="whiteButton"
             onClick={this.handleCancel}
             type="button"
           >
             Cancel
-          </button>
-          <button className="whiteButton" type="submit">
-            Mark Site as Clean
           </button>
         </form>
       </div>
