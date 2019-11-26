@@ -1,4 +1,4 @@
-![Trash#Tracker](src/landing/logo.png)
+![Trash#Tracker](src/components/nav/logo1.png)
 
 Trash#Tracker is an app designed to piggy-back off of the trending #Trash-Tag challenge. The challenge was to find an area that was littered or polluted, clean it, and then post a before and after picture of the clean up job.
 
@@ -14,13 +14,16 @@ This is a mobile-first application with a focus on ease-of-use and intuitive use
 
 - HTML
 - CSS
+- AOS Scrolling
 - JavaScript
 - React
 - Enzyme
 
 # APIs
 
-- Trash#Track API (https://github.com/Cosmic-Noir/trash-tracker-api). Accompanying server built with express to securely store site and user data.
+1. [Trash-Tracker-API](https://github.com/Cosmic-Noir/trash-tracker-api)
+   - Accompanying server built with express to securely store site and user data.
+   - Utilized all endpoints.
 
 # Features
 
@@ -28,11 +31,34 @@ This is a mobile-first application with a focus on ease-of-use and intuitive use
 - Users can then post new trash sites.
 - Users can comment on existing trash or cleaned sites.
 - Users can mark trash sites as cleaned with their success picture.
+- Users can view basic Enviornmental Impact score.
 
 # Demo
 
-(Soon to come)
+- [TrashTracker Live](https://trash-tag-tracker-app.cosmicnoir.now.sh/)
 
 ## ScreenShots
 
-(Soon to come)
+###### Mobile Home Screen
+
+![TT screen shot one](README_images/mobile1.png)
+
+###### Mobile Trash Site List Screen
+
+![TT screen shot two](README_images/mobile2.png)
+
+###### Mobile Add Trash Site Screen
+
+![TT screen shot three](README_images/mobile3.png)
+
+###### Desktop Trash Site List Screen
+
+![TT screen shot four](README_images/desk1.png)
+
+###### Desktop Site Detail Screen
+
+![TT screen shot five](README_images/desk2.png)
+
+###### Desktop Add Comment Screen
+
+![TT screen shot six](README_images/desk3.png)
