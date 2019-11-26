@@ -20,7 +20,7 @@ class SiteDetail extends Component {
 
   static contextType = siteContext;
 
-  /* Custom Methods */  
+  /* Custom Methods */
 
   // Responsible for when user clicks cancel button
   handleClickBack = () => {
@@ -65,7 +65,7 @@ class SiteDetail extends Component {
   render() {
     return (
       <div className="flex-column">
-        <div className="siteDetail">
+        <div className="itemBorder siteDetail">
           <section className="flex-column">
             <img
               alt="Before"
@@ -100,7 +100,7 @@ class SiteDetail extends Component {
           {this.state.site.clean === false &&
           TokenService.hasAuthToken() === true ? (
             <Link
-            className="whiteButton"
+              className="whiteButton"
               to={`/cleanSite/${this.state.site.id}`}
             >
               Mark as Cleaned!

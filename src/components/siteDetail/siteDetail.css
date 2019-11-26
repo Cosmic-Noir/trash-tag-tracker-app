@@ -26,9 +26,6 @@ p {
 .siteDetail {
   align-items: center;
   background-color: rgba(211, 209, 209, 0.13);
-  border: 1px solid hsla(0, 0%, 78%, 0.747);
-  border-radius: 5px;
-  box-shadow: 3px 3px 3px hsla(180, 1%, 52%, 0.541);
   display: flex;
   flex-direction: column;
   justify-content: center;

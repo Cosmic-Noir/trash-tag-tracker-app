@@ -10,7 +10,11 @@ class Site extends Component {
     return (
       <Link to={`/sites/${this.props.id}`}>
         <div
-          className={this.props.clean === false ? "trash tile" : "clean tile"}
+          className={
+            this.props.clean === false
+              ? "itemBorder tile trash"
+              : "clean itemBorder tile"
+          }
         >
           <div className="siteContent">
             <h2 className="title">{this.props.title}</h2>
