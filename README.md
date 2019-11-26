@@ -5,6 +5,9 @@ width: 150px;
 height: 150px;
 }
 
+<img src="README_images/logo2.png#logo" alt="logo"
+	title="logo" width="150" height="150" />
+
 Trash#Tracker is an app designed to piggy-back off of the trending #Trash-Tag challenge. The challenge was to find an area that was littered or polluted, clean it, and then post a before and after picture of the clean up job.
 
 This app allows users to post trash sites that need cleaning, communicate with other interested users, and then mark a site as cleaned and post a picture of their success.
