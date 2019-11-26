@@ -45,7 +45,7 @@ class Landing extends Component {
         <div className="container">
           <section
             className="landingSection"
-            data-aos="fade-right"
+            data-aos="fade-in"
             data-aos-duration="2000"
           >
             <div className="landingContent">
@@ -61,7 +61,7 @@ class Landing extends Component {
           <section className="landingSection dark">
             <div
               className="landingContent"
-              data-aos="fade-left"
+              data-aos="fade-in"
               data-aos-duration="2000"
             >
               <h2>Post A Trash Site:</h2>
@@ -75,15 +75,33 @@ class Landing extends Component {
               <img
                 alt="Add a site"
                 className="exImg"
+                data-aos="fade-in"
+                data-aos-duration="2000"
                 id="addPic"
                 src={addTrashSite}
               />
-              <img alt="Add a site" className="exImg" src={trashSite} />
-              <img alt="Add a site" className="exImg" src={cleanSite} />
+              <img
+                alt="Add a site"
+                className="exImg"
+                data-aos="fade-in"
+                data-aos-duration="2000"
+                src={trashSite}
+              />
+              <img
+                alt="Add a site"
+                className="exImg"
+                data-aos="fade-in"
+                data-aos-duration="2000"
+                src={cleanSite}
+              />
             </div>
           </section>
           <section className="landingSection flex-column">
-            <div className="landingContent">
+            <div
+              className="landingContent"
+              data-aos="fade-in"
+              data-aos-duration="2000"
+            >
               <h2>Cleaning Our World Together:</h2>
               <p>
                 Whether it is a small ditch on the side of a highway, or an oil

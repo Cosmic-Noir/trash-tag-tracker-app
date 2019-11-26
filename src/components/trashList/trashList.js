@@ -46,7 +46,7 @@ class TrashList extends Component {
     return sites;
   };
 
-   // Responsible for creating unique state option list from context-passed sites - returns option elements
+  // Responsible for creating unique state option list from context-passed sites - returns option elements
   filterForStates = () => {
     const state_abrs = {};
 
@@ -71,16 +71,15 @@ class TrashList extends Component {
 
   render() {
     return (
-      <div className="flex-column">
+      <div className="flex-column" data-aos="fade-in" data-aos-duration="1000">
         <h2 className="title">Trash Sites:</h2>
         {this.context.loggedIn === true ? (
           <Link className="whiteButton" to="/addSite">
             Add New Trash Site
           </Link>
         ) : (
-          <Link className="whiteButton" to="/signIn" >
-
-          <h5>Sign in to add a new site</h5>
+          <Link className="whiteButton" to="/signIn">
+            <h5>Sign in to add a new site</h5>
           </Link>
         )}
         <div className="siteList">

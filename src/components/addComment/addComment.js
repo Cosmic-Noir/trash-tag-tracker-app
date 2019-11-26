@@ -22,7 +22,7 @@ class AddComment extends Component {
     this.setState({ content: "" });
   };
 
-  // Responsible for POST request with comment content from state 
+  // Responsible for POST request with comment content from state
   postComment = () => {
     const url = config.API_ENDPOINT + "comments";
 
@@ -62,7 +62,7 @@ class AddComment extends Component {
     }
   };
 
-  // Responsible for hiding content input 
+  // Responsible for hiding content input
   handleCancel = () => {
     const element = document.getElementById("addComment");
     element.classList.add("hidden");
@@ -73,7 +73,12 @@ class AddComment extends Component {
 
   render() {
     return (
-      <div className="addComment hidden width100" id="addComment">
+      <div
+        className="addComment hidden width100"
+        data-aos="fade-in"
+        data-aos-duration="1000"
+        id="addComment"
+      >
         <form
           className="width100"
           onSubmit={e => {

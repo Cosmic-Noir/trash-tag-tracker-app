@@ -15,6 +15,8 @@ class Site extends Component {
               ? "itemBorder tile trash"
               : "clean itemBorder tile"
           }
+          data-aos="fade-in"
+          data-aos-duration="2000"
         >
           <div className="siteContent">
             <h2 className="title">{this.props.title}</h2>

@@ -20,7 +20,7 @@ class CleanList extends Component {
 
   /* Custom Methods */
 
-// Responsible for setting state from user input
+  // Responsible for setting state from user input
   updateState = state_abr => {
     this.setState({ state_abr });
   };
@@ -81,7 +81,11 @@ class CleanList extends Component {
 
   render() {
     return (
-      <div className="cleanList flex-column">
+      <div
+        className="cleanList flex-column"
+        data-aos="fade-in"
+        data-aos-duration="1000"
+      >
         <h2 className="title"> Cleaned Sites:</h2>
         <form className="siteList">
           <select

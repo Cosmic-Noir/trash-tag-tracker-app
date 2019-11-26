@@ -5,7 +5,11 @@ import { Link } from "react-router-dom";
 class Dashboard extends Component {
   render() {
     return (
-      <div className="dashboard flex-column">
+      <div
+        className="dashboard flex-column"
+        data-aos="fade-in"
+        data-aos-duration="2000"
+      >
         <h2 className="title">Welcome back!</h2>
         <h3 className="subtitle">What would you like to do?</h3>
         <Link className="whiteButton" to="/sites">

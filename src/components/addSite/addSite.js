@@ -101,7 +101,11 @@ class AddSite extends Component {
 
   render() {
     return (
-      <div className="addSite flex-column">
+      <div
+        className="addSite flex-column"
+        data-aos="fade-in"
+        data-aos-duration="2000"
+      >
         <form
           className="formBorder width100"
           onSubmit={e => {
@@ -109,9 +113,6 @@ class AddSite extends Component {
           }}
         >
           <h2 className="title">Add a new site that needs cleaning:</h2>
-          {/* <label className="subtitle" htmlFor="title">
-            Title
-          </label> */}
           <input
             className="formInput"
             id="title"
@@ -122,9 +123,7 @@ class AddSite extends Component {
             required
             type="text"
           ></input>
-          {/* <label className="subtitle" htmlFor="addrss">
-            Address(aprox):
-          </label> */}
+
           <input
             className="formInput"
             id="addrss"
@@ -135,9 +134,7 @@ class AddSite extends Component {
             required
             type="addrss"
           ></input>
-          {/* <label className="subtitle" htmlFor="city">
-            City:
-          </label> */}
+
           <input
             className="formInput"
             id="city"
