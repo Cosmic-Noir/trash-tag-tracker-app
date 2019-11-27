@@ -61,9 +61,9 @@ class Landing extends Component {
             >
               <h2>Post A Trash Site:</h2>
               <p>
-                Use our app to report a new trash site that needs
-                help.Coordinate with others, clean up the site, and then mark it
-                as clean and post your success picture!
+                Use our app to report a new trash site that needs help.
+                Coordinate with others, clean up the site, and then mark it as
+                clean and post your success picture!
               </p>
             </div>
             <div className="landingImages">
