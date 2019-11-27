@@ -103,7 +103,7 @@ class Landing extends Component {
                 spill requiring hundreds of hands, together we can undo the
                 damage done to our planet. By raising more enviornmental
                 awareness we can prevent further pollution of our most precious
-                resrouce: Our planet.
+                resource: Our planet.
               </p>
             </div>
             <a href="#home" id="landingLogo">
