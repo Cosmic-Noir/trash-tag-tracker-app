@@ -24,6 +24,7 @@ class Dashboard extends Component {
         <a
           className="whiteButton"
           href="https://www.epa.gov/trash-free-waters/preventing-trash-source-0"
+          rel="noopener noreferrer"
           target="_blank"
         >
           Ways to Reduce Trash
