@@ -25,12 +25,12 @@ import siteContext from "./siteContext";
 
 class App extends Component {
   state = {
+    clean_sites: [],
     error: null,
     loggedIn: "",
     totalScore: "",
     totalSitesCleaned: "",
-    trash_sites: [],
-    clean_sites: []
+    trash_sites: []
   };
 
   /* State Setting Methods */
@@ -128,10 +128,10 @@ class App extends Component {
     return (
       <div className="App">
         <siteContext.Provider value={contextValue}>
-          <nav>
+          <nav role="navigation">
             <Nav />
           </nav>
-          <main>
+          <main role="main">
             <Route path="/impact" component={Impact} />
             <Route path="/addSite" component={AddSite} />
             <Route path="/cleaned" component={CleanList} />
@@ -145,7 +145,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
           </main>
         </siteContext.Provider>
-        <footer className="dark">
+        <footer className="dark" role="contentinfo">
           {this.state.loggedIn === false ? (
             <Link to="/signUp" id="footerSignUp">
               Sign Up
