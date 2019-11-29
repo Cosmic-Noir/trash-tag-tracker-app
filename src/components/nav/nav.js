@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 /* Custom Components */
 import TokenService from "../../auth/token-service";
 
-// Styling and Images:
+/* Styling and Images: */
 import logo from "./logo1.png";
 import menuIcon from "./menuIcon.png";
 import "./nav.css";
@@ -21,7 +21,6 @@ class Nav extends Component {
   handleSignOut = () => {
     TokenService.clearAuthToken();
     this.context.checkLoginStatus();
-    console.log(window.innerWidth);
     if (window.innerWidth < 600) {
       this.toggleMobileMenu();
     }

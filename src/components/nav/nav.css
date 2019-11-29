@@ -1,3 +1,5 @@
+/* Class styling */
+
 .deskNav {
   display: none;
 }
@@ -55,6 +57,8 @@
   background-color: white;
 }
 
+/* ID styling */
+
 #menuIcon {
   height: 30px;
   width: 30px;
@@ -78,6 +82,8 @@
   transition-duration: 1s;
   /* width: 77px; */
 }
+
+/* Responsive Adjustments */
 
 @media screen and (min-width: 600px) {
   .deskNav {
