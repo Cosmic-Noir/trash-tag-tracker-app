@@ -24,13 +24,12 @@ class CommentList extends Component {
   /* Custom Methods */
 
   // Responsible for displaying comment input element and add button
-  // May want to change to arrow function? - Cannot currently test fuctionality
-  clickAddComment() {
+  clickAddComment = () => {
     const element = document.getElementById("addComment");
     element.classList.remove("hidden");
     const addButton = document.getElementById("add");
     addButton.classList.add("hidden");
-  }
+  };
 
   // Responsible for GET request for all comments with matching siteID
   getComments = () => {
