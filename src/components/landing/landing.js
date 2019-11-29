@@ -68,7 +68,7 @@ class Landing extends Component {
             </div>
             <div className="landingImages">
               <img
-                alt="Add a site"
+                alt="Add a trash site"
                 className="exImg"
                 data-aos="fade-in"
                 data-aos-duration="2000"
@@ -76,14 +76,14 @@ class Landing extends Component {
                 src={addTrashSite}
               />
               <img
-                alt="Add a site"
+                alt="View a posted trash site"
                 className="exImg"
                 data-aos="fade-in"
                 data-aos-duration="2000"
                 src={trashSite}
               />
               <img
-                alt="Add a site"
+                alt="Mark a site as cleaned"
                 className="exImg"
                 data-aos="fade-in"
                 data-aos-duration="2000"
