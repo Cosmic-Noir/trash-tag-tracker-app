@@ -21,6 +21,12 @@ class CommentList extends Component {
 
   static contextType = siteContext;
 
+  /* State Setting Methods */
+
+  setComments = comments => {
+    this.setState({ comments: comments, error: null });
+  };
+
   /* Custom Methods */
 
   // Responsible for displaying comment input element and add button
@@ -49,11 +55,6 @@ class CommentList extends Component {
       })
       .then(this.setComments)
       .catch(error => this.setState({ error }));
-  };
-
-  // Responsible for setting comments state to response received
-  setComments = comments => {
-    this.setState({ comments: comments, error: null });
   };
 
   // Responsible for taking comments state and returning array of Comment components OR 'No comments yet!'
