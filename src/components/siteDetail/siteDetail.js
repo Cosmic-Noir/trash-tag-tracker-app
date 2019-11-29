@@ -104,7 +104,9 @@ class SiteDetail extends Component {
               Mark as Cleaned!
             </Link>
           ) : (
-            ""
+            <Link className="whiteButton" to="/signIn">
+              Sign in to Mark as Cleaned
+            </Link>
           )}
           <button
             className="whiteButton"
