@@ -14,12 +14,23 @@ header {
   background-color: black;
 }
 
+.earth {
+  max-height: 150px;
+  max-width: 250px;
+  margin: 20px;
+}
+
 .exImg {
   height: 90%;
   margin: 10px;
+
+  /*
   max-height: 300px;
-  max-width: 250px;
+  max-width: 250px; */
   width: 80%;
+}
+.landingContent {
+  margin: 5px;
 }
 
 .landingImages {
@@ -40,20 +51,8 @@ header {
 
 /* ID styling */
 
-#addPic {
-  max-height: 300px;
-  margin: 10px;
-  max-width: 220px;
-}
-
 #cleaning {
-  padding-top: 15px;
-}
-
-.earth {
-  max-height: 150px;
-  max-width: 250px;
-  margin: 20px;
+  padding: 10px 5px 0px;
 }
 
 #ex {
@@ -67,11 +66,10 @@ header {
 
 /* Responsive Adjustments */
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 600px) {
   .exImg {
-    height: 250px;
-    max-width: 230px;
     width: 30%;
+    height: 70%;
   }
   .landingImages {
     flex-direction: row;

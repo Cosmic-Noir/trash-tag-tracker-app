@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 
 /* Custom Components */
 import Site from "../site/site";
+
+/* Styling & Images */
 import "./trashList.css";
+
+/* Context */
 import siteContext from "../../siteContext";
 
 class TrashList extends Component {

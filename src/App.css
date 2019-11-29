@@ -36,6 +36,7 @@ p {
   line-height: 26px;
   max-width: 500px;
   margin: 0px;
+  padding: 5px;
 }
 
 /* Global class sytles */
@@ -95,7 +96,15 @@ p {
 }
 
 .siteList {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0px;
   margin-bottom: 15px;
+  padding: 0px;
+  width: 100%;
 }
 
 .subtitle {
@@ -143,4 +152,12 @@ p {
 
 #footerSignUp:hover {
   text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+
+@media screen and (min-width: 600px) {
+  .siteList {
+    flex-direction: row;
+  }
 }
