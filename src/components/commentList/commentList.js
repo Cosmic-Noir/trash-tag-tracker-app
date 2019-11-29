@@ -83,7 +83,7 @@ class CommentList extends Component {
 
   render() {
     return (
-      <div className="comments">
+      <div className="comments width100">
         {this.context.loggedIn === false ? (
           <Link className="whiteButton" to="/signIn">
             Sign in to view comments

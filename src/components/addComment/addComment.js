@@ -75,12 +75,11 @@ class AddComment extends Component {
     return (
       <div className="addComment hidden width100" id="addComment">
         <form
-          className="width100"
+          className="flex-column width100"
           onSubmit={e => {
             this.handleSubmit(e);
           }}
         >
-          <label htmlFor="content">Add comment:</label>
           {this.state.error !== null ? (
             <h4 className="error">{this.state.error}</h4>
           ) : (
@@ -88,11 +87,12 @@ class AddComment extends Component {
           )}
           <textarea
             className="desc"
-            name="content"
             id="addComment"
+            name="content"
+            onChange={e => this.updateContent(e.target.value)}
+            placeholder="Comment..."
             ref={this.content}
             value={this.state.content}
-            onChange={e => this.updateContent(e.target.value)}
           ></textarea>
           <button className="whiteButton" type="submit">
             Add

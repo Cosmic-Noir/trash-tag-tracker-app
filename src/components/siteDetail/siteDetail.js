@@ -95,8 +95,6 @@ class SiteDetail extends Component {
             <h5>Posted By: {this.state.site.username} </h5>
             <p>{this.state.site.content}</p>
           </section>
-        </div>
-        <section className="comments" role="dialog">
           {this.state.site.clean === false &&
           TokenService.hasAuthToken() === true ? (
             <Link
@@ -115,8 +113,9 @@ class SiteDetail extends Component {
           >
             Back
           </button>
-          <CommentList siteId={this.props.match.params.siteId} />
-        </section>
+        </div>
+
+        <CommentList siteId={this.props.match.params.siteId} />
       </div>
     );
   }
