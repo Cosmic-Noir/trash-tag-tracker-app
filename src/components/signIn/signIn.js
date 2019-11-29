@@ -1,12 +1,9 @@
-import config from "../../config";
-import { Link } from "react-router-dom";
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import config from "../../config";
 
 /* Custom Components */
 import TokenService from "../../auth/token-service";
-
-/* Styling & Images */
-import "./signIn.css";
 
 /* Context */
 import siteContext from "../../siteContext";
@@ -14,13 +11,13 @@ import siteContext from "../../siteContext";
 class SignIn extends Component {
   state = {
     error: null,
-    username: "",
-    pass: ""
+    pass: "",
+    username: ""
   };
 
   static contextType = siteContext;
 
-  /* State updating methods */
+  /* State Updating Methods */
   updateUsername(username) {
     this.setState({ username: username });
   }
@@ -36,8 +33,8 @@ class SignIn extends Component {
     const url = config.API_ENDPOINT + "login";
 
     const credentials = {
-      username: this.state.username,
-      pass: this.state.pass
+      pass: this.state.pass,
+      username: this.state.username
     };
 
     fetch(url, {
