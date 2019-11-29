@@ -109,7 +109,7 @@ class AddSite extends Component {
         data-aos-duration="2000"
       >
         <form
-          className="formBorder width100"
+          className="flex-column formBorder width100"
           onSubmit={e => {
             this.handleSubmit(e);
           }}

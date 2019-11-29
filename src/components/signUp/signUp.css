@@ -1,17 +1,3 @@
-button {
-  margin: 10px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-input {
-  margin: 5px;
-}
-
 .signUp {
   display: flex;
   flex-direction: column;

@@ -1,6 +1,6 @@
-import config from "../../config";
-import { Link } from "react-router-dom";
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import config from "../../config";
 
 /* Styling & Images */
 import "./signUp.css";
@@ -100,7 +100,7 @@ class SignUp extends Component {
     return (
       <div className="signUp" data-aos="fade-in" data-aos-duration="1000">
         <form
-          className="formBorder"
+          className="flex-column formBorder"
           onSubmit={e => {
             this.handlSubmit(e);
           }}

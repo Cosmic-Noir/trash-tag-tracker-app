@@ -87,7 +87,7 @@ class SignIn extends Component {
         data-aos-duration="1000"
       >
         <form
-          className="formBorder"
+          className="flex-column formBorder"
           onSubmit={e => {
             this.handleSubmit(e);
           }}
