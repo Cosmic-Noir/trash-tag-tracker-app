@@ -65,7 +65,6 @@ class CleanSite extends Component {
       });
   };
 
-  // NEED TO WRITE CONTENT VALIDATION
   // Responsible for validating form input and setting error state
   handleSubmit = e => {
     e.preventDefault();
@@ -85,7 +84,6 @@ class CleanSite extends Component {
     return (
       <div className="flex-column" data-aos="fade-in" data-aos-duration="1000">
         <h2 className="title">Mark A Trash Site As Cleaned:</h2>
-        <h3>{this.state.title}</h3>
         <form
           className="flex-column width100"
           id="clean_form"
