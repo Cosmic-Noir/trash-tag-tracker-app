@@ -4,7 +4,6 @@ import React, { Component } from "react";
 import Site from "../site/site";
 
 /* Styling & Images */
-import "./cleanList.css";
 
 /* Context */
 import siteContext from "../../siteContext";
@@ -12,18 +11,19 @@ import siteContext from "../../siteContext";
 class CleanList extends Component {
   state = {
     error: "",
-    state_abr: "",
-    sites: null
+    sites: null,
+    state_abr: ""
   };
 
   static contextType = siteContext;
 
-  /* Custom Methods */
+  /* State Setting Methods */
 
-  // Responsible for setting state from user input
   updateState = state_abr => {
     this.setState({ state_abr });
   };
+
+  /* Custom Methods */
 
   // Responsible for taking context-passed clean_sites and returning array of site components
   displayList = () => {
@@ -56,7 +56,7 @@ class CleanList extends Component {
     return sites;
   };
 
-  // Responsible for creating unique state option list from context-passed sites - returns option elements
+  // Responsible for creating unique state option list from context-passed sites and returns option elements
   filterForStates = () => {
     const state_abrs = {};
 
@@ -67,7 +67,7 @@ class CleanList extends Component {
       if (state_abrs[state_abr] === true) {
         return null;
       } else {
-        // else if state_abr does not exist - then return option
+        // else if state_abr does not exist add to object - then return option
         state_abrs[state_abr] = true;
 
         return (

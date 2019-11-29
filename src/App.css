@@ -91,6 +91,10 @@ p {
   box-shadow: 3px 3px 3px hsla(180, 1%, 52%, 0.541);
 }
 
+.siteList {
+  margin-bottom: 15px;
+}
+
 .subtitle {
   padding: 20px 5px 2px;
 }
@@ -116,6 +120,10 @@ p {
 
 .whiteButton:hover {
   box-shadow: 5px 3px 4px rgba(102, 102, 102, 0.822);
+}
+
+.width100 {
+  width: 100%;
 }
 
 .wrapper {

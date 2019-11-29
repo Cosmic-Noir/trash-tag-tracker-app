@@ -12,13 +12,22 @@ import siteContext from "../../siteContext";
 
 class CleanSite extends Component {
   state = {
-    error: null,
-    clean: true,
     after_img: "",
-    content: ""
+    clean: true,
+    content: "",
+    error: null
   };
 
   static contextType = siteContext;
+
+  /* State updating methods */
+  updateContent = content => {
+    this.setState({ content: content });
+  };
+
+  updateAfterImg = event => {
+    this.setState({ after_img: event.target.files[0] });
+  };
 
   /* Custom Methods */
 
@@ -60,16 +69,11 @@ class CleanSite extends Component {
   // Responsible for validating form input and setting error state
   handleSubmit = e => {
     e.preventDefault();
-    this.patchSite();
-  };
-
-  /* State updating methods */
-  updateContent = content => {
-    this.setState({ content: content });
-  };
-
-  updateAfterImg = event => {
-    this.setState({ after_img: event.target.files[0] });
+    if (this.state.content.length > 175) {
+      this.setState({ error: `Max character limit of 175 exceeded` });
+    } else {
+      this.patchSite();
+    }
   };
 
   // Responsible for when user clicks cancel button
@@ -83,7 +87,7 @@ class CleanSite extends Component {
         <h2 className="title">Mark A Trash Site As Cleaned:</h2>
         <h3>{this.state.title}</h3>
         <form
-          className="flex-column"
+          className="flex-column width100"
           id="clean_form"
           onSubmit={this.handleSubmit}
         >
@@ -109,6 +113,11 @@ class CleanSite extends Component {
             required
             type="file"
           />
+          {this.state.error !== null ? (
+            <h5 className="error">{this.state.error}</h5>
+          ) : (
+            ""
+          )}
 
           <button className="whiteButton" type="submit">
             Mark Site as Clean
