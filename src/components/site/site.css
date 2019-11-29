@@ -1,11 +1,7 @@
+/* Class styling */
+
 .address {
   margin-bottom: 0px;
-}
-
-.cleanSiteImg {
-  max-height: 200px;
-  max-width: 300px;
-  padding: 10px;
 }
 
 .clean {
@@ -18,6 +14,12 @@
   padding: 10px;
   transition-duration: 1s;
   width: 100%;
+}
+
+.cleanSiteImg {
+  max-height: 200px;
+  max-width: 300px;
+  padding: 10px;
 }
 
 .content {
@@ -43,10 +45,8 @@
   display: flex;
 }
 
-.trashSiteImg {
-  max-height: 200px;
-  max-width: 300px;
-  padding: 10px;
+.tile:hover {
+  box-shadow: 8px 5px 5px hsla(180, 1%, 24%, 0.541);
 }
 
 .trash {
@@ -60,9 +60,13 @@
   transition-duration: 1s;
 }
 
-.tile:hover {
-  box-shadow: 8px 5px 5px hsla(180, 1%, 24%, 0.541);
+.trashSiteImg {
+  max-height: 200px;
+  max-width: 300px;
+  padding: 10px;
 }
+
+/* Responsive Adjustments */
 
 @media screen and (min-width: 800px) {
   .clean {
@@ -73,15 +77,14 @@
   .content {
     display: flex;
   }
+  .siteContent {
+    align-self: start;
+  }
   .trash {
     flex-direction: row;
     width: 700px;
     height: 200px;
   }
-  .siteContent {
-    align-self: start;
-  }
-
   .trashSiteImg {
     max-height: 280px;
     max-width: 400px;

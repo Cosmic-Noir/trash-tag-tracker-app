@@ -4,7 +4,7 @@ import React, { Component } from "react";
 /* Styling & Images */
 import "./site.css";
 
-// Consider turning into Function instead when can test
+// Must remain a component to accept props
 class Site extends Component {
   render() {
     return (
