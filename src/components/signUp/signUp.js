@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import config from "../../config";
 
-/* Styling & Images */
-import "./signUp.css";
-
 /* Context */
 import siteContext from "../../siteContext";
 
@@ -98,7 +95,7 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div className="signUp" data-aos="fade-in" data-aos-duration="1000">
+      <div className="flex-column" data-aos="fade-in" data-aos-duration="1000">
         <form
           className="flex-column formBorder"
           onSubmit={e => {

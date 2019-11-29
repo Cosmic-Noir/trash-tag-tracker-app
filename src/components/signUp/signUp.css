@@ -1,9 +1,0 @@
-.signUp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.warning {
-  color: red;
-  max-width: 400px;
-}
