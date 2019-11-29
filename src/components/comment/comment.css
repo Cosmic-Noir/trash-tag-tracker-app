@@ -18,5 +18,6 @@
 @media screen and (min-width: 350px) {
   .date {
     float: right;
+    padding-top: 2px;
   }
 }
