@@ -3,12 +3,13 @@
 .cleanDetailImg {
   max-height: 400px;
   max-width: 500px;
-  padding: 5px;
+  margin: 20px 0px;
   width: 90%;
 }
 
 .detailImg {
   height: 80%;
+  margin: 15px 0px;
   max-width: 600px;
   padding: 10px;
   width: 90%;
@@ -16,19 +17,22 @@
 
 .details {
   align-self: start;
-  padding: 20px;
+  margin: 20px;
   width: 90%;
+}
+
+.detailTile {
+  background-color: rgba(211, 209, 209, 0.13);
+  margin: 20px;
+  width: 80%;
 }
 
 .siteDetail {
   align-items: center;
-  background-color: rgba(211, 209, 209, 0.13);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 15px;
-  padding: 10px;
-  width: 80%;
+  /* width: 90%; */
 }
 
 /* Responsive Adjustments */
@@ -43,8 +47,5 @@
   }
   .siteDetail {
     flex-direction: row;
-  }
-  .detailImg {
-    max-width: 70%;
   }
 }

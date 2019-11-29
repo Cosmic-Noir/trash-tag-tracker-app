@@ -65,61 +65,68 @@ class SiteDetail extends Component {
   render() {
     return (
       <div className="flex-column" data-aos="fade-in" data-aos-duration="1000">
-        <div className="itemBorder siteDetail">
-          <section className="flex-column">
-            <img
-              alt="Before site"
-              className={
-                this.state.site.clean === false ? "detailImg" : "cleanDetailImg"
-              }
-              src={this.state.site.before_img}
-            />
-            {this.state.site.clean === true ? (
+        <section className="flex-column itemBorder detailTile">
+          <div className="siteDetail">
+            <section className="flex-column">
               <img
-                alt="Clean site"
-                className="cleanDetailImg"
-                src={this.state.site.after_img}
+                alt="Before site"
+                className={
+                  this.state.site.clean === false
+                    ? "detailImg"
+                    : "cleanDetailImg"
+                }
+                src={this.state.site.before_img}
               />
-            ) : (
-              ""
-            )}
-          </section>
-          <section className="details" role="contentinfo">
-            <h2>{this.state.site.title}</h2>
-            <h4 className="addrss">{this.state.site.addrss}</h4>
-            <h4>
-              {this.state.site.city}, {this.state.site.state_abr}
-            </h4>
-            <br />
-            <h5>Date Posted: {this.state.dated}</h5>
-            <h5>Posted By: {this.state.site.username} </h5>
-            <p>{this.state.site.content}</p>
-          </section>
-        </div>
-        {this.state.site.clean === false &&
-        TokenService.hasAuthToken() === true ? (
-          <Link className="whiteButton" to={`/cleanSite/${this.state.site.id}`}>
-            Mark as Cleaned!
-          </Link>
-        ) : (
-          ""
-        )}
-        {this.state.site.clean === false &&
-        TokenService.hasAuthToken() === false ? (
-          <Link className="whiteButton" to="/signIn">
-            Sign in to Mark as Cleaned
-          </Link>
-        ) : (
-          ""
-        )}
+              {this.state.site.clean === true ? (
+                <img
+                  alt="Clean site"
+                  className="cleanDetailImg"
+                  src={this.state.site.after_img}
+                />
+              ) : (
+                ""
+              )}
+            </section>
+            <section className="details" role="contentinfo">
+              <h2>{this.state.site.title}</h2>
+              <h4 className="addrss">{this.state.site.addrss}</h4>
+              <h4>
+                {this.state.site.city}, {this.state.site.state_abr}
+              </h4>
+              <br />
+              <h5>Date Posted: {this.state.dated}</h5>
+              <h5>Posted By: {this.state.site.username} </h5>
+              <p>{this.state.site.content}</p>
+            </section>
+          </div>
+          {this.state.site.clean === false &&
+          TokenService.hasAuthToken() === true ? (
+            <Link
+              className="whiteButton"
+              to={`/cleanSite/${this.state.site.id}`}
+            >
+              Mark as Cleaned!
+            </Link>
+          ) : (
+            ""
+          )}
+          {this.state.site.clean === false &&
+          TokenService.hasAuthToken() === false ? (
+            <Link className="whiteButton" to="/signIn">
+              Sign in to Mark as Cleaned
+            </Link>
+          ) : (
+            ""
+          )}
 
-        <button
-          className="whiteButton"
-          onClick={this.handleClickBack}
-          type="button"
-        >
-          Back
-        </button>
+          <button
+            className="whiteButton"
+            onClick={this.handleClickBack}
+            type="button"
+          >
+            Back
+          </button>
+        </section>
 
         <CommentList siteId={this.props.match.params.siteId} />
       </div>
