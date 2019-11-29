@@ -87,6 +87,8 @@ class AddSite extends Component {
       this.setState({ error: `Please enter a valid city name` });
     } else if (this.state.content.length < 1) {
       this.setState({ error: `Please enter a description` });
+    } else if (this.state.content.length > 175) {
+      this.setState({ error: `Max character limit of 175 exceeded` });
     } else if (this.state.state_abr.length !== 2) {
       this.setState({ error: `Please select a valid state` });
     } else {
