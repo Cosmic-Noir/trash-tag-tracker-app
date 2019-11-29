@@ -134,7 +134,6 @@ class AddSite extends Component {
             required
             type="addrss"
           ></input>
-
           <input
             className="formInput"
             id="city"
@@ -206,9 +205,6 @@ class AddSite extends Component {
             <option value="WI">WI</option>
             <option value="WY">WY</option>
           </select>
-          {/* <label className="subtitle" htmlFor="content">
-            Description:
-          </label> */}
           <textarea
             id="content"
             name="content"

@@ -98,10 +98,10 @@ class AddComment extends Component {
             Add
           </button>
           <button
-            type="button"
             className="whiteButton"
             id="cancel"
             onClick={this.handleCancel}
+            type="button"
           >
             Cancel
           </button>
