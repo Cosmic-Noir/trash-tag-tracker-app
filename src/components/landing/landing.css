@@ -1,3 +1,5 @@
+/* Element styling */
+
 header {
   background-color: black;
   color: white;
@@ -5,23 +7,7 @@ header {
   width: 100%;
 }
 
-p {
-  max-width: 500px;
-  margin: 0px;
-}
-
-header,
-.landing,
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.container {
-  width: 100%;
-}
+/* Class styling */
 
 .dark {
   color: white;
@@ -52,10 +38,16 @@ header,
   width: 100%;
 }
 
+/* ID styling */
+
 #addPic {
   max-height: 300px;
   margin: 10px;
   max-width: 220px;
+}
+
+#cleaning {
+  padding-top: 15px;
 }
 
 .earth {
@@ -72,6 +64,8 @@ header,
 #landingLogo {
   margin-top: 15px;
 }
+
+/* Responsive Adjustments */
 
 @media screen and (min-width: 500px) {
   .exImg {

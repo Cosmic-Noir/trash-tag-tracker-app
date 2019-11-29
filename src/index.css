@@ -1,5 +1,6 @@
-body {
+/* Element styling */
 
+body {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -19,4 +20,3 @@ code {
 html {
   height: 100%;
 }
-

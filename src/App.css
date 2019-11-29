@@ -34,6 +34,8 @@ main {
 
 p {
   line-height: 26px;
+  max-width: 500px;
+  margin: 0px;
 }
 
 /* Global class sytles */

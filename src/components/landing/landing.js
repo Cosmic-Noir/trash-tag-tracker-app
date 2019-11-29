@@ -18,8 +18,8 @@ class Landing extends Component {
 
   render() {
     return (
-      <div className="landing" id="home">
-        <header role="banner">
+      <div className="flex-column" id="home">
+        <header className="flex-column" role="banner">
           <h1 data-aos="fade-in" data-aos-duration="2000">
             Welcome to Trash
             <img alt="logo" className="logo" src={logo} />
@@ -37,7 +37,7 @@ class Landing extends Component {
           </p>
         </header>
 
-        <div className="container">
+        <div className="flex-column width100">
           <section
             className="landingSection"
             data-aos="fade-in"
@@ -91,13 +91,13 @@ class Landing extends Component {
               />
             </div>
           </section>
-          <section className="landingSection flex-column">
+          <section className="flex-column">
             <div
               className="landingContent"
               data-aos="fade-in"
               data-aos-duration="2000"
             >
-              <h2>Cleaning Our World Together:</h2>
+              <h2 id="cleaning">Cleaning Our World Together:</h2>
               <p>
                 Whether it is a small ditch on the side of a highway, or an oil
                 spill requiring hundreds of hands, together we can undo the
