@@ -1,6 +1,6 @@
-import config from "../../config";
-import { Link } from "react-router-dom";
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import config from "../../config";
 
 /* Custom Components */
 import CommentList from "../commentList/commentList";
@@ -14,8 +14,8 @@ import siteContext from "../../siteContext";
 
 class SiteDetail extends Component {
   state = {
-    site: "",
-    error: ""
+    error: "",
+    site: ""
   };
 
   static contextType = siteContext;
@@ -68,7 +68,7 @@ class SiteDetail extends Component {
         <div className="itemBorder siteDetail">
           <section className="flex-column">
             <img
-              alt="Before"
+              alt="Before site"
               className={
                 this.state.site.clean === false ? "detailImg" : "cleanDetailImg"
               }
@@ -84,7 +84,7 @@ class SiteDetail extends Component {
               ""
             )}
           </section>
-          <section className="details">
+          <section className="details" role="contentinfo">
             <h2>{this.state.site.title}</h2>
             <h4 className="addrss">{this.state.site.addrss}</h4>
             <h4>
@@ -96,7 +96,7 @@ class SiteDetail extends Component {
             <p>{this.state.site.content}</p>
           </section>
         </div>
-        <section className="comments">
+        <section className="comments" role="dialog">
           {this.state.site.clean === false &&
           TokenService.hasAuthToken() === true ? (
             <Link
