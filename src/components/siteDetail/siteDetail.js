@@ -95,27 +95,31 @@ class SiteDetail extends Component {
             <h5>Posted By: {this.state.site.username} </h5>
             <p>{this.state.site.content}</p>
           </section>
-          {this.state.site.clean === false &&
-          TokenService.hasAuthToken() === true ? (
-            <Link
-              className="whiteButton"
-              to={`/cleanSite/${this.state.site.id}`}
-            >
-              Mark as Cleaned!
-            </Link>
-          ) : (
-            <Link className="whiteButton" to="/signIn">
-              Sign in to Mark as Cleaned
-            </Link>
-          )}
-          <button
-            className="whiteButton"
-            onClick={this.handleClickBack}
-            type="button"
-          >
-            Back
-          </button>
         </div>
+        {this.state.site.clean === false &&
+        TokenService.hasAuthToken() === true ? (
+          <Link className="whiteButton" to={`/cleanSite/${this.state.site.id}`}>
+            Mark as Cleaned!
+          </Link>
+        ) : (
+          ""
+        )}
+        {this.state.site.clean === false &&
+        TokenService.hasAuthToken() === false ? (
+          <Link className="whiteButton" to="/signIn">
+            Sign in to Mark as Cleaned
+          </Link>
+        ) : (
+          ""
+        )}
+
+        <button
+          className="whiteButton"
+          onClick={this.handleClickBack}
+          type="button"
+        >
+          Back
+        </button>
 
         <CommentList siteId={this.props.match.params.siteId} />
       </div>
