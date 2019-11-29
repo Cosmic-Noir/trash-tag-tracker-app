@@ -7,9 +7,6 @@ import earthPic from "../landing/images/earth2.jpg";
 // Context
 import siteContext from "../../siteContext";
 
-// Maybe use this as a score page or to track impact from score
-// Component not currently in use
-
 class Impact extends Component {
   static contextType = siteContext;
 

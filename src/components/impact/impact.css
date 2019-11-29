@@ -1,7 +1,11 @@
+/* Class styling */
+
 .impact {
   height: 100%;
   padding: 15px;
 }
+
+/* ID styling */
 
 #totalScore {
   margin: 10px;
