@@ -69,6 +69,7 @@ class AddSite extends Component {
           throw error;
         });
       }
+      console.log(res);
       this.props.history.push("/sites");
       this.context.getTrashSites();
       return res.json();

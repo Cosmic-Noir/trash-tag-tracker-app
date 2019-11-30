@@ -50,7 +50,7 @@ class App extends Component {
 
   // Responsible for setting user's loggedIn status to true or false if JWT present
   checkLoginStatus = () => {
-    if (window.localStorage.getItem(config.TOKEN_KEY)) {
+    if (window.sessionStorage.getItem(config.TOKEN_KEY)) {
       this.setState({ loggedIn: true });
     } else {
       this.setState({ loggedIn: false });
