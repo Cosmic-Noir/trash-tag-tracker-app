@@ -28,7 +28,7 @@ This is a mobile-first application with a focus on ease-of-use and intuitive use
 
 # Features
 
-- Allows user to create a peronal account.
+- Allows user to create a personal account.
 - Users can then post new trash sites.
 - Users can comment on existing trash or cleaned sites.
 - Users can mark trash sites as cleaned with their success picture.
