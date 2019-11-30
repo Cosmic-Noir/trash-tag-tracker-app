@@ -49,6 +49,7 @@ p {
 
 .error {
   color: red;
+  margin: 15px;
 }
 
 .flex-column {
