@@ -93,7 +93,11 @@ class AddSite extends Component {
     } else if (this.state.state_abr.length !== 2) {
       this.setState({ error: `Please select a valid state` });
     } else {
-      this.addSite();
+      if (window.sessionStorage.getItem(config.TOKEN_KEY)) {
+        this.addSite();
+      } else {
+        this.props.history.push("/demo");
+      }
     }
   };
 

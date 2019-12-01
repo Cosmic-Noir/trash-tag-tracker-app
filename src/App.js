@@ -8,6 +8,7 @@ import AddSite from "./components/addSite/addSite";
 import CleanList from "./components/cleanList/cleanList";
 import CleanSite from "./components/cleanSite/cleanSite";
 import Dashboard from "./components/dashboard/dashboard";
+import Demo from "./components/demo/demo";
 import Impact from "./components/impact/impact";
 import Landing from "./components/landing/landing";
 import Nav from "./components/nav/nav";
@@ -137,6 +138,7 @@ class App extends Component {
             <Route path="/cleaned" component={CleanList} />
             <Route path="/cleanSite/:siteId" component={CleanSite} />
             <Route path="/dashboard" component={Dashboard} />
+            <Route path="/demo" component={Demo} />
             <Route path="/signIn" component={SignIn} />
             <Route path="/signOut" component={SignOut} />
             <Route path="/signUp" component={SignUp} />
