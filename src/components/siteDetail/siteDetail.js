@@ -34,7 +34,7 @@ class SiteDetail extends Component {
     fetch(url, {
       method: "GET",
       headers: {
-        "content-type": "applicatin/json"
+        "content-type": "application/json"
       }
     })
       .then(res => {
