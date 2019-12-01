@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 /* Styling & Images */
 import "./landing.css";
@@ -15,6 +16,12 @@ import siteContext from "../../siteContext";
 
 class Landing extends Component {
   static contextType = siteContext;
+
+  /* Custom Methods */
+
+  demoLogin = () => {
+    console.log("Hey things");
+  };
 
   render() {
     return (
@@ -106,6 +113,13 @@ class Landing extends Component {
                 resource: Our planet.
               </p>
             </div>
+            <Link
+              className="whiteButton"
+              to="/dashboard"
+              onClick={this.demoLogin()}
+            >
+              Demo
+            </Link>
             <a href="#home" id="landingLogo">
               <img alt="Logo" className="logo" src={darkLogo} />
             </a>
