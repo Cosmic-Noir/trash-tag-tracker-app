@@ -64,7 +64,9 @@ class Nav extends Component {
                 Dashboard
               </Link>
             ) : (
-              ""
+              <Link className="nav" to="/dashboard">
+                Demo
+              </Link>
             )}
             {this.context.loggedIn === false ? (
               <Link id="signUp" to="/signUp">
