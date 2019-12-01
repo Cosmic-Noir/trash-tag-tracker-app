@@ -16,9 +16,13 @@ export default function Dashboard() {
       <Link className="whiteButton" to="/cleaned">
         View Cleaned Sites
       </Link>
+      <Link className="whiteButton" to="/impact">
+        View Impact
+      </Link>
       <Link className="whiteButton" to="/addSite">
         Add New Trash Site
       </Link>
+
       <a
         className="whiteButton"
         href="https://www.epa.gov/trash-free-waters/preventing-trash-source-0"
