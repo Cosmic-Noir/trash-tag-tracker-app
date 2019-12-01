@@ -33,6 +33,7 @@ class Impact extends Component {
           <a
             className="inPLink"
             href="https://www.epa.gov/trash-free-waters/impacts-mismanaged-trash"
+            target="_blank"
           >
             United States Enviornmental Protection Agency(EPA)
           </a>
