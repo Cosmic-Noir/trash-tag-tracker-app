@@ -17,12 +17,6 @@ import siteContext from "../../siteContext";
 class Landing extends Component {
   static contextType = siteContext;
 
-  /* Custom Methods */
-
-  demoLogin = () => {
-    console.log("Hey things");
-  };
-
   render() {
     return (
       <div className="flex-column" id="home">
@@ -113,11 +107,7 @@ class Landing extends Component {
                 resource: Our planet.
               </p>
             </div>
-            <Link
-              className="whiteButton"
-              to="/dashboard"
-              onClick={this.demoLogin()}
-            >
+            <Link className="whiteButton" to="/dashboard">
               Demo
             </Link>
             <a href="#home" id="landingLogo">
