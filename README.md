@@ -11,6 +11,8 @@ Eventually the hope is that this app can measure the enviornmental impact of eve
 
 This is a mobile-first application with a focus on ease-of-use and intuitive user experience.
 
+[Trello Board Planning](https://trello.com/b/L5LTv7zo/trashtag-tracker)
+
 # Tech
 
 - HTML
